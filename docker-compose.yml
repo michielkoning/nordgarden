@@ -1,0 +1,30 @@
+version: '3.3'
+
+services:
+   db_nordgarden:
+     image: mysql:5.7
+     volumes:
+       - data_nordgarden:/var/lib/mysql
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: somewordpress
+       MYSQL_DATABASE: wordpress
+       MYSQL_USER: wordpress
+       MYSQL_PASSWORD: wordpress
+
+   wp_nordgarden:
+     depends_on:
+       - db_nordgarden
+     image: wordpress:latest
+     volumes:
+       - ./theme/:/var/www/html/wp-content/themes/nordgarden/
+     ports:
+       - "9000:80"
+     restart: always
+     environment:
+       WORDPRESS_DB_HOST: db_nordgarden:3306
+       WORDPRESS_DB_USER: wordpress
+       WORDPRESS_DB_PASSWORD: wordpress
+       WORDPRESS_DB_NAME: wordpress
+volumes:
+    data_nordgarden: {}
