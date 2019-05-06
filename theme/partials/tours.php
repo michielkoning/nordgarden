@@ -25,5 +25,5 @@ if ($tours) :
   ?>
   </ul>
 <?php else : ?>
-  <p>No tours announced for now.</p>
+  <p><?php _e('No tours announced for now.', 'nordgarden'); ?></p>
 <?php endif;
