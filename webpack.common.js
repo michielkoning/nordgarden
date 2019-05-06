@@ -13,7 +13,7 @@ const PATHS = {
 const settings = {
   host: 'localhost',
   port: 3001,
-  proxy: 'localhost:9000',
+  proxy: 'localhost:9030',
 };
 
 module.exports = {

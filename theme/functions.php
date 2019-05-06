@@ -5,3 +5,4 @@ require_once __DIR__ . '/includes/custom-posts.php';
 require_once __DIR__ . '/includes/images.php';
 require_once __DIR__ . '/includes/menu.php';
 require_once __DIR__ . '/includes/translations.php';
+require_once __DIR__ . '/includes/tours.php';
