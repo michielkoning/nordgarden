@@ -35,8 +35,8 @@ select {
   transition: background-color 0.1s ease-out;
 
   &:disabled {
-    background-color: var(--gray-lightest);
-    color: var(--gray-light);
+    background-color: var(--color-gray-lightest);
+    color: var(--color-gray-light);
   }
 
   &.has-error {
@@ -61,7 +61,7 @@ input {
   }
 
   &::placeholder {
-    color: var(--gray-dark);
+    color: var(--color-gray-dark);
   }
 }
 
