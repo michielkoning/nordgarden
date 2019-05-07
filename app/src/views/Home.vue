@@ -1,18 +1,39 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="posts">
+    <ul>
+      <li v-for="post in posts" :key="post.date">
+        <router-link :to="post.slug">{{ post.title.rendered }}</router-link>
+      </li>
+    </ul>
+    {{ posts }}
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
+import axios from 'axios';
 
 export default {
-  name: 'home',
-  components: {
-    HelloWorld,
+  data() {
+    return {
+      posts: [],
+      isLoading: false,
+    };
+  },
+  mounted() {
+    this.getPosts();
+  },
+  methods: {
+    async getPosts() {
+      this.loading = true;
+      try {
+        const response = await axios.get('wp/v2/posts');
+        this.posts = response.data;
+      } catch (error) {
+        window.console.error(error);
+      } finally {
+        this.loading = false;
+      }
+    },
   },
 };
 </script>

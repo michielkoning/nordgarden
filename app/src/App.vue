@@ -1,12 +1,22 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link>|
-      <router-link to="/about">About</router-link>
-    </div>
+    <audio-player />
+    <app-menu />
     <router-view />
   </div>
 </template>
+
+<script>
+import AudioPlayer from '@/components/AudioPlayer.vue';
+import AppMenu from '@/components/AppMenu.vue';
+
+export default {
+  components: {
+    AudioPlayer,
+    AppMenu,
+  },
+};
+</script>
 
 <style>
 @import './styles/base.css';
