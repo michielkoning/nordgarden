@@ -4,6 +4,8 @@
     <router-link to="/tour">Tour</router-link>
     <router-link to="/albums">Albums</router-link>
     <router-link to="/videos">Videos</router-link>
+    <router-link to="/biography">Biography</router-link>
+    <router-link to="/contact">Contact</router-link>
   </nav>
 </template>
 

@@ -28,6 +28,16 @@ export default new Router({
       component: () => import(/* webpackChunkName: "videos" */ './views/Videos.vue'),
     },
     {
+      path: '/biography',
+      name: 'biography',
+      component: () => import(/* webpackChunkName: "biography" */ './views/Biography.vue'),
+    },
+    {
+      path: '/contact',
+      name: 'contact',
+      component: () => import(/* webpackChunkName: "contact" */ './views/Contact.vue'),
+    },
+    {
       path: '/:post',
       name: 'post',
       component: () => import(/* webpackChunkName: "post" */ './views/Post.vue'),

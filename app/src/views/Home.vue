@@ -1,39 +1,28 @@
 <template>
   <div class="posts">
     <ul>
-      <li v-for="post in posts" :key="post.date">
+      <li v-for="post in list" :key="post.date">
         <router-link :to="post.slug">{{ post.title.rendered }}</router-link>
       </li>
     </ul>
-    {{ posts }}
   </div>
 </template>
 
 <script>
-import axios from 'axios';
+import { mapActions, mapState } from 'vuex';
 
 export default {
-  data() {
-    return {
-      posts: [],
-      isLoading: false,
-    };
+  computed: {
+    ...mapState('posts', ['list']),
   },
+
   mounted() {
-    this.getPosts();
+    if (!this.list.length) this.setPosts();
   },
   methods: {
-    async getPosts() {
-      this.loading = true;
-      try {
-        const response = await axios.get('wp/v2/posts');
-        this.posts = response.data;
-      } catch (error) {
-        window.console.error(error);
-      } finally {
-        this.loading = false;
-      }
-    },
+    ...mapActions({
+      setPosts: 'posts/set',
+    }),
   },
 };
 </script>

@@ -12,6 +12,7 @@ Version: 0.1
 
 add_action('init', 'create_album_post_type');
 add_action('init', 'create_song_post_type');
+add_action('init', 'create_youtube_post_type');
 
 function create_album_post_type()
 {
@@ -33,8 +34,6 @@ function create_album_post_type()
       'supports' => array('title', 'thumbnail', 'page-attributes'),
       'public' => true,
       'menu_position' => 200,
-      'register_meta_box_cb' => 'add_album_metaboxes',
-      'menu_icon' => 'dashicons-format-audio'
     )
   );
 }
@@ -59,8 +58,6 @@ function create_song_post_type()
       'supports' => array('title', 'editor'),
       'public' => true,
       'menu_position' => 210,
-      'register_meta_box_cb' => 'add_song_metaboxes',
-      'show_in_menu' => 'edit.php?post_type=albums',
     )
   );
 }

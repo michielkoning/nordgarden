@@ -1,37 +1,26 @@
 <template>
-  <div class="tours">
+  <div class="tour">
     <ul>
-      <li v-for="tour in tours" :key="tour.date">{{ tour.date }}</li>
+      <li v-for="tour in list" :key="tour.date">{{ tour.date }}</li>
     </ul>
-    {{ tours }}
   </div>
 </template>
 
 <script>
-import axios from 'axios';
+import { mapActions, mapState } from 'vuex';
 
 export default {
-  data() {
-    return {
-      tours: [],
-      isLoading: false,
-    };
+  computed: {
+    ...mapState('tour', ['list']),
   },
+
   mounted() {
-    this.getTours();
+    if (!this.list.length) this.setTour();
   },
   methods: {
-    async getTours() {
-      this.loading = true;
-      try {
-        const response = await axios.get('site/v1/tours');
-        this.tours = response.data;
-      } catch (error) {
-        window.console.error(error);
-      } finally {
-        this.loading = false;
-      }
-    },
+    ...mapActions({
+      setTour: 'tour/set',
+    }),
   },
 };
 </script>

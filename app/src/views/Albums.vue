@@ -1,7 +1,7 @@
 <template>
   <div class="albums">
     <ul>
-      <li v-for="album in albums" :key="album.name" class="album">
+      <li v-for="album in list" :key="album.name" class="album">
         <div v-html="album.image"></div>
         <ul>
           <li v-for="song in album.songlist" :key="song.title">{{ song.title }}</li>
@@ -12,30 +12,20 @@
 </template>
 
 <script>
-import axios from 'axios';
+import { mapActions, mapState } from 'vuex';
 
 export default {
-  data() {
-    return {
-      albums: [],
-      isLoading: false,
-    };
+  computed: {
+    ...mapState('albums', ['list']),
   },
+
   mounted() {
-    this.getAlbums();
+    if (!this.list.length) this.setAlbums();
   },
   methods: {
-    async getAlbums() {
-      this.loading = true;
-      try {
-        const response = await axios.get('site/v1/discography');
-        this.albums = response.data;
-      } catch (error) {
-        window.console.error(error);
-      } finally {
-        this.loading = false;
-      }
-    },
+    ...mapActions({
+      setAlbums: 'albums/set',
+    }),
   },
 };
 </script>
