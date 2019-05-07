@@ -9,7 +9,7 @@
   </nav>
 </template>
 
-<style>
+<style lang="postcss" scoped>
 nav {
   display: flex;
   justify-content: center;
