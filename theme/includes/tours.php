@@ -30,3 +30,4 @@ function update_feed_hourly()
   endforeach;
   update_option('tours', $tours);
 }
+update_feed_hourly();

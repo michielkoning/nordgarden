@@ -88,8 +88,8 @@ function tdd_oembed_filter($html, $url, $attr, $post_ID)
 function add_edit_link_after_content($content)
 {
   $edit_post_title = is_single()
-    ? "Bewerk dit bericht"
-    : "Bewerk deze pagina";
+    ? __("Bewerk dit bericht", 'nordgarden')
+    : __("Bewerk deze pagina", 'nordgarden');
   $edit_post_url = get_edit_post_link();
   $edit_link = null;
   if ($edit_post_url) {

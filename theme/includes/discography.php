@@ -19,22 +19,22 @@ function create_album_post_type()
     'albums',
     array(
       'labels' => array(
-        'name' => __('Albums'),
-        'singular_name' => __('Album'),
-        'add_new' => __('New album'),
-        'add_new_item' => __('Add new album'),
-        'edit_item' => __('Edit album'),
-        'new_item' => __('New album'),
-        'view_item' => __('View album'),
-        'search_items' => __('Search albums'),
-        'not_found' => __('No albums found'),
-        'not_found_in_trash' => __('No albums found in Trash')
+        'name' => __('Albums', 'nordgarden'),
+        'singular_name' => __('Album', 'nordgarden'),
+        'add_new' => __('New album', 'nordgarden'),
+        'add_new_item' => __('Add new album', 'nordgarden'),
+        'edit_item' => __('Edit album', 'nordgarden'),
+        'new_item' => __('New album', 'nordgarden'),
+        'view_item' => __('View album', 'nordgarden'),
+        'search_items' => __('Search albums', 'nordgarden'),
+        'not_found' => __('No albums found', 'nordgarden'),
+        'not_found_in_trash' => __('No albums found in Trash', 'nordgarden')
       ),
       'supports' => array('title', 'thumbnail', 'page-attributes'),
       'public' => true,
       'menu_position' => 200,
       'register_meta_box_cb' => 'add_album_metaboxes',
-      'menu_icon' => plugins_url('albums.png', __FILE__)
+      'menu_icon' => 'dashicons-format-audio'
     )
   );
 }
@@ -45,23 +45,22 @@ function create_song_post_type()
     'songs',
     array(
       'labels' => array(
-        'name' => __('Songs'),
-        'singular_name' => __('Song'),
-        'add_new' => __('New song'),
-        'add_new_item' => __('Add new song'),
-        'edit_item' => __('Edit song'),
-        'new_item' => __('New song'),
-        'view_item' => __('View song'),
-        'search_items' => __('Search songs'),
-        'not_found' => __('No songs found'),
-        'not_found_in_trash' => __('No songs found in Trash')
+        'name' => __('Songs', 'nordgarden'),
+        'singular_name' => __('Song', 'nordgarden'),
+        'add_new' => __('New song', 'nordgarden'),
+        'add_new_item' => __('Add new song', 'nordgarden'),
+        'edit_item' => __('Edit song', 'nordgarden'),
+        'new_item' => __('New song', 'nordgarden'),
+        'view_item' => __('View song', 'nordgarden'),
+        'search_items' => __('Search songs', 'nordgarden'),
+        'not_found' => __('No songs found', 'nordgarden'),
+        'not_found_in_trash' => __('No songs found in Trash', 'nordgarden')
       ),
       'supports' => array('title', 'editor'),
       'public' => true,
       'menu_position' => 210,
       'register_meta_box_cb' => 'add_song_metaboxes',
       'show_in_menu' => 'edit.php?post_type=albums',
-      'menu_icon' => plugins_url('songs.png', __FILE__)
     )
   );
 }
