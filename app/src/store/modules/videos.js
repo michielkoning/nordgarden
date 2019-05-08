@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const moduleState = {
   list: [],
+  isLoading: false,
 };
 
 const mutations = {
@@ -9,17 +10,21 @@ const mutations = {
     const newState = state;
     newState.list = payload;
   },
+  updateLoader: (state, payload) => {
+    const newState = state;
+    newState.isLoading = payload;
+  },
 };
 
 const actions = {
   set: async ({ commit }) => {
+    commit('updateLoader', true);
+
     try {
       const response = await axios.get('site/v1/tours');
       commit('set', response.data);
-    } catch (error) {
-      window.console.error(error);
     } finally {
-      // this.loading = false;
+      commit('updateLoader', false);
     }
   },
 };

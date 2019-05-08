@@ -12,7 +12,7 @@ Version: 0.1
 
 add_action('init', 'create_album_post_type');
 add_action('init', 'create_song_post_type');
-add_action('init', 'create_youtube_post_type');
+// add_action('init', 'create_youtube_post_type');
 
 function create_album_post_type()
 {

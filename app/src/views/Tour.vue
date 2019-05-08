@@ -11,7 +11,7 @@ import { mapActions, mapState } from 'vuex';
 
 export default {
   computed: {
-    ...mapState('tour', ['list']),
+    ...mapState('tour', ['list', 'isLoading']),
   },
 
   mounted() {
