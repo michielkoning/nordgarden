@@ -1,13 +1,19 @@
 <template>
-  <div v-if="biography" class="biography">
+  <app-page v-if="biography" class="biography">
     <h1>{{ biography.title.rendered }}</h1>
-  </div>
+    <div class="text" v-html="biography.content.rendered" />
+  </app-page>
 </template>
 
 <script>
 import { mapActions, mapState } from 'vuex';
 
+import AppPage from '@/components/AppPage.vue';
+
 export default {
+  components: {
+    AppPage,
+  },
   computed: {
     ...mapState('pages', ['biography']),
   },
@@ -22,3 +28,10 @@ export default {
   },
 };
 </script>
+
+<style lang="postcss" scoped>
+.text {
+  columns: 100px 3;
+  column-gap: var(--gutter);
+}
+</style>

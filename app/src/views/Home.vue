@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <app-page class="wrapper">
     <transition-group name="list" tag="ul">
       <li v-for="post in list" :key="post.date">
         <router-link :to="post.slug">{{ post.id }}</router-link>
@@ -7,13 +7,17 @@
       </li>
     </transition-group>
     <button v-if="!hasAllPostsLoaded" @click="setPosts">Load more</button>
-  </div>
+  </app-page>
 </template>
 
 <script>
 import { mapActions, mapState, mapGetters } from 'vuex';
+import AppPage from '@/components/AppPage.vue';
 
 export default {
+  components: {
+    AppPage,
+  },
   computed: {
     ...mapState('posts', ['list', 'isLoading']),
     ...mapGetters({

@@ -1,12 +1,16 @@
 <template>
-  <div class="wrapper">{{ post }}</div>
+  <app-page class="wrapper">{{ post }}</app-page>
 </template>
 
 <script>
 import axios from 'axios';
 import { mapGetters } from 'vuex';
+import AppPage from '@/components/AppPage.vue';
 
 export default {
+  components: {
+    AppPage,
+  },
   data() {
     return {
       post: null,

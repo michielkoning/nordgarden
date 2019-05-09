@@ -1,15 +1,19 @@
 <template>
-  <div class="tour">
+  <app-page class="tour">
     <ul>
       <li v-for="tour in list" :key="tour.date">{{ tour.date }}</li>
     </ul>
-  </div>
+  </app-page>
 </template>
 
 <script>
 import { mapActions, mapState } from 'vuex';
+import AppPage from '@/components/AppPage.vue';
 
 export default {
+  components: {
+    AppPage,
+  },
   computed: {
     ...mapState('tour', ['list', 'isLoading']),
   },

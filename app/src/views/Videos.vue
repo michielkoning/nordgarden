@@ -1,16 +1,21 @@
 <template>
-  <div class="wrapper">
+  <app-page class="content">
     <h1>This is an about page</h1>
     <ul>
       <li v-for="video in videos" :key="video">
         <img :src="`https://img.youtube.com/vi/${video}/hqdefault.jpg`" alt />
       </li>
     </ul>
-  </div>
+  </app-page>
 </template>
 
 <script>
+import AppPage from '@/components/AppPage.vue';
+
 export default {
+  components: {
+    AppPage,
+  },
   data() {
     return {
       videos: [
@@ -33,9 +38,8 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.wrapper {
+.wrapper2 {
   @mixin center;
-  max-width: var(--container-width-xlg);
 }
 
 ul {
