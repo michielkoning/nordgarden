@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import tour from './modules/tour';
 import albums from './modules/albums';
+import pages from './modules/pages';
 import posts from './modules/posts';
 import videos from './modules/videos';
 
@@ -12,6 +13,7 @@ export default new Vuex.Store({
     tour,
     albums,
     posts,
+    pages,
     videos,
   },
 });

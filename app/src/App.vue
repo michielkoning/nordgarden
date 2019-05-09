@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <!-- <error-handler/>
-    <audio-player/>
-    <app-menu/>-->
+    <!-- <error-handler />
+    <audio-player />
+    <app-menu />-->
     <router-view />
   </div>
 </template>
@@ -23,8 +23,4 @@ export default {
 
 <style>
 @import './styles/base.css';
-/*
-* {
-  display: none;
-} */
 </style>

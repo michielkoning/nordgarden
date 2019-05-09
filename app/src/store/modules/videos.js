@@ -19,7 +19,6 @@ const mutations = {
 const actions = {
   set: async ({ commit }) => {
     commit('updateLoader', true);
-
     try {
       const response = await axios.get('site/v1/tours');
       commit('set', response.data);

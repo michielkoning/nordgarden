@@ -1,20 +1,24 @@
 <template>
   <div class="wrapper">
-    <ul>
+    <transition-group name="list" tag="ul">
       <li v-for="post in list" :key="post.date">
-        <router-link :to="post.slug">{{ post.title.rendered }}</router-link>
-        {{ post.excerpt.rendered }}
+        <router-link :to="post.slug">{{ post.id }}</router-link>
+        <!-- {{ post.excerpt.rendered }} -->
       </li>
-    </ul>
+    </transition-group>
+    <button v-if="!hasAllPostsLoaded" @click="setPosts">Load more</button>
   </div>
 </template>
 
 <script>
-import { mapActions, mapState } from 'vuex';
+import { mapActions, mapState, mapGetters } from 'vuex';
 
 export default {
   computed: {
-    ...mapState('posts', ['list']),
+    ...mapState('posts', ['list', 'isLoading']),
+    ...mapGetters({
+      hasAllPostsLoaded: 'posts/hasAllPostsLoaded',
+    }),
   },
 
   mounted() {
@@ -22,7 +26,7 @@ export default {
   },
   methods: {
     ...mapActions({
-      setPosts: 'posts/set',
+      setPosts: 'posts/setPosts',
     }),
   },
 };
@@ -31,6 +35,7 @@ export default {
 <style lang="postcss" scoped>
 .wrapper {
   @mixin center;
+
   max-width: var(--container-width-xlg);
 }
 
@@ -40,5 +45,16 @@ ul {
   display: grid;
   grid-gap: var(--gutter);
   grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+}
+
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.2s;
+}
+
+.list-enter,
+.list-leave-to {
+  opacity: 0;
+  transform: translateY(1em);
 }
 </style>
