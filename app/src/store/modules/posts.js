@@ -36,6 +36,7 @@ const actions = {
       const response = await axios.get('wp/v2/posts/', {
         params: {
           page: moduleState.currentPage,
+          per_page: 12,
         },
       });
 

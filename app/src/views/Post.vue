@@ -1,5 +1,7 @@
 <template>
-  <app-page class="wrapper">{{ post }}</app-page>
+  <app-page class="wrapper" :title="post.title.rendered">
+    <div v-html="post.content.rendered"></div>
+  </app-page>
 </template>
 
 <script>
@@ -51,8 +53,4 @@ export default {
 };
 </script>
 
-<style lang="postcss" scoped>
-.wrapper {
-  display: none;
-}
-</style>
+<style lang="postcss" scoped></style>
