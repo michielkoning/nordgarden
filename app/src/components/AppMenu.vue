@@ -1,7 +1,10 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link>
-    <router-link to="/tour">Tour</router-link>
+    <router-link to="/tour">
+      Tour
+      <span v-if="list.length">({{ list.length }})</span>
+    </router-link>
     <router-link to="/albums">Albums</router-link>
     <router-link to="/videos">Videos</router-link>
     <router-link to="/biography">Biography</router-link>
@@ -12,10 +15,23 @@
 
 <script>
 import AudioPlayer from '@/components/AudioPlayer.vue';
+import { mapActions, mapState } from 'vuex';
 
 export default {
   components: {
     AudioPlayer,
+  },
+  computed: {
+    ...mapState('tour', ['list', 'isLoading']),
+  },
+
+  mounted() {
+    if (!this.list.length) this.setTour();
+  },
+  methods: {
+    ...mapActions({
+      setTour: 'tour/set',
+    }),
   },
 };
 </script>
@@ -27,6 +43,7 @@ nav {
   top: 0;
   bottom: 0;
   width: 20em;
+  background: rgba(255, 255, 255, 0.5);
 }
 
 a {

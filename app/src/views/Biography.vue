@@ -31,7 +31,6 @@ export default {
 
 <style lang="postcss" scoped>
 .text {
-  columns: 100px 3;
-  column-gap: var(--gutter);
+  max-width: var(--container-width-sm);
 }
 </style>
