@@ -15,7 +15,7 @@
 
 <script>
 import AudioPlayer from '@/components/AudioPlayer.vue';
-import { mapActions, mapState } from 'vuex';
+import { mapState } from 'vuex';
 
 export default {
   components: {
@@ -23,15 +23,6 @@ export default {
   },
   computed: {
     ...mapState('tour', ['list', 'isLoading']),
-  },
-
-  mounted() {
-    if (!this.list.length) this.setTour();
-  },
-  methods: {
-    ...mapActions({
-      setTour: 'tour/set',
-    }),
   },
 };
 </script>

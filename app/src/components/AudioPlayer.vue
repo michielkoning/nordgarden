@@ -5,18 +5,16 @@
     <button @click="next">►►</button>
     <div ref="progress" class="progress" @click="scrub">
       <div class="bar" :style="{ width: progress }"></div>
-      <div v-if="song">{{ song.title }}</div>
-      <div v-else>test</div>
+      <div class="title">{{ currentSong.title }}</div>
     </div>
     <audio
       ref="audio"
-      :src="song.file"
+      :src="currentSong.file"
       @timeupdate="timeupdate"
+      @ended="next"
       @play="setPlayState(true)"
       @pause="setPlayState(false)"
-      @ended="next"
     ></audio>
-    {{ currentSong }}
   </div>
 </template>
 
@@ -29,7 +27,6 @@ export default {
     return {
       songIndex: 1,
       player: null,
-      song: '',
       progress: 0,
     };
   },
@@ -41,7 +38,7 @@ export default {
   },
 
   created() {
-    EventBusUtil.$on('audio-play-song', song => this.playSong(song));
+    EventBusUtil.$on('audio-play-song', state => (state ? this.play() : this.pause()));
     this.$nextTick(() => {
       this.player = this.$refs.audio;
     });
@@ -49,15 +46,18 @@ export default {
   methods: {
     ...mapActions({
       setPlayState: 'albums/setPlayState',
+      selectNextSong: 'albums/selectNextSong',
     }),
     pause() {
-      this.player.pause();
+      this.player?.pause();
     },
     play() {
-      this.player.play();
+      this.player?.play();
     },
     next() {
-      this.playSong();
+      this.selectNextSong().then(() => {
+        this.player?.play();
+      });
     },
     scrub(event) {
       const progress = this.$refs.progress;
@@ -67,14 +67,6 @@ export default {
     timeupdate() {
       this.progress = `${(this.player.currentTime / this.player.duration) * 100}%`;
     },
-    // playSong(song) {
-    //   this.song = song;
-    //   this.songIndex += 1;
-    //   if (this.songIndex === 11) this.songIndex = 1;
-    //   this.$nextTick(() => {
-    //     this.player.play();
-    //   });
-    // },
   },
 };
 </script>
@@ -96,7 +88,14 @@ button {
 .progress {
   position: relative;
   text-align: center;
-  flex: 1 1 auto;
+  flex: 1 0 auto;
+}
+
+.title {
+  max-width: 16em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .bar {

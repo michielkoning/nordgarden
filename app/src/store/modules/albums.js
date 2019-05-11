@@ -62,6 +62,19 @@ const actions = {
   setPlayState: ({ commit }, payload) => {
     commit('setPlayState', payload);
   },
+  selectNextSong: ({ commit }) => {
+    const songs = getters.playableSongs(moduleState);
+    const currentSong = moduleState.currentSong;
+    const currentSongIndex = songs.findIndex(song => song === currentSong);
+
+    let nextSongIndex;
+    if (currentSongIndex + 1 >= songs.length) {
+      nextSongIndex = 0;
+    } else {
+      nextSongIndex = currentSongIndex + 1;
+    }
+    commit('selectSong', songs[nextSongIndex]);
+  },
 };
 
 export default {

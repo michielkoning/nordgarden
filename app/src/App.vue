@@ -13,6 +13,7 @@
 <script>
 import AppMenu from '@/components/AppMenu.vue';
 import ErrorHandler from '@/components/ErrorHandler.vue';
+import { mapActions } from 'vuex';
 
 export default {
   components: {
@@ -32,6 +33,16 @@ export default {
         this.transitionName = 'slide-previous';
       }
     },
+  },
+  mounted() {
+    this.setTour();
+    this.setAlbums();
+  },
+  methods: {
+    ...mapActions({
+      setAlbums: 'albums/set',
+      setTour: 'tour/set',
+    }),
   },
 };
 </script>

@@ -9,9 +9,11 @@
         <div>
           <ul class="songlist">
             <li v-for="song in album.songlist" :key="song.title" class="song">
-              <button v-if="song.file" @click="playSong(song)">►</button>
+              <template v-if="song.file">
+                <button v-if="!isPlayingCurrentSong(song)" @click="play(song)">►</button>
+                <button v-else @click="pause">❚ ❚</button>
+              </template>
               {{ song.title }}
-              {{ isCurrentSong(song) }}
             </li>
           </ul>
         </div>
@@ -30,22 +32,24 @@ export default {
     AppPage,
   },
   computed: {
-    ...mapState('albums', ['list', 'currentSong']),
+    ...mapState('albums', ['list', 'currentSong', 'isPlaying']),
   },
 
-  mounted() {
-    if (!this.list.length) this.setAlbums();
-  },
   methods: {
     ...mapActions({
-      setAlbums: 'albums/set',
       selectSong: 'albums/selectSong',
+      setPlayState: 'albums/setPlayState',
     }),
-    isCurrentSong(song) {
-      return song === this.currentSong;
+    isPlayingCurrentSong(song) {
+      return song === this.currentSong && this.isPlaying;
     },
-    playSong(song) {
-      this.selectSong(song);
+    play(song) {
+      this.selectSong(song).then(() => {
+        EventBusUtil.$emit('audio-play-song', true);
+      });
+    },
+    pause() {
+      EventBusUtil.$emit('audio-play-song', false);
     },
   },
 };
