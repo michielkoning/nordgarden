@@ -31,7 +31,7 @@ function create_album_post_type()
         'not_found' => __('No albums found', 'nordgarden'),
         'not_found_in_trash' => __('No albums found in Trash', 'nordgarden')
       ),
-      'supports' => array('title', 'thumbnail', 'page-attributes'),
+      'supports' => array('title', 'thumbnail'),
       'public' => true,
       'menu_position' => 200,
     )
@@ -58,6 +58,7 @@ function create_song_post_type()
       'supports' => array('title', 'editor'),
       'public' => true,
       'menu_position' => 210,
+      'show_in_menu' => 'edit.php?post_type=albums'
     )
   );
 }

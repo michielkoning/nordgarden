@@ -1,5 +1,5 @@
 <template>
-  <div class="player">
+  <div v-show="songs.length" class="player">
     <button v-if="!isPlaying" @click="play">►</button>
     <button v-if="isPlaying" @click="pause">❚ ❚</button>
     <button @click="next">►►</button>
@@ -10,40 +10,46 @@
     </div>
     <audio
       ref="audio"
-      :src="file"
+      :src="song.file"
       @timeupdate="timeupdate"
-      @play="updateIsPlayingStatus(true)"
-      @pause="updateIsPlayingStatus(false)"
+      @play="setPlayState(true)"
+      @pause="setPlayState(false)"
       @ended="next"
     ></audio>
+    {{ currentSong }}
   </div>
 </template>
 
 <script>
 import EventBusUtil from '@/utils/eventBusUtil';
+import { mapActions, mapGetters, mapState } from 'vuex';
 
 export default {
   data() {
     return {
       songIndex: 1,
       player: null,
-      isPlaying: false,
       song: '',
       progress: 0,
     };
   },
   computed: {
-    file() {
-      return `/audio/${this.songIndex}.mp3`;
-    },
+    ...mapState('albums', ['currentSong', 'isPlaying']),
+    ...mapGetters({
+      songs: 'albums/playableSongs',
+    }),
   },
+
   created() {
+    EventBusUtil.$on('audio-play-song', song => this.playSong(song));
     this.$nextTick(() => {
       this.player = this.$refs.audio;
     });
-    EventBusUtil.$on('audio-play-song', song => this.playSong(song));
   },
   methods: {
+    ...mapActions({
+      setPlayState: 'albums/setPlayState',
+    }),
     pause() {
       this.player.pause();
     },
@@ -58,20 +64,17 @@ export default {
       const scrubTime = (event.offsetX / progress.offsetWidth) * this.player.duration;
       this.player.currentTime = scrubTime;
     },
-    updateIsPlayingStatus(status) {
-      this.isPlaying = status;
-    },
     timeupdate() {
       this.progress = `${(this.player.currentTime / this.player.duration) * 100}%`;
     },
-    playSong(song) {
-      this.song = song;
-      this.songIndex += 1;
-      if (this.songIndex === 11) this.songIndex = 1;
-      this.$nextTick(() => {
-        this.player.play();
-      });
-    },
+    // playSong(song) {
+    //   this.song = song;
+    //   this.songIndex += 1;
+    //   if (this.songIndex === 11) this.songIndex = 1;
+    //   this.$nextTick(() => {
+    //     this.player.play();
+    //   });
+    // },
   },
 };
 </script>

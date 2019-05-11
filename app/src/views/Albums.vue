@@ -8,13 +8,10 @@
         </div>
         <div>
           <ul class="songlist">
-            <li
-              v-for="song in album.songlist"
-              :key="song.title"
-              class="song"
-              @click="playSong(song)"
-            >
+            <li v-for="song in album.songlist" :key="song.title" class="song">
+              <button v-if="song.file" @click="playSong(song)">►</button>
               {{ song.title }}
+              {{ isCurrentSong(song) }}
             </li>
           </ul>
         </div>
@@ -33,7 +30,7 @@ export default {
     AppPage,
   },
   computed: {
-    ...mapState('albums', ['list']),
+    ...mapState('albums', ['list', 'currentSong']),
   },
 
   mounted() {
@@ -42,9 +39,13 @@ export default {
   methods: {
     ...mapActions({
       setAlbums: 'albums/set',
+      selectSong: 'albums/selectSong',
     }),
+    isCurrentSong(song) {
+      return song === this.currentSong;
+    },
     playSong(song) {
-      EventBusUtil.$emit('audio-play-song', song);
+      this.selectSong(song);
     },
   },
 };

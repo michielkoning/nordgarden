@@ -1,3 +1,4 @@
+
 version: '3.3'
 
 services:
@@ -18,6 +19,7 @@ services:
      image: wordpress:latest
      volumes:
        - ./theme/:/var/www/html/wp-content/themes/nordgarden/
+       - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
      ports:
        - "9030:80"
      restart: always

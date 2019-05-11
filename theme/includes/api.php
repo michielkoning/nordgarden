@@ -24,7 +24,19 @@ function get_discography()
     $album->itunes = get_field('itunes', $post->ID);
     $album->amazon = get_field('amazon', $post->ID);
     $album->release_date = get_field('release_date', $post->ID);
-    $album->songlist = $post->songlist;
+    $songs = get_field('songs', $post->ID);
+    $album->songlist = [];
+
+    if ($songs) {
+      foreach ($songs as $songRow) {
+        $song =  new stdClass();
+        $songObj = $songRow['song'];
+        $song->title = $songObj->post_title;
+        $song->file = get_field('file', $songObj->ID);
+        $album->songlist[] = $song;
+      }
+    }
+
     $albums[] = $album;
   }
 
