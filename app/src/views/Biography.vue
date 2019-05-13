@@ -1,9 +1,10 @@
 <template>
   <app-loader v-if="isLoading" />
-  <app-page v-else class="biography">
-    <h1>{{ biography.title.rendered }}</h1>
-    <div class="text" v-html="biography.content.rendered" />
-  </app-page>
+  <div v-else>
+    <app-page v-if="biography" class="biography" :title="biography.title.rendered">
+      <div class="text" v-html="biography.content.rendered" />
+    </app-page>
+  </div>
 </template>
 
 <script>
@@ -18,7 +19,7 @@ export default {
     AppLoader,
   },
   computed: {
-    ...mapState('pages', ['biography']),
+    ...mapState('pages', ['biography', 'isLoading']),
   },
 
   mounted() {

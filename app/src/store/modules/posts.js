@@ -30,6 +30,9 @@ const mutations = {
 };
 
 const actions = {
+  updateLoader: ({ commit }, payload) => {
+    commit('updateLoader', payload);
+  },
   setPosts: async ({ commit }) => {
     commit('updateLoader', true);
 

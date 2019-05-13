@@ -1,7 +1,7 @@
 <template>
   <app-loader v-if="isLoading" />
   <app-page v-else title="Albums">
-    <ul class="albums-list">
+    <ul v-if="list.length" class="albums-list">
       <li v-for="album in list" :key="album.name" class="album">
         <h2>{{ album.title }}</h2>
         <div>
@@ -41,7 +41,7 @@ export default {
     AppLoader,
   },
   computed: {
-    ...mapState('albums', ['list', 'currentSong', 'isPlaying']),
+    ...mapState('albums', ['list', 'currentSong', 'isPlaying', 'isLoading']),
   },
 
   methods: {

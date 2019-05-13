@@ -1,6 +1,6 @@
 <template>
   <main>
-    <h1>{{ title }}</h1>
+    <h1 id="content" tabindex="-1">{{ title }}</h1>
     <slot />
   </main>
 </template>

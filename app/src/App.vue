@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <skip-links />
     <error-handler />
     <app-header />
     <div class="page">
@@ -13,12 +14,14 @@
 <script>
 import AppHeader from '@/components/AppHeader.vue';
 import ErrorHandler from '@/components/ErrorHandler.vue';
+import SkipLinks from '@/components/SkipLinks.vue';
 import { mapActions } from 'vuex';
 
 export default {
   components: {
     AppHeader,
     ErrorHandler,
+    SkipLinks,
   },
   data() {
     return {

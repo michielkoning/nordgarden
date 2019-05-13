@@ -1,12 +1,12 @@
 <template>
   <div class="loader">
-    <span class="sr-only">{{ $('loading') }}</span>
+    <span class="sr-only">{{ $t('loading') }}</span>
   </div>
 </template>
 
 <style scoped lang="postcss">
 .loader {
-  background: $gray-dark;
+  background: gray;
   border-top-left-radius: 2em;
   border-top-right-radius: 2em;
   width: 4em;
@@ -19,7 +19,7 @@
     margin: 0 1em 0 0;
     font-size: 0.5em;
     display: inline-block;
-    background: $white;
+    background: white;
     transform: translateY(0.2em);
 
     &::before, &::after {
@@ -30,7 +30,7 @@
   &::before,
   &::after {
     content: '';
-    background-color: $white;
+    background-color: white;
     position: absolute;
   }
 

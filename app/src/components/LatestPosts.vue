@@ -2,7 +2,7 @@
   <section class="news-list" aria-labelledby="news-list-title">
     <h1 id="news-list-title">{{ $t('latestPosts') }}</h1>
     <transition-group name="list" tag="ul">
-      <li v-for="post in list" :key="post.date">
+      <li v-for="post in list" :key="post.slug">
         <h2>
           <router-link :to="post.slug">{{ post.title.rendered }}</router-link>
         </h2>

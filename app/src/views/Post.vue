@@ -10,7 +10,7 @@
 
 <script>
 import axios from 'axios';
-import { mapGetters } from 'vuex';
+import { mapGetters, mapState, mapActions } from 'vuex';
 import AppPage from '@/components/AppPage.vue';
 import LatestPosts from '@/components/LatestPosts.vue';
 import PostDate from '@/components/PostDate.vue';
@@ -24,10 +24,12 @@ export default {
   data() {
     return {
       post: null,
-      isLoading: false,
+      isLoadingUniquePost: false,
     };
   },
   computed: {
+    ...mapState('posts', ['isLoading']),
+
     ...mapGetters({
       getPostBySlug: 'posts/getPostBySlug',
     }),
@@ -41,7 +43,7 @@ export default {
   },
   methods: {
     async getPostByApi(slug) {
-      this.loading = true;
+      this.isLoadingUniquePost = true;
       try {
         const response = await axios.get('wp/v2/posts/', {
           params: {
@@ -50,7 +52,7 @@ export default {
         });
         this.post = response.data[0];
       } finally {
-        this.loading = false;
+        this.isLoadingUniquePost = false;
       }
     },
 
