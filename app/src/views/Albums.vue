@@ -10,8 +10,12 @@
           <ul class="songlist">
             <li v-for="song in album.songlist" :key="song.title" class="song">
               <template v-if="song.file">
-                <button v-if="!isPlayingCurrentSong(song)" @click="play(song)">►</button>
-                <button v-else @click="pause">❚ ❚</button>
+                <button v-if="!isPlayingCurrentSong(song)" @click="play(song)">
+                  <app-icon icon="play" :title="$t('play')"/>
+                </button>
+                <button v-else @click="pause">
+                  <app-icon icon="play" :title="$t('play')"/>
+                </button>
               </template>
               {{ song.title }}
             </li>
@@ -26,10 +30,12 @@
 import { mapActions, mapState } from 'vuex';
 import AppPage from '@/components/AppPage.vue';
 import EventBusUtil from '@/utils/eventBusUtil';
+import AppIcon from '@/components/AppIcon.vue';
 
 export default {
   components: {
     AppPage,
+    AppIcon,
   },
   computed: {
     ...mapState('albums', ['list', 'currentSong', 'isPlaying']),

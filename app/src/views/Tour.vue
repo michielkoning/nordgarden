@@ -1,7 +1,7 @@
 <template>
   <app-page class="tour">
     <div class="text">
-      <h1>Tour</h1>
+      <h1>{{ $t('tour') }}</h1>
       <ul>
         <li v-for="tour in list" :key="tour.date">
           <span class="date">{{ tour.date | formatDate }}</span>
@@ -10,7 +10,7 @@
         </li>
       </ul>
     </div>
-    <img src="/img/tour.jpg" alt />
+    <img src="/img/tour.jpg" alt>
   </app-page>
 </template>
 

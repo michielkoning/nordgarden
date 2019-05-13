@@ -5,12 +5,12 @@
         <h2>
           <router-link :to="post.slug">{{ post.title.rendered }}</router-link>
         </h2>
-        <post-date :date="post.date" />
+        <post-date :date="post.date"/>
         <div v-html="post.excerpt.rendered"></div>
-        <router-link :to="post.slug">Read more</router-link>
+        <router-link :to="post.slug">{{ $t('readMore') }}</router-link>
       </li>
     </transition-group>
-    <button v-if="!hasAllPostsLoaded" @click="setPosts">Load more</button>
+    <button v-if="!hasAllPostsLoaded" @click="setPosts">{{ $t('loadMore') }}</button>
   </div>
 </template>
 
