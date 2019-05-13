@@ -11,17 +11,20 @@
         <router-link :to="post.slug">{{ $t('readMore') }}</router-link>
       </li>
     </transition-group>
-    <button v-if="!hasAllPostsLoaded" @click="setPosts">{{ $t('loadMore') }}</button>
+    <app-loader v-if="isLoading" />
+    <button v-else-if="!hasAllPostsLoaded" @click="setPosts">{{ $t('loadMore') }}</button>
   </div>
 </template>
 
 <script>
 import { mapActions, mapState, mapGetters } from 'vuex';
 import PostDate from '@/components/PostDate.vue';
+import AppLoader from '@/components/AppLoader.vue';
 
 export default {
   components: {
     PostDate,
+    AppLoader,
   },
 
   computed: {

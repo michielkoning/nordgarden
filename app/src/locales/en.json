@@ -5,10 +5,13 @@
   "home": "Home",
   "latestPosts": "Latest posts",
   "loadMore": "Load more",
+  "loading": "Loading…",
   "next": "Next",
+  "noTourDays": "No tour days confirmed",
   "pause": "Pause",
   "play": "Play",
   "readMore": "Read more",
   "tour": "Tour",
-  "videos": "Videos"
+  "videos": "Videos",
+  "viewNordgardenOn": "View Nordgarden on"
 }

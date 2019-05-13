@@ -1,5 +1,6 @@
 <template>
-  <app-page title="Albums">
+  <app-loader v-if="isLoading" />
+  <app-page v-else title="Albums">
     <ul class="albums-list">
       <li v-for="album in list" :key="album.name" class="album">
         <h2>{{ album.title }}</h2>
@@ -11,10 +12,10 @@
             <li v-for="song in album.songlist" :key="song.title" class="song">
               <template v-if="song.file">
                 <button v-if="!isPlayingCurrentSong(song)" @click="play(song)">
-                  <app-icon icon="play" :title="$t('play')"/>
+                  <app-icon icon="play" :title="$t('play')" />
                 </button>
                 <button v-else @click="pause">
-                  <app-icon icon="play" :title="$t('play')"/>
+                  <app-icon icon="play" :title="$t('play')" />
                 </button>
               </template>
               {{ song.title }}
@@ -31,11 +32,13 @@ import { mapActions, mapState } from 'vuex';
 import AppPage from '@/components/AppPage.vue';
 import EventBusUtil from '@/utils/eventBusUtil';
 import AppIcon from '@/components/AppIcon.vue';
+import AppLoader from '@/components/AppLoader.vue';
 
 export default {
   components: {
     AppPage,
     AppIcon,
+    AppLoader,
   },
   computed: {
     ...mapState('albums', ['list', 'currentSong', 'isPlaying']),

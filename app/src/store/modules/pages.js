@@ -3,6 +3,7 @@ import axios from 'axios';
 const moduleState = {
   about: null,
   biography: null,
+  isLoading: false,
 };
 
 const mutations = {
