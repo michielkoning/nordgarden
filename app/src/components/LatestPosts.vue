@@ -1,6 +1,6 @@
 <template>
-  <div class="news-list">
-    <h2>{{ $t('latestPosts') }}</h2>
+  <section class="news-list" aria-labelledby="news-list-title">
+    <h1 id="news-list-title">{{ $t('latestPosts') }}</h1>
     <transition-group name="list" tag="ul">
       <li v-for="post in list" :key="post.date">
         <h2>
@@ -13,7 +13,7 @@
     </transition-group>
     <app-loader v-if="isLoading" />
     <button v-else-if="!hasAllPostsLoaded" @click="setPosts">{{ $t('loadMore') }}</button>
-  </div>
+  </section>
 </template>
 
 <script>

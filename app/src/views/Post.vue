@@ -3,7 +3,7 @@
     <app-page class="wrapper" :title="post.title.rendered">
       <post-date :date="post.date" />
       <div v-html="post.content.rendered"></div>
-      <posts-list />
+      <latest-posts />
     </app-page>
   </div>
 </template>
@@ -12,14 +12,14 @@
 import axios from 'axios';
 import { mapGetters } from 'vuex';
 import AppPage from '@/components/AppPage.vue';
-import PostsList from '@/components/PostsList.vue';
+import LatestPosts from '@/components/LatestPosts.vue';
 import PostDate from '@/components/PostDate.vue';
 
 export default {
   components: {
     PostDate,
     AppPage,
-    PostsList,
+    LatestPosts,
   },
   data() {
     return {

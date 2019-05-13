@@ -1,16 +1,16 @@
 <template>
   <app-page>
-    <posts-list />
+    <latest-posts />
   </app-page>
 </template>
 
 <script>
-import PostsList from '@/components/PostsList.vue';
+import LatestPosts from '@/components/LatestPosts.vue';
 import AppPage from '@/components/AppPage.vue';
 
 export default {
   components: {
-    PostsList,
+    LatestPosts,
     AppPage,
   },
 };
