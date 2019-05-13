@@ -1,3 +1,11 @@
 {
-  "message": "hello i18n !!"
+  "play": "Play",
+  "home": "Home",
+  "tour": "Tour",
+  "albums": "Albums",
+  "videos": "Videos",
+  "biography": "Biography",
+  "contact": "Contact",
+  "next": "Next",
+  "pause": "Pause"
 }

@@ -1,14 +1,14 @@
 <template>
   <nav>
-    <router-link to="/">{{ $t('Home') }}</router-link>
+    <router-link to="/">{{ $t('home') }}</router-link>
     <router-link to="/tour">
-      {{ $t('Tour') }}
+      {{ $t('tour') }}
       <app-badge :amount="list.length" />
     </router-link>
-    <router-link to="/albums">{{ $t('Albums') }}</router-link>
-    <router-link to="/videos">{{ $t('Videos') }}</router-link>
-    <router-link to="/biography">{{ $t('Biography') }}</router-link>
-    <router-link to="/contact">{{ $t('Contact') }}</router-link>
+    <router-link to="/albums">{{ $t('albums') }}</router-link>
+    <router-link to="/videos">{{ $t('videos') }}</router-link>
+    <router-link to="/biography">{{ $t('biography') }}</router-link>
+    <router-link to="/contact">{{ $t('contact') }}</router-link>
   </nav>
 </template>
 
