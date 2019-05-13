@@ -51,14 +51,6 @@ export default new Router({
       },
     },
     {
-      path: '/contact',
-      name: 'contact',
-      component: () => import(/* webpackChunkName: "contact" */ './views/Contact.vue'),
-      meta: {
-        step: 5,
-      },
-    },
-    {
       path: '/:post',
       name: 'post',
       component: () => import(/* webpackChunkName: "post" */ './views/Post.vue'),

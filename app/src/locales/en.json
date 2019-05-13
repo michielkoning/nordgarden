@@ -1,13 +1,14 @@
 {
-  "play": "Play",
-  "home": "Home",
-  "tour": "Tour",
   "albums": "Albums",
-  "videos": "Videos",
   "biography": "Biography",
   "contact": "Contact",
+  "home": "Home",
+  "latestPosts": "Latest posts",
+  "loadMore": "Load more",
   "next": "Next",
   "pause": "Pause",
+  "play": "Play",
   "readMore": "Read more",
-  "loadMore": "Load more"
+  "tour": "Tour",
+  "videos": "Videos"
 }

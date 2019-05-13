@@ -3,12 +3,11 @@
     <router-link to="/">{{ $t('home') }}</router-link>
     <router-link to="/tour">
       {{ $t('tour') }}
-      <app-badge :amount="list.length" />
+      <app-badge :amount="list.length"/>
     </router-link>
     <router-link to="/albums">{{ $t('albums') }}</router-link>
     <router-link to="/videos">{{ $t('videos') }}</router-link>
     <router-link to="/biography">{{ $t('biography') }}</router-link>
-    <router-link to="/contact">{{ $t('contact') }}</router-link>
   </nav>
 </template>
 

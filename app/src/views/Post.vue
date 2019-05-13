@@ -2,9 +2,8 @@
   <div v-if="post">
     <app-page class="wrapper" :title="post.title.rendered">
       <post-date :date="post.date" />
-
       <div v-html="post.content.rendered"></div>
-      <news-list />
+      <posts-list />
     </app-page>
   </div>
 </template>
@@ -13,14 +12,14 @@
 import axios from 'axios';
 import { mapGetters } from 'vuex';
 import AppPage from '@/components/AppPage.vue';
-import NewsList from '@/components/NewsList.vue';
+import PostsList from '@/components/PostsList.vue';
 import PostDate from '@/components/PostDate.vue';
 
 export default {
   components: {
     PostDate,
     AppPage,
-    NewsList,
+    PostsList,
   },
   data() {
     return {

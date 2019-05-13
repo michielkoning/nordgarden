@@ -1,17 +1,16 @@
 <template>
   <app-page>
-    <h1>News</h1>
-    <news-list />
+    <posts-list />
   </app-page>
 </template>
 
 <script>
-import NewsList from '@/components/NewsList.vue';
+import PostsList from '@/components/PostsList.vue';
 import AppPage from '@/components/AppPage.vue';
 
 export default {
   components: {
-    NewsList,
+    PostsList,
     AppPage,
   },
 };

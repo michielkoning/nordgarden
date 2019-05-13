@@ -1,11 +1,12 @@
 <template>
   <div class="news-list">
+    <h2>{{ $t('latestPosts') }}</h2>
     <transition-group name="list" tag="ul">
       <li v-for="post in list" :key="post.date">
         <h2>
           <router-link :to="post.slug">{{ post.title.rendered }}</router-link>
         </h2>
-        <post-date :date="post.date"/>
+        <post-date :date="post.date" />
         <div v-html="post.excerpt.rendered"></div>
         <router-link :to="post.slug">{{ $t('readMore') }}</router-link>
       </li>
