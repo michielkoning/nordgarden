@@ -6,6 +6,8 @@ import i18n from './plugins/i18n';
 import './plugins/axios';
 import store from './store/store';
 
+import './icons/amazon.svg';
+
 Vue.config.productionTip = false;
 
 new Vue({

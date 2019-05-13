@@ -10,18 +10,21 @@
     <router-link to="/biography">Biography</router-link>
     <router-link to="/contact">Contact</router-link>
     <audio-player />
+    <app-icon icon="amazon" />
   </nav>
 </template>
 
 <script>
 import AudioPlayer from '@/components/AudioPlayer.vue';
 import AppBadge from '@/components/AppBadge.vue';
+import AppIcon from '@/components/AppIcon.vue';
 import { mapState } from 'vuex';
 
 export default {
   components: {
     AudioPlayer,
     AppBadge,
+    AppIcon,
   },
   computed: {
     ...mapState('tour', ['list', 'isLoading']),
