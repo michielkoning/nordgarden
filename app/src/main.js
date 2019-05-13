@@ -5,8 +5,7 @@ import './registerServiceWorker';
 import i18n from './plugins/i18n';
 import './plugins/axios';
 import store from './store/store';
-
-import './icons/amazon.svg';
+import './utils/icons';
 
 Vue.config.productionTip = false;
 

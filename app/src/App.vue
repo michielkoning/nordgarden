@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <error-handler />
-    <app-menu />
+    <app-header />
     <div class="page">
       <transition :name="transitionName">
         <router-view />
@@ -11,13 +11,13 @@
 </template>
 
 <script>
-import AppMenu from '@/components/AppMenu.vue';
+import AppHeader from '@/components/AppHeader.vue';
 import ErrorHandler from '@/components/ErrorHandler.vue';
 import { mapActions } from 'vuex';
 
 export default {
   components: {
-    AppMenu,
+    AppHeader,
     ErrorHandler,
   },
   data() {

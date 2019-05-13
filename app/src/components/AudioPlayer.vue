@@ -1,8 +1,14 @@
 <template>
   <div v-show="songs.length" class="player">
-    <button v-if="!isPlaying" @click="play">►</button>
-    <button v-if="isPlaying" @click="pause">❚ ❚</button>
-    <button @click="next">►►</button>
+    <button v-if="!isPlaying" @click="play">
+      <app-icon icon="play" :title="$t('play')" />
+    </button>
+    <button v-if="isPlaying" @click="pause">
+      <app-icon icon="pause" :title="$t('pause')" />
+    </button>
+    <button @click="next">
+      <app-icon icon="forwards" :title="$t('next')" />
+    </button>
     <div ref="progress" class="progress" @click="scrub">
       <div class="bar" :style="{ width: progress }"></div>
       <div class="title">{{ currentSong.title }}</div>
@@ -21,8 +27,12 @@
 <script>
 import EventBusUtil from '@/utils/eventBusUtil';
 import { mapActions, mapGetters, mapState } from 'vuex';
+import AppIcon from '@/components/AppIcon.vue';
 
 export default {
+  components: {
+    AppIcon,
+  },
   data() {
     return {
       songIndex: 1,
