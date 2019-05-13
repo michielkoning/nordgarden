@@ -1,52 +1,64 @@
 <template>
-  <app-page class="wrapper" :title="post.title.rendered">
-    <div v-html="post.content.rendered"></div>
-  </app-page>
+  <div v-if="post">
+    <app-page class="wrapper" :title="post.title.rendered">
+      <post-date :date="post.date" />
+
+      <div v-html="post.content.rendered"></div>
+      <news-list />
+    </app-page>
+  </div>
 </template>
 
 <script>
 import axios from 'axios';
 import { mapGetters } from 'vuex';
 import AppPage from '@/components/AppPage.vue';
+import NewsList from '@/components/NewsList.vue';
+import PostDate from '@/components/PostDate.vue';
 
 export default {
   components: {
+    PostDate,
     AppPage,
+    NewsList,
   },
   data() {
     return {
       post: null,
       isLoading: false,
-      slug: this.$route.params.post,
     };
   },
   computed: {
     ...mapGetters({
-      getBySlug: 'posts/getBySlug',
+      getPostBySlug: 'posts/getPostBySlug',
     }),
   },
   mounted() {
-    this.getPost();
+    this.getPost(this.$route.params.post);
+  },
+  beforeRouteUpdate(to, from, next) {
+    this.getPost(to.params.post);
+    next();
   },
   methods: {
-    async getPostByApi() {
+    async getPostByApi(slug) {
       this.loading = true;
       try {
         const response = await axios.get('wp/v2/posts/', {
           params: {
-            slug: this.slug,
+            slug,
           },
         });
-        this.post = response.data;
+        this.post = response.data[0];
       } finally {
         this.loading = false;
       }
     },
 
-    getPost() {
-      this.post = this.getBySlug(this.slug);
+    getPost(slug) {
+      this.post = this.getPostBySlug(slug);
       if (!this.post) {
-        this.getPostByApi();
+        this.getPostByApi(slug);
       }
     },
   },

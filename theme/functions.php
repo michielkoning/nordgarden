@@ -7,4 +7,3 @@ require_once __DIR__ . '/includes/translations.php';
 require_once __DIR__ . '/includes/tours.php';
 require_once __DIR__ . '/includes/discography.php';
 require_once __DIR__ . '/includes/api.php';
-//require_once __DIR__ . '/includes/videos.php';

@@ -34,6 +34,7 @@ function create_album_post_type()
       'supports' => array('title', 'thumbnail'),
       'public' => true,
       'menu_position' => 200,
+      'menu_icon' => 'dashicons-format-audio'
     )
   );
 }

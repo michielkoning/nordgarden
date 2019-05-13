@@ -85,20 +85,6 @@ function tdd_oembed_filter($html, $url, $attr, $post_ID)
   return "<figure class=\"video-container\">{$html}</figure>";
 }
 
-function add_edit_link_after_content($content)
-{
-  $edit_post_title = is_single()
-    ? __("Bewerk dit bericht", 'nordgarden')
-    : __("Bewerk deze pagina", 'nordgarden');
-  $edit_post_url = get_edit_post_link();
-  $edit_link = null;
-  if ($edit_post_url) {
-    $edit_link = "<p><a href=\"{$edit_post_url}\" class=\"post-edit-link\" title=\"{$edit_post_title}\">{$edit_post_title}</a></p>";
-  }
-  return $content . $edit_link;
-}
-add_filter('the_content', 'add_edit_link_after_content');
-
 function add_defer_and_sync_attribute($tag, $handle)
 {
   if (is_admin()) {

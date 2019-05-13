@@ -28,9 +28,9 @@ export default {
   watch: {
     $route(to, from) {
       if (to.meta.step < from.meta.step) {
-        this.transitionName = 'slide-next';
+        this.transitionName = 'sli1de-next';
       } else {
-        this.transitionName = 'slide-previous';
+        this.transitionName = 'sli2de-previous';
       }
     },
   },

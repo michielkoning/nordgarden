@@ -8,7 +8,8 @@ const moduleState = {
 };
 
 const getters = {
-  getBySlug: state => slug => state.list.find(post => post.slug === slug),
+  getPostBySlug: state => slug => state.list.find(recipe => recipe.slug === slug),
+
   hasAllPostsLoaded: state => state.totalPages && state.currentPage > state.totalPages,
 };
 
@@ -42,12 +43,12 @@ const actions = {
 
       if (moduleState.currentPage === 1)
         commit('setTotalPages', response.headers['x-wp-totalpages']);
-
       commit('setPosts', response.data);
     } finally {
       commit('updateLoader', false);
     }
   },
+  setPost: async ({ commit }) => {},
 };
 
 export default {

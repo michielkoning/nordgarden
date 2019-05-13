@@ -3,7 +3,7 @@
     <router-link to="/">Home</router-link>
     <router-link to="/tour">
       Tour
-      <span v-if="list.length">({{ list.length }})</span>
+      <app-badge :amount="list.length" />
     </router-link>
     <router-link to="/albums">Albums</router-link>
     <router-link to="/videos">Videos</router-link>
@@ -15,11 +15,13 @@
 
 <script>
 import AudioPlayer from '@/components/AudioPlayer.vue';
+import AppBadge from '@/components/AppBadge.vue';
 import { mapState } from 'vuex';
 
 export default {
   components: {
     AudioPlayer,
+    AppBadge,
   },
   computed: {
     ...mapState('tour', ['list', 'isLoading']),
@@ -39,6 +41,8 @@ nav {
 
 a {
   margin: 0 1em;
-  display: block;
+  align-items: center;
+  display: flex;
+  position: relative;
 }
 </style>
