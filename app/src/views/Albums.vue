@@ -15,7 +15,7 @@
                   <app-icon icon="play" :title="$t('play')" />
                 </button>
                 <button v-else @click="pause">
-                  <app-icon icon="play" :title="$t('play')" />
+                  <app-icon icon="pause" :title="$t('pause')" />
                 </button>
               </template>
               {{ song.title }}
