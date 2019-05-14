@@ -7,12 +7,13 @@
   "loadMore": "Load more",
   "loading": "Loading…",
   "next": "Next",
-  "noTourDays": "No tour days confirmed",
+  "noTourDays": "No tour dates confirmed",
   "pause": "Pause",
   "play": "Play",
   "readMore": "Read more",
   "tour": "Tour",
   "videos": "Videos",
   "viewNordgardenOn": "View Nordgarden on",
-  "socialMediaLinks": "Social media links"
+  "socialMediaLinks": "Social media links",
+  "mainNavigation": "Main navigation"
 }

@@ -1,6 +1,6 @@
 <template>
-  <nav>
-    <h2 id="menu-title" class="sr-only" tabindex="-1">Hoofdnavigatie</h2>
+  <nav aria-labelledby="menu-title">
+    <h2 id="menu-title" class="sr-only" tabindex="-1">{{ $t('mainNavigation') }}</h2>
     <ul>
       <li>
         <router-link to="/">{{ $t('home') }}</router-link>
