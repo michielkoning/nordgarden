@@ -3,10 +3,10 @@
     <h1>
       <router-link to="/">Nordgarden</router-link>
     </h1>
-    <mobile-navigation @toggleMenu="toggleMenu"/>
-    <main-navigation/>
-    <audio-player/>
-    <social-links/>
+    <mobile-navigation @toggleMenu="toggleMenu" />
+    <main-navigation />
+    <audio-player />
+    <social-links />
   </header>
 </template>
 
