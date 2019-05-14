@@ -82,6 +82,10 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+.player {
+  margin-bottom: 1em;
+}
+
 audio {
   width: 100%;
 }

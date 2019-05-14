@@ -1,16 +1,6 @@
 <template>
   <nav>
-<<<<<<< Updated upstream
     <h2 id="menu-title" class="sr-only" tabindex="-1">Hoofdnavigatie</h2>
-    <router-link to="/">{{ $t('home') }}</router-link>
-    <router-link to="/tour">
-      {{ $t('tour') }}
-      <app-badge :amount="list.length"/>
-    </router-link>
-    <router-link to="/albums">{{ $t('albums') }}</router-link>
-    <router-link to="/videos">{{ $t('videos') }}</router-link>
-    <router-link to="/biography">{{ $t('biography') }}</router-link>
-=======
     <ul>
       <li>
         <router-link to="/">{{ $t('home') }}</router-link>
@@ -31,7 +21,6 @@
         <router-link to="/biography">{{ $t('biography') }}</router-link>
       </li>
     </ul>
->>>>>>> Stashed changes
   </nav>
 </template>
 
