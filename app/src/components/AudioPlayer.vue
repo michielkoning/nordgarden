@@ -1,10 +1,10 @@
 <template>
   <div v-show="songs.length" class="player">
-    <button v-if="!isPlaying" @click="play">
-      <app-icon icon="play" :title="$t('play')" />
-    </button>
     <button v-if="isPlaying" @click="pause">
       <app-icon icon="pause" :title="$t('pause')" />
+    </button>
+    <button v-else @click="play">
+      <app-icon icon="play" :title="$t('play')" />
     </button>
     <button @click="next">
       <app-icon icon="forwards" :title="$t('next')" />

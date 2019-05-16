@@ -1,12 +1,28 @@
 <template>
   <header>
-    <h1>
-      <router-link to="/">Nordgarden</router-link>
-    </h1>
     <mobile-navigation @toggleMenu="toggleMenu" />
-    <main-navigation />
-    <audio-player />
-    <social-links />
+    <transition
+      name="fade2"
+      @after-enter="afterEnter"
+      @after-leave="afterLeave"
+      @before-leave="beforeLeave"
+    >
+      <div v-show="showMenu" class="bg">
+        <transition name="fade">
+          <div v-show="showMenu" ref="bg" class="content">
+            <h1>
+              <router-link to="/">Nordgarden</router-link>
+            </h1>
+            <main-navigation />
+            <main-navigation />
+            <main-navigation />
+            <main-navigation />
+            <audio-player />
+            <social-links />
+          </div>
+        </transition>
+      </div>
+    </transition>
   </header>
 </template>
 
@@ -16,6 +32,8 @@ import MainNavigation from '@/components/MainNavigation.vue';
 import SocialLinks from '@/components/SocialLinks.vue';
 import MobileNavigation from '@/components/MobileNavigation.vue';
 
+const bodyScrollLock = require('body-scroll-lock');
+
 export default {
   components: {
     AudioPlayer,
@@ -23,22 +41,75 @@ export default {
     MainNavigation,
     MobileNavigation,
   },
+  data() {
+    return {
+      showMenu: false,
+    };
+  },
+
   methods: {
     toggleMenu(status) {
-      console.log(status);
+      this.showMenu = status;
+    },
+    afterEnter() {
+      const bg = this.$refs.bg;
+      bodyScrollLock.disableBodyScroll(bg);
+    },
+    beforeLeave() {
+      const bg = this.$refs.bg;
+      bg.scrollTop = 0;
+    },
+    afterLeave() {
+      const bg = this.$refs.bg;
+      bodyScrollLock.enableBodyScroll(bg);
     },
   },
 };
 </script>
 
 <style lang="postcss" scoped>
-header {
-  position: fixed;
-  left: 0;
-  top: 3em;
-  bottom: 0;
-  width: 20em;
-  background: rgba(255, 255, 255, 0.5);
+.content {
   padding: var(--gutter);
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  max-height: 80vh;
+
+  @media (--viewport-md) {
+    width: 20em;
+  }
+}
+
+.bg {
+  position: fixed;
+  top: 0;
+  background: #999;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  padding-top: 3em;
+  overflow: hidden;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.3s 0.2s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  transform: translateY(-2em);
+  opacity: 0;
+}
+
+.fade2-enter-active,
+.fade2-leave-active {
+  transition: transform 0.3s;
+}
+
+.fade2-enter,
+.fade2-leave-to {
+  /* height: 0; */
+  transform: translateY(-100vh);
 }
 </style>
