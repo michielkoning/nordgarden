@@ -63,6 +63,6 @@ div {
   display: flex;
   justify-content: space-between;
   background: var(--color-white);
-  z-index: 99;
+  z-index: var(--mobile-navigation);
 }
 </style>

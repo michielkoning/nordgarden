@@ -89,6 +89,7 @@ export default {
   height: 100vh;
   padding-top: 3em;
   overflow: hidden;
+  z-index: var(--main-navigation);
 }
 
 .fade-enter-active,
@@ -109,7 +110,6 @@ export default {
 
 .fade2-enter,
 .fade2-leave-to {
-  /* height: 0; */
   transform: translateY(-100vh);
 }
 </style>

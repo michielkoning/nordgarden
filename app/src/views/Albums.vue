@@ -77,8 +77,11 @@ h2 {
 .album {
   display: grid;
   grid-gap: var(--gutter);
-  grid-template-columns: 10em auto;
   margin-bottom: 2em;
+
+  @media (--viewport-sm) {
+    grid-template-columns: 10em auto;
+  }
 }
 
 img {
