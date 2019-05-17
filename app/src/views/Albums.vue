@@ -83,10 +83,13 @@ h2 {
     grid-template-columns: 10em auto;
   }
 }
-
-img {
+>>> img {
   display: block;
-  max-width: 100%;
+  max-width: 10em;
+  width: 100%;
+  @media (--viewport-sm) {
+    max-width: none;
+  }
 }
 
 .songlist {

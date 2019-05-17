@@ -64,5 +64,9 @@ div {
   justify-content: space-between;
   background: var(--color-white);
   z-index: var(--mobile-navigation);
+
+  @media (--navigation-position-left) {
+    display: none;
+  }
 }
 </style>

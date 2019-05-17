@@ -5,4 +5,6 @@
   --container-width-lg: 52rem;
   --container-width-xlg: 64rem;
   --gutter: 1em;
+  --height-navigation-sm: 2em;
+  --width-navigation-left: 20rem;
 }

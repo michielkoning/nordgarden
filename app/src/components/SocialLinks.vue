@@ -4,32 +4,62 @@
     <ul class="social-links">
       <li>
         <a href="#">
-          <app-icon icon="amazon" :title="`${'viewNordgardenOn'} amazon`" />
+          <app-icon
+            icon="spotify"
+            width="32"
+            height="32"
+            :title="`${'viewNordgardenOn'} spotify`"
+          />
         </a>
       </li>
       <li>
         <a href="#">
-          <app-icon icon="spotify" :title="`${'viewNordgardenOn'} spotify`" />
+          <app-icon
+            icon="youtube"
+            width="32"
+            height="32"
+            :title="`${'viewNordgardenOn'} youtube`"
+          />
         </a>
       </li>
       <li>
         <a href="#">
-          <app-icon icon="youtube" :title="`${'viewNordgardenOn'} youtube`" />
+          <app-icon
+            icon="last.fm"
+            width="32"
+            height="32"
+            :title="`${'viewNordgardenOn'} last.fm`"
+          />
         </a>
       </li>
       <li>
         <a href="#">
-          <app-icon icon="last.fm" :title="`${'viewNordgardenOn'} last.fm`" />
+          <app-icon
+            icon="facebook"
+            width="32"
+            height="32"
+            :title="`${'viewNordgardenOn'} facebook`"
+          />
         </a>
       </li>
       <li>
         <a href="#">
-          <app-icon icon="facebook" :title="`${'viewNordgardenOn'} facebook`" />
+          <app-icon
+            icon="twitter"
+            width="32"
+            height="32"
+            :title="`${'viewNordgardenOn'} twitter`"
+          />
         </a>
       </li>
       <li>
         <a href="#">
-          <app-icon icon="twitter" :title="`${'viewNordgardenOn'} twitter`" />
+          <app-icon
+            icon="linkedin"
+            width="32"
+            height="32"
+            :title="`${'viewNordgardenOn'} LinkedIn`"
+          />
         </a>
       </li>
     </ul>
@@ -51,5 +81,10 @@ ul {
   @mixin list-reset;
 
   display: flex;
+}
+
+a {
+  flex: 0 0 1em;
+  margin-right: 0.5em;
 }
 </style>

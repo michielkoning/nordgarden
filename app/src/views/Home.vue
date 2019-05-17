@@ -1,5 +1,5 @@
 <template>
-  <app-page>
+  <app-page title="Nordgarden">
     <latest-posts />
   </app-page>
 </template>

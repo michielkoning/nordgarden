@@ -19,10 +19,10 @@ export default {
 <style lang="postcss" scoped>
 main {
   min-height: 100vh;
-  padding: 0 var(--gutter);
+  padding: var(--gutter);
 
-  @media (--viewport-md) {
-    margin-left: 20rem;
+  @media (--navigation-position-left) {
+    margin-left: var(--width-navigation-left);
   }
 }
 </style>

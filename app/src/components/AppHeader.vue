@@ -14,9 +14,6 @@
               <router-link to="/">Nordgarden</router-link>
             </h1>
             <main-navigation />
-            <main-navigation />
-            <main-navigation />
-            <main-navigation />
             <audio-player />
             <social-links />
           </div>
@@ -74,8 +71,11 @@ export default {
   -webkit-overflow-scrolling: touch;
   max-height: 80vh;
 
-  @media (--viewport-md) {
-    width: 20em;
+  @media (--navigation-position-left) {
+    padding-top: 0;
+    transform: translateY(0);
+    display: block !important;
+    max-height: none;
   }
 }
 
@@ -90,6 +90,12 @@ export default {
   padding-top: 3em;
   overflow: hidden;
   z-index: var(--main-navigation);
+
+  @media (--navigation-position-left) {
+    padding-top: var(--gutter);
+    display: block !important;
+    width: var(--width-navigation-left);
+  }
 }
 
 .fade-enter-active,

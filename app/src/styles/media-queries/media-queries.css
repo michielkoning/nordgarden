@@ -4,3 +4,4 @@
 @custom-media --viewport-lg (width >= 1140px);
 @custom-media --portrait (orientation: portrait);
 @custom-media --landscape (orientation: landscape);
+@custom-media --navigation-position-left (width >= 1024px);

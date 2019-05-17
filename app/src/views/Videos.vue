@@ -1,6 +1,5 @@
 <template>
-  <app-page class="content">
-    <h1>This is an about page</h1>
+  <app-page class="content" title="Videos">
     <ul>
       <li v-for="video in videos" :key="video">
         <img :src="`https://img.youtube.com/vi/${video}/hqdefault.jpg`" alt />
