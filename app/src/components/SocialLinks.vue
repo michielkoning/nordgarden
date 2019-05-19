@@ -1,39 +1,29 @@
 <template>
   <nav aria-labelledby="social-links-title">
-    <h2 class="sr-only">{{ $t('socialMediaLinks') }}</h2>
+    <h2 id="social-links-title" class="sr-only">{{ $t('socialMediaLinks') }}</h2>
     <ul class="social-links">
       <li>
-        <a href="#">
-          <app-icon
-            icon="spotify"
-            width="32"
-            height="32"
-            :title="`${'viewNordgardenOn'} spotify`"
-          />
+        <a href="#" rel="noopener" target="_blank">
+          <app-icon icon="spotify" width="32" height="32" :title="`${'viewNordgardenOn'} spotify`"/>
         </a>
       </li>
       <li>
-        <a href="#">
-          <app-icon
-            icon="youtube"
-            width="32"
-            height="32"
-            :title="`${'viewNordgardenOn'} youtube`"
-          />
+        <a href="#" rel="noopener" target="_blank">
+          <app-icon icon="apple" width="32" height="32" :title="`${'viewNordgardenOn'} Apple`"/>
         </a>
       </li>
       <li>
-        <a href="#">
-          <app-icon
-            icon="last.fm"
-            width="32"
-            height="32"
-            :title="`${'viewNordgardenOn'} last.fm`"
-          />
+        <a href="#" rel="noopener" target="_blank">
+          <app-icon icon="youtube" width="32" height="32" :title="`${'viewNordgardenOn'} youtube`"/>
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="#" rel="noopener" target="_blank">
+          <app-icon icon="last.fm" width="32" height="32" :title="`${'viewNordgardenOn'} last.fm`"/>
+        </a>
+      </li>
+      <li>
+        <a href="#" rel="noopener" target="_blank">
           <app-icon
             icon="facebook"
             width="32"
@@ -43,17 +33,12 @@
         </a>
       </li>
       <li>
-        <a href="#">
-          <app-icon
-            icon="twitter"
-            width="32"
-            height="32"
-            :title="`${'viewNordgardenOn'} twitter`"
-          />
+        <a href="#" rel="noopener" target="_blank">
+          <app-icon icon="twitter" width="32" height="32" :title="`${'viewNordgardenOn'} twitter`"/>
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="#" rel="noopener" target="_blank">
           <app-icon
             icon="linkedin"
             width="32"
