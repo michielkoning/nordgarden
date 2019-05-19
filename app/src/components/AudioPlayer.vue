@@ -1,15 +1,15 @@
 <template>
-  <div v-show="songs.length" class="player">
-    <button v-if="isPlaying" @click="pause">
+  <div class="player">
+    <button v-if="isPlaying" @click="pause" :disabled="!songs.length">
       <app-icon icon="pause" :title="$t('pause')" />
     </button>
-    <button v-else @click="play">
+    <button v-else @click="play" :disabled="!songs.length">
       <app-icon icon="play" :title="$t('play')" />
     </button>
-    <button @click="next">
+    <button @click="next" :disabled="songs.length < 1">
       <app-icon icon="forwards" :title="$t('next')" />
     </button>
-    <div ref="progress" class="progress" @click="scrub">
+    <div v-show="songs.length" ref="progress" class="progress" @click="scrub">
       <div class="bar" :style="{ width: progress }"></div>
       <div class="title">{{ currentSong.title }}</div>
     </div>
@@ -83,7 +83,7 @@ export default {
 
 <style lang="postcss" scoped>
 .player {
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 
 audio {
@@ -95,8 +95,11 @@ audio {
 }
 
 button {
-  flex: 0 0 2em;
   text-align: center;
+  margin-right: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
 }
 
 .progress {

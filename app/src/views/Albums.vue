@@ -6,11 +6,34 @@
         <h2>{{ album.title }}</h2>
         <div>
           <div v-html="album.image"></div>
+          {{ album.release_date | formatDate }}
+            <ul class="shops">
+              <li>
+                <a href="#">
+                  <app-icon
+                    icon="spotify"
+                    width="24"
+                    height="24"
+                    :title="`${'viewNordgardenOn'} spotify`"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <app-icon
+                    icon="apple"
+                    width="24"
+                    height="24"
+                    :title="`${'viewNordgardenOn'} apple`"
+                  />
+                </a>
+              </li>
+            </ul>
         </div>
         <div>
           <ul class="songlist">
             <li v-for="song in album.songlist" :key="song.title" class="song">
-              <template v-if="song.file">
+              <template\ v-if="song.file">
                 <button v-if="!isPlayingCurrentSong(song)" @click="play(song)">
                   <app-icon icon="play" :title="$t('play')" />
                 </button>
@@ -43,7 +66,12 @@ export default {
   computed: {
     ...mapState('albums', ['list', 'currentSong', 'isPlaying', 'isLoading']),
   },
-
+  filters: {
+    formatDate(value) {
+      const date = new Date(value);
+      return `${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}`;
+    },
+  },
   methods: {
     ...mapActions({
       selectSong: 'albums/selectSong',
@@ -100,5 +128,14 @@ h2 {
 .song {
   padding: 0.1em 0;
   border-bottom: 1px solid #ccc;
+}
+
+.shops {
+    display: flex;
+}
+
+a {
+  flex: 0 0 1em;
+  margin-right: 0.5em;
 }
 </style>

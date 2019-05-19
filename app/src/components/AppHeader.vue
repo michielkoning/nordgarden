@@ -73,6 +73,7 @@ export default {
 
   @media (--navigation-position-left) {
     padding-top: 0;
+    overflow: visible;
     transform: translateY(0);
     display: block !important;
     max-height: none;
@@ -92,6 +93,7 @@ export default {
   z-index: var(--main-navigation);
 
   @media (--navigation-position-left) {
+     overflow: visible;
     padding-top: var(--gutter);
     display: block !important;
     width: var(--width-navigation-left);

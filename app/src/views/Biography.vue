@@ -2,6 +2,9 @@
   <app-loader v-if="isLoading" />
   <div v-else>
     <app-page v-if="biography" class="biography" :title="biography.title.rendered">
+    <blockquote>
+    “The closest a new Norwegian singer/songwriter has come the timeless qualities of Ryan Adams” (Stein Ostboe, VG, Norway)
+    </blockquote>
       <div class="text" v-html="biography.content.rendered" />
     </app-page>
   </div>
@@ -35,6 +38,14 @@ export default {
 
 <style lang="postcss" scoped>
 .text {
-  max-width: var(--container-width-sm);
+  column-count: 2;
+  column-gap: var(--gutter);
+}
+
+blockquote {
+  margin: 0 0 1em;
+  font-weight: var(--font-weight-bold);
+  font-size: 1.5em;
+  line-height: 1.2;
 }
 </style>

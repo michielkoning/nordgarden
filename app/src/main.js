@@ -6,8 +6,10 @@ import i18n from './plugins/i18n';
 import './plugins/axios';
 import store from './store/store';
 import './utils/icons';
+import VueYoutube from 'vue-youtube'
 
 Vue.config.productionTip = false;
+Vue.use(VueYoutube)
 
 new Vue({
   router,

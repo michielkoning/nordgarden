@@ -7,8 +7,10 @@
         <ul v-if="list.length">
           <li v-for="tour in list" :key="tour.date">
             <span class="date">{{ tour.date | formatDate }}</span>
+            <div>
             <span class="venue">{{ tour.venue }}</span>
             <span class="city">{{ tour.city }}</span>
+            </div>
           </li>
         </ul>
         <p v-else>{{ $('noTourDays') }}</p>
@@ -55,12 +57,16 @@ img {
   margin-left: 5rem;
 }
 
-.text {
-  padding-top: 5em;
-}
-
 ul {
   @mixin list-reset;
+}
+
+li {
+  display: flex;
+}
+
+.date {
+  flex: 0 0 3em;
 }
 
 .city,

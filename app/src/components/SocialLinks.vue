@@ -65,11 +65,9 @@ export default {
 ul {
   @mixin list-reset;
 
+  justify-content: space-between;
   display: flex;
+  margin-bottom: 1em;
 }
 
-a {
-  flex: 0 0 1em;
-  margin-right: 0.5em;
-}
 </style>

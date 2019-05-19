@@ -10,8 +10,9 @@ function get_discography()
   $posts = get_posts(array(
     'post_type'   => 'albums',
     'numberposts' => -1,
-    'orderby' => 'title',
-    'order' => 'ASC'
+    'meta_key'			=> 'release_date',
+    'orderby'			=> 'meta_value',
+    'order'				=> 'DESC'
   ));
 
   $albums = [];
@@ -19,7 +20,6 @@ function get_discography()
     $album =  new stdClass();
 
     $album->title = $post->post_title;
-    $album->album_meta = $post->album_meta;
     $album->image = get_the_post_thumbnail($post->ID);
     $album->itunes = get_field('itunes', $post->ID);
     $album->amazon = get_field('amazon', $post->ID);
