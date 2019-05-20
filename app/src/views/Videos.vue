@@ -3,8 +3,15 @@
     <youtube :video-id="videoId" ref="youtube" :player-vars="playerVars"  @playing="playing" :fitParent="true" :resizeDelay="10" :resize="true" ></youtube>
 
     <ul>
-      <li v-for="video in videos" :key="video" @click="playVideo(video)">
-        <img :src="`https://img.youtube.com/vi/${video}/hqdefault.jpg`" alt />
+      <li v-for="video in videos" :key="video" @click="playVideo(video)"
+      
+      :class="{ 'is-active': isCurrentVideo(video) }">
+        <div class="image-wrapper">
+          <img :src="`https://img.youtube.com/vi/${video}/hqdefault.jpg`" alt />
+          <app-icon icon="play" :title="$t('play')" />
+        </div>
+        title of the video
+        
       </li>
     </ul>
   </app-page>
@@ -16,10 +23,12 @@ import scriptjs from 'scriptjs';
 import VueYoutube from 'vue-youtube' 
 import EventBusUtil from '@/utils/eventBusUtil';
 import { mapState } from 'vuex';
+import AppIcon from '@/components/AppIcon.vue';
 
 export default {
   components: {
     AppPage,
+    AppIcon
   },
   data() {
     return {
@@ -66,7 +75,9 @@ export default {
     },
     pauseVideo() {
         this.player.pauseVideo()
-
+    },
+    isCurrentVideo(video) {
+      return this.videoId === video;
     },
     playing() {
       EventBusUtil.$emit('audio-play-song', false);
@@ -77,13 +88,37 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.wrapper2 {
-  @mixin center;
-}
-
 img {
   width: 100%;
   display: block;
+  margin-bottom: 0.25em;
+}
+
+.image-wrapper {
+  position: relative;
+}
+
+svg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 2em;
+  height: 2em;
+  margin: -1em 0 0 -1em;
+  opacity: 0.7;
+  transition: opacity 0.2s ease-out;
+}
+
+li {
+  text-align: center;
+
+  &.is-active {
+    border: 1px solid #fff;
+  }
+
+  &:hover svg {
+    opacity: 1;
+  }
 }
 
 ul {
