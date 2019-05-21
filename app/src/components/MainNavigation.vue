@@ -21,7 +21,7 @@
         <router-link to="/biography">{{ $t('biography') }}</router-link>
       </li>
     </ul>
-    <div class="arrow"  :style="{transform: arrowPosition}" />
+    <div class="arrow" :style="{ transform: arrowPosition }" />
   </nav>
 </template>
 
@@ -35,21 +35,19 @@ export default {
   },
   data() {
     return {
-      arrowPosition: 0
-    }
+      arrowPosition: 0,
+    };
   },
   watch: {
     $route(to, from) {
-      const { step }= to.meta;
-      const position = this.$refs.list.querySelector(`:nth-child(${step + 1}`).offsetTop
+      const { step } = to.meta;
+      const position = this.$refs.list.querySelector(`:nth-child(${step + 1}`).offsetTop;
       this.arrowPosition = `translateY(${position}px)`;
-    }
-  }, 
+    },
+  },
   computed: {
     ...mapState('tour', ['list']),
   },
-
-  
 };
 </script>
 
@@ -71,14 +69,13 @@ a {
 }
 
 .arrow {
-
   display: block;
   position: absolute;
   top: 0;
   right: -3em;
-  border-top: 0.75em solid transparent; 
+  border-top: 0.75em solid transparent;
   border-bottom: 0.75em solid transparent;
-  border-left: 1em solid #999;
+  border-left: 1em solid var(--color-navigation);
   transition: transform 0.2s ease-out;
 }
 </style>

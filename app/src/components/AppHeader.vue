@@ -93,7 +93,7 @@ export default {
   z-index: var(--main-navigation);
 
   @media (--navigation-position-left) {
-     overflow: visible;
+    overflow: visible;
     padding-top: var(--gutter);
     display: block !important;
     width: var(--width-navigation-left);

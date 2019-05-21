@@ -10,10 +10,11 @@
   /*  */
   --color-text: #000;
   /*  */
-  --color-primary: #4ba82e;
+  --color-primary: #eb2860;
   --color-primary-dark: #449729;
   /*  */
   --color-bg-page: #fff;
+  --color-navigation: rgba(0, 0, 0, 0.5);
 }
 
 @media (--dark-mode) {
@@ -22,3 +23,6 @@
     --color-white: #000;
   }
 }
+
+/* #2b2a3b */
+/* #eb2860 */

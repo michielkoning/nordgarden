@@ -10,9 +10,9 @@ function get_discography()
   $posts = get_posts(array(
     'post_type'   => 'albums',
     'numberposts' => -1,
-    'meta_key'			=> 'release_date',
-    'orderby'			=> 'meta_value',
-    'order'				=> 'DESC'
+    'meta_key'      => 'release_date',
+    'orderby'      => 'meta_value',
+    'order'        => 'DESC'
   ));
 
   $albums = [];
@@ -32,6 +32,7 @@ function get_discography()
         $song =  new stdClass();
         $songObj = $songRow['song'];
         $song->title = $songObj->post_title;
+        $song->lyrics = $songObj->post_content;
         $song->file = get_field('file', $songObj->ID);
         $album->songlist[] = $song;
       }

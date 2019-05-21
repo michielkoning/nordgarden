@@ -1,4 +1,5 @@
 import '@/icons/amazon.svg';
+import '@/icons/close.svg';
 import '@/icons/facebook.svg';
 import '@/icons/spotify.svg';
 import '@/icons/apple.svg';
