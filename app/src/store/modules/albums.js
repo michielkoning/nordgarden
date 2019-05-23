@@ -1,9 +1,8 @@
-import axios from 'axios';
+import albums from '@/data/albums.json';
 
 const moduleState = {
-  list: [],
-  isLoading: false,
-  currentSong: 0,
+  list: albums,
+  currentSong: albums[0].songlist.find(song => song.file !== null),
   isPlaying: false,
 };
 
@@ -19,14 +18,6 @@ const getters = {
 };
 
 const mutations = {
-  set: (state, payload) => {
-    const newState = state;
-    newState.list = payload;
-  },
-  updateLoader: (state, payload) => {
-    const newState = state;
-    newState.isLoading = payload;
-  },
   selectSong: (state, payload) => {
     const newState = state;
     newState.currentSong = payload;
@@ -38,22 +29,6 @@ const mutations = {
 };
 
 const actions = {
-  set: async ({ commit }) => {
-    commit('updateLoader', true);
-
-    try {
-      const response = await axios.get('site/v1/discography');
-      commit('set', response.data);
-      const songs = await getters.playableSongs(moduleState);
-
-      if (songs.length) {
-        const song = songs[0];
-        commit('selectSong', song);
-      }
-    } finally {
-      commit('updateLoader', false);
-    }
-  },
   selectSong: ({ commit }, payload) => {
     const songs = getters.playableSongs(moduleState);
     const song = songs.find(item => item === payload);

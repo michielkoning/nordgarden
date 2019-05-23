@@ -39,11 +39,9 @@ export default {
   },
   mounted() {
     this.setTour();
-    this.setAlbums();
   },
   methods: {
     ...mapActions({
-      setAlbums: 'albums/set',
       setTour: 'tour/set',
     }),
   },

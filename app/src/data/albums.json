@@ -1,0 +1,272 @@
+[
+  {
+    "title": "Live in Dresden",
+
+    "itunes": "https://itunes.apple.com/nl/album/live-in-dresden/id978762992?=&app=music&ign-mpt=uo%3D4",
+    "amazon": "",
+    "songlist": [
+      {
+        "title": "A Brighter Kind of Blue",
+        "file": "/audio/1.mp3"
+      },
+      {
+        "title": "They're Building They're Building",
+        "file": "/audio/1.mp3"
+      },
+      {
+        "title": "My Father the Sailor",
+        "file": "/audio/1.mp3"
+      },
+      {
+        "title": "All Yr. Notes",
+        "file": "/audio/1.mp3"
+      },
+      {
+        "title": "Invisibile",
+        "file": "/audio/1.mp3"
+      },
+      {
+        "title": "Keep It Shining On The Inside",
+        "file": "/audio/1.mp3"
+      },
+      {
+        "title": "2nd Flight",
+        "file": "/audio/1.mp3"
+      },
+      {
+        "title": "Blessed",
+        "file": "/audio/1.mp3"
+      },
+      {
+        "title": "Up the Hillside",
+        "permalink": "http://nordgarden.info/songs/up-the-hillside/"
+      },
+      {
+        "title": "The Path of Love"
+      },
+      {
+        "title": "Good Things Die"
+      },
+      {
+        "title": "The Night",
+        "permalink": "http://nordgarden.info/songs/the-night-2/"
+      },
+      {
+        "title": "B Minor Tinitus"
+      }
+    ],
+    "image": "<img width=\"1400\" height=\"1400\" src=\"http://localhost:9030/wp-content/uploads/2015/03/Artwork-Live-in-Dresden-Itunes-Digital.jpg.jpg\" class=\"attachment-post-thumbnail size-post-thumbnail wp-post-image\" alt=\"\" srcset=\"http://localhost:9030/wp-content/uploads/2015/03/Artwork-Live-in-Dresden-Itunes-Digital.jpg.jpg 1400w, http://localhost:9030/wp-content/uploads/2015/03/Artwork-Live-in-Dresden-Itunes-Digital.jpg-150x150.jpg 150w, http://localhost:9030/wp-content/uploads/2015/03/Artwork-Live-in-Dresden-Itunes-Digital.jpg-300x300.jpg 300w, http://localhost:9030/wp-content/uploads/2015/03/Artwork-Live-in-Dresden-Itunes-Digital.jpg-768x768.jpg 768w, http://localhost:9030/wp-content/uploads/2015/03/Artwork-Live-in-Dresden-Itunes-Digital.jpg-1024x1024.jpg 1024w\" sizes=\"(max-width: 1400px) 100vw, 1400px\" />",
+    "releaseDate": "2019, 04, 01"
+  },
+  {
+    "title": "The Path Of Love",
+
+    "itunes": "http://itunes.apple.com/album/the-path-of-love/id280823276#",
+    "amazon": "http://www.amazon.com/The-Path-Of-Love/dp/B001BB6KDI/ref=sr_1_3?ie=UTF8&qid=1319490739&sr=8-3",
+    "songlist": [
+      {
+        "title": "Up the Hillside",
+        "permalink": "http://nordgarden.info/new/songs/up-the-hillside/"
+      },
+      {
+        "title": "The Path of Love"
+      },
+      {
+        "title": "Stay Away"
+      },
+      {
+        "title": "On London Town"
+      },
+      {
+        "title": "Oh Brother"
+      },
+      {
+        "title": "Capture"
+      },
+      {
+        "title": "So Far Away"
+      },
+      {
+        "title": "The Night"
+      },
+      {
+        "title": "In Hopes and Dreams",
+        "permalink": "http://nordgarden.info/songs/in-hopes-and-dreams/"
+      },
+      {
+        "title": "The Path of Love (Piano Version)"
+      }
+    ],
+    "image": "<img width=\"170\" height=\"154\" src=\"http://localhost:9030/wp-content/uploads/2011/08/mzi.jyssbrlg.170x170-75.jpg\" class=\"attachment-post-thumbnail size-post-thumbnail wp-post-image\" alt=\"\" />",
+    "releaseDate": "2018, 05, 05"
+  },
+  {
+    "title": "Dieci",
+
+    "itunes": "https://itunes.apple.com/it/album/dieci/id740768520",
+    "amazon": "",
+    "songlist": [
+      {
+        "title": "Non \\u00e8 la California"
+      },
+      {
+        "title": "La mia rivoluzione"
+      },
+      {
+        "title": "Invisibile"
+      },
+      {
+        "title": "Cerchi nell\\u2019acqua"
+      },
+      {
+        "title": "Le canzoni dei cani"
+      },
+      {
+        "title": "Miele"
+      },
+      {
+        "title": "L\\u2019abbandono"
+      },
+      {
+        "title": "Dove mi perdo"
+      },
+      {
+        "title": "La realt\\u00e0 non esiste"
+      },
+      {
+        "title": "L\\u2019invasore"
+      }
+    ],
+    "image": "<img width=\"1417\" height=\"1417\" src=\"http://localhost:9030/wp-content/uploads/2014/02/Cover-Dieci-web.jpg\" class=\"attachment-post-thumbnail size-post-thumbnail wp-post-image\" alt=\"\" srcset=\"http://localhost:9030/wp-content/uploads/2014/02/Cover-Dieci-web.jpg 1417w, http://localhost:9030/wp-content/uploads/2014/02/Cover-Dieci-web-150x150.jpg 150w, http://localhost:9030/wp-content/uploads/2014/02/Cover-Dieci-web-300x300.jpg 300w, http://localhost:9030/wp-content/uploads/2014/02/Cover-Dieci-web-768x768.jpg 768w, http://localhost:9030/wp-content/uploads/2014/02/Cover-Dieci-web-1024x1024.jpg 1024w\" sizes=\"(max-width: 1417px) 100vw, 1417px\" />",
+    "releaseDate": "2013, 11, 22"
+  },
+  {
+    "title": "You Gotta Get Ready",
+
+    "itunes": "https://itunes.apple.com/album/you-gotta-get-ready/id502874072",
+    "amazon": "",
+    "songlist": [
+      {
+        "title": "You Gotta Get Ready"
+      },
+      {
+        "title": "Schiphol Blues"
+      },
+      {
+        "title": "Leaving"
+      },
+      {
+        "title": "Keep It Shining On The Inside"
+      },
+      {
+        "title": "These Lovesick Blues"
+      },
+      {
+        "title": "Fool To Let You Go"
+      },
+      {
+        "title": "They're Building They're Building"
+      },
+      {
+        "title": "Some Work On You"
+      },
+      {
+        "title": "Why Would She Go"
+      },
+      {
+        "title": "Carousel On The Loose"
+      }
+    ],
+    "image": "<img width=\"200\" height=\"200\" src=\"http://localhost:9030/wp-content/uploads/2012/01/cover.png\" class=\"attachment-post-thumbnail size-post-thumbnail wp-post-image\" alt=\"\" srcset=\"http://localhost:9030/wp-content/uploads/2012/01/cover.png 200w, http://localhost:9030/wp-content/uploads/2012/01/cover-150x150.png 150w\" sizes=\"(max-width: 200px) 100vw, 200px\" />",
+    "releaseDate": "2012, 02, 24"
+  },
+  {
+    "title": "A Brighter Kind of Blue",
+
+    "itunes": "http://itunes.apple.com/album/a-brighter-kind-of-blue/id297076152",
+    "amazon": "http://www.amazon.com/A-Brighter-Kind-Of-Blue/dp/B001CKO4FE/ref=sr_1_3?ie=UTF8&qid=1319049779&sr=8-3",
+    "songlist": [
+      {
+        "title": "A Brighter Kind of Blue"
+      },
+      {
+        "title": "The Gift of Song"
+      },
+      {
+        "title": "My Father the Sailor"
+      },
+      {
+        "title": "Good Things Die"
+      },
+      {
+        "title": "Blessed"
+      },
+      {
+        "title": "Metronome"
+      },
+      {
+        "title": "To the River"
+      },
+      {
+        "title": "Monday"
+      },
+      {
+        "title": "What Would Ol' Bob Say?"
+      },
+      {
+        "title": "Weeks At a Time"
+      }
+    ],
+    "image": "<img width=\"280\" height=\"280\" src=\"http://localhost:9030/wp-content/uploads/2011/10/51-1JFTE5vL._SL500_AA280_.jpg\" class=\"attachment-post-thumbnail size-post-thumbnail wp-post-image\" alt=\"\" srcset=\"http://localhost:9030/wp-content/uploads/2011/10/51-1JFTE5vL._SL500_AA280_.jpg 280w, http://localhost:9030/wp-content/uploads/2011/10/51-1JFTE5vL._SL500_AA280_-150x150.jpg 150w\" sizes=\"(max-width: 280px) 100vw, 280px\" />",
+    "releaseDate": "2006, 06, 26"
+  },
+  {
+    "title": "Terje Nordgarden",
+
+    "itunes": "http://itunes.apple.com/album/terje-nordgarden/id314338759",
+    "amazon": "http://www.amazon.com/Terje-Nordgarden/dp/B0028JGZ1Y/ref=sr_1_1?ie=UTF8&qid=1319490481&sr=8-1",
+    "songlist": [
+      {
+        "title": "Winter Mourning"
+      },
+      {
+        "title": "The Last Song"
+      },
+      {
+        "title": "All Yr. Notes"
+      },
+      {
+        "title": "Something Else In Mind"
+      },
+      {
+        "title": "Even Now"
+      },
+      {
+        "title": "Nothing Comes That Easy"
+      },
+      {
+        "title": "2nd Flight"
+      },
+      {
+        "title": "Song for Drake"
+      },
+      {
+        "title": "This Time"
+      },
+      {
+        "title": "Sometimes"
+      },
+      {
+        "title": "These Memories"
+      },
+      {
+        "title": "Coming Back Home"
+      },
+      {
+        "title": "Paint You a Picture"
+      }
+    ],
+    "image": "<img width=\"280\" height=\"280\" src=\"http://localhost:9030/wp-content/uploads/2011/10/51ShDT0KukL._SL500_AA280_.jpg\" class=\"attachment-post-thumbnail size-post-thumbnail wp-post-image\" alt=\"\" srcset=\"http://localhost:9030/wp-content/uploads/2011/10/51ShDT0KukL._SL500_AA280_.jpg 280w, http://localhost:9030/wp-content/uploads/2011/10/51ShDT0KukL._SL500_AA280_-150x150.jpg 150w\" sizes=\"(max-width: 280px) 100vw, 280px\" />",
+    "releaseDate": "2003, 05, 01"
+  }
+]

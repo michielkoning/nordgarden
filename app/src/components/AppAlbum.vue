@@ -3,7 +3,7 @@
     <h2>{{ album.title }}</h2>
     <div>
       <div v-html="album.image"></div>
-      {{ album.release_date | formatDate }}
+      {{ album.releaseDate | formatDate }}
       <ul class="shops">
         <li>
           <a href="#">

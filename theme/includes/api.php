@@ -20,6 +20,8 @@ function get_discography()
     $album =  new stdClass();
 
     $album->title = $post->post_title;
+    $album->meta = $post->album_meta;
+    $album->songs = get_post_meta($post->ID, 'songlist', true);
     $album->image = get_the_post_thumbnail($post->ID);
     $album->itunes = get_field('itunes', $post->ID);
     $album->amazon = get_field('amazon', $post->ID);
