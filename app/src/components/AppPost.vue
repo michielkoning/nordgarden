@@ -32,7 +32,7 @@ li {
   display: flex;
   flex-direction: column;
   padding-bottom: 1em;
-  border-bottom: 1px dashed var(--color-white);
+  border-bottom: 2px dashed var(--color-white);
 }
 
 time {

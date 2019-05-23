@@ -43,51 +43,51 @@ export default {
       videos: [
         {
           videoId: 'bH67wt1CHv8',
-          title: 'Side of the road',
+          title: 'SIDE OF THE ROAD &#8211; (OFFICIAL VIDEO)',
         },
         {
           videoId: 'JRwpPplPqmM',
-          title: 'Side of the road (live @ TV Rai)',
+          title: 'SIDE OF THE ROAD &#8211; LIVE @ TV RAI 1',
         },
         {
           videoId: '3K-f6RVtKwA',
-          title: 'title',
+          title: 'YOU MUST BE THE CHANGE &#8211; (OFFICIAL VIDEO)',
         },
         {
           videoId: 'phujbtP9J_Y',
-          title: 'title',
+          title: 'A MERRY OLD CHRISTMAS &#8211; (OFFICIAL VIDEO)',
         },
         {
           videoId: '7qO4Lu5rxew',
-          title: 'title',
+          title: 'LA MIA RIVOLUZIONE &#8211; (OFFICIAL VIDEO)',
         },
         {
           videoId: 'Rc-fLsWAe_A',
-          title: 'title',
+          title: 'LA CANZONE DEI CANI &#8211; (OFFICIAL VIDEO)',
         },
         {
           videoId: '83OIrw0AjgY',
-          title: 'title',
+          title: 'NON È LA CALIFORNIA – (OFFICIAL VIDEO)',
         },
         {
           videoId: 'RA2dLa5ZAVY',
-          title: 'title',
+          title: 'L’ABBANDONO – LIVE @ ROMA &#8211; 06.12.13',
         },
         {
           videoId: 'ioYwLp2PKBY',
-          title: 'title',
+          title: 'THESE LOVESICK BLUES – (OFFICIAL VIDEO)',
         },
         {
           videoId: 'PBMpzxa-SJA',
-          title: 'title',
+          title: 'KEEP IT SHINING ON THE INSIDE – (OFFICIAL VIDEO)',
         },
         {
           videoId: '_SnVGrgAHmg',
-          title: 'title',
+          title: 'THE PATH OF LOVE – (OFFICIAL VIDEO)',
         },
         {
           videoId: '986m8vY9DVo',
-          title: 'title',
+          title: 'GOOD THINGS DIE – (OFFICIAL VIDEO)',
         },
       ],
       videoId: 'bH67wt1CHv8',
@@ -97,13 +97,6 @@ export default {
       isPlayingVideo: false,
     };
   },
-  watch: {
-    isPlaying(value) {
-      if (value) {
-        this.pauseVideo();
-      }
-    },
-  },
   computed: {
     ...mapState('albums', ['isPlaying']),
 
@@ -111,6 +104,14 @@ export default {
       return this.$refs.youtube.player;
     },
   },
+  watch: {
+    isPlaying(value) {
+      if (value) {
+        this.pauseVideo();
+      }
+    },
+  },
+
   methods: {
     playVideo(videoId) {
       this.videoId = videoId;
@@ -157,9 +158,11 @@ svg {
 li {
   text-align: center;
   border: 2px solid transparent;
+  border-bottom: 2px dashed var(--color-white);
+  padding-bottom: 0.5em;
 
   &.is-active {
-    border-color: #fff;
+    border: 2px solid var(--color-white);
   }
 
   &:hover svg {
