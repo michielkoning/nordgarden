@@ -2,29 +2,26 @@
   <section class="news-list" aria-labelledby="news-list-title">
     <h1 id="news-list-title">{{ $t('latestPosts') }}</h1>
     <transition-group name="list" tag="ul">
-      <li v-for="post in list" :key="post.slug">
-        <h2>
-          <router-link :to="post.slug">{{ post.title.rendered }}</router-link>
-        </h2>
-        <post-date :date="post.date" />
-        <div v-html="post.excerpt.rendered"></div>
-        <router-link :to="post.slug">{{ $t('readMore') }}</router-link>
-      </li>
+      <app-post v-for="post in list" :key="post.slug" :post="post" />
     </transition-group>
     <app-loader v-if="isLoading" />
-    <button v-else-if="!hasAllPostsLoaded" @click="setPosts">{{ $t('loadMore') }}</button>
+    <div v-else-if="!hasAllPostsLoaded" class="button-wrapper">
+      <button class="btn" @click="setPosts">{{ $t('loadMore') }}</button>
+    </div>
   </section>
 </template>
 
 <script>
 import { mapActions, mapState, mapGetters } from 'vuex';
 import PostDate from '@/components/PostDate.vue';
+import AppPost from '@/components/AppPost.vue';
 import AppLoader from '@/components/AppLoader.vue';
 
 export default {
   components: {
     PostDate,
     AppLoader,
+    AppPost,
   },
 
   computed: {
@@ -67,5 +64,10 @@ ul {
 .list-leave-to {
   opacity: 0;
   transform: translateY(1em);
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
 }
 </style>

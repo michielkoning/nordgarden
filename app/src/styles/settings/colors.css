@@ -13,8 +13,8 @@
   --color-primary: #eb2860;
   --color-primary-dark: #449729;
   /*  */
-  --color-bg-page: #fff;
-  --color-navigation: rgba(0, 0, 0, 0.5);
+  --color-bg-page: #2f2e3e;
+  --color-navigation: #2f2e3e;
 }
 
 @media (--dark-mode) {

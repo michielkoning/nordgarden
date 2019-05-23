@@ -18,6 +18,7 @@
             <social-links />
           </div>
         </transition>
+        <div class="empty"></div>
       </div>
     </transition>
   </header>
@@ -72,29 +73,36 @@ export default {
   max-height: 80vh;
 
   @media (--navigation-position-left) {
-    padding-top: 0;
     overflow: visible;
     transform: translateY(0);
     display: block !important;
     max-height: none;
+    background: var(--color-bg-page);
+  }
+}
+
+h1 {
+  color: currentColor;
+
+  & a {
+    text-decoration: none;
   }
 }
 
 .bg {
   position: fixed;
   top: 0;
-  background: #999;
   left: 0;
   right: 0;
   bottom: 0;
   height: 100vh;
-  padding-top: 3em;
   overflow: hidden;
   z-index: var(--main-navigation);
+  border-right: 2px solid #fff;
 
   @media (--navigation-position-left) {
     overflow: visible;
-    padding-top: var(--gutter);
+    padding-top: 0;
     display: block !important;
     width: var(--width-navigation-left);
   }

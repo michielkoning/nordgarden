@@ -12,7 +12,7 @@
           </div>
         </li>
       </ul>
-      <p v-else>{{ $('noTourDays') }}</p>
+      <p v-else>{{ $t('noTourDays') }}</p>
     </template>
   </div>
 </template>

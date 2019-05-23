@@ -13,15 +13,15 @@
     <ul>
       <li
         v-for="video in videos"
-        :key="video"
+        :key="video.videoId"
         :class="{ 'is-active': isCurrentVideo(video) }"
-        @click="playVideo(video)"
+        @click="playVideo(video.videoId)"
       >
         <div class="image-wrapper">
-          <img :src="`https://img.youtube.com/vi/${video}/hqdefault.jpg`" alt />
+          <img :src="`https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`" alt />
           <app-icon icon="play" :title="$t('play')" />
         </div>
-        title of the video
+        {{ video.title }}
       </li>
     </ul>
   </app-page>
@@ -41,18 +41,54 @@ export default {
   data() {
     return {
       videos: [
-        'bH67wt1CHv8',
-        'JRwpPplPqmM',
-        '3K-f6RVtKwA',
-        'phujbtP9J_Y',
-        '7qO4Lu5rxew',
-        'Rc-fLsWAe_A',
-        '83OIrw0AjgY',
-        'RA2dLa5ZAVY',
-        'ioYwLp2PKBY',
-        'PBMpzxa-SJA',
-        '_SnVGrgAHmg',
-        '986m8vY9DVo',
+        {
+          videoId: 'bH67wt1CHv8',
+          title: 'Side of the road',
+        },
+        {
+          videoId: 'JRwpPplPqmM',
+          title: 'Side of the road (live @ TV Rai)',
+        },
+        {
+          videoId: '3K-f6RVtKwA',
+          title: 'title',
+        },
+        {
+          videoId: 'phujbtP9J_Y',
+          title: 'title',
+        },
+        {
+          videoId: '7qO4Lu5rxew',
+          title: 'title',
+        },
+        {
+          videoId: 'Rc-fLsWAe_A',
+          title: 'title',
+        },
+        {
+          videoId: '83OIrw0AjgY',
+          title: 'title',
+        },
+        {
+          videoId: 'RA2dLa5ZAVY',
+          title: 'title',
+        },
+        {
+          videoId: 'ioYwLp2PKBY',
+          title: 'title',
+        },
+        {
+          videoId: 'PBMpzxa-SJA',
+          title: 'title',
+        },
+        {
+          videoId: '_SnVGrgAHmg',
+          title: 'title',
+        },
+        {
+          videoId: '986m8vY9DVo',
+          title: 'title',
+        },
       ],
       videoId: 'bH67wt1CHv8',
       playerVars: {
@@ -86,7 +122,7 @@ export default {
       this.player.pauseVideo();
     },
     isCurrentVideo(video) {
-      return this.videoId === video;
+      return this.videoId === video.videoId;
     },
 
     playing() {

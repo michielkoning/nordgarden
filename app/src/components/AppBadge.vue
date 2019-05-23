@@ -15,17 +15,17 @@ export default {
 
 <style lang="postcss" scoped>
 .badge {
-  font-size: 0.8em;
-  background: gray;
+  font-size: 0.7em;
+  background: var(--color-white);
   min-width: 1.25em;
   height: 1.25em;
-  margin-left: 0.25em;
+  transform: translate3d(0.25em, 0, 0);
   flex: 0 1 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  color: white;
+  color: var(--color-bg-page);
   padding: 0 0.3em;
 }
 </style>

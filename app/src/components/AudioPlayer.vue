@@ -1,12 +1,12 @@
 <template>
   <div class="player">
-    <button v-if="isPlaying" @click="pause" :disabled="!songs.length">
+    <button v-if="isPlaying" :disabled="!songs.length" @click="pause">
       <app-icon icon="pause" :title="$t('pause')" />
     </button>
-    <button v-else @click="play" :disabled="!songs.length">
+    <button v-else :disabled="!songs.length" @click="play">
       <app-icon icon="play" :title="$t('play')" />
     </button>
-    <button @click="next" :disabled="songs.length < 1">
+    <button :disabled="songs.length < 1" @click="next">
       <app-icon icon="forwards" :title="$t('next')" />
     </button>
     <div v-show="songs.length" ref="progress" class="progress" @click="scrub">
@@ -99,19 +99,21 @@ button {
   margin-right: 1em;
   display: flex;
   justify-content: center;
-  align-items: center;  
+  align-items: center;
 }
 
 .progress {
   position: relative;
   text-align: center;
   flex: 1 0 auto;
+  cursor: pointer;
 }
 
 .title {
   max-width: 16em;
   white-space: nowrap;
   overflow: hidden;
+  position: relative;
   text-overflow: ellipsis;
 }
 
@@ -120,6 +122,6 @@ button {
   left: 0;
   top: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.2);
+  background: var(--color-primary);
 }
 </style>

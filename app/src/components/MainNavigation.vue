@@ -62,20 +62,42 @@ ul {
   margin-bottom: 1em;
 }
 
+li {
+  padding: 0.1em 0;
+}
+
 a {
   align-items: center;
   display: flex;
   position: relative;
+  text-decoration: none;
+  font-size: 1.2em;
 }
 
 .arrow {
   display: block;
   position: absolute;
   top: 0;
-  right: -3em;
-  border-top: 0.75em solid transparent;
-  border-bottom: 0.75em solid transparent;
-  border-left: 1em solid var(--color-navigation);
+  right: -2em;
   transition: transform 0.2s ease-out;
+
+  &::after {
+    position: absolute;
+    display: block;
+    content: '';
+    border-top: 0.75em solid transparent;
+    border-bottom: 0.75em solid transparent;
+    border-left: 1em solid var(--color-navigation);
+  }
+
+  &::before {
+    position: absolute;
+    display: block;
+    content: '';
+    margin-top: -3px;
+    border-top: calc(0.75em + 3px) solid transparent;
+    border-bottom: calc(0.75em + 3px) solid transparent;
+    border-left: calc(1em + 6px) solid #fff;
+  }
 }
 </style>
