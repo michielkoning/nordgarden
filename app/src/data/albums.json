@@ -2,7 +2,7 @@
   {
     "title": "Live in Dresden",
 
-    "itunes": "https://itunes.apple.com/nl/album/live-in-dresden/id978762992?=&app=music&ign-mpt=uo%3D4",
+    "apple": "https://itunes.apple.com/nl/album/live-in-dresden/id978762992?=&app=music&ign-mpt=uo%3D4",
     "amazon": "",
     "songlist": [
       {
@@ -11,31 +11,31 @@
       },
       {
         "title": "They're Building They're Building",
-        "file": "/audio/1.mp3"
+        "file": "/audio/2.mp3"
       },
       {
         "title": "My Father the Sailor",
-        "file": "/audio/1.mp3"
+        "file": "/audio/3.mp3"
       },
       {
         "title": "All Yr. Notes",
-        "file": "/audio/1.mp3"
+        "file": "/audio/4.mp3"
       },
       {
         "title": "Invisibile",
-        "file": "/audio/1.mp3"
+        "file": "/audio/5.mp3"
       },
       {
         "title": "Keep It Shining On The Inside",
-        "file": "/audio/1.mp3"
+        "file": "/audio/6.mp3"
       },
       {
         "title": "2nd Flight",
-        "file": "/audio/1.mp3"
+        "file": "/audio/7.mp3"
       },
       {
         "title": "Blessed",
-        "file": "/audio/1.mp3"
+        "file": "/audio/8.mp3"
       },
       {
         "title": "Up the Hillside",
@@ -61,7 +61,7 @@
   {
     "title": "The Path Of Love",
 
-    "itunes": "http://itunes.apple.com/album/the-path-of-love/id280823276#",
+    "apple": "http://itunes.apple.com/album/the-path-of-love/id280823276#",
     "amazon": "http://www.amazon.com/The-Path-Of-Love/dp/B001BB6KDI/ref=sr_1_3?ie=UTF8&qid=1319490739&sr=8-3",
     "songlist": [
       {
@@ -103,7 +103,7 @@
   {
     "title": "Dieci",
 
-    "itunes": "https://itunes.apple.com/it/album/dieci/id740768520",
+    "apple": "https://itunes.apple.com/it/album/dieci/id740768520",
     "amazon": "",
     "songlist": [
       {
@@ -143,7 +143,7 @@
   {
     "title": "You Gotta Get Ready",
 
-    "itunes": "https://itunes.apple.com/album/you-gotta-get-ready/id502874072",
+    "apple": "https://itunes.apple.com/album/you-gotta-get-ready/id502874072",
     "amazon": "",
     "songlist": [
       {
@@ -183,7 +183,7 @@
   {
     "title": "A Brighter Kind of Blue",
 
-    "itunes": "http://itunes.apple.com/album/a-brighter-kind-of-blue/id297076152",
+    "apple": "http://itunes.apple.com/album/a-brighter-kind-of-blue/id297076152",
     "amazon": "http://www.amazon.com/A-Brighter-Kind-Of-Blue/dp/B001CKO4FE/ref=sr_1_3?ie=UTF8&qid=1319049779&sr=8-3",
     "songlist": [
       {
@@ -223,7 +223,7 @@
   {
     "title": "Terje Nordgarden",
 
-    "itunes": "http://itunes.apple.com/album/terje-nordgarden/id314338759",
+    "apple": "http://itunes.apple.com/album/terje-nordgarden/id314338759",
     "amazon": "http://www.amazon.com/Terje-Nordgarden/dp/B0028JGZ1Y/ref=sr_1_1?ie=UTF8&qid=1319490481&sr=8-1",
     "songlist": [
       {

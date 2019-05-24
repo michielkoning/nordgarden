@@ -2,15 +2,15 @@ import albums from '@/data/albums.json';
 
 const moduleState = {
   list: albums,
-  currentSong: albums[0].songlist.find(song => song.file !== null),
+  currentSong: albums[0].songlist.find(song => song.file !== undefined),
   isPlaying: false,
 };
 
 const getters = {
   playableSongs: state => {
     let newArray = [];
-    state.list.forEach(item => {
-      const songs = item.songlist.filter(song => song.file !== null);
+    state.list.forEach(album => {
+      const songs = album.songlist.filter(song => song.file !== undefined);
       newArray = [...newArray, ...songs];
     });
     return newArray;

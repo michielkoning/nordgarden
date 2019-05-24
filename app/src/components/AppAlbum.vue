@@ -6,7 +6,7 @@
       {{ album.releaseDate | formatDate }}
       <ul class="shops">
         <li>
-          <a href="#">
+          <a v-if="album.amazon" rel="noopener" target="_blank" :href="album.amazon">
             <app-icon
               icon="spotify"
               width="24"
@@ -16,7 +16,7 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a v-if="album.apple" rel="noopener" target="_blank" :href="album.apple">
             <app-icon icon="apple" width="24" height="24" :title="`${'viewNordgardenOn'} apple`" />
           </a>
         </li>

@@ -3,22 +3,30 @@
     <h2 id="menu-title" class="sr-only" tabindex="-1">{{ $t('mainNavigation') }}</h2>
     <ul ref="list">
       <li>
-        <router-link to="/">{{ $t('home') }}</router-link>
+        <router-link to="/">
+          <span class="title">{{ $t('home') }}</span>
+        </router-link>
       </li>
       <li>
         <router-link to="/tour">
-          {{ $t('tour') }}
+          <span class="title">{{ $t('tour') }}</span>
           <app-badge :amount="list.length" />
         </router-link>
       </li>
       <li>
-        <router-link to="/albums">{{ $t('albums') }}</router-link>
+        <router-link to="/albums">
+          <span class="title">{{ $t('albums') }}</span>
+        </router-link>
       </li>
       <li>
-        <router-link to="/videos">{{ $t('videos') }}</router-link>
+        <router-link to="/videos">
+          <span class="title">{{ $t('videos') }}</span>
+        </router-link>
       </li>
       <li>
-        <router-link to="/biography">{{ $t('biography') }}</router-link>
+        <router-link to="/biography">
+          <span class="title">{{ $t('biography') }}</span>
+        </router-link>
       </li>
     </ul>
     <div class="arrow" :style="{ transform: arrowPosition }" />
@@ -63,7 +71,12 @@ ul {
 }
 
 li {
-  padding: 0.1em 0;
+  padding: 0.25em 0;
+}
+
+.title {
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.1s ease-out;
 }
 
 a {
@@ -72,6 +85,14 @@ a {
   position: relative;
   text-decoration: none;
   font-size: 1.2em;
+  line-height: 1.1;
+
+  &:hover {
+    text-decoration: none;
+    & .title {
+      border-bottom-color: var(--color-primary);
+    }
+  }
 }
 
 .arrow {

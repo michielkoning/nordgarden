@@ -43,27 +43,27 @@ export default {
       videos: [
         {
           videoId: 'bH67wt1CHv8',
-          title: 'SIDE OF THE ROAD &#8211; (OFFICIAL VIDEO)',
+          title: 'SIDE OF THE ROAD – (OFFICIAL VIDEO)',
         },
         {
           videoId: 'JRwpPplPqmM',
-          title: 'SIDE OF THE ROAD &#8211; LIVE @ TV RAI 1',
+          title: 'SIDE OF THE ROAD – LIVE @ TV RAI 1',
         },
         {
           videoId: '3K-f6RVtKwA',
-          title: 'YOU MUST BE THE CHANGE &#8211; (OFFICIAL VIDEO)',
+          title: 'YOU MUST BE THE CHANGE – (OFFICIAL VIDEO)',
         },
         {
           videoId: 'phujbtP9J_Y',
-          title: 'A MERRY OLD CHRISTMAS &#8211; (OFFICIAL VIDEO)',
+          title: 'A MERRY OLD CHRISTMAS – (OFFICIAL VIDEO)',
         },
         {
           videoId: '7qO4Lu5rxew',
-          title: 'LA MIA RIVOLUZIONE &#8211; (OFFICIAL VIDEO)',
+          title: 'LA MIA RIVOLUZIONE – (OFFICIAL VIDEO)',
         },
         {
           videoId: 'Rc-fLsWAe_A',
-          title: 'LA CANZONE DEI CANI &#8211; (OFFICIAL VIDEO)',
+          title: 'LA CANZONE DEI CANI – (OFFICIAL VIDEO)',
         },
         {
           videoId: '83OIrw0AjgY',
@@ -71,7 +71,7 @@ export default {
         },
         {
           videoId: 'RA2dLa5ZAVY',
-          title: 'L’ABBANDONO – LIVE @ ROMA &#8211; 06.12.13',
+          title: 'L’ABBANDONO – LIVE @ ROMA – 06.12.13',
         },
         {
           videoId: 'ioYwLp2PKBY',

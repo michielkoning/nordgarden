@@ -84,14 +84,11 @@ export default {
 <style lang="postcss" scoped>
 .player {
   margin-bottom: 2em;
+  display: flex;
 }
 
 audio {
   width: 100%;
-}
-
-.player {
-  display: flex;
 }
 
 button {
@@ -104,13 +101,13 @@ button {
 
 .progress {
   position: relative;
-  text-align: center;
   flex: 1 0 auto;
   cursor: pointer;
 }
 
 .title {
-  max-width: 16em;
+  max-width: 12rem;
+  font-size: 0.8em;
   white-space: nowrap;
   overflow: hidden;
   position: relative;
