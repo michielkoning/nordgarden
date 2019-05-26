@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1>{{ $t('tour') }}</h1>
     <app-loader v-if="isLoading" />
     <template v-else>
       <ul v-if="list.length">

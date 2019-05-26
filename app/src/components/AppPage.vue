@@ -1,7 +1,7 @@
 <template>
   <main>
     <h1 id="content" tabindex="-1">{{ title }}</h1>
-    <slot />
+    <slot/>
   </main>
 </template>
 

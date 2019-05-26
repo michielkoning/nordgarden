@@ -1,5 +1,5 @@
 <template>
-  <div aria-live="status" role="region">{{ message }}</div>
+  <div aria-live="polite" role="region">{{ message }}</div>
 </template>
 
 <script>

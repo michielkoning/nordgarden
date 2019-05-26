@@ -1,7 +1,10 @@
 <template>
   <app-page title="Home">
     <biography-intro :read-more="true" />
-    <tour-dates />
+    <section aria-labelledby="tour-title">
+      <h1 id="tour-title">{{ $t('tour') }}</h1>
+      <tour-dates />
+    </section>
     <app-gallery />
     <latest-posts />
     <div class="mood"></div>

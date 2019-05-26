@@ -1,9 +1,11 @@
 <template>
-  <app-page class="tour">
-    <div class="text">
-      <tour-dates />
+  <app-page :title="$t('tour')">
+    <div class="tour">
+      <div class="text">
+        <tour-dates />
+      </div>
+      <img src="/img/tour.jpg" alt />
     </div>
-    <img src="/img/tour.jpg" alt />
   </app-page>
 </template>
 

@@ -1,9 +1,9 @@
 <template>
-  <nav aria-labelledby="menu-title">
+  <nav aria-labelledby="menu-title" role="navigation">
     <h2 id="menu-title" class="sr-only" tabindex="-1">{{ $t('mainNavigation') }}</h2>
     <ul ref="list">
       <li>
-        <router-link to="/">
+        <router-link id="menu" to="/">
           <span class="title">{{ $t('home') }}</span>
         </router-link>
       </li>

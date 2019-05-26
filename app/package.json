@@ -7,6 +7,7 @@
     "lint": "vue-cli-service lint",
     "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'",
     "start": "vue-cli-service serve",
+    "test:e2e": "vue-cli-service test:e2e",
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
@@ -22,15 +23,19 @@
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.7.0",
+    "@vue/cli-plugin-e2e-cypress": "^3.8.0",
     "@vue/cli-plugin-pwa": "^3.7.0",
     "@vue/cli-plugin-unit-jest": "^3.7.0",
     "@vue/cli-service": "^3.7.0",
     "@vue/eslint-config-airbnb": "^4.0.0",
     "@vue/eslint-config-prettier": "^4.0.1",
     "@vue/test-utils": "1.0.0-beta.29",
+    "axe-core": "^3.2.2",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
+    "cypress": "^3.3.1",
+    "cypress-axe": "^0.4.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.2.2",
     "postcss-loader": "^3.0.0",
