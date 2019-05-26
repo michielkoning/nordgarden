@@ -1,3 +1,5 @@
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
+
 // installed via npm
 module.exports = {
   rules: [
@@ -12,5 +14,12 @@ module.exports = {
         'postcss-loader',
       ],
     },
+  ],
+  plugins: [
+    new SpriteLoaderPlugin({
+      spriteAttrs: {
+        id: 'my-custom-sprite-id',
+      },
+    }),
   ],
 };

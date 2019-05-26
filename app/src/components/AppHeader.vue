@@ -1,5 +1,5 @@
 <template>
-  <header role="banner">
+  <header>
     <mobile-navigation @toggleMenu="toggleMenu" />
     <transition
       name="fade2"

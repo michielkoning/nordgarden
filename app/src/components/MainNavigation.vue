@@ -1,5 +1,5 @@
 <template>
-  <nav aria-labelledby="menu-title" role="navigation">
+  <nav aria-labelledby="menu-title">
     <h2 id="menu-title" class="sr-only" tabindex="-1">{{ $t('mainNavigation') }}</h2>
     <ul ref="list">
       <li>

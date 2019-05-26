@@ -1,5 +1,5 @@
 <template>
-  <nav aria-labelledby="social-links-title" role="contentinfo">
+  <nav aria-labelledby="social-links-title">
     <h2 id="social-links-title" class="sr-only">{{ $t('socialMediaLinks') }}</h2>
     <ul class="social-links">
       <li>
