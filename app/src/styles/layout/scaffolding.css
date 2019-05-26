@@ -32,7 +32,6 @@ main {
   flex: 1 1 auto;
 }
 
-
 #app {
   background: #2f2e3e;
   color: #fff;
@@ -40,4 +39,8 @@ main {
 
 h1 {
   color: #eb2860;
+}
+
+#__SVG_SPRITE_NODE__ {
+  display: none;
 }

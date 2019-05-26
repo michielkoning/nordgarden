@@ -15,11 +15,4 @@ module.exports = {
       ],
     },
   ],
-  plugins: [
-    new SpriteLoaderPlugin({
-      spriteAttrs: {
-        id: 'my-custom-sprite-id',
-      },
-    }),
-  ],
 };

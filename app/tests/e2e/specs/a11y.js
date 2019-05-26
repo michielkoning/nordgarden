@@ -1,7 +1,7 @@
 // https://docs.cypress.io/api/introduction/api.html
 
 describe('a11y', () => {
-  it.only('home', () => {
+  it('home', () => {
     cy.visit('/');
     cy.injectAxe();
     cy.checkA11y();

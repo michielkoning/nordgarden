@@ -2,7 +2,9 @@
   <app-page class="biography" :title="$t('biography')">
     <biography-intro />
     <app-loader v-if="isLoading" />
-    <div v-else class="text" v-html="biography.content.rendered" />
+    <template v-else>
+      <div v-if="biography" class="text" v-html="biography.content.rendered" />
+    </template>
   </app-page>
 </template>
 

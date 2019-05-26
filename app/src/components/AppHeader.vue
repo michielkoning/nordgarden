@@ -1,6 +1,8 @@
 <template>
   <header>
+    <skip-links />
     <mobile-navigation @toggleMenu="toggleMenu" />
+
     <transition
       name="fade2"
       @after-enter="afterEnter"
@@ -25,6 +27,8 @@
 </template>
 
 <script>
+import SkipLinks from '@/components/SkipLinks.vue';
+
 import AudioPlayer from '@/components/AudioPlayer.vue';
 import MainNavigation from '@/components/MainNavigation.vue';
 import SocialLinks from '@/components/SocialLinks.vue';
@@ -34,6 +38,7 @@ const bodyScrollLock = require('body-scroll-lock');
 
 export default {
   components: {
+    SkipLinks,
     AudioPlayer,
     SocialLinks,
     MainNavigation,
