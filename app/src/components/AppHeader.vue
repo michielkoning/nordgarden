@@ -1,5 +1,6 @@
 <template>
   <header>
+    <AudioVisualiser />
     <skip-links />
     <mobile-navigation @toggleMenu="toggleMenu" />
 
@@ -30,6 +31,7 @@
 import SkipLinks from '@/components/SkipLinks.vue';
 
 import AudioPlayer from '@/components/AudioPlayer.vue';
+import AudioVisualiser from '@/components/AudioVisualiser.vue';
 import MainNavigation from '@/components/MainNavigation.vue';
 import SocialLinks from '@/components/SocialLinks.vue';
 import MobileNavigation from '@/components/MobileNavigation.vue';
@@ -40,6 +42,7 @@ export default {
   components: {
     SkipLinks,
     AudioPlayer,
+    AudioVisualiser,
     SocialLinks,
     MainNavigation,
     MobileNavigation,

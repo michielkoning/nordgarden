@@ -14,6 +14,7 @@
       <div class="title">{{ currentSong.title }}</div>
     </div>
     <audio
+      id="audio"
       ref="audio"
       :src="currentSong.file"
       @timeupdate="timeupdate"
