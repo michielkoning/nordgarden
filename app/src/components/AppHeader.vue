@@ -1,6 +1,7 @@
 <template>
   <header>
-    <AudioVisualiser />
+    <AudioVisualiser class="canvas1" />
+    <AudioVisualiser class="canvas2" />
     <skip-links />
     <mobile-navigation @toggleMenu="toggleMenu" />
 
@@ -106,7 +107,7 @@ h1 {
   height: 100vh;
   overflow: hidden;
   z-index: var(--main-navigation);
-  border-right: 2px solid #fff;
+  /* border-right: 2px solid #fff; */
 
   @media (--navigation-position-left) {
     overflow: visible;
@@ -135,5 +136,21 @@ h1 {
 .fade2-enter,
 .fade2-leave-to {
   transform: translateY(-100vh);
+}
+
+.canvas1 {
+  width: 5em;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 20rem;
+}
+
+.canvas2 {
+  width: 5em;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 10rem;
 }
 </style>

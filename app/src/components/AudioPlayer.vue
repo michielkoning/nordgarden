@@ -108,6 +108,7 @@ button {
 
 .title {
   max-width: 12rem;
+  padding: 0 0.25em;
   font-size: 0.8em;
   white-space: nowrap;
   overflow: hidden;

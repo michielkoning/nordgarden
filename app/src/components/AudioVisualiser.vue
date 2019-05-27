@@ -1,5 +1,5 @@
 <template>
-  <canvas id="canvas"></canvas>
+  <canvas ref="canvas"></canvas>
 </template>
 
 <script>
@@ -11,7 +11,8 @@ export default {
     var src = context.createMediaElementSource(audio);
     var analyser = context.createAnalyser();
 
-    var canvas = document.getElementById('canvas');
+    var canvas = this.$refs.canvas;
+
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     var ctx = canvas.getContext('2d');
@@ -19,7 +20,7 @@ export default {
     src.connect(analyser);
     analyser.connect(context.destination);
 
-    analyser.fftSize = 64;
+    analyser.fftSize = 512;
 
     var bufferLength = analyser.frequencyBinCount;
 
@@ -28,9 +29,9 @@ export default {
     var WIDTH = canvas.width;
     var HEIGHT = canvas.height;
 
-    var barWidth = (WIDTH / bufferLength) * 2.5;
-    var barHeight;
-    var x = 0;
+    var barWidth;
+    var barHeight = (HEIGHT / bufferLength) * 5;
+    var y = 0;
 
     function renderFrame() {
       requestAnimationFrame(renderFrame);
@@ -40,20 +41,21 @@ export default {
       ctx.clearRect(0, 0, WIDTH, HEIGHT);
 
       ctx.beginPath();
+      console.log(dataArray);
 
-      x = 0;
+      y = 0;
       for (var i = 0; i < bufferLength; i++) {
-        barHeight = dataArray[i];
+        barWidth = dataArray[i];
 
         if (i === 0) {
-          ctx.moveTo(x, HEIGHT - barHeight);
+          ctx.moveTo(barWidth, y);
         } else {
-          ctx.lineTo(x, HEIGHT - barHeight);
+          ctx.lineTo(barWidth, y);
         }
 
-        x += barWidth;
+        y += barHeight;
       }
-      ctx.lineWidth = 10;
+      ctx.lineWidth = 60;
       ctx.strokeStyle = '#fff';
       ctx.stroke();
     }
@@ -64,11 +66,11 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-#canvas {
-  width: 10em;
+canvas {
+  width: 5em;
   height: 100vh;
   position: fixed;
   top: 0;
-  left: 0;
+  left: 20rem;
 }
 </style>
