@@ -1,16 +1,16 @@
 module.exports = {
   plugins: {
     'postcss-mixins': {
-      mixinsDir: './styles/mixins/'
+      mixinsDir: './src/styles/mixins/',
     },
     'postcss-preset-env': {
-      importFrom: ['./styles/media-queries/media-queries.css'],
+      importFrom: ['./src/styles/media-queries/media-queries.css'],
 
       features: {
         'nesting-rules': true,
         'custom-media-queries': true,
-        'media-query-ranges': true
-      }
-    }
-  }
-}
+        'media-query-ranges': true,
+      },
+    },
+  },
+};
