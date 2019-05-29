@@ -10,7 +10,10 @@ export default {
     titleTemplate: '%s | Nordgarden',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1, viewport-fit=cover'
+      },
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
@@ -45,7 +48,8 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    '@nuxtjs/sitemap'
   ],
   /*
    ** Axios module configuration
@@ -70,6 +74,22 @@ export default {
           loader: 'eslint-loader',
           exclude: /(node_modules)/
         })
+      }
+    },
+    postcss: {
+      plugins: {
+        'postcss-mixins': {
+          mixinsDir: './styles/mixins/'
+        },
+        'postcss-preset-env': {
+          importFrom: ['./styles/media-queries/media-queries.css'],
+
+          features: {
+            'nesting-rules': true,
+            'custom-media-queries': true,
+            'media-query-ranges': true
+          }
+        }
       }
     }
   }
