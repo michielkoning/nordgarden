@@ -32,7 +32,7 @@ export default {
    */
   css: ['~/styles/base.css'],
   router: {
-    middleware: 'i18n'
+    middleware: ['i18n', 'steps']
   },
   /*
    ** Plugins to load before mounting the App

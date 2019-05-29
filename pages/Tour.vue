@@ -1,18 +1,33 @@
 <template>
-  <div class="tour">
+  <app-page :title="title" class="tour">
     <div class="text">
       <tour-dates />
     </div>
     <img src="/img/tour.jpg" alt />
-  </div>
+  </app-page>
 </template>
 
 <script>
 import TourDates from '@/components/TourDates.vue'
+import AppPage from '@/components/AppPage.vue'
 
 export default {
   components: {
-    TourDates
+    TourDates,
+    AppPage
+  },
+  meta: {
+    step: 1
+  },
+  data() {
+    return {
+      title: this.$t('tour')
+    }
+  },
+  head() {
+    return {
+      title: this.title
+    }
   }
 }
 </script>

@@ -1,9 +1,7 @@
 <template>
   <div>
     <app-header />
-    <main>
-      <nuxt />
-    </main>
+    <nuxt />
     <error-handler />
   </div>
 </template>

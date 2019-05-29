@@ -1,23 +1,32 @@
 <template>
-  <div class="biography" :title="$t('biography')">
+  <app-page class="biography" :title="title">
     <biography-intro />
     <app-loader v-if="isLoading" />
     <template v-else>
       <div v-if="biography" class="text" v-html="biography.content.rendered" />
     </template>
-  </div>
+  </app-page>
 </template>
 
 <script>
 import { mapActions, mapState } from 'vuex'
-
 import AppLoader from '@/components/AppLoader.vue'
 import BiographyIntro from '@/components/BiographyIntro.vue'
+import AppPage from '@/components/AppPage.vue'
 
 export default {
   components: {
     AppLoader,
-    BiographyIntro
+    BiographyIntro,
+    AppPage
+  },
+  meta: {
+    step: 4
+  },
+  data() {
+    return {
+      title: this.$t('biography')
+    }
   },
   computed: {
     ...mapState('pages', ['biography', 'isLoading'])
@@ -30,6 +39,11 @@ export default {
     ...mapActions({
       setPage: 'pages/setPage'
     })
+  },
+  head() {
+    return {
+      title: this.title
+    }
   }
 }
 </script>

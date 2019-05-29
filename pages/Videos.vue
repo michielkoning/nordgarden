@@ -1,5 +1,5 @@
 <template>
-  <div class="content" title="Videos">
+  <app-page class="content" :title="title">
     <youtube
       ref="youtube"
       :video-id="videoId"
@@ -27,20 +27,26 @@
         {{ video.title }}
       </li>
     </ul>
-  </div>
+  </app-page>
 </template>
 
 <script>
 import EventBusUtil from '@/utils/eventBusUtil'
 import { mapState } from 'vuex'
 import AppIcon from '@/components/AppIcon.vue'
+import AppPage from '@/components/AppPage.vue'
 
 export default {
   components: {
-    AppIcon
+    AppIcon,
+    AppPage
+  },
+  meta: {
+    step: 3
   },
   data() {
     return {
+      title: this.$t('videos'),
       videos: [
         {
           videoId: 'bH67wt1CHv8',
@@ -129,6 +135,11 @@ export default {
 
     playing() {
       EventBusUtil.$emit('audio-play-song', false)
+    }
+  },
+  head() {
+    return {
+      title: this.title
     }
   }
 }

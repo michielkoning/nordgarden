@@ -53,10 +53,10 @@ export default {
   },
   watch: {
     $route(to, from) {
-      // const { step } = to.meta
-      // const position = this.$refs.list.querySelector(`:nth-child(${step + 1}`)
-      //   .offsetTop
-      // this.arrowPosition = `translateY(${position}px)`
+      const { step } = this.$store.state
+      const position = this.$refs.list.querySelector(`:nth-child(${step + 1}`)
+        .offsetTop
+      this.arrowPosition = `translateY(${position}px)`
     }
   }
 }

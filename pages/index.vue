@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <app-page :title="title">
     <biography-intro :read-more="true" />
     <section aria-labelledby="tour-title">
       <h1 id="tour-title">{{ $t('tour') }}</h1>
@@ -8,7 +8,7 @@
     <app-gallery />
     <latest-posts />
     <div class="mood"></div>
-  </div>
+  </app-page>
 </template>
 
 <script>
@@ -16,25 +16,27 @@ import LatestPosts from '@/components/LatestPosts.vue'
 import TourDates from '@/components/TourDates.vue'
 import AppGallery from '@/components/AppGallery.vue'
 import BiographyIntro from '@/components/BiographyIntro.vue'
+import AppPage from '@/components/AppPage.vue'
 
 export default {
   components: {
     LatestPosts,
     TourDates,
     AppGallery,
-    BiographyIntro
+    BiographyIntro,
+    AppPage
+  },
+  meta: {
+    step: 0
+  },
+  data() {
+    return {
+      title: this.$t('home')
+    }
   },
   head() {
     return {
-      title: 'Home',
-      meta: [
-        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
-        {
-          hid: 'description',
-          name: 'description',
-          content: 'My custom description'
-        }
-      ]
+      title: this.title
     }
   }
 }
