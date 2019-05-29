@@ -2,7 +2,7 @@
   <li class="album">
     <h2>{{ album.title }}</h2>
     <div>
-      <div v-html="album.image"></div>
+      {{ album.image }}
       {{ album.releaseDate | formatDate }}
       <ul class="shops">
         <li>

@@ -1,36 +1,25 @@
-import axios from 'axios'
-
-const moduleState = {
+export const state = () => ({
   list: [],
   isLoading: false
-}
+})
 
-const mutations = {
+export const mutations = {
   set: (state, payload) => {
-    const newState = state
-    newState.list = payload
+    state.list = payload
   },
   updateLoader: (state, payload) => {
-    const newState = state
-    newState.isLoading = payload
+    state.isLoading = payload
   }
 }
 
-const actions = {
-  set: async ({ commit }) => {
+export const actions = {
+  async set({ commit }) {
     commit('updateLoader', true)
     try {
-      const response = await axios.get('site/v1/tours')
-      commit('set', response.data)
+      const response = await this.$axios.$get('site/v1/tours')
+      commit('set', response)
     } finally {
       commit('updateLoader', false)
     }
   }
-}
-
-export default {
-  state: moduleState,
-  mutations,
-  actions,
-  namespaced: true
 }

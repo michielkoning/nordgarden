@@ -6,12 +6,15 @@
     </transition-group>
     <app-loader v-if="isLoading" />
     <div v-else-if="!hasAllPostsLoaded" class="button-wrapper">
-      <button class="btn" @click="setPosts">{{ $t('loadMore') }}</button>
+      <button class="btn" @click="setPosts(currentPage)">
+        {{ $t('loadMore') }}
+      </button>
     </div>
   </section>
 </template>
 
 <script>
+//  import axios from 'axios'
 import { mapActions, mapState, mapGetters } from 'vuex'
 import AppPost from '@/components/AppPost.vue'
 import AppLoader from '@/components/AppLoader.vue'
@@ -23,14 +26,18 @@ export default {
   },
 
   computed: {
-    ...mapState('posts', ['list', 'isLoading']),
+    ...mapState('posts', ['list', 'isLoading', 'currentPage', 'totalPages']),
     ...mapGetters({
       hasAllPostsLoaded: 'posts/hasAllPostsLoaded'
     })
   },
 
   mounted() {
-    if (!this.list.length) this.setPosts()
+    if (!this.list.length) this.setPosts(this.currentPage)
+    // axios.get('http://localhost:9030/wp-json/wp/v2/posts/').then(response => {
+    //   window.console.log(response)
+    //   this.setPosts(response.data)
+    // })
   },
   methods: {
     ...mapActions({

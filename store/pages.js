@@ -1,10 +1,10 @@
-import axios from 'axios'
+// import axios from 'axios'
 
-const moduleState = {
+const moduleState = () => ({
   about: null,
   biography: null,
   isLoading: false
-}
+})
 
 const mutations = {
   setAboutPage: (state, payload) => {
@@ -23,26 +23,26 @@ const mutations = {
 
 const actions = {
   setPage: async ({ commit }, payload) => {
-    commit('updateLoader', true)
-    try {
-      if (payload === 'about') {
-        const response = await axios.get('wp/v2/pages/', {
-          params: {
-            slug: 'home'
-          }
-        })
-        commit('setAboutPage', response.data[0])
-      } else {
-        const response = await axios.get('wp/v2/pages/', {
-          params: {
-            slug: 'biography'
-          }
-        })
-        commit('setBiographyPage', response.data[0])
-      }
-    } finally {
-      commit('updateLoader', false)
-    }
+    // commit('updateLoader', true)
+    // try {
+    //   if (payload === 'about') {
+    //     const response = await axios.get('wp/v2/pages/', {
+    //       params: {
+    //         slug: 'home'
+    //       }
+    //     })
+    //     commit('setAboutPage', response.data[0])
+    //   } else {
+    //     const response = await axios.get('wp/v2/pages/', {
+    //       params: {
+    //         slug: 'biography'
+    //       }
+    //     })
+    //     commit('setBiographyPage', response.data[0])
+    //   }
+    // } finally {
+    //   commit('updateLoader', false)
+    // }
   }
 }
 

@@ -1,12 +1,12 @@
 import albums from '@/data/albums.json'
 
-const moduleState = {
+export const state = () => ({
   list: albums,
   currentSong: albums[0].songlist.find(song => song.file !== undefined),
   isPlaying: false
-}
+})
 
-const getters = {
+export const getters = {
   playableSongs: state => {
     let newArray = []
     state.list.forEach(album => {
@@ -17,7 +17,7 @@ const getters = {
   }
 }
 
-const mutations = {
+export const mutations = {
   selectSong: (state, payload) => {
     const newState = state
     newState.currentSong = payload
@@ -28,9 +28,9 @@ const mutations = {
   }
 }
 
-const actions = {
+export const actions = {
   selectSong: ({ commit }, payload) => {
-    const songs = getters.playableSongs(moduleState)
+    const songs = getters.playableSongs(state)
     const song = songs.find(item => item === payload)
     commit('selectSong', song)
   },
@@ -38,8 +38,8 @@ const actions = {
     commit('setPlayState', payload)
   },
   selectNextSong: ({ commit }) => {
-    const songs = getters.playableSongs(moduleState)
-    const currentSong = moduleState.currentSong
+    const songs = getters.playableSongs(state)
+    const currentSong = state.currentSong
     const currentSongIndex = songs.findIndex(song => song === currentSong)
 
     let nextSongIndex
@@ -50,12 +50,4 @@ const actions = {
     }
     commit('selectSong', songs[nextSongIndex])
   }
-}
-
-export default {
-  state: moduleState,
-  getters,
-  mutations,
-  actions,
-  namespaced: true
 }

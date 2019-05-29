@@ -31,7 +31,7 @@ export default {
     }
   },
   computed: {
-    ...mapState('tour', ['list', 'isLoading'])
+    ...mapState('tour', ['isLoading', 'list'])
   }
 }
 </script>

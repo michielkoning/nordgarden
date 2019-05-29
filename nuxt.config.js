@@ -55,7 +55,10 @@ export default {
    ** Axios module configuration
    */
   axios: {
-    // See https://github.com/nuxt-community/axios-module#options
+    baseURL: 'http://localhost:9030/wp-json/',
+    defaults: {
+      baseURL: 'http://localhost:9030/wp-json/'
+    }
   },
 
   /*

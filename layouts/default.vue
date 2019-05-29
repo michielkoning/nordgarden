@@ -9,22 +9,22 @@
 <script>
 import AppHeader from '@/components/AppHeader.vue'
 import ErrorHandler from '@/components/ErrorHandler.vue'
-import { mapActions } from 'vuex'
+// import { mapActions } from 'vuex'
 
 export default {
   components: {
     AppHeader,
     ErrorHandler
-  },
-
-  mounted() {
-    this.setTour()
-  },
-  methods: {
-    ...mapActions({
-      setTour: 'tour/set'
-    })
   }
+
+  // mounted() {
+  //   this.setTour()
+  // },
+  // methods: {
+  //   ...mapActions({
+  //     setTour: 'tour/set'
+  //   })
+  // }
 }
 </script>
 

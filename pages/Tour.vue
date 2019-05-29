@@ -29,18 +29,13 @@ export default {
       title: this.title
     }
   }
+  // async fetch({ store, params }) {
+  //   await store.dispatch('tour/set')
+  // }
 }
 </script>
 
 <style lang="postcss" scoped>
-.tour {
-  background: #2f2e3e;
-  color: #fff;
-  display: flex;
-  align-items: flex-start;
-  font-size: 1.2em;
-}
-
 img {
   flex: 0 0 auto;
   height: auto;

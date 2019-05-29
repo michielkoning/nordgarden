@@ -34,6 +34,13 @@ export default {
       title: this.$t('home')
     }
   },
+  mounted() {
+    // this.$store.dispatch('posts/setPosts')
+  },
+  // async fetch({ store }) {
+  //   await store.dispatch('posts/setPosts')
+  // },
+
   head() {
     return {
       title: this.title

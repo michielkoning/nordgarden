@@ -37,7 +37,7 @@
 
 <script>
 import AppBadge from '@/components/AppBadge.vue'
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 
 export default {
   components: {
@@ -58,6 +58,14 @@ export default {
         .offsetTop
       this.arrowPosition = `translateY(${position}px)`
     }
+  },
+  mounted() {
+    this.setTours()
+  },
+  methods: {
+    ...mapActions({
+      setTours: 'tour/set'
+    })
   }
 }
 </script>

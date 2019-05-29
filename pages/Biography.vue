@@ -3,7 +3,7 @@
     <biography-intro />
     <app-loader v-if="isLoading" />
     <template v-else>
-      <div v-if="biography" class="text" v-html="biography.content.rendered" />
+      <div v-if="biography" class="text">{{ post.excerpt.rendered }}</div>
     </template>
   </app-page>
 </template>
