@@ -22,10 +22,12 @@ button {
 
 a {
   color: inherit;
-  text-decoration-skip: auto;
+  text-decoration: none;
+  box-shadow: 0 2px 0 0 var(--color-primary);
+  transition: box-shadow 0.2s ease-out;
 
   &:hover {
-    text-decoration: underline;
+    box-shadow: 0 3px 0 0 var(--color-primary);
   }
 }
 

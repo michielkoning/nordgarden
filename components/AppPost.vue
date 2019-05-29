@@ -2,8 +2,8 @@
   <li>
     <h2>{{ post.title.rendered }}</h2>
     <post-date :date="post.date" />
-
-    {{ post.excerpt.rendered }}
+    <!-- eslint-disable-next-line -->
+    <div class="text" v-html="post.excerpt.rendered"/>
     <div class="link-wrapper">
       <read-more-link :to="post.slug" :text="$t('readMore')" />
     </div>

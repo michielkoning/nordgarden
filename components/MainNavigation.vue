@@ -6,28 +6,38 @@
     <ul ref="list">
       <li>
         <nuxt-link id="menu" to="/">
-          <span class="title">{{ $t('home') }}</span>
+          <span class="title" :class="{ 'link-active': isCurrentStep(0) }">{{
+            $t('home')
+          }}</span>
         </nuxt-link>
       </li>
       <li>
         <nuxt-link to="/tour">
-          <span class="title">{{ $t('tour') }}</span>
+          <span class="title" :class="{ 'link-active': isCurrentStep(1) }">
+            {{ $t('tour') }}
+          </span>
           <app-badge :amount="list.length" />
         </nuxt-link>
       </li>
       <li>
         <nuxt-link to="/albums">
-          <span class="title">{{ $t('albums') }}</span>
+          <span class="title" :class="{ 'link-active': isCurrentStep(2) }">
+            {{ $t('albums') }}
+          </span>
         </nuxt-link>
       </li>
       <li>
         <nuxt-link to="/videos">
-          <span class="title">{{ $t('videos') }}</span>
+          <span class="title" :class="{ 'link-active': isCurrentStep(3) }">
+            {{ $t('videos') }}
+          </span>
         </nuxt-link>
       </li>
       <li>
         <nuxt-link to="/biography">
-          <span class="title">{{ $t('biography') }}</span>
+          <span class="title" :class="{ 'link-active': isCurrentStep(4) }">
+            {{ $t('biography') }}
+          </span>
         </nuxt-link>
       </li>
     </ul>
@@ -49,13 +59,16 @@ export default {
     }
   },
   computed: {
-    ...mapState('tour', ['list'])
+    ...mapState('tour', ['list']),
+    step() {
+      return this.$store.state.step
+    }
   },
   watch: {
     $route(to, from) {
-      const { step } = this.$store.state
-      const position = this.$refs.list.querySelector(`:nth-child(${step + 1}`)
-        .offsetTop
+      const position = this.$refs.list.querySelector(
+        `:nth-child(${this.step + 1}`
+      ).offsetTop
       this.arrowPosition = `translateY(${position}px)`
     }
   },
@@ -65,7 +78,10 @@ export default {
   methods: {
     ...mapActions({
       setTours: 'tour/set'
-    })
+    }),
+    isCurrentStep(step) {
+      return this.step === step
+    }
   }
 }
 </script>
@@ -86,22 +102,25 @@ li {
 }
 
 .title {
-  border-bottom: 2px solid transparent;
-  transition: border-color 0.1s ease-out;
+  transition: box-shadow 0.1s ease-out;
+  &.link-active {
+    box-shadow: 0 2px 0 0 var(--color-primary);
+  }
 }
 
 a {
+  @mixin link-reset;
+
   align-items: center;
   display: flex;
   position: relative;
   text-decoration: none;
   font-size: 1.2em;
   line-height: 1.1;
-
   &:hover {
     text-decoration: none;
     & .title {
-      border-bottom-color: var(--color-primary);
+      box-shadow: 0 3px 0 0 var(--color-primary);
     }
   }
 }

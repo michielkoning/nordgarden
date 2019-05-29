@@ -86,6 +86,10 @@ export default {
   }
 }
 
+a {
+  @mixin link-reset;
+}
+
 h1 {
   color: currentColor;
 

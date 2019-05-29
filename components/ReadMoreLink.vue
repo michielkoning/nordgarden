@@ -28,10 +28,14 @@ export default {
 <style lang="postcss" scoped>
 a {
   text-decoration: none;
-  border-bottom: 2px solid var(--color-primary);
+  box-shadow: 0 2px 0 0 var(--color-primary);
+  transition: box-shadow 0.1s ease-out;
 
-  &:hover svg {
-    transform: translate3d(0.5em, 2px, 0);
+  &:hover {
+    box-shadow: 0 3px 0 0 var(--color-primary);
+    svg {
+      transform: translate3d(0.5em, 2px, 0);
+    }
   }
 }
 

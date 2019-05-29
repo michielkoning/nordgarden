@@ -1,42 +1,46 @@
 <template>
   <app-page class="biography" :title="title">
-    <biography-intro />
     <!-- eslint-disable-next-line -->
     <div class="text" v-html="text"/>
+    <latest-posts />
   </app-page>
 </template>
 
 <script>
-import BiographyIntro from '@/components/BiographyIntro.vue'
 import AppPage from '@/components/AppPage.vue'
 import axios from 'axios'
+import LatestPosts from '@/components/LatestPosts.vue'
 
 export default {
   components: {
-    BiographyIntro,
-    AppPage
+    AppPage,
+    LatestPosts
   },
   meta: {
-    step: 4
+    step: 0
   },
   data() {
     return {
-      title: this.$t('biography'),
+      title: '',
       text: ''
     }
   },
 
   async asyncData({ params }) {
     const response = await axios.get(
-      'http://localhost:9030/wp-json/wp/v2/pages/',
+      'http://localhost:9030/wp-json/wp/v2/posts/',
       {
         params: {
-          slug: 'biography'
+          slug: params.slug
         }
       }
     )
+    const post = response.data[0]
 
-    return { text: response.data[0].content.rendered }
+    return {
+      title: post.title.rendered,
+      text: post.content.rendered
+    }
   },
   head() {
     return {

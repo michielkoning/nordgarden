@@ -96,4 +96,8 @@ ul {
   display: flex;
   margin-bottom: 1em;
 }
+
+a {
+  @mixin link-reset;
+}
 </style>
