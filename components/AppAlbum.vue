@@ -20,10 +20,9 @@
         <li>
           <a :href="album.apple" rel="noopener" target="_blank">
             <icon-apple aria-hidden="true" width="24" height="24" />
-            <span class="sr-only"
-              >{{ $t('view') }} {{ album.title }} {{ $t('on') }} Apple
-              Music</span
-            >
+            <span class="sr-only">
+              {{ $t('view') }} {{ album.title }} {{ $t('on') }} Apple Music
+            </span>
           </a>
         </li>
       </ul>

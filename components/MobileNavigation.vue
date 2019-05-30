@@ -8,7 +8,7 @@
           @click="toggleMenu(!menuIsExpanded)"
         >
           <icon-bars aria-hidden="true" width="24" height="24" />
-          {{ $t('Menu') }}
+          {{ $t('menu') }}
         </button>
         <template v-if="songs.length">
           <button v-if="isPlaying" @click="pauseAudio">
