@@ -2,7 +2,11 @@
   <li class="album">
     <h2>{{ album.title }}</h2>
     <div>
-      {{ album.image }}
+      <img
+        :src="`/images/albums/${album.image}.jpg`"
+        alt
+        :srcset="`/images/albums/${album.image}@2x.jpg 2x`"
+      />
       {{ album.releaseDate | formatDate }}
       <ul class="shops">
         <li>

@@ -1,41 +1,82 @@
 [
   {
-    "title": "Live in Dresden",
-
+    "title": "Changes",
+    "image": "changes",
     "apple": "https://itunes.apple.com/nl/album/live-in-dresden/id978762992?=&app=music&ign-mpt=uo%3D4",
     "amazon": "",
+    "releaseDate": "2019, 09, 29",
     "songlist": [
       {
-        "title": "A Brighter Kind of Blue",
+        "title": "Changes",
         "file": "/audio/1.mp3"
       },
       {
-        "title": "They're Building They're Building",
+        "title": "Side of the Road",
         "file": "/audio/2.mp3"
       },
       {
-        "title": "My Father the Sailor",
+        "title": "Wide Open Spaces",
+
         "file": "/audio/3.mp3"
       },
       {
-        "title": "All Yr. Notes",
+        "title": "I Ain’t Gonna Let Her (Let Me On No More)",
         "file": "/audio/4.mp3"
       },
       {
-        "title": "Invisibile",
+        "title": "You Must Be the Change",
         "file": "/audio/5.mp3"
       },
       {
-        "title": "Keep It Shining On The Inside",
+        "title": "The Storm",
         "file": "/audio/6.mp3"
       },
       {
-        "title": "2nd Flight",
+        "title": "Right Now (Love is Hell)",
         "file": "/audio/7.mp3"
       },
       {
-        "title": "Blessed",
+        "title": "on’t Need Nobody",
         "file": "/audio/8.mp3"
+      },
+      {
+        "title": "Hearts at Stake"
+      },
+      {
+        "title": "Come On, Come In, Come Along"
+      }
+    ]
+  },
+  {
+    "title": "Live in Dresden",
+    "image": "live-in-dresden",
+    "apple": "https://itunes.apple.com/nl/album/live-in-dresden/id978762992?=&app=music&ign-mpt=uo%3D4",
+    "amazon": "",
+    "releaseDate": "2019, 04, 01",
+    "songlist": [
+      {
+        "title": "A Brighter Kind of Blue"
+      },
+      {
+        "title": "They're Building They're Building"
+      },
+      {
+        "title": "My Father the Sailor"
+      },
+      {
+        "title": "All Yr. Notes"
+      },
+      {
+        "title": "Invisibile"
+      },
+      {
+        "title": "Keep It Shining On The Inside"
+      },
+      {
+        "title": "2nd Flight"
+      },
+      {
+        "title": "Blessed"
       },
       {
         "title": "Up the Hillside",
@@ -54,15 +95,93 @@
       {
         "title": "B Minor Tinitus"
       }
-    ],
-    "image": "<img width=\"1400\" height=\"1400\" src=\"http://localhost:9030/wp-content/uploads/2015/03/Artwork-Live-in-Dresden-Itunes-Digital.jpg.jpg\" class=\"attachment-post-thumbnail size-post-thumbnail wp-post-image\" alt=\"\" srcset=\"http://localhost:9030/wp-content/uploads/2015/03/Artwork-Live-in-Dresden-Itunes-Digital.jpg.jpg 1400w, http://localhost:9030/wp-content/uploads/2015/03/Artwork-Live-in-Dresden-Itunes-Digital.jpg-150x150.jpg 150w, http://localhost:9030/wp-content/uploads/2015/03/Artwork-Live-in-Dresden-Itunes-Digital.jpg-300x300.jpg 300w, http://localhost:9030/wp-content/uploads/2015/03/Artwork-Live-in-Dresden-Itunes-Digital.jpg-768x768.jpg 768w, http://localhost:9030/wp-content/uploads/2015/03/Artwork-Live-in-Dresden-Itunes-Digital.jpg-1024x1024.jpg 1024w\" sizes=\"(max-width: 1400px) 100vw, 1400px\" />",
-    "releaseDate": "2019, 04, 01"
+    ]
+  },
+  {
+    "title": "Dieci",
+    "image": "dieci",
+    "apple": "https://itunes.apple.com/it/album/dieci/id740768520",
+    "amazon": "",
+    "releaseDate": "2013, 11, 22",
+    "songlist": [
+      {
+        "title": "Non \\u00e8 la California"
+      },
+      {
+        "title": "La mia rivoluzione"
+      },
+      {
+        "title": "Invisibile"
+      },
+      {
+        "title": "Cerchi nell\\u2019acqua"
+      },
+      {
+        "title": "Le canzoni dei cani"
+      },
+      {
+        "title": "Miele"
+      },
+      {
+        "title": "L\\u2019abbandono"
+      },
+      {
+        "title": "Dove mi perdo"
+      },
+      {
+        "title": "La realt\\u00e0 non esiste"
+      },
+      {
+        "title": "L\\u2019invasore"
+      }
+    ]
+  },
+
+  {
+    "title": "You Gotta Get Ready",
+    "image": "you-gotta-get-ready",
+    "apple": "https://itunes.apple.com/album/you-gotta-get-ready/id502874072",
+    "amazon": "",
+    "releaseDate": "2012, 02, 24",
+    "songlist": [
+      {
+        "title": "You Gotta Get Ready"
+      },
+      {
+        "title": "Schiphol Blues"
+      },
+      {
+        "title": "Leaving"
+      },
+      {
+        "title": "Keep It Shining On The Inside"
+      },
+      {
+        "title": "These Lovesick Blues"
+      },
+      {
+        "title": "Fool To Let You Go"
+      },
+      {
+        "title": "They're Building They're Building"
+      },
+      {
+        "title": "Some Work On You"
+      },
+      {
+        "title": "Why Would She Go"
+      },
+      {
+        "title": "Carousel On The Loose"
+      }
+    ]
   },
   {
     "title": "The Path Of Love",
-
+    "image": "path-of-love",
     "apple": "http://itunes.apple.com/album/the-path-of-love/id280823276#",
     "amazon": "http://www.amazon.com/The-Path-Of-Love/dp/B001BB6KDI/ref=sr_1_3?ie=UTF8&qid=1319490739&sr=8-3",
+    "releaseDate": "2018, 05, 05",
     "songlist": [
       {
         "title": "Up the Hillside",
@@ -96,95 +215,15 @@
       {
         "title": "The Path of Love (Piano Version)"
       }
-    ],
-    "image": "<img width=\"170\" height=\"154\" src=\"http://localhost:9030/wp-content/uploads/2011/08/mzi.jyssbrlg.170x170-75.jpg\" class=\"attachment-post-thumbnail size-post-thumbnail wp-post-image\" alt=\"\" />",
-    "releaseDate": "2018, 05, 05"
+    ]
   },
-  {
-    "title": "Dieci",
 
-    "apple": "https://itunes.apple.com/it/album/dieci/id740768520",
-    "amazon": "",
-    "songlist": [
-      {
-        "title": "Non \\u00e8 la California"
-      },
-      {
-        "title": "La mia rivoluzione"
-      },
-      {
-        "title": "Invisibile"
-      },
-      {
-        "title": "Cerchi nell\\u2019acqua"
-      },
-      {
-        "title": "Le canzoni dei cani"
-      },
-      {
-        "title": "Miele"
-      },
-      {
-        "title": "L\\u2019abbandono"
-      },
-      {
-        "title": "Dove mi perdo"
-      },
-      {
-        "title": "La realt\\u00e0 non esiste"
-      },
-      {
-        "title": "L\\u2019invasore"
-      }
-    ],
-    "image": "<img width=\"1417\" height=\"1417\" src=\"http://localhost:9030/wp-content/uploads/2014/02/Cover-Dieci-web.jpg\" class=\"attachment-post-thumbnail size-post-thumbnail wp-post-image\" alt=\"\" srcset=\"http://localhost:9030/wp-content/uploads/2014/02/Cover-Dieci-web.jpg 1417w, http://localhost:9030/wp-content/uploads/2014/02/Cover-Dieci-web-150x150.jpg 150w, http://localhost:9030/wp-content/uploads/2014/02/Cover-Dieci-web-300x300.jpg 300w, http://localhost:9030/wp-content/uploads/2014/02/Cover-Dieci-web-768x768.jpg 768w, http://localhost:9030/wp-content/uploads/2014/02/Cover-Dieci-web-1024x1024.jpg 1024w\" sizes=\"(max-width: 1417px) 100vw, 1417px\" />",
-    "releaseDate": "2013, 11, 22"
-  },
-  {
-    "title": "You Gotta Get Ready",
-
-    "apple": "https://itunes.apple.com/album/you-gotta-get-ready/id502874072",
-    "amazon": "",
-    "songlist": [
-      {
-        "title": "You Gotta Get Ready"
-      },
-      {
-        "title": "Schiphol Blues"
-      },
-      {
-        "title": "Leaving"
-      },
-      {
-        "title": "Keep It Shining On The Inside"
-      },
-      {
-        "title": "These Lovesick Blues"
-      },
-      {
-        "title": "Fool To Let You Go"
-      },
-      {
-        "title": "They're Building They're Building"
-      },
-      {
-        "title": "Some Work On You"
-      },
-      {
-        "title": "Why Would She Go"
-      },
-      {
-        "title": "Carousel On The Loose"
-      }
-    ],
-    "image": "<img width=\"200\" height=\"200\" src=\"http://localhost:9030/wp-content/uploads/2012/01/cover.png\" class=\"attachment-post-thumbnail size-post-thumbnail wp-post-image\" alt=\"\" srcset=\"http://localhost:9030/wp-content/uploads/2012/01/cover.png 200w, http://localhost:9030/wp-content/uploads/2012/01/cover-150x150.png 150w\" sizes=\"(max-width: 200px) 100vw, 200px\" />",
-    "releaseDate": "2012, 02, 24"
-  },
   {
     "title": "A Brighter Kind of Blue",
-
+    "image": "a-brighter-kind-of-blue",
     "apple": "http://itunes.apple.com/album/a-brighter-kind-of-blue/id297076152",
     "amazon": "http://www.amazon.com/A-Brighter-Kind-Of-Blue/dp/B001CKO4FE/ref=sr_1_3?ie=UTF8&qid=1319049779&sr=8-3",
+    "releaseDate": "2006, 06, 26",
     "songlist": [
       {
         "title": "A Brighter Kind of Blue"
@@ -216,15 +255,14 @@
       {
         "title": "Weeks At a Time"
       }
-    ],
-    "image": "<img width=\"280\" height=\"280\" src=\"http://localhost:9030/wp-content/uploads/2011/10/51-1JFTE5vL._SL500_AA280_.jpg\" class=\"attachment-post-thumbnail size-post-thumbnail wp-post-image\" alt=\"\" srcset=\"http://localhost:9030/wp-content/uploads/2011/10/51-1JFTE5vL._SL500_AA280_.jpg 280w, http://localhost:9030/wp-content/uploads/2011/10/51-1JFTE5vL._SL500_AA280_-150x150.jpg 150w\" sizes=\"(max-width: 280px) 100vw, 280px\" />",
-    "releaseDate": "2006, 06, 26"
+    ]
   },
   {
     "title": "Terje Nordgarden",
-
+    "image": "terje-nordgarden",
     "apple": "http://itunes.apple.com/album/terje-nordgarden/id314338759",
     "amazon": "http://www.amazon.com/Terje-Nordgarden/dp/B0028JGZ1Y/ref=sr_1_1?ie=UTF8&qid=1319490481&sr=8-1",
+    "releaseDate": "2003, 05, 01",
     "songlist": [
       {
         "title": "Winter Mourning"
@@ -265,8 +303,6 @@
       {
         "title": "Paint You a Picture"
       }
-    ],
-    "image": "<img width=\"280\" height=\"280\" src=\"http://localhost:9030/wp-content/uploads/2011/10/51ShDT0KukL._SL500_AA280_.jpg\" class=\"attachment-post-thumbnail size-post-thumbnail wp-post-image\" alt=\"\" srcset=\"http://localhost:9030/wp-content/uploads/2011/10/51ShDT0KukL._SL500_AA280_.jpg 280w, http://localhost:9030/wp-content/uploads/2011/10/51ShDT0KukL._SL500_AA280_-150x150.jpg 150w\" sizes=\"(max-width: 280px) 100vw, 280px\" />",
-    "releaseDate": "2003, 05, 01"
+    ]
   }
 ]

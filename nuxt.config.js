@@ -51,7 +51,8 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/sitemap',
-    'nuxt-svg-loader'
+    'nuxt-svg-loader',
+    'nuxt-imagemin'
   ],
   /*
    ** Axios module configuration
