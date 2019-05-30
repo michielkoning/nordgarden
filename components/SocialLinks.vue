@@ -96,6 +96,7 @@ ul {
   justify-content: space-between;
   display: flex;
   margin-bottom: 1em;
+  max-width: 20em;
 }
 
 a {

@@ -88,7 +88,7 @@ li {
 }
 
 .title {
-  flex: 1 0 auto;
+  flex: 1 1 auto;
 }
 
 .button-wrapper {
