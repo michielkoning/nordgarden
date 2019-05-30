@@ -1,8 +1,8 @@
 <template>
   <app-page class="post" :title="title">
+    <post-date :date="date" />
     <!-- eslint-disable-next-line -->
-    <post-date :date="date"/>
-    <div class="text" v-html="text" />
+    <div class="text" v-html="text"/>
     <latest-posts />
   </app-page>
 </template>

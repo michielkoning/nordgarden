@@ -109,9 +109,9 @@ h1 {
   height: 100vh;
   overflow: hidden;
   z-index: var(--main-navigation);
-  border-right: 2px solid #fff;
 
   @media (--navigation-position-left) {
+    border-right: 2px solid #fff;
     background: transparent;
     overflow: visible;
     padding-top: 0;
