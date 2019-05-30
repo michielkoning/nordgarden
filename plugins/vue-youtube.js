@@ -15,4 +15,5 @@ import '@/icons/play.svg'
 import '@/icons/pause.svg'
 import '@/icons/forwards.svg'
 import '@/icons/chevron-right.svg'
+
 Vue.use(VueYoutube)

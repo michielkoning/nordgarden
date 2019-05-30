@@ -1,3 +1,4 @@
+import axios from 'axios'
 import pkg from './package'
 
 export default {
@@ -55,10 +56,7 @@ export default {
    ** Axios module configuration
    */
   axios: {
-    baseURL: 'http://localhost:9030/wp-json/',
-    defaults: {
-      baseURL: 'http://localhost:9030/wp-json/'
-    }
+    baseURL: 'http://localhost:9030/wp-json/'
   },
 
   /*
@@ -94,6 +92,15 @@ export default {
           }
         }
       }
+    }
+  },
+  sitemap: {
+    async routes(callback) {
+      const response = await axios.get(
+        'http://localhost:9030/wp-json/wp/v2/posts/?per_page=100'
+      )
+      const routes = response.data.map(post => post.slug)
+      callback(null, routes).catch(callback)
     }
   }
 }

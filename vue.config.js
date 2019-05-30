@@ -7,18 +7,20 @@ module.exports = {
       enableInSFC: false
     }
   },
-  chainWebpack: config => {
-    const svgRule = config.module.rule('svg')
+  build: {
+    extend: config => {
+      const svgRule = config.module.rules.find(rule => rule.test.test('.svg'))
 
-    // clear all existing loaders.
-    // if you don't do this, the loader below will be appended to
-    // existing loaders of the rule.
-    svgRule.uses.clear()
+      // clear all existing loaders.
+      // if you don't do this, the loader below will be appended to
+      // existing loaders of the rule.
+      svgRule.uses.clear()
 
-    // add replacement loader(s)
-    svgRule
-      .use('svg-sprite-loader')
-      .loader('svgo-loader')
-      .loader('svg-sprite-loader')
+      // add replacement loader(s)
+      svgRule
+        .use('svg-sprite-loader')
+        .loader('svgo-loader')
+        .loader('svg-sprite-loader')
+    }
   }
 }

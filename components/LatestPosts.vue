@@ -34,10 +34,6 @@ export default {
 
   mounted() {
     if (!this.list.length) this.setPosts(this.currentPage)
-    // axios.get('http://localhost:9030/wp-json/wp/v2/posts/').then(response => {
-    //   window.console.log(response)
-    //   this.setPosts(response.data)
-    // })
   },
   methods: {
     ...mapActions({

@@ -80,6 +80,7 @@
 
 <script>
 import AppIcon from '@/components/AppIcon.vue'
+import '@/icons/amazon.svg'
 
 export default {
   components: {
