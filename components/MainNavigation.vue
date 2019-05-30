@@ -6,38 +6,38 @@
     <ul ref="list">
       <li>
         <nuxt-link id="menu" to="/">
-          <span class="title" :class="{ 'link-active': isCurrentStep(0) }">
-            {{ $t('home') }}
-          </span>
+          <span class="title" :class="{ 'link-active': isCurrentStep(0) }">{{
+            $t('home')
+          }}</span>
         </nuxt-link>
       </li>
       <li>
         <nuxt-link to="/tour">
-          <span class="title" :class="{ 'link-active': isCurrentStep(1) }">{{
-            $t('tour')
-          }}</span>
+          <span class="title" :class="{ 'link-active': isCurrentStep(1) }">
+            {{ $t('tour') }}
+          </span>
           <app-badge :amount="list.length" />
         </nuxt-link>
       </li>
       <li>
         <nuxt-link to="/albums">
-          <span class="title" :class="{ 'link-active': isCurrentStep(2) }">{{
-            $t('albums')
-          }}</span>
+          <span class="title" :class="{ 'link-active': isCurrentStep(2) }">
+            {{ $t('albums') }}
+          </span>
         </nuxt-link>
       </li>
       <li>
         <nuxt-link to="/videos">
-          <span class="title" :class="{ 'link-active': isCurrentStep(3) }">{{
-            $t('videos')
-          }}</span>
+          <span class="title" :class="{ 'link-active': isCurrentStep(3) }">
+            {{ $t('videos') }}
+          </span>
         </nuxt-link>
       </li>
       <li>
         <nuxt-link to="/biography">
-          <span class="title" :class="{ 'link-active': isCurrentStep(4) }">{{
-            $t('biography')
-          }}</span>
+          <span class="title" :class="{ 'link-active': isCurrentStep(4) }">
+            {{ $t('biography') }}
+          </span>
         </nuxt-link>
       </li>
     </ul>

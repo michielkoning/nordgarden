@@ -1,9 +1,10 @@
 <template>
-  <ul class="gallery">
-    <li v-for="n in 6" :key="n">
+  <div class="gallery">
+    <h1>Gallery</h1>
+    <div v-for="n in 6" :key="n" class="image-wrapper" :class="`item-${n}`">
       <img :src="`/images/${n}.jpg`" alt />
-    </li>
-  </ul>
+    </div>
+  </div>
 </template>
 
 <style lang="postcss" scoped>
@@ -11,38 +12,45 @@
   @mixin list-reset;
 
   display: grid;
-  margin: 5em 0;
+  margin: 0 0 5em;
   grid-gap: 1em;
   /* height: 80vh; */
   grid-template-areas:
-    '. . photo-3 photo-3'
+    '.       title   photo-3 photo-3'
     'photo-1 photo-2 photo-3 photo-3'
     'photo-4 photo-4 photo-5 photo-6'
     'photo-4 photo-4 photo-5 .';
   grid-template-rows: repeat(4, 10em);
 }
 
-li:nth-child(1) {
+h1 {
+  grid-area: title;
+  align-self: end;
+  margin-bottom: 0;
+  text-align: right;
+}
+
+.item-1 {
   grid-area: photo-1;
 }
 
-li:nth-child(2) {
+.item-2 {
   grid-area: photo-2;
 }
 
-li:nth-child(3) {
+.item-3 {
   grid-area: photo-3;
 }
 
-li:nth-child(4) {
+.item-4 {
   grid-area: photo-4;
 }
 
-li:nth-child(5) {
+.item-5 {
   grid-area: photo-5;
 }
 
-li:nth-child(6) {
+.item-6 {
   grid-area: photo-6;
 }
 

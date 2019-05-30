@@ -7,7 +7,9 @@
     </section>
     <app-gallery />
     <latest-posts />
-    <div class="mood"></div>
+    <div class="mood">
+      <img src="/images/mood.jpg" alt />
+    </div>
   </app-page>
 </template>
 
@@ -51,11 +53,10 @@ export default {
 }
 
 .mood {
-  margin: 2em calc(var(--gutter) * -1) 0 -22em;
-  background: url('https://api.nordgarden.michielkoning.nl/wp-content/uploads/2012/10/Foto-1-Nordgarden-live-@-Ostello-Catania-07.10.2012.jpg')
-    no-repeat;
-  background-size: cover;
-  height: 100vh;
-  background-attachment: fixed;
+  margin: 0 calc(var(--gutter) * -1);
+}
+
+img {
+  display: block;
 }
 </style>
