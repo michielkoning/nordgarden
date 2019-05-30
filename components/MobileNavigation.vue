@@ -5,7 +5,8 @@
       :aria-expanded="menuIsExpanded"
       @click="toggleMenu(!menuIsExpanded)"
     >
-      <icon-bars aria-hidden="true" width="24" height="24" />Show menu
+      <icon-bars aria-hidden="true" width="24" height="24" />
+      {{ toggleMenuText }}
     </button>
     <template v-if="songs.length">
       <button v-if="isPlaying" @click="pauseAudio">
@@ -42,7 +43,10 @@ export default {
     ...mapState('albums', ['isPlaying']),
     ...mapGetters({
       songs: 'albums/playableSongs'
-    })
+    }),
+    toggleMenuText() {
+      return this.menuIsExpanded ? this.$t('closeMenu') : this.$t('openMenu')
+    }
   },
   watch: {
     $route() {

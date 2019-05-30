@@ -19,5 +19,7 @@
   "mainNavigation": "Main navigation",
   "readFullBiography": "Read the full biography",
   "view": "view",
-  "on": "on"
+  "on": "on",
+  "openMenu": "Open menu",
+  "closeMenu": "Close menu"
 }
