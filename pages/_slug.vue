@@ -1,8 +1,9 @@
 <template>
-  <app-page class="post" :title="title">
-    <post-date :date="date" />
+  <app-loader v-if="isLoading" />
+  <app-page v-else-if="post" class="post" :title="title">
+    <post-date :date="post.date" />
     <!-- eslint-disable-next-line -->
-    <div class="text" v-html="text"/>
+    <div class="text" v-html="post.content.rendered"/>
     <latest-posts />
   </app-page>
 </template>
@@ -12,9 +13,12 @@ import AppPage from '@/components/AppPage.vue'
 import axios from '~/plugins/axios'
 import LatestPosts from '@/components/LatestPosts.vue'
 import PostDate from '@/components/PostDate.vue'
+import AppLoader from '@/components/AppLoader.vue'
+import { mapGetters } from 'vuex'
 
 export default {
   components: {
+    AppLoader,
     AppPage,
     PostDate,
     LatestPosts
@@ -24,24 +28,46 @@ export default {
   },
   data() {
     return {
-      title: '',
-      text: '',
-      date: ''
+      isLoading: false,
+      post: '',
+      title: ''
     }
   },
 
-  async asyncData({ params }) {
-    const response = await axios.get(`wp/v2/posts/`, {
-      params: {
-        slug: params.slug
-      }
+  computed: {
+    ...mapGetters({
+      getPostBySlug: 'posts/getPostBySlug'
     })
-    const post = response.data[0]
+  },
 
-    return {
-      title: post.title.rendered,
-      text: post.content.rendered,
-      date: post.date
+  mounted() {
+    this.getPost(this.$route.params.slug)
+  },
+  methods: {
+    async getPostByApi(slug) {
+      this.isLoading = true
+      try {
+        const response = await axios.get(`wp/v2/posts/`, {
+          params: {
+            slug
+          }
+        })
+        const post = response.data[0]
+
+        this.title = post.title.rendered
+        this.post = post
+      } finally {
+        this.isLoading = false
+      }
+    },
+    getPost(slug) {
+      this.post = this.getPostBySlug(slug)
+
+      if (this.post) {
+        this.title = this.post.title.rendered
+      } else {
+        this.getPostByApi(slug)
+      }
     }
   },
   head() {

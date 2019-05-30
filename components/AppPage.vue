@@ -1,6 +1,7 @@
 <template>
   <main>
-    <h1 id="content" tabindex="-1">{{ title }}</h1>
+    <!-- eslint-disable-next-line -->
+    <h1 id="content" tabindex="-1" v-html="title"/>
     <slot />
   </main>
 </template>
