@@ -1,3 +1,5 @@
+import axios from '~/plugins/axios'
+
 export const state = () => ({
   list: [],
   isLoading: false,
@@ -34,7 +36,7 @@ export const actions = {
     commit('updateLoader', true)
 
     try {
-      const response = await this.$axios.get('wp/v2/posts/', {
+      const response = await axios.get('wp/v2/posts/', {
         params: {
           page: currentPage,
           per_page: 12
