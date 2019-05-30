@@ -44,7 +44,7 @@ export default {
       { name: 'theme-color', content: '#d7d7d7' },
 
       {
-        href: 'https://fonts.googleapis.com/css?family=ABeeZee',
+        href: 'https://fonts.googleapis.com/css?family=ABeeZee&display=swap',
         rel: 'stylesheet'
       }
     ]
