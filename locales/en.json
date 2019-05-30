@@ -2,6 +2,7 @@
   "albums": "Albums",
   "biography": "Biography",
   "contact": "Contact",
+  "close": "Close",
   "home": "Home",
   "latestPosts": "Latest posts",
   "loadMore": "Load more",
@@ -16,5 +17,7 @@
   "viewNordgardenOn": "View Nordgarden on",
   "socialMediaLinks": "Social media links",
   "mainNavigation": "Main navigation",
-  "readFullBiography": "Read the full biography"
+  "readFullBiography": "Read the full biography",
+  "view": "view",
+  "on": "on"
 }

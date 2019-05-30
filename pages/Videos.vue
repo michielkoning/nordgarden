@@ -22,7 +22,8 @@
             :src="`https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`"
             alt
           />
-          <app-icon icon="play" :title="$t('play')" />
+          <icon-play aria-hidden="true" />
+          <span class="sr-only">{{ $t('play') }}</span>
         </div>
         {{ video.title }}
       </li>
@@ -33,12 +34,12 @@
 <script>
 import EventBusUtil from '@/utils/eventBusUtil'
 import { mapState } from 'vuex'
-import AppIcon from '@/components/AppIcon.vue'
+import IconPlay from '@/assets/icons/play.svg'
 import AppPage from '@/components/AppPage.vue'
 
 export default {
   components: {
-    AppIcon,
+    IconPlay,
     AppPage
   },
   meta: {

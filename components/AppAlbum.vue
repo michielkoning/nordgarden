@@ -6,33 +6,23 @@
       {{ album.releaseDate | formatDate }}
       <ul class="shops">
         <li>
-          <a
-            v-if="album.amazon"
-            rel="noopener"
-            target="_blank"
-            :href="album.amazon"
-          >
-            <app-icon
-              icon="spotify"
-              width="24"
-              height="24"
-              :title="`${'viewNordgardenOn'} spotify`"
-            />
+          <a href="#" rel="noopener" target="_blank">
+            <icon-spotify aria-hidden="true" width="32" height="32" />
+            <span class="sr-only"
+              >{{ $t('view') }} {{ album.title }} on Spotify</span
+            >
           </a>
         </li>
         <li>
-          <a
-            v-if="album.apple"
-            rel="noopener"
-            target="_blank"
-            :href="album.apple"
-          >
-            <app-icon
-              icon="apple"
-              width="24"
-              height="24"
-              :title="`${'viewNordgardenOn'} apple`"
-            />
+          <a href="#" rel="noopener" target="_blank">
+            <icon-amazon aria-hidden="true" width="32" height="32" />
+            <span class="sr-only">{{ $t('viewNordgardenOn') }} amazon</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" rel="noopener" target="_blank">
+            <icon-apple aria-hidden="true" width="32" height="32" />
+            <span class="sr-only">{{ $t('viewNordgardenOn') }} Apple</span>
           </a>
         </li>
       </ul>
@@ -51,12 +41,16 @@
 </template>
 
 <script>
-import AppIcon from '@/components/AppIcon.vue'
 import AppSong from '@/components/AppSong.vue'
+import IconAmazon from '@/assets/icons/amazon.svg'
+import IconApple from '@/assets/icons/apple.svg'
+import IconSpotify from '@/assets/icons/spotify.svg'
 
 export default {
   components: {
-    AppIcon,
+    IconSpotify,
+    IconApple,
+    IconAmazon,
     AppSong
   },
   filters: {
@@ -112,6 +106,8 @@ h2 {
 }
 
 a {
+  @mixin link-reset;
+
   flex: 0 0 1em;
   margin-right: 0.5em;
 }

@@ -11,7 +11,8 @@
         <header>
           <h2 id="modal" class="title">{{ title }}</h2>
           <button type="button" class="close" @click="close">
-            <app-icon icon="close" title="Sluiten" />
+            <icon-close aria-hidden="true" width="32" height="32" />
+            <span class="sr-only">{{ $t('close') }}</span>
           </button>
         </header>
         <div class="content" data-qa="modal-content">
@@ -23,12 +24,12 @@
 </template>
 
 <script>
-import AppIcon from '@/components/AppIcon.vue'
+import IconClose from '@/assets/icons/close.svg'
 
 export default {
   name: 'Modal',
   components: {
-    AppIcon
+    IconClose
   },
   props: {
     title: {

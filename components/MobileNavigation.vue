@@ -8,10 +8,12 @@
     </button>
     <template v-if="songs.length">
       <button v-if="isPlaying" @click="pauseAudio">
-        <app-icon icon="pause" :title="$t('pause')" />
+        <icon-pause width="24" height="24" aria-hidden="true" />
+        <span class="sr-only">{{ $t('pause') }}</span>
       </button>
       <button v-else @click="playAudio()">
-        <app-icon icon="play" :title="$t('play')" />
+        <icon-play width="24" height="24" aria-hidden="true" />
+        <span class="sr-only">{{ $t('play') }}</span>
       </button>
     </template>
   </div>
@@ -20,11 +22,13 @@
 <script>
 import EventBusUtil from '@/utils/eventBusUtil'
 import { mapState, mapGetters } from 'vuex'
-import AppIcon from '@/components/AppIcon.vue'
+import IconPlay from '@/assets/icons/play.svg'
+import IconPause from '@/assets/icons/pause.svg'
 
 export default {
   components: {
-    AppIcon
+    IconPlay,
+    IconPause
   },
   data() {
     return {

@@ -1,16 +1,16 @@
 <template>
   <nuxt-link :to="to">
     {{ text }}
-    <app-icon icon="chevron-right" width="16" height="16" />
+    <icon-chevron-right aria-hidden="true" width="16" height="16" />
   </nuxt-link>
 </template>
 
 <script>
-import AppIcon from '@/components/AppIcon.vue'
+import IconChevronRight from '@/assets/icons/chevron-right.svg'
 
 export default {
   components: {
-    AppIcon
+    IconChevronRight
   },
   props: {
     to: {
@@ -27,20 +27,13 @@ export default {
 
 <style lang="postcss" scoped>
 a {
-  text-decoration: none;
-  box-shadow: 0 2px 0 0 var(--color-primary);
-  transition: box-shadow 0.1s ease-out;
-
-  &:hover {
-    box-shadow: 0 3px 0 0 var(--color-primary);
-    svg {
-      transform: translate3d(0.5em, 2px, 0);
-    }
+  &:hover svg {
+    margin-left: 0.25em;
   }
 }
 
 svg {
-  transition: all 0.2s ease-out;
+  transition: margin 0.2s ease-out;
   transform: translate3d(2px, 2px, 0);
 }
 </style>

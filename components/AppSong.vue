@@ -7,10 +7,12 @@
           class="btn-play"
           @click="play(song)"
         >
-          <app-icon icon="play" :title="$t('play')" width="20" height="20" />
+          <icon-play width="24" height="24" aria-hidden="true" />
+          <span class="sr-only">{{ $t('play') }}</span>
         </button>
         <button v-else class="btn-pause" @click="pause">
-          <app-icon icon="pause" :title="$t('pause')" width="20" height="20" />
+          <icon-pause width="24" height="24" aria-hidden="true" />
+          <span class="sr-only">{{ $t('pause') }}</span>
         </button>
       </template>
     </div>
@@ -32,11 +34,13 @@ import { mapActions, mapState } from 'vuex'
 import EventBusUtil from '@/utils/eventBusUtil'
 
 import AppModal from '@/components/AppModal.vue'
-import AppIcon from '@/components/AppIcon.vue'
+import IconPlay from '@/assets/icons/play.svg'
+import IconPause from '@/assets/icons/pause.svg'
 
 export default {
   components: {
-    AppIcon,
+    IconPlay,
+    IconPause,
     AppModal
   },
   props: {

@@ -1,13 +1,16 @@
 <template>
   <div class="player">
     <button v-if="isPlaying" :disabled="!songs.length" @click="pause">
-      <app-icon icon="pause" :title="$t('pause')" />
+      <icon-pause width="24" height="24" aria-hidden="true" />
+      <span class="sr-only">{{ $t('pause') }}</span>
     </button>
     <button v-else :disabled="!songs.length" @click="play">
-      <app-icon icon="play" :title="$t('play')" />
+      <icon-play width="24" height="24" aria-hidden="true" />
+      <span class="sr-only">{{ $t('play') }}</span>
     </button>
     <button :disabled="songs.length < 1" @click="next">
-      <app-icon icon="forwards" :title="$t('next')" />
+      <icon-forwards width="24" height="24" aria-hidden="true" />
+      <span class="sr-only">{{ $t('next') }}</span>
     </button>
     <div v-show="songs.length" ref="progress" class="progress" @click="scrub">
       <div class="bar" :style="{ width: progress }"></div>
@@ -28,11 +31,16 @@
 <script>
 import EventBusUtil from '@/utils/eventBusUtil'
 import { mapActions, mapGetters, mapState } from 'vuex'
-import AppIcon from '@/components/AppIcon.vue'
+
+import IconPlay from '@/assets/icons/play.svg'
+import IconPause from '@/assets/icons/pause.svg'
+import IconForwards from '@/assets/icons/forwards.svg'
 
 export default {
   components: {
-    AppIcon
+    IconPlay,
+    IconPause,
+    IconForwards
   },
   data() {
     return {

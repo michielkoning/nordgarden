@@ -6,72 +6,39 @@
     <ul class="social-links">
       <li>
         <a href="#" rel="noopener" target="_blank">
-          <app-icon
-            icon="spotify"
-            width="32"
-            height="32"
-            :title="`${'viewNordgardenOn'} spotify`"
-          />
+          <icon-spotify aria-hidden="true" width="32" height="32" />
+          <span class="sr-only">{{ $t('viewNordgardenOn') }} spotify</span>
         </a>
       </li>
       <li>
         <a href="#" rel="noopener" target="_blank">
-          <app-icon
-            icon="apple"
-            width="32"
-            height="32"
-            :title="`${'viewNordgardenOn'} Apple`"
-          />
+          <icon-apple aria-hidden="true" width="32" height="32" />
+          <span class="sr-only">{{ $t('viewNordgardenOn') }} Apple</span>
         </a>
       </li>
       <li>
         <a href="#" rel="noopener" target="_blank">
-          <app-icon
-            icon="youtube"
-            width="32"
-            height="32"
-            :title="`${'viewNordgardenOn'} youtube`"
-          />
+          <icon-youtube aria-hidden="true" width="32" height="32" />
+          <span class="sr-only">{{ $t('viewNordgardenOn') }} youtube</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="#" rel="noopener" target="_blank">
+          <icon-facebook aria-hidden="true" width="32" height="32" />
+          <span class="sr-only">{{ $t('viewNordgardenOn') }} facebook</span>
         </a>
       </li>
       <li>
         <a href="#" rel="noopener" target="_blank">
-          <app-icon
-            icon="last.fm"
-            width="32"
-            height="32"
-            :title="`${'viewNordgardenOn'} last.fm`"
-          />
+          <icon-twitter aria-hidden="true" width="32" height="32" />
+          <span class="sr-only">{{ $t('viewNordgardenOn') }} twitter</span>
         </a>
       </li>
       <li>
         <a href="#" rel="noopener" target="_blank">
-          <app-icon
-            icon="facebook"
-            width="32"
-            height="32"
-            :title="`${'viewNordgardenOn'} facebook`"
-          />
-        </a>
-      </li>
-      <li>
-        <a href="#" rel="noopener" target="_blank">
-          <app-icon
-            icon="twitter"
-            width="32"
-            height="32"
-            :title="`${'viewNordgardenOn'} twitter`"
-          />
-        </a>
-      </li>
-      <li>
-        <a href="#" rel="noopener" target="_blank">
-          <app-icon
-            icon="linkedin"
-            width="32"
-            height="32"
-            :title="`${'viewNordgardenOn'} LinkedIn`"
-          />
+          <icon-linkedin aria-hidden="true" width="32" height="32" />
+          <span class="sr-only">{{ $t('viewNordgardenOn') }} LinkedIn</span>
         </a>
       </li>
     </ul>
@@ -79,12 +46,21 @@
 </template>
 
 <script>
-import AppIcon from '@/components/AppIcon.vue'
-import '@/icons/amazon.svg'
+import IconApple from '@/assets/icons/apple.svg'
+import IconYoutube from '@/assets/icons/youtube.svg'
+import IconFacebook from '@/assets/icons/facebook.svg'
+import IconTwitter from '@/assets/icons/twitter.svg'
+import IconLinkedin from '@/assets/icons/linkedin.svg'
+import IconSpotify from '@/assets/icons/spotify.svg'
 
 export default {
   components: {
-    AppIcon
+    IconSpotify,
+    IconApple,
+    IconYoutube,
+    IconFacebook,
+    IconTwitter,
+    IconLinkedin
   }
 }
 </script>
