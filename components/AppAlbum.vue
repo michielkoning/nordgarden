@@ -7,11 +7,11 @@
         alt
         :srcset="`/images/albums/${album.image}@2x.jpg 2x`"
       />
-      {{ album.releaseDate | formatDate }}
+      <post-date :date="album.releaseDate" />
       <ul class="shops">
         <li>
           <a :href="album.spotify" rel="noopener" target="_blank">
-            <icon-spotify aria-hidden="true" width="32" height="32" />
+            <icon-spotify aria-hidden="true" width="24" height="24" />
             <span class="sr-only"
               >{{ $t('view') }} {{ album.title }} {{ $t('on') }} Spotify</span
             >
@@ -19,10 +19,11 @@
         </li>
         <li>
           <a :href="album.apple" rel="noopener" target="_blank">
-            <icon-apple aria-hidden="true" width="32" height="32" />
-            <span class="sr-only">
-              {{ $t('view') }} {{ album.title }} {{ $t('on') }} Apple Music
-            </span>
+            <icon-apple aria-hidden="true" width="24" height="24" />
+            <span class="sr-only"
+              >{{ $t('view') }} {{ album.title }} {{ $t('on') }} Apple
+              Music</span
+            >
           </a>
         </li>
       </ul>
@@ -44,18 +45,14 @@
 import AppSong from '@/components/AppSong.vue'
 import IconApple from '@/assets/icons/apple.svg'
 import IconSpotify from '@/assets/icons/spotify.svg'
+import PostDate from '@/components/PostDate.vue'
 
 export default {
   components: {
     IconSpotify,
     IconApple,
-    AppSong
-  },
-  filters: {
-    formatDate(value) {
-      const date = new Date(value)
-      return `${date.getDate()}.${date.getMonth() + 1}.${date.getFullYear()}`
-    }
+    AppSong,
+    PostDate
   },
   props: {
     album: {
@@ -78,16 +75,23 @@ h2 {
 
 .album {
   display: grid;
-  grid-gap: var(--gutter);
+  grid-gap: 1em;
   margin-bottom: 2em;
 
   @media (--viewport-sm) {
     grid-template-columns: 10em auto;
   }
 }
->>> img {
+
+time {
+  margin-bottom: 0.25em;
+  display: block;
+}
+
+img {
   display: block;
   max-width: 10em;
+  margin-bottom: 0.25em;
   width: 100%;
   @media (--viewport-sm) {
     max-width: none;

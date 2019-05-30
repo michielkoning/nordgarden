@@ -38,6 +38,8 @@ li {
 
 time {
   order: -1;
+  font-size: 0.9em;
+  color: var(--color-gray);
 }
 
 .link-wrapper {

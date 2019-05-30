@@ -18,10 +18,3 @@ export default {
   }
 }
 </script>
-
-<style lang="postcss" scoped>
-time {
-  font-size: 0.9em;
-  color: var(--color-gray);
-}
-</style>
