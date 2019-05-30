@@ -66,7 +66,7 @@ export default {
       setPlayState: 'albums/setPlayState'
     }),
     isPlayingCurrentSong(song) {
-      return song === this.currentSong && this.isPlaying
+      return song.file === this.currentSong.file && this.isPlaying
     },
     play(song) {
       this.selectSong(song).then(() => {

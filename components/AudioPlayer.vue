@@ -76,7 +76,7 @@ export default {
       this.player.play()
     },
     next() {
-      this.selectNextSong().then(() => {
+      this.selectNextSong(this.currentSong).then(() => {
         this.player.play()
       })
     },

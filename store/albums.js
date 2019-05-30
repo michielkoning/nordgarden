@@ -7,9 +7,9 @@ export const state = () => ({
 })
 
 export const getters = {
-  playableSongs: state => {
+  playableSongs: () => {
     let newArray = []
-    state.list.forEach(album => {
+    albums.forEach(album => {
       const songs = album.songlist.filter(song => song.file !== undefined)
       newArray = [...newArray, ...songs]
     })
@@ -19,29 +19,25 @@ export const getters = {
 
 export const mutations = {
   selectSong: (state, payload) => {
-    const newState = state
-    newState.currentSong = payload
+    if (payload) state.currentSong = payload
   },
   setPlayState: (state, payload) => {
-    const newState = state
-    newState.isPlaying = payload
+    state.isPlaying = payload
   }
 }
 
 export const actions = {
-  selectSong: ({ commit }, payload) => {
-    const songs = getters.playableSongs(state)
-    const song = songs.find(item => item === payload)
+  selectSong({ commit }, payload) {
+    const songs = getters.playableSongs()
+    const song = songs.find(item => item.file === payload.file)
     commit('selectSong', song)
   },
   setPlayState: ({ commit }, payload) => {
     commit('setPlayState', payload)
   },
-  selectNextSong: ({ commit }) => {
-    const songs = getters.playableSongs(state)
-    const currentSong = state.currentSong
+  selectNextSong({ commit }, currentSong) {
+    const songs = getters.playableSongs()
     const currentSongIndex = songs.findIndex(song => song === currentSong)
-
     let nextSongIndex
     if (currentSongIndex + 1 >= songs.length) {
       nextSongIndex = 0
