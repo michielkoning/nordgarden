@@ -16,8 +16,8 @@
   grid-gap: 1em;
   /* height: 80vh; */
   grid-template-areas:
-    'photo-3 photo-3 photo-3 photo-2  '
-    'photo-4 photo-4 photo-4 photo-4';
+    'photo-3 photo-3 photo-2  '
+    'photo-4 photo-4 photo-4';
   grid-template-rows: repeat(2, 1fr);
 
   @media (--viewport-xlg) {

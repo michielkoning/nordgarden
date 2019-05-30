@@ -1,7 +1,8 @@
 <template>
-  <app-page class="biography" :title="title">
+  <app-page class="post" :title="title">
     <!-- eslint-disable-next-line -->
-    <div class="text" v-html="text"/>
+    <post-date :date="date"/>
+    <div class="text" v-html="text" />
     <latest-posts />
   </app-page>
 </template>
@@ -10,10 +11,12 @@
 import AppPage from '@/components/AppPage.vue'
 import axios from '~/plugins/axios'
 import LatestPosts from '@/components/LatestPosts.vue'
+import PostDate from '@/components/PostDate.vue'
 
 export default {
   components: {
     AppPage,
+    PostDate,
     LatestPosts
   },
   meta: {
@@ -22,7 +25,8 @@ export default {
   data() {
     return {
       title: '',
-      text: ''
+      text: '',
+      date: ''
     }
   },
 
@@ -36,7 +40,8 @@ export default {
 
     return {
       title: post.title.rendered,
-      text: post.content.rendered
+      text: post.content.rendered,
+      date: post.date
     }
   },
   head() {
@@ -50,5 +55,16 @@ export default {
 <style lang="postcss" scoped>
 .text {
   max-width: 60ch;
+}
+
+time {
+  font-size: 0.9em;
+  color: var(--color-gray);
+  margin-bottom: 1em;
+  display: block;
+}
+
+>>> h1 {
+  margin-bottom: 0.25rem;
 }
 </style>
