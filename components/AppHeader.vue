@@ -72,12 +72,13 @@ export default {
 
 <style lang="postcss" scoped>
 .content {
-  padding: var(--gutter);
+  padding: 5em var(--gutter) var(--gutter);
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   max-height: 80vh;
 
   @media (--navigation-position-left) {
+    padding: var(--gutter);
     overflow: visible;
     transform: translateY(0);
     display: block !important;
