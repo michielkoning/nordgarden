@@ -1,9 +1,12 @@
 import axios from 'axios'
 import pkg from './package'
+const baseUrl = 'https://api.nordgarden.michielkoning.nl/wp-json/'
 
 export default {
   mode: 'universal',
-
+  env: {
+    baseUrl
+  },
   /*
    ** Headers of the page
    */
@@ -41,24 +44,23 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/i18n.js', '~/plugins/vue-youtube'],
+  plugins: ['~/plugins/i18n.js', '~/plugins/vue-youtube', '~/plugins/axios'],
 
   /*
    ** Nuxt.js modules
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/sitemap',
     'nuxt-svg-loader',
-    'nuxt-imagemin'
+    '@nuxtjs/axios'
   ],
   /*
    ** Axios module configuration
    */
   axios: {
-    baseURL: 'https://api.nordgarden.michielkoning.nl/wp-json/'
+    baseURL: baseUrl
   },
 
   /*
@@ -98,9 +100,7 @@ export default {
   },
   sitemap: {
     async routes(callback) {
-      const response = await axios.get(
-        'https://api.nordgarden.michielkoning.nl/wp-json/wp/v2/posts/?per_page=100'
-      )
+      const response = await axios.get(`${baseUrl}wp/v2/posts/?per_page=100`)
       const routes = response.data.map(post => post.slug)
       callback(null, routes).catch(callback)
     }

@@ -9,7 +9,7 @@
 <script>
 import BiographyIntro from '@/components/BiographyIntro.vue'
 import AppPage from '@/components/AppPage.vue'
-import axios from 'axios'
+import axios from '~/plugins/axios'
 
 export default {
   components: {
@@ -27,14 +27,11 @@ export default {
   },
 
   async asyncData({ params }) {
-    const response = await axios.get(
-      'https://api.nordgarden.michielkoning.nl/wp-json/wp/v2/pages/',
-      {
-        params: {
-          slug: 'biography'
-        }
+    const response = await axios.get(`wp/v2/pages/`, {
+      params: {
+        slug: 'biography'
       }
-    )
+    })
 
     return { text: response.data[0].content.rendered }
   },

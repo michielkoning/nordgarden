@@ -8,7 +8,7 @@
 
 <script>
 import AppPage from '@/components/AppPage.vue'
-import axios from 'axios'
+import axios from '~/plugins/axios'
 import LatestPosts from '@/components/LatestPosts.vue'
 
 export default {
@@ -27,14 +27,11 @@ export default {
   },
 
   async asyncData({ params }) {
-    const response = await axios.get(
-      'https://api.nordgarden.michielkoning.nl/wp-json/wp/v2/posts/',
-      {
-        params: {
-          slug: params.slug
-        }
+    const response = await axios.get(`wp/v2/posts/`, {
+      params: {
+        slug: params.slug
       }
-    )
+    })
     const post = response.data[0]
 
     return {
