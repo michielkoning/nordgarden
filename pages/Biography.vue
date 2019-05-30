@@ -28,7 +28,7 @@ export default {
 
   async asyncData({ params }) {
     const response = await axios.get(
-      'http://localhost:9030/wp-json/wp/v2/pages/',
+      'https://api.nordgarden.michielkoning.nl/wp-json/wp/v2/pages/',
       {
         params: {
           slug: 'biography'

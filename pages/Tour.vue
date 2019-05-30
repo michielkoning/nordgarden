@@ -3,7 +3,7 @@
     <div class="text">
       <tour-dates />
     </div>
-    <img src="/img/tour.jpg" alt />
+    <img src="/images/tour.jpg" alt />
   </app-page>
 </template>
 
@@ -29,9 +29,6 @@ export default {
       title: this.title
     }
   }
-  // async fetch({ store, params }) {
-  //   await store.dispatch('tour/set')
-  // }
 }
 </script>
 

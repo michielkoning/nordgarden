@@ -34,12 +34,6 @@ export default {
       title: this.$t('home')
     }
   },
-  mounted() {
-    // this.$store.dispatch('posts/setPosts')
-  },
-  // async fetch({ store }) {
-  //   await store.dispatch('posts/setPosts')
-  // },
 
   head() {
     return {
@@ -58,7 +52,7 @@ export default {
 
 .mood {
   margin: 2em -2em 0 -22em;
-  background: url('http://localhost:9030/wp-content/uploads/2012/10/Foto-1-Nordgarden-live-@-Ostello-Catania-07.10.2012.jpg')
+  background: url('https://api.nordgarden.michielkoning.nl/wp-content/uploads/2012/10/Foto-1-Nordgarden-live-@-Ostello-Catania-07.10.2012.jpg')
     no-repeat;
   background-size: cover;
   height: 100vh;
