@@ -72,7 +72,7 @@ export default {
 
 <style lang="postcss" scoped>
 .content {
-  padding: 5em var(--gutter) var(--gutter);
+  padding: 5em var(--gutter) 0;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   max-height: 80vh;

@@ -98,6 +98,7 @@ export default {
 
 .btn {
   padding: 0.5em 0.5em;
+  width: 9em;
   font-size: 0.8em;
   display: flex;
   align-items: center;
