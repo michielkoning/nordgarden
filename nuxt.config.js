@@ -99,11 +99,19 @@ export default {
       }
     }
   },
-  sitemap: {
-    async routes(callback) {
+  generate: {
+    async routes() {
       const response = await axios.get(`${baseUrl}wp/v2/posts/?per_page=100`)
-      const routes = response.data.map(post => post.slug)
-      callback(null, routes).catch(callback)
+      const posts = response.data.map(post => post.slug)
+      const urls = ['biography', ...posts]
+
+      return urls
+    }
+  },
+  sitemap: {
+    async routes() {
+      const response = await axios.get(`${baseUrl}wp/v2/posts/?per_page=100`)
+      return response.data.map(post => post.slug)
     }
   }
 }
