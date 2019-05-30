@@ -71,4 +71,8 @@ ul {
   display: flex;
   justify-content: center;
 }
+
+.btn {
+  width: 100%;
+}
 </style>

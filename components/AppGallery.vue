@@ -1,7 +1,7 @@
 <template>
   <div class="gallery">
-    <h1>Gallery</h1>
-    <div v-for="n in 6" :key="n" class="image-wrapper" :class="`item-${n}`">
+    <h1 class="sr-only">Gallery</h1>
+    <div v-for="n in 4" :key="n" class="image-wrapper" :class="`item-${n}`">
       <img :src="`/images/${n}.jpg`" alt />
     </div>
   </div>
@@ -12,14 +12,14 @@
   @mixin list-reset;
 
   display: grid;
-  margin: 0 0 5em;
+  margin: 2em 0 5em;
   grid-gap: 1em;
   /* height: 80vh; */
   grid-template-areas:
-    '.       title   photo-3 photo-3'
-    'photo-1 photo-2 photo-3 photo-3'
-    'photo-4 photo-4 photo-5 photo-6'
-    'photo-4 photo-4 photo-5 .';
+    'photo-3 photo-3 photo-3 photo-2  '
+    'photo-3 photo-3 photo-3 photo-2 '
+    'photo-4 photo-4 photo-4 photo-4'
+    'photo-4 photo-4 photo-4 photo-4';
   grid-template-rows: repeat(4, 10em);
 }
 
@@ -27,10 +27,10 @@ h1 {
   grid-area: title;
   align-self: end;
   margin-bottom: 0;
-  text-align: right;
 }
 
 .item-1 {
+  display: none;
   grid-area: photo-1;
 }
 
