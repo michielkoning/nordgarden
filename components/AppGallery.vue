@@ -1,11 +1,26 @@
 <template>
   <section class="gallery" aria-labelledby="gallery-title">
     <h1 id="gallery-title" class="sr-only">{{ $t('gallery') }}</h1>
-    <div v-for="n in 4" :key="n" class="image-wrapper" :class="`item-${n}`">
+    <div
+      v-for="n in images"
+      :key="n"
+      class="image-wrapper"
+      :class="`item-${n}`"
+    >
       <img :src="`/images/${n}.jpg`" alt />
     </div>
   </section>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      images: ['2', '3', '4']
+    }
+  }
+}
+</script>
 
 <style lang="postcss" scoped>
 .gallery {
