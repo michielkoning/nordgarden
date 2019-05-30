@@ -109,12 +109,13 @@ h1 {
   height: 100vh;
   overflow: hidden;
   z-index: var(--main-navigation);
+  padding: 0 env(safe-area-inset-right) 0 env(safe-area-inset-left);
 
   @media (--navigation-position-left) {
+    padding: 0;
     border-right: 2px solid #fff;
     background: transparent;
     overflow: visible;
-    padding-top: 0;
     display: block !important;
     width: var(--width-navigation-left);
   }
