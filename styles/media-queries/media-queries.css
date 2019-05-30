@@ -2,6 +2,7 @@
 @custom-media --viewport-sm (width >= 640px);
 @custom-media --viewport-md (width >= 1024px);
 @custom-media --viewport-lg (width >= 1240px);
+@custom-media --viewport-xlg (width >= 1440px);
 @custom-media --portrait (orientation: portrait);
 @custom-media --landscape (orientation: landscape);
 @custom-media --navigation-position-left (width >= 1024px);

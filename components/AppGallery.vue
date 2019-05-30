@@ -17,10 +17,13 @@
   /* height: 80vh; */
   grid-template-areas:
     'photo-3 photo-3 photo-3 photo-2  '
-    'photo-3 photo-3 photo-3 photo-2 '
-    'photo-4 photo-4 photo-4 photo-4'
     'photo-4 photo-4 photo-4 photo-4';
-  grid-template-rows: repeat(4, 10em);
+  grid-template-rows: repeat(2, 1fr);
+
+  @media (--viewport-xlg) {
+    grid-template-areas: 'photo-3 photo-3 photo-2 photo-4 photo-4';
+    grid-template-rows: 1fr;
+  }
 }
 
 h1 {
@@ -55,9 +58,13 @@ h1 {
 }
 
 img {
+  height: 40vw;
   display: block;
-  height: 100%;
   object-fit: cover;
   width: 100%;
+
+  @media (--viewport-xlg) {
+    height: 20vw;
+  }
 }
 </style>
