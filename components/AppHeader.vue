@@ -99,6 +99,7 @@ h1 {
 }
 
 .bg {
+  background: var(--color-bg-page);
   position: fixed;
   top: 0;
   left: 0;
@@ -110,6 +111,7 @@ h1 {
   border-right: 2px solid #fff;
 
   @media (--navigation-position-left) {
+    background: transparent;
     overflow: visible;
     padding-top: 0;
     display: block !important;

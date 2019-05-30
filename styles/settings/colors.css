@@ -14,6 +14,8 @@
   --color-primary-dark: #449729;
   /*  */
   --color-bg-page: #2f2e3e;
+  --color-secondary: #2f2e3e;
+
   --color-navigation: #2f2e3e;
   --text-color: var(--color-white);
 }

@@ -1,6 +1,7 @@
 <template>
   <li>
-    <h2>{{ post.title.rendered }}</h2>
+    <!-- eslint-disable-next-line -->
+    <h2 v-html="post.title.rendered"/>
     <post-date :date="post.date" />
     <!-- eslint-disable-next-line -->
     <div class="text" v-html="post.excerpt.rendered"/>

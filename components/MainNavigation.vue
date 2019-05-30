@@ -95,10 +95,11 @@ ul {
   @mixin list-reset;
 
   margin-bottom: 1em;
-}
+  border-top: 1px dashed var(--color-gray);
 
-li {
-  padding: 0.25em 0;
+  @media (--navigation-position-left) {
+    border-top: 0;
+  }
 }
 
 .title {
@@ -117,38 +118,47 @@ a {
   text-decoration: none;
   font-size: 1.2em;
   line-height: 1.1;
+  padding: 0.45em 0;
+  border-bottom: 1px dashed var(--color-gray);
+
   &:hover {
     text-decoration: none;
     & .title {
       box-shadow: 0 3px 0 0 var(--color-primary);
     }
   }
+  @media (--navigation-position-left) {
+    border-bottom: 0;
+    padding: 0.25em 0;
+  }
 }
 
 .arrow {
-  display: block;
-  position: absolute;
-  top: 0;
-  right: -2em;
-  transition: transform 0.2s ease-out;
-
-  &::after {
-    position: absolute;
+  @media (--navigation-position-left) {
     display: block;
-    content: '';
-    border-top: 0.75em solid transparent;
-    border-bottom: 0.75em solid transparent;
-    border-left: 1em solid var(--color-navigation);
-  }
-
-  &::before {
     position: absolute;
-    display: block;
-    content: '';
-    margin-top: -3px;
-    border-top: calc(0.75em + 3px) solid transparent;
-    border-bottom: calc(0.75em + 3px) solid transparent;
-    border-left: calc(1em + 6px) solid #fff;
+    top: 0;
+    right: -2em;
+    transition: transform 0.2s ease-out;
+
+    &::after {
+      position: absolute;
+      display: block;
+      content: '';
+      border-top: 0.75em solid transparent;
+      border-bottom: 0.75em solid transparent;
+      border-left: 1em solid var(--color-navigation);
+    }
+
+    &::before {
+      position: absolute;
+      display: block;
+      content: '';
+      margin-top: -3px;
+      border-top: calc(0.75em + 3px) solid transparent;
+      border-bottom: calc(0.75em + 3px) solid transparent;
+      border-left: calc(1em + 6px) solid #fff;
+    }
   }
 }
 </style>
