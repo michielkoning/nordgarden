@@ -10,23 +10,20 @@
       {{ album.releaseDate | formatDate }}
       <ul class="shops">
         <li>
-          <a href="#" rel="noopener" target="_blank">
+          <a :href="album.spotify" rel="noopener" target="_blank">
             <icon-spotify aria-hidden="true" width="32" height="32" />
             <span class="sr-only"
-              >{{ $t('view') }} {{ album.title }} on Spotify</span
+              >{{ $t('view') }} {{ album.title }} {{ $t('on') }} Spotify</span
             >
           </a>
         </li>
         <li>
-          <a href="#" rel="noopener" target="_blank">
-            <icon-amazon aria-hidden="true" width="32" height="32" />
-            <span class="sr-only">{{ $t('viewNordgardenOn') }} amazon</span>
-          </a>
-        </li>
-        <li>
-          <a href="#" rel="noopener" target="_blank">
+          <a :href="album.apple" rel="noopener" target="_blank">
             <icon-apple aria-hidden="true" width="32" height="32" />
-            <span class="sr-only">{{ $t('viewNordgardenOn') }} Apple</span>
+            <span class="sr-only"
+              >{{ $t('view') }} {{ album.title }} {{ $t('on') }} Apple
+              Music</span
+            >
           </a>
         </li>
       </ul>
@@ -46,7 +43,6 @@
 
 <script>
 import AppSong from '@/components/AppSong.vue'
-import IconAmazon from '@/assets/icons/amazon.svg'
 import IconApple from '@/assets/icons/apple.svg'
 import IconSpotify from '@/assets/icons/spotify.svg'
 
@@ -54,7 +50,6 @@ export default {
   components: {
     IconSpotify,
     IconApple,
-    IconAmazon,
     AppSong
   },
   filters: {

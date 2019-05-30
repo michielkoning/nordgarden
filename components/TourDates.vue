@@ -47,6 +47,7 @@ li {
 
 .date {
   flex: 0 0 3em;
+  text-align: right;
 }
 
 .city,

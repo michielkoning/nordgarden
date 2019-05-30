@@ -1,7 +1,7 @@
 <template>
   <ul class="gallery">
     <li v-for="n in 6" :key="n">
-      <img :src="`/img/${n}.jpg`" alt />
+      <img :src="`/images/${n}.jpg`" alt />
     </li>
   </ul>
 </template>

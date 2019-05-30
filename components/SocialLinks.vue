@@ -5,38 +5,62 @@
     </h2>
     <ul class="social-links">
       <li>
-        <a href="#" rel="noopener" target="_blank">
+        <a
+          href="https://open.spotify.com/artist/2yLSBMXR6j2svRJtsIn2Cz"
+          rel="noopener"
+          target="_blank"
+        >
           <icon-spotify aria-hidden="true" width="32" height="32" />
           <span class="sr-only">{{ $t('viewNordgardenOn') }} spotify</span>
         </a>
       </li>
       <li>
-        <a href="#" rel="noopener" target="_blank">
+        <a
+          href="https://music.apple.com/nl/artist/nordgarden/165768114"
+          rel="noopener"
+          target="_blank"
+        >
           <icon-apple aria-hidden="true" width="32" height="32" />
           <span class="sr-only">{{ $t('viewNordgardenOn') }} Apple</span>
         </a>
       </li>
       <li>
-        <a href="#" rel="noopener" target="_blank">
+        <a
+          href="https://www.youtube.com/channel/UChYwZ-Z9ub3gh0lYcP8Nfag"
+          rel="noopener"
+          target="_blank"
+        >
           <icon-youtube aria-hidden="true" width="32" height="32" />
           <span class="sr-only">{{ $t('viewNordgardenOn') }} youtube</span>
         </a>
       </li>
 
       <li>
-        <a href="#" rel="noopener" target="_blank">
+        <a
+          href="https://www.facebook.com/NordgardenOfficial/"
+          rel="noopener"
+          target="_blank"
+        >
           <icon-facebook aria-hidden="true" width="32" height="32" />
           <span class="sr-only">{{ $t('viewNordgardenOn') }} facebook</span>
         </a>
       </li>
       <li>
-        <a href="#" rel="noopener" target="_blank">
+        <a
+          href="https://twitter.com/TerjeNordgarden"
+          rel="noopener"
+          target="_blank"
+        >
           <icon-twitter aria-hidden="true" width="32" height="32" />
           <span class="sr-only">{{ $t('viewNordgardenOn') }} twitter</span>
         </a>
       </li>
       <li>
-        <a href="#" rel="noopener" target="_blank">
+        <a
+          href="https://www.linkedin.com/in/terje-nordgarden-2460364/"
+          rel="noopener"
+          target="_blank"
+        >
           <icon-linkedin aria-hidden="true" width="32" height="32" />
           <span class="sr-only">{{ $t('viewNordgardenOn') }} LinkedIn</span>
         </a>

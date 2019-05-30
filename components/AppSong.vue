@@ -7,11 +7,11 @@
           class="btn-play"
           @click="play(song)"
         >
-          <icon-play width="24" height="24" aria-hidden="true" />
+          <icon-play width="20" height="20" aria-hidden="true" />
           <span class="sr-only">{{ $t('play') }}</span>
         </button>
         <button v-else class="btn-pause" @click="pause">
-          <icon-pause width="24" height="24" aria-hidden="true" />
+          <icon-pause width="20" height="20" aria-hidden="true" />
           <span class="sr-only">{{ $t('pause') }}</span>
         </button>
       </template>

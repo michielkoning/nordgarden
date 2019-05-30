@@ -2,8 +2,8 @@
   {
     "title": "Changes",
     "image": "changes",
-    "apple": "https://itunes.apple.com/nl/album/live-in-dresden/id978762992?=&app=music&ign-mpt=uo%3D4",
-    "amazon": "",
+    "apple": "https://music.apple.com/nl/album/changes/1277930075",
+    "spotify": "https://open.spotify.com/album/1kDQYA7Y0fn2myWcngbPaT?si=1LOYjtvvR5eb0i9d5IRZFg",
     "releaseDate": "2019, 09, 29",
     "songlist": [
       {
@@ -36,7 +36,7 @@
         "file": "/audio/7.mp3"
       },
       {
-        "title": "on’t Need Nobody",
+        "title": "Don’t Need Nobody",
         "file": "/audio/8.mp3"
       },
       {
@@ -50,8 +50,8 @@
   {
     "title": "Live in Dresden",
     "image": "live-in-dresden",
-    "apple": "https://itunes.apple.com/nl/album/live-in-dresden/id978762992?=&app=music&ign-mpt=uo%3D4",
-    "amazon": "",
+    "apple": "https://music.apple.com/nl/album/live-in-dresden/978762992",
+    "spotify": "https://open.spotify.com/album/7KOjiSkYIEQ8661zSn2Aqk?si=9AKow4oNR6WrfHa4NqKwhQ",
     "releaseDate": "2019, 04, 01",
     "songlist": [
       {
@@ -100,8 +100,8 @@
   {
     "title": "Dieci",
     "image": "dieci",
-    "apple": "https://itunes.apple.com/it/album/dieci/id740768520",
-    "amazon": "",
+    "apple": "https://music.apple.com/nl/album/dieci/740768520",
+    "spotify": "https://open.spotify.com/album/4kgFNGMZDP24BXAgHBBFX7?si=inBRQ6RsSI-kQrEc2vC-XQ",
     "releaseDate": "2013, 11, 22",
     "songlist": [
       {
@@ -140,8 +140,8 @@
   {
     "title": "You Gotta Get Ready",
     "image": "you-gotta-get-ready",
-    "apple": "https://itunes.apple.com/album/you-gotta-get-ready/id502874072",
-    "amazon": "",
+    "apple": "https://music.apple.com/nl/album/you-gotta-get-ready/502874072",
+    "spotify": "https://open.spotify.com/album/2cMkuV3mePu8FkEe0deujG?si=RxAmhyqjR4GwGvt8FKFkxQ",
     "releaseDate": "2012, 02, 24",
     "songlist": [
       {
@@ -179,8 +179,8 @@
   {
     "title": "The Path Of Love",
     "image": "path-of-love",
-    "apple": "http://itunes.apple.com/album/the-path-of-love/id280823276#",
-    "amazon": "http://www.amazon.com/The-Path-Of-Love/dp/B001BB6KDI/ref=sr_1_3?ie=UTF8&qid=1319490739&sr=8-3",
+    "apple": "https://music.apple.com/nl/album/the-path-of-love/1093200481",
+    "spotify": "https://open.spotify.com/album/4ENKgj2Vl1bHr6gfDya6q4?si=L7DhJAiJQvytNCUymhwSdQ",
     "releaseDate": "2018, 05, 05",
     "songlist": [
       {
@@ -221,8 +221,8 @@
   {
     "title": "A Brighter Kind of Blue",
     "image": "a-brighter-kind-of-blue",
-    "apple": "http://itunes.apple.com/album/a-brighter-kind-of-blue/id297076152",
-    "amazon": "http://www.amazon.com/A-Brighter-Kind-Of-Blue/dp/B001CKO4FE/ref=sr_1_3?ie=UTF8&qid=1319049779&sr=8-3",
+    "apple": "https://music.apple.com/nl/album/a-brighter-kind-of-blue/297076152",
+    "spotify": "https://open.spotify.com/album/0lm0RlZkT8kzcofLm2Pyh9?si=L4rU7ucSRnOK_ZPxGKDrWg",
     "releaseDate": "2006, 06, 26",
     "songlist": [
       {
@@ -260,8 +260,8 @@
   {
     "title": "Terje Nordgarden",
     "image": "terje-nordgarden",
-    "apple": "http://itunes.apple.com/album/terje-nordgarden/id314338759",
-    "amazon": "http://www.amazon.com/Terje-Nordgarden/dp/B0028JGZ1Y/ref=sr_1_1?ie=UTF8&qid=1319490481&sr=8-1",
+    "apple": "https://music.apple.com/nl/album/terje-nordgarden/961461467",
+    "spotify": "https://open.spotify.com/album/5pNDGKY5WW5R9uhQUM17hx?si=QxZiPjqpRtiWbM3nLp8vRg",
     "releaseDate": "2003, 05, 01",
     "songlist": [
       {
