@@ -8,7 +8,7 @@
           @click="toggleMenu(!menuIsExpanded)"
         >
           <icon-bars aria-hidden="true" width="24" height="24" />
-          {{ toggleMenuText }}
+          {{ $t('Menu') }}
         </button>
         <template v-if="songs.length">
           <button v-if="isPlaying" @click="pauseAudio">
@@ -49,10 +49,7 @@ export default {
     ...mapState('albums', ['isPlaying']),
     ...mapGetters({
       songs: 'albums/playableSongs'
-    }),
-    toggleMenuText() {
-      return this.menuIsExpanded ? this.$t('closeMenu') : this.$t('openMenu')
-    }
+    })
   },
   watch: {
     $route() {
@@ -97,8 +94,7 @@ export default {
 }
 
 .btn {
-  padding: 0.5em 0.5em;
-  width: 9.25em;
+  padding: 0.5em 0.75em 0.5em 0.5em;
   font-size: 0.8em;
   display: flex;
   align-items: center;

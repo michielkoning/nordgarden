@@ -1,10 +1,10 @@
 <template>
-  <div class="gallery">
-    <h1 class="sr-only">Gallery</h1>
+  <section class="gallery" aria-labelledby="gallery-title">
+    <h1 id="gallery-title" class="sr-only">{{ $t('gallery') }}</h1>
     <div v-for="n in 4" :key="n" class="image-wrapper" :class="`item-${n}`">
       <img :src="`/images/${n}.jpg`" alt />
     </div>
-  </div>
+  </section>
 </template>
 
 <style lang="postcss" scoped>
