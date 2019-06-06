@@ -8,36 +8,35 @@
     "songlist": [
       {
         "title": "Changes",
-        "file": "/audio/1.mp3"
+        "file": "/media/audio/1.mp3"
       },
       {
         "title": "Side of the Road",
-        "file": "/audio/2.mp3"
+        "file": "/media/audio/2.mp3"
       },
       {
         "title": "Wide Open Spaces",
-
-        "file": "/audio/3.mp3"
+        "file": "/media/audio/3.mp3"
       },
       {
         "title": "I Ain’t Gonna Let Her (Let Me On No More)",
-        "file": "/audio/4.mp3"
+        "file": "/media/audio/4.mp3"
       },
       {
         "title": "You Must Be the Change",
-        "file": "/audio/5.mp3"
+        "file": "/media/audio/5.mp3"
       },
       {
         "title": "The Storm",
-        "file": "/audio/6.mp3"
+        "file": "/media/audio/6.mp3"
       },
       {
         "title": "Right Now (Love is Hell)",
-        "file": "/audio/7.mp3"
+        "file": "/media/audio/7.mp3"
       },
       {
         "title": "Don’t Need Nobody",
-        "file": "/audio/8.mp3"
+        "file": "/media/audio/8.mp3"
       },
       {
         "title": "Hearts at Stake"
@@ -136,7 +135,6 @@
       }
     ]
   },
-
   {
     "title": "You Gotta Get Ready",
     "image": "you-gotta-get-ready",
@@ -217,7 +215,6 @@
       }
     ]
   },
-
   {
     "title": "A Brighter Kind of Blue",
     "image": "a-brighter-kind-of-blue",
