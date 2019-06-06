@@ -3,9 +3,11 @@
     <h2>{{ album.title }}</h2>
     <div>
       <img
-        :src="`/images/albums/${album.image}.jpg`"
+        :src="`/media/images/${album.image}.jpg?nf_resize=fit&w=200&h=200`"
         alt
-        :srcset="`/images/albums/${album.image}@2x.jpg 2x`"
+        :srcset="
+          `/media/images/${album.image}.jpg?nf_resize=fit&w=400&h=400 2x`
+        "
       />
       <post-date :date="album.releaseDate" />
       <ul class="shops">
@@ -20,9 +22,10 @@
         <li>
           <a :href="album.apple" rel="noopener" target="_blank">
             <icon-apple aria-hidden="true" width="24" height="24" />
-            <span class="sr-only">
-              {{ $t('view') }} {{ album.title }} {{ $t('on') }} Apple Music
-            </span>
+            <span class="sr-only"
+              >{{ $t('view') }} {{ album.title }} {{ $t('on') }} Apple
+              Music</span
+            >
           </a>
         </li>
       </ul>
