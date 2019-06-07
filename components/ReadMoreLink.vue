@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link :to="to">
+  <nuxt-link class="read-more" :to="to">
     {{ text }}
     <icon-chevron-right aria-hidden="true" width="16" height="16" />
   </nuxt-link>
@@ -15,7 +15,7 @@ export default {
   props: {
     to: {
       type: String,
-      required: true
+      default: '#'
     },
     text: {
       type: String,
@@ -24,16 +24,3 @@ export default {
   }
 }
 </script>
-
-<style lang="postcss" scoped>
-a {
-  &:hover svg {
-    margin-left: 0.25em;
-  }
-}
-
-svg {
-  transition: margin 0.2s ease-out;
-  transform: translate3d(2px, 2px, 0);
-}
-</style>
