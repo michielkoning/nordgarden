@@ -21,12 +21,10 @@
           </div>
         </transition>
         <img
-          src="`/media/images/logo.png?nf_resize=fit&w=200&h=200`"
+          src="/media/images/logo.png?nf_resize=fit&w=200&h=200"
           alt
           class="logo"
-          srcset="
-          `/media/images/logo.png?nf_resize=fit&w=400&h=400 2x`
-        "
+          srcset="/media/images/logo.png?nf_resize=fit&w=400&h=400 2x"
         />
       </div>
     </transition>
