@@ -16,7 +16,7 @@ export default {
 <style lang="postcss" scoped>
 .badge {
   font-size: 0.7em;
-  background: var(--color-white);
+  background: var(--text-color);
   min-width: 1.25em;
   height: 1.25em;
   transform: translate3d(0.25em, 0, 0);
@@ -25,7 +25,7 @@ export default {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  color: var(--color-bg-page);
+  color: var(--color-secondary);
   padding: 0 0.3em;
 }
 </style>

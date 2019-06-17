@@ -54,7 +54,7 @@ export default {
     right: 0;
     z-index: var(--error-handler);
     padding: 0.5em 0.25em;
-    background: var(--color-bg-page);
+    background: var(--color-secondary);
     border-top: 2px solid var(--color-white);
   }
 }

@@ -20,7 +20,14 @@
             <social-links />
           </div>
         </transition>
-        <div class="empty"></div>
+        <img
+          src="`/media/images/logo.png?nf_resize=fit&w=200&h=200`"
+          alt
+          class="logo"
+          srcset="
+          `/media/images/logo.png?nf_resize=fit&w=400&h=400 2x`
+        "
+        />
       </div>
     </transition>
   </header>
@@ -78,12 +85,11 @@ export default {
   max-height: 100vh;
 
   @media (--navigation-position-left) {
-    padding: var(--gutter);
+    padding: 0;
     overflow: visible;
     transform: translateY(0);
     display: block !important;
     max-height: none;
-    background: var(--color-bg-page);
   }
 }
 
@@ -100,7 +106,7 @@ h1 {
 }
 
 .bg {
-  background: var(--color-bg-page);
+  background: var(--color-secondary);
   position: fixed;
   top: 0;
   left: 0;
@@ -112,9 +118,9 @@ h1 {
   padding: 0 env(safe-area-inset-right) 0 env(safe-area-inset-left);
 
   @media (--navigation-position-left) {
-    padding: 0;
-    border-right: 2px solid #fff;
     background: transparent;
+    padding: var(--gutter);
+    border-right: 2px solid #fff;
     overflow: visible;
     display: block !important;
     width: var(--width-navigation-left);
@@ -140,5 +146,14 @@ h1 {
 .fade2-enter,
 .fade2-leave-to {
   transform: translateY(-100vh);
+}
+
+.logo {
+  margin-top: 22em;
+  display: none;
+
+  @media (--navigation-position-left) {
+    display: block;
+  }
 }
 </style>

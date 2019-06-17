@@ -147,7 +147,7 @@ a {
       content: '';
       border-top: 0.75em solid transparent;
       border-bottom: 0.75em solid transparent;
-      border-left: 1em solid var(--color-navigation);
+      border-left: 1em solid var(--color-secondary);
     }
 
     &::before {

@@ -3,7 +3,7 @@
 }
 
 *:focus {
-  outline: 1px dashed var(--color-black);
+  outline: 1px dashed var(--color-white);
 }
 
 .visuallyhidden {
