@@ -3,41 +3,33 @@
     <h2 id="menu-title" class="sr-only" tabindex="-1">
       {{ $t('mainNavigation') }}
     </h2>
-    <ul ref="list">
+    <ul ref="menu">
       <li>
         <nuxt-link id="menu" to="/">
-          <span class="title" :class="{ 'link-active': isCurrentStep(0) }">
+          <span class="title">
             {{ $t('home') }}
           </span>
         </nuxt-link>
       </li>
       <li>
         <nuxt-link to="/tour">
-          <span class="title" :class="{ 'link-active': isCurrentStep(1) }">{{
-            $t('tour')
-          }}</span>
+          <span class="title">{{ $t('tour') }}</span>
           <app-badge :amount="list.length" />
         </nuxt-link>
       </li>
       <li>
         <nuxt-link to="/albums">
-          <span class="title" :class="{ 'link-active': isCurrentStep(2) }">{{
-            $t('albums')
-          }}</span>
+          <span class="title">{{ $t('albums') }}</span>
         </nuxt-link>
       </li>
       <li>
         <nuxt-link to="/videos">
-          <span class="title" :class="{ 'link-active': isCurrentStep(3) }">{{
-            $t('videos')
-          }}</span>
+          <span class="title">{{ $t('videos') }}</span>
         </nuxt-link>
       </li>
       <li>
         <nuxt-link to="/biography">
-          <span class="title" :class="{ 'link-active': isCurrentStep(4) }">{{
-            $t('biography')
-          }}</span>
+          <span class="title">{{ $t('biography') }}</span>
         </nuxt-link>
       </li>
     </ul>
@@ -46,8 +38,8 @@
 </template>
 
 <script>
-import AppBadge from '@/components/AppBadge.vue'
 import { mapState, mapActions } from 'vuex'
+import AppBadge from '@/components/AppBadge.vue'
 
 export default {
   components: {
@@ -65,23 +57,33 @@ export default {
     }
   },
   watch: {
-    $route(to, from) {
-      const position = this.$refs.list.querySelector(
-        `:nth-child(${this.step + 1}`
-      ).offsetTop
-      this.arrowPosition = `translateY(${position}px)`
+    $route() {
+      this.$nextTick(() => {
+        this.setArrowPosition()
+      })
     }
   },
   mounted() {
+    this.setArrowPosition()
+    setTimeout(() => {
+      this.mounted = true
+    }, 0)
+
     this.setTours()
   },
   methods: {
+    setArrowPosition() {
+      const { menu } = this.$refs
+      const activeLink = menu.querySelector('.nuxt-link-exact-active')
+      if (activeLink) {
+        const { parentElement } = activeLink
+        this.arrowPosition = `translateY(${parentElement.offsetTop}px)`
+        this.arrowWidth = `${activeLink.offsetWidth}px`
+      }
+    },
     ...mapActions({
       setTours: 'tour/set'
-    }),
-    isCurrentStep(step) {
-      return this.step === step
-    }
+    })
   }
 }
 </script>
@@ -120,6 +122,10 @@ a {
   line-height: 1.1;
   padding: 0.45em 0;
   border-bottom: 1px dashed var(--color-gray);
+
+  &.nuxt-link-exact-active .title {
+    box-shadow: 0 2px 0 0 var(--color-primary);
+  }
 
   &:hover {
     text-decoration: none;

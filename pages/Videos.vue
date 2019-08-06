@@ -32,8 +32,8 @@
 </template>
 
 <script>
-import EventBusUtil from '@/utils/eventBusUtil'
 import { mapState } from 'vuex'
+import EventBusUtil from '@/utils/eventBusUtil'
 import IconPlay from '@/assets/icons/play.svg'
 import AppPage from '@/components/AppPage.vue'
 

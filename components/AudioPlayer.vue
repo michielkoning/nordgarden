@@ -29,8 +29,8 @@
 </template>
 
 <script>
-import EventBusUtil from '@/utils/eventBusUtil'
 import { mapActions, mapGetters, mapState } from 'vuex'
+import EventBusUtil from '@/utils/eventBusUtil'
 
 import IconPlay from '@/assets/icons/play.svg'
 import IconPause from '@/assets/icons/pause.svg'

@@ -16,7 +16,7 @@ html {
 }
 
 body {
-  background: var(--color-secondary) url('/media/images/bg.png') repeat;
+  background: var(--color-secondary) url('/media/images/bg.jpg') repeat;
   background-attachment: fixed;
   margin: 0;
   min-height: 100vh;

@@ -120,7 +120,9 @@ h1 {
     padding: var(--gutter);
     border-right: 2px solid #fff;
     overflow: visible;
-    display: block !important;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-between;
     width: var(--width-navigation-left);
   }
 }
@@ -147,7 +149,6 @@ h1 {
 }
 
 .logo {
-  margin-top: 22em;
   display: none;
 
   @media (--navigation-position-left) {

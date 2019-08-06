@@ -6,7 +6,7 @@ export const state = () => ({
 
 export const mutations = {
   SET_LANG(state, locale) {
-    if (state.locales.indexOf(locale) !== -1) {
+    if (state.locales.includes(locale)) {
       state.locale = locale
     }
   },
