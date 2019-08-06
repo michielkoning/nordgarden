@@ -150,9 +150,9 @@ h1 {
 
 .logo {
   display: none;
-  flex: 0 0 auto;
 
   @media (--navigation-position-left) {
+    flex: 0 0 auto;
     display: block;
   }
 }
