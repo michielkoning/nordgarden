@@ -20,12 +20,14 @@
             <social-links />
           </div>
         </transition>
-        <img
-          src="/media/images/logo.png?nf_resize=fit&w=200&h=200"
-          alt
-          class="logo"
-          srcset="/media/images/logo.png?nf_resize=fit&w=400&h=400 2x"
-        />
+        <div class="logo-wrapper">
+          <img
+            src="/media/images/logo.png?nf_resize=fit&w=200&h=200"
+            alt
+            class="logo"
+            srcset="/media/images/logo.png?nf_resize=fit&w=400&h=400 2x"
+          />
+        </div>
       </div>
     </transition>
   </header>
@@ -148,12 +150,16 @@ h1 {
   transform: translateY(-100vh);
 }
 
-.logo {
+.logo-wrapper {
   display: none;
 
   @media (--navigation-position-left) {
     flex: 0 0 auto;
     display: block;
   }
+}
+
+.logo {
+  width: 100%;
 }
 </style>
