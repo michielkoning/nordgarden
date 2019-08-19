@@ -27,7 +27,7 @@ export default {
   @mixin list-reset;
 
   display: grid;
-  margin: 2em 0 5em;
+  margin: 2em 0 3em;
   grid-gap: 1em;
   /* height: 80vh; */
   grid-template-areas:

@@ -15,7 +15,8 @@
         v-for="video in videos"
         :key="video.videoId"
         :class="{ 'is-active': isCurrentVideo(video) }"
-        @click="playVideo(video.videoId)"
+        @mousedown="mouseDown"
+        @mouseup="mouseUp(video.videoId)"
       >
         <div class="image-wrapper">
           <img
@@ -26,9 +27,11 @@
             alt
           />
           <icon-play aria-hidden="true" />
-          <span class="sr-only">{{ $t('play') }}</span>
         </div>
-        {{ video.title }}
+        <button class="btn-video" @click="playVideo(video.videoId)">
+          <span class="sr-only">{{ $t('play') }}</span>
+          {{ video.title }}
+        </button>
       </li>
     </ul>
   </app-page>
@@ -105,7 +108,8 @@ export default {
       playerVars: {
         rel: 0
       },
-      isPlayingVideo: false
+      isPlayingVideo: false,
+      down: null
     }
   },
   computed: {
@@ -122,8 +126,19 @@ export default {
       }
     }
   },
-
   methods: {
+    mouseUp(videoId) {
+      const up = +new Date()
+      if (up - this.down < 200) {
+        this.playVideo(videoId)
+      }
+    },
+    mouseDown() {
+      this.down = +new Date()
+    },
+    goToPost() {
+      this.$router.push(this.post.slug)
+    },
     playVideo(videoId) {
       this.videoId = videoId
       this.$nextTick(() => {
@@ -174,15 +189,20 @@ svg {
 li {
   text-align: center;
   border: 2px solid transparent;
+  color: var(--color-white);
   border-bottom: 2px dashed var(--color-white);
   padding-bottom: 0.5em;
 
+  &:focus-within,
   &.is-active {
     border: 2px solid var(--color-white);
   }
 
-  &:hover svg {
-    opacity: 1;
+  &:focus-within,
+  &:hover {
+    & svg {
+      opacity: 1;
+    }
   }
 }
 
@@ -198,5 +218,9 @@ ul {
   width: 100%;
   display: block;
   margin-bottom: 1em;
+}
+
+.btn-video:focus {
+  outline: none;
 }
 </style>
