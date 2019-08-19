@@ -183,19 +183,19 @@ svg {
   height: 2em;
   margin: -1em 0 0 -1em;
   opacity: 0.7;
+  fill: var(--color-white);
   transition: opacity 0.2s ease-out;
 }
 
 li {
   text-align: center;
   border: 2px solid transparent;
-  color: var(--color-white);
-  border-bottom: 2px dashed var(--color-white);
+  border-bottom: 2px dashed var(--color-primary);
   padding-bottom: 0.5em;
 
   &:focus-within,
   &.is-active {
-    border: 2px solid var(--color-white);
+    border-style: solid;
   }
 
   &:focus-within,
