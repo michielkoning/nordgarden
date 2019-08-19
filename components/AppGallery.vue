@@ -2,12 +2,24 @@
   <section class="gallery" aria-labelledby="gallery-title">
     <h1 id="gallery-title" class="sr-only">{{ $t('gallery') }}</h1>
     <div
-      v-for="n in images"
-      :key="n"
+      v-for="image in images"
+      :key="image"
+      :width="image.width / 2"
+      :height="image.height / 2"
       class="image-wrapper"
-      :class="`item-${n}`"
+      :class="`item-${image.name}`"
     >
-      <img loading="lazy" :src="`/media/images/${n}.jpg`" alt />
+      <img
+        loading="lazy"
+        :src="
+          `/media/images/${image.name}.jpg?nf_resize=fit&w=${image.width /
+            2}&h=${image.height / 2}`
+        "
+        :srcset="
+          `/media/images/${image.name}.jpg?nf_resize=fit&w=${image.width}&h=${image.height} 2x`
+        "
+        alt
+      />
     </div>
   </section>
 </template>
@@ -16,7 +28,11 @@
 export default {
   data() {
     return {
-      images: ['2', '3', '4']
+      images: [
+        { name: '2', width: 640, height: 960 },
+        { name: '3', width: 960, height: 640 },
+        { name: '4', width: 960, height: 720 }
+      ]
     }
   }
 }
