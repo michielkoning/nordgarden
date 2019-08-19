@@ -19,6 +19,9 @@
       >
         <div class="image-wrapper">
           <img
+            width="480"
+            height="360"
+            loading="lazy"
             :src="`https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`"
             alt
           />

@@ -22,6 +22,9 @@
         </transition>
         <div class="logo-wrapper">
           <img
+            width="200"
+            height="200"
+            loading="lazy"
             src="/media/images/logo.png?nf_resize=fit&w=200&h=200"
             alt
             class="logo"

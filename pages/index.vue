@@ -8,7 +8,7 @@
     <app-gallery />
     <latest-posts />
     <div class="mood">
-      <img src="/media/images/mood.jpg" alt />
+      <img loading="lazy" src="/media/images/mood.jpg" alt />
     </div>
   </app-page>
 </template>

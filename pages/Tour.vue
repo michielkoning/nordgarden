@@ -2,7 +2,7 @@
   <app-page :title="title">
     <div class="tour">
       <tour-dates />
-      <img src="/media/images/tour.jpg" alt />
+      <img loading="lazy" src="/media/images/tour.jpg" alt />
     </div>
   </app-page>
 </template>

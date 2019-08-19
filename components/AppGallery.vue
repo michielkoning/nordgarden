@@ -7,7 +7,7 @@
       class="image-wrapper"
       :class="`item-${n}`"
     >
-      <img :src="`/media/images/${n}.jpg`" alt />
+      <img loading="lazy" :src="`/media/images/${n}.jpg`" alt />
     </div>
   </section>
 </template>

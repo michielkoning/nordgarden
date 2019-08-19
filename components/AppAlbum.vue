@@ -3,6 +3,9 @@
     <h2>{{ album.title }}</h2>
     <div>
       <img
+        width="200"
+        height="200"
+        loading="lazy"
         :src="`/media/images/${album.image}.jpg?nf_resize=fit&w=200&h=200`"
         alt
         :srcset="
@@ -22,10 +25,9 @@
         <li>
           <a :href="album.apple" rel="noopener" target="_blank">
             <icon-apple aria-hidden="true" width="24" height="24" />
-            <span class="sr-only"
-              >{{ $t('view') }} {{ album.title }} {{ $t('on') }} Apple
-              Music</span
-            >
+            <span class="sr-only">
+              {{ $t('view') }} {{ album.title }} {{ $t('on') }} Apple Music
+            </span>
           </a>
         </li>
       </ul>
