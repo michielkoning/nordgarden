@@ -33,7 +33,10 @@
         </nuxt-link>
       </li>
     </ul>
-    <div class="arrow" :style="{ transform: arrowPosition }" />
+    <div
+      class="arrow"
+      :style="{ '-webkit-transform': arrowPosition, transform: arrowPosition }"
+    />
   </nav>
 </template>
 
