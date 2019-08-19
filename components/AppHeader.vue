@@ -22,13 +22,13 @@
         </transition>
         <div class="logo-wrapper">
           <img
-            width="200"
-            height="200"
+            width="300"
+            height="300"
             loading="lazy"
-            src="/media/images/logo.png?nf_resize=fit&w=200&h=200"
+            src="/media/images/logo.png?nf_resize=fit&w=300&h=300"
             alt
             class="logo"
-            srcset="/media/images/logo.png?nf_resize=fit&w=400&h=400 2x"
+            srcset="/media/images/logo.png?nf_resize=fit&w=600&h=600 2x"
           />
         </div>
       </div>
