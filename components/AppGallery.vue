@@ -4,19 +4,19 @@
     <div
       v-for="image in images"
       :key="image"
-      :width="image.width / 2"
-      :height="image.height / 2"
+      :width="image.width"
+      :height="image.height"
       class="image-wrapper"
       :class="`item-${image.name}`"
     >
       <img
         loading="lazy"
         :src="
-          `/media/images/${image.name}.jpg?nf_resize=fit&w=${image.width /
-            2}&h=${image.height / 2}`
+          `/media/images/${image.name}.jpg?nf_resize=fit&w=${image.width}&h=${image.height}`
         "
         :srcset="
-          `/media/images/${image.name}.jpg?nf_resize=fit&w=${image.width}&h=${image.height} 2x`
+          `/media/images/${image.name}.jpg?nf_resize=fit&w=${image.width *
+            1.5}&h=${image.height * 1.5} 2x`
         "
         alt
       />
