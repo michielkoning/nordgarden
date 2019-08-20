@@ -1,7 +1,6 @@
 export const state = () => ({
   locales: ['en'],
-  locale: 'en',
-  step: 0
+  locale: 'en'
 })
 
 export const mutations = {
@@ -9,8 +8,5 @@ export const mutations = {
     if (state.locales.includes(locale)) {
       state.locale = locale
     }
-  },
-  SET_STEP(state, step) {
-    state.step = step
   }
 }
