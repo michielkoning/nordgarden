@@ -13,7 +13,7 @@
     "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'",
     "precommit": "npm run lint",
     "start": "nuxt start",
-    "lh": "lighthouse-ci --score=96 --runner=wpt"
+    "lh": "lighthouse-ci --score=90 --runner=wpt"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.5.4",
