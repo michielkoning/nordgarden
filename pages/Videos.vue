@@ -1,39 +1,44 @@
 <template>
   <app-page class="content" :title="title">
-    <youtube
-      ref="youtube"
-      :video-id="videoId"
-      :player-vars="playerVars"
-      :fit-parent="true"
-      :resize-delay="10"
-      :resize="true"
-      @playing="playing"
-    ></youtube>
+    <div class="videos">
+      <div class="player">
+        <youtube
+          ref="youtube"
+          :video-id="videoId"
+          :player-vars="playerVars"
+          :fit-parent="true"
+          :resize-delay="10"
+          :resize="true"
+          @playing="playing"
+        ></youtube>
+      </div>
 
-    <ul>
-      <li
-        v-for="video in videos"
-        :key="video.videoId"
-        :class="{ 'is-active': isCurrentVideo(video) }"
-        @mousedown="mouseDown"
-        @mouseup="mouseUp(video.videoId)"
-      >
-        <div class="image-wrapper">
-          <img
-            width="480"
-            height="360"
-            loading="lazy"
-            :src="`https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`"
-            alt
-          />
-          <icon-play aria-hidden="true" />
-        </div>
-        <button class="btn-video" @click="playVideo(video.videoId)">
-          <span class="sr-only">{{ $t('play') }}</span>
-          {{ video.title }}
-        </button>
-      </li>
-    </ul>
+      <ul class="list">
+        <li
+          v-for="video in videos"
+          :key="video.videoId"
+          class="list-item"
+          :class="{ 'is-active': isCurrentVideo(video) }"
+          @mousedown="mouseDown"
+          @mouseup="mouseUp(video.videoId)"
+        >
+          <div class="image-wrapper">
+            <img
+              width="480"
+              height="360"
+              loading="lazy"
+              :src="`https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`"
+              alt
+            />
+            <icon-play aria-hidden="true" />
+          </div>
+          <button class="btn-video" @click="playVideo(video.videoId)">
+            <span class="sr-only">{{ $t('play') }}</span>
+            {{ video.title }}
+          </button>
+        </li>
+      </ul>
+    </div>
   </app-page>
 </template>
 
@@ -187,7 +192,7 @@ svg {
   transition: opacity 0.2s ease-out;
 }
 
-li {
+.list-item {
   text-align: center;
   border: 2px solid transparent;
   border-bottom: 2px dashed var(--color-primary);
@@ -206,7 +211,11 @@ li {
   }
 }
 
-ul {
+.videos {
+  max-width: 48em;
+}
+
+.list {
   @mixin list-reset;
 
   display: grid;
