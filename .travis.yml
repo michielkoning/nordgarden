@@ -18,3 +18,4 @@ script:
   - npm test
 after_success:
   - npm run lh -- https://nordgarden.michielkoning.nl/
+  - npm run coveralls
