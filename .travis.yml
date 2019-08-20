@@ -1,6 +1,7 @@
 sudo: false
 language: node_js
-
+git:
+  lfs_skip_smudge: true
 node_js:
   - '10.0'
 branches:
@@ -10,8 +11,6 @@ cache:
   directories:
     - node_modules
 before_install:
-  - echo -e "machine github.com\n  login $GITHUB_TOKEN" > ~/.netrc
-  - git lfs pull
   - npm update
 install:
   - npm install
