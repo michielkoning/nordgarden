@@ -141,17 +141,4 @@ h1 {
 .fade2-leave-to {
   transform: translateY(-100vh);
 }
-
-.logo-wrapper {
-  display: none;
-
-  @media (--navigation-position-left) {
-    flex: 0 0 auto;
-    display: block;
-  }
-}
-
-.logo {
-  width: 100%;
-}
 </style>
