@@ -62,3 +62,30 @@ h5 {
 address {
   font-style: normal;
 }
+
+.quote {
+  margin: 0 0 1em;
+}
+
+.intro {
+  max-width: 60ch;
+  margin-bottom: 3em;
+  font-size: 1.2em;
+}
+
+blockquote {
+  margin: 0 0 0.25em;
+  font-weight: var(--font-weight-bold);
+  font-size: 1.5em;
+  line-height: 1.2;
+}
+
+cite {
+  display: block;
+  font-style: normal;
+
+  &::before {
+    content: '—';
+    margin-left: 1em;
+  }
+}

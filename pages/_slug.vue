@@ -2,7 +2,7 @@
   <app-page class="post" :title="title">
     <post-date :date="date" />
     <!-- eslint-disable-next-line -->
-    <div class="text" v-html="text"/>
+    <div class="text" v-html="text" />
     <latest-posts />
   </app-page>
 </template>
@@ -18,9 +18,6 @@ export default {
     AppPage,
     PostDate,
     LatestPosts
-  },
-  meta: {
-    step: 0
   },
   data() {
     return {
