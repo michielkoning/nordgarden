@@ -20,17 +20,6 @@
             <social-links />
           </div>
         </transition>
-        <div class="logo-wrapper">
-          <img
-            width="300"
-            height="300"
-            loading="lazy"
-            src="/media/images/logo.png?nf_resize=fit&w=300&h=300"
-            alt
-            class="logo"
-            srcset="/media/images/logo.png?nf_resize=fit&w=600&h=600 2x"
-          />
-        </div>
       </div>
     </transition>
   </header>
