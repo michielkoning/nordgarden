@@ -13,7 +13,7 @@
     "i18n:report": "vue-cli-service i18n:report --src './src/**/*.?(js|vue)' --locales './src/locales/**/*.json'",
     "precommit": "npm run lint",
     "start": "nuxt start",
-    "lh": "lighthouse-ci --score=90 --runner=wpt",
+    "lh": "lighthouse-ci --accessibility=100 --seo=100 --pwa=100 --performance=75 --runner=wpt",
     "coveralls": "jest --coverage && cat ./tests/coverage/lcov.info | coveralls"
   },
   "dependencies": {
