@@ -3,14 +3,14 @@
     <h2>{{ album.title }}</h2>
     <div>
       <img
-        width="200"
-        height="200"
-        loading="lazy"
         :src="`/media/images/${album.image}.jpg?nf_resize=fit&w=200&h=200`"
-        alt
         :srcset="
           `/media/images/${album.image}.jpg?nf_resize=fit&w=400&h=400 2x`
         "
+        width="200"
+        height="200"
+        loading="lazy"
+        alt
       />
       <post-date :date="album.releaseDate" />
       <ul class="shops">

@@ -34,8 +34,8 @@
       </li>
     </ul>
     <div
-      class="arrow"
       :style="{ '-webkit-transform': arrowPosition, transform: arrowPosition }"
+      class="arrow"
     />
   </nav>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <app-page class="content" :title="title">
+  <app-page :title="title" class="content">
     <div class="videos">
       <div class="player">
         <youtube
@@ -17,22 +17,22 @@
         <li
           v-for="video in videos"
           :key="video.videoId"
-          class="list-item"
           :class="{ 'is-active': isCurrentVideo(video) }"
           @mousedown="mouseDown"
           @mouseup="mouseUp(video.videoId)"
+          class="list-item"
         >
           <div class="image-wrapper">
             <img
+              :src="`https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`"
               width="480"
               height="360"
               loading="lazy"
-              :src="`https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`"
               alt
             />
             <icon-play aria-hidden="true" />
           </div>
-          <button class="btn-video" @click="playVideo(video.videoId)">
+          <button @click="playVideo(video.videoId)" class="btn-video">
             <span class="sr-only">{{ $t('play') }}</span>
             {{ video.title }}
           </button>
