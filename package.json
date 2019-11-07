@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.8.0",
-    "@nuxtjs/pwa": "^3.0.0-beta.16",
+    "@nuxtjs/pwa": "^3.0.0-beta.19",
     "body-scroll-lock": "^2.6.4",
     "cross-env": "^6.0.3",
     "nuxt": "^2.10.2",
