@@ -34,8 +34,8 @@
       </li>
     </ul>
     <div
-      class="arrow"
       :style="{ '-webkit-transform': arrowPosition, transform: arrowPosition }"
+      class="arrow"
     />
   </nav>
 </template>
@@ -130,8 +130,12 @@ a {
     box-shadow: 0 2px 0 0 var(--color-primary);
   }
 
+  &:focus {
+    outline: none;
+  }
+
+  &:focus,
   &:hover {
-    text-decoration: none;
     & .title {
       box-shadow: 0 3px 0 0 var(--color-primary);
     }

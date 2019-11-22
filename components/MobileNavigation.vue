@@ -3,9 +3,9 @@
     <notch-wrapper>
       <div class="buttons">
         <button
-          class="btn"
           :aria-expanded="menuIsExpanded"
           @click="toggleMenu(!menuIsExpanded)"
+          class="btn"
         >
           <icon-bars aria-hidden="true" width="24" height="24" />
           {{ $t('menu') }}

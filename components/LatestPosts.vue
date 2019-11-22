@@ -6,7 +6,7 @@
     </transition-group>
     <app-loader v-if="isLoading" />
     <div v-else-if="!hasAllPostsLoaded" class="button-wrapper">
-      <button class="btn" @click="setPosts(currentPage)">
+      <button @click="setPosts(currentPage)" class="btn">
         {{ $t('loadMore') }}
       </button>
     </div>

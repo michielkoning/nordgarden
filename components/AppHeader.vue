@@ -4,14 +4,14 @@
     <mobile-navigation @toggleMenu="toggleMenu" />
 
     <transition
-      name="fade2"
       @after-enter="afterEnter"
       @after-leave="afterLeave"
       @before-leave="beforeLeave"
+      name="fade2"
     >
       <div v-show="showMenu" class="bg">
         <transition name="fade">
-          <div v-show="showMenu" ref="bg" class="content">
+          <div ref="bg" v-show="showMenu" class="content">
             <h1>
               <router-link to="/">Nordgarden</router-link>
             </h1>
@@ -20,17 +20,6 @@
             <social-links />
           </div>
         </transition>
-        <div class="logo-wrapper">
-          <img
-            width="300"
-            height="300"
-            loading="lazy"
-            src="/media/images/logo.png?nf_resize=fit&w=300&h=300"
-            alt
-            class="logo"
-            srcset="/media/images/logo.png?nf_resize=fit&w=600&h=600 2x"
-          />
-        </div>
       </div>
     </transition>
   </header>
@@ -151,18 +140,5 @@ h1 {
 .fade2-enter,
 .fade2-leave-to {
   transform: translateY(-100vh);
-}
-
-.logo-wrapper {
-  display: none;
-
-  @media (--navigation-position-left) {
-    flex: 0 0 auto;
-    display: block;
-  }
-}
-
-.logo {
-  width: 100%;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link class="read-more" :to="to">
+  <nuxt-link :to="to" class="read-more">
     {{ text }}
     <icon-chevron-right aria-hidden="true" width="16" height="16" />
   </nuxt-link>

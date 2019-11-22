@@ -1,11 +1,11 @@
 <template>
   <app-page :title="title">
+    <biography-intro />
     <section aria-labelledby="tour-title">
-      <h2 id="tour-title">{{ $t('tour') }}</h2>
+      <h1 id="tour-title">{{ $t('tour') }}</h1>
       <tour-dates />
     </section>
     <app-gallery />
-    <biography-intro :read-more="true" />
     <latest-posts />
     <div class="mood">
       <img loading="lazy" src="/media/images/mood.jpg" alt />

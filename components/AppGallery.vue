@@ -6,11 +6,10 @@
       :key="image"
       :width="image.width"
       :height="image.height"
-      class="image-wrapper"
       :class="`item-${image.name}`"
+      class="image-wrapper"
     >
       <img
-        loading="lazy"
         :src="
           `/media/images/${image.name}.jpg?nf_resize=fit&w=${image.width}&h=${image.height}`
         "
@@ -18,6 +17,7 @@
           `/media/images/${image.name}.jpg?nf_resize=fit&w=${image.width *
             1.5}&h=${image.height * 1.5} 2x`
         "
+        loading="lazy"
         alt
       />
     </div>

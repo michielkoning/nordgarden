@@ -3,7 +3,7 @@ language: node_js
 git:
   lfs_skip_smudge: true
 node_js:
-  - '10.0'
+  - "10.0"
 branches:
   only:
     - master
@@ -18,4 +18,3 @@ script:
   - npm test
 after_success:
   - npm run lh -- https://nordgarden.michielkoning.nl/
-  - npm run coveralls
