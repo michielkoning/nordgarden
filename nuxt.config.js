@@ -34,7 +34,12 @@ export default {
    ** Customize the progress-bar color
    */
   loading: { color: '#fff' },
-
+  manifest: {
+    name: 'Nordgarden',
+    short_name: 'Nordgarden',
+    background_color: '#c30531',
+    theme_color: '#c30531'
+  },
   /*
    ** Global CSS
    */
