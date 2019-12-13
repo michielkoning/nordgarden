@@ -4,13 +4,13 @@
       <template v-if="song.file">
         <button
           v-if="!isPlayingCurrentSong(song)"
-          @click="play(song)"
           class="btn-play"
+          @click="play(song)"
         >
           <icon-play width="20" height="20" aria-hidden="true" />
           <span class="sr-only">{{ $t('play') }}</span>
         </button>
-        <button v-else @click="pause" class="btn-pause">
+        <button v-else class="btn-pause" @click="pause">
           <icon-pause width="20" height="20" aria-hidden="true" />
           <span class="sr-only">{{ $t('pause') }}</span>
         </button>

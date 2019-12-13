@@ -4,8 +4,8 @@
       <div class="buttons">
         <button
           :aria-expanded="menuIsExpanded"
-          @click="toggleMenu(!menuIsExpanded)"
           class="btn"
+          @click="toggleMenu(!menuIsExpanded)"
         >
           <icon-bars aria-hidden="true" width="24" height="24" />
           {{ $t('menu') }}

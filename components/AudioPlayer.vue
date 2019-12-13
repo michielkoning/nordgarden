@@ -12,7 +12,7 @@
       <icon-forwards width="24" height="24" aria-hidden="true" />
       <span class="sr-only">{{ $t('next') }}</span>
     </button>
-    <div ref="progress" v-show="songs.length" @click="scrub" class="progress">
+    <div v-show="songs.length" ref="progress" class="progress" @click="scrub">
       <div :style="{ width: progress }" class="bar"></div>
       <div class="title">{{ currentSong.title }}</div>
     </div>

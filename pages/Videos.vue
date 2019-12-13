@@ -18,9 +18,9 @@
           v-for="video in videos"
           :key="video.videoId"
           :class="{ 'is-active': isCurrentVideo(video) }"
+          class="list-item"
           @mousedown="mouseDown"
           @mouseup="mouseUp(video.videoId)"
-          class="list-item"
         >
           <div class="image-wrapper">
             <img
@@ -32,7 +32,7 @@
             />
             <icon-play aria-hidden="true" />
           </div>
-          <button @click="playVideo(video.videoId)" class="btn-video">
+          <button class="btn-video" @click="playVideo(video.videoId)">
             <span class="sr-only">{{ $t('play') }}</span>
             {{ video.title }}
           </button>

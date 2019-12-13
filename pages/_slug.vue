@@ -19,6 +19,13 @@ export default {
     PostDate,
     LatestPosts
   },
+  data() {
+    return {
+      title: '',
+      text: '',
+      date: ''
+    }
+  },
 
   async asyncData({ params }) {
     const response = await axios.get(`wp/v2/posts/`, {
@@ -32,13 +39,6 @@ export default {
       title: post.title.rendered,
       text: post.content.rendered,
       date: post.date
-    }
-  },
-  data() {
-    return {
-      title: '',
-      text: '',
-      date: ''
     }
   },
   head() {
