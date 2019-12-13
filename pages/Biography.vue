@@ -19,12 +19,6 @@ export default {
   meta: {
     step: 4
   },
-  data() {
-    return {
-      title: this.$t('biography'),
-      text: ''
-    }
-  },
 
   async asyncData({ params }) {
     const response = await axios.get(`wp/v2/pages/`, {
@@ -34,6 +28,12 @@ export default {
     })
 
     return { text: response.data[0].content.rendered }
+  },
+  data() {
+    return {
+      title: this.$t('biography'),
+      text: ''
+    }
   },
   head() {
     return {

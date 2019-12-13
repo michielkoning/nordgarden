@@ -24,7 +24,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
+  border-radius: 1.25em;
   color: var(--color-secondary);
   padding: 0 0.3em;
 }
