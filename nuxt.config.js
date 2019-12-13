@@ -18,9 +18,21 @@ export default {
         name: 'viewport',
         content: 'width=device-width, initial-scale=1, viewport-fit=cover'
       },
+      {
+        name: 'black-translucent',
+        content: 'apple-mobile-web-app-status-bar-style'
+      },
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
+      {
+        rel: 'dns-prefetch',
+        href: '//www.google-analytics.com',
+      },
+      {
+        rel: 'dns-prefetch',
+        href: 'https://api.nordgarden.michielkoning.nl',
+      },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
 
       {
