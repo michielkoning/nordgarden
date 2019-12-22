@@ -1,5 +1,3 @@
-splashscreen
-nuxt-i18n
 graphql
 spacing
 notch

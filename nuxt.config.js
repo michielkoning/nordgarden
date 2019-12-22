@@ -55,9 +55,6 @@ export default {
    ** Global CSS
    */
   css: ['~/styles/base.css'],
-  router: {
-    middleware: ['i18n']
-  },
   /*
    ** Plugins to load before mounting the App
    */
@@ -74,7 +71,7 @@ export default {
     'nuxt-svg-loader',
     'nuxt-i18n'
   ],
-  buildModules: ['@nuxtjs/google-analytics'],
+  // buildModules: ['@nuxtjs/google-analytics'],
   manifest,
   i18n,
 
@@ -125,7 +122,7 @@ export default {
   generate: {
     async routes() {
       const response = await axios.get(
-        `${apiUrl}/wp-json/wp/v2/posts/?per_page=100`
+        `${apiUrl}wp-json/wp/v2/posts/?per_page=100`
       )
       const posts = response.data.map(post => post.slug)
       const urls = ['biography', ...posts]

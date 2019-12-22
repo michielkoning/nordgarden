@@ -13,7 +13,7 @@ export default {
   vueI18nLoader: true,
   vueI18n: {
     dateTimeFormats: {
-      nl: {
+      en: {
         short: {
           year: 'numeric',
           month: 'long',

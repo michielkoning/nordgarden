@@ -3,7 +3,7 @@
     <h1 id="gallery-title" class="sr-only">{{ $t('gallery') }}</h1>
     <div
       v-for="image in images"
-      :key="image"
+      :key="image.name"
       :width="image.width"
       :height="image.height"
       :class="`item-${image.name}`"
