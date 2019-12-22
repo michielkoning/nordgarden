@@ -1,16 +1,24 @@
 import axios from 'axios'
 import pkg from './package'
-const baseUrl = 'https://api.nordgarden.michielkoning.nl/wp-json/'
+import splashscreens from './config/splashscreens'
+import googleAnalytics from './config/googleAnalytics'
+import manifest from './config/manifest'
+import i18n from './config/i18n'
+import sitemap from './config/sitemap'
+import { apiUrl, siteUrl } from './config/siteDetails'
 
 export default {
   mode: 'universal',
   env: {
-    baseUrl
+    siteUrl
   },
   /*
    ** Headers of the page
    */
   head: {
+    htmlAttrs: {
+      lang: 'en'
+    },
     titleTemplate: '%s | Nordgarden',
     meta: [
       { charset: 'utf-8' },
@@ -25,13 +33,10 @@ export default {
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
+      ...splashscreens,
       {
         rel: 'dns-prefetch',
-        href: '//www.google-analytics.com',
-      },
-      {
-        rel: 'dns-prefetch',
-        href: 'https://api.nordgarden.michielkoning.nl',
+        href: apiUrl
       },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
 
@@ -46,12 +51,6 @@ export default {
    ** Customize the progress-bar color
    */
   loading: { color: '#fff' },
-  manifest: {
-    name: 'Nordgarden',
-    short_name: 'Nordgarden',
-    background_color: '#c30531',
-    theme_color: '#c30531'
-  },
   /*
    ** Global CSS
    */
@@ -62,7 +61,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/i18n.js', '~/plugins/vue-youtube', '~/plugins/axios'],
+  plugins: ['~/plugins/vue-youtube', '~/plugins/axios'],
 
   /*
    ** Nuxt.js modules
@@ -71,14 +70,21 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/pwa',
     '@nuxtjs/sitemap',
+    '@nuxtjs/axios',
     'nuxt-svg-loader',
-    '@nuxtjs/axios'
+    'nuxt-i18n'
   ],
+  buildModules: ['@nuxtjs/google-analytics'],
+  manifest,
+  i18n,
+
+  googleAnalytics,
+
   /*
    ** Axios module configuration
    */
   axios: {
-    baseURL: baseUrl
+    baseURL: `${apiUrl}wp-json/`
   },
 
   /*
@@ -118,20 +124,14 @@ export default {
   },
   generate: {
     async routes() {
-      const response = await axios.get(`${baseUrl}wp/v2/posts/?per_page=100`)
+      const response = await axios.get(
+        `${apiUrl}/wp-json/wp/v2/posts/?per_page=100`
+      )
       const posts = response.data.map(post => post.slug)
       const urls = ['biography', ...posts]
 
       return urls
     }
   },
-  sitemap: {
-    hostname: 'https://nordgarden.michielkoning.nl/',
-    async routes() {
-      const response = await axios.get(`${baseUrl}wp/v2/posts/?per_page=100`)
-      return response.data.map(
-        post => `https://nordgarden.michielkoning.nl/${post.slug}`
-      )
-    }
-  }
+  sitemap
 }
