@@ -57,8 +57,7 @@ li {
   margin-right: 0.25em;
 }
 
-.venue,
-h1 {
-  color: #eb2860;
+.venue {
+  color: var(--color-primary);
 }
 </style>
