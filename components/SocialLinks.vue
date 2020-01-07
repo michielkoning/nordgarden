@@ -11,7 +11,9 @@
           target="_blank"
         >
           <icon-spotify aria-hidden="true" width="32" height="32" />
-          <span class="sr-only">{{ $t('viewNordgardenOn') }} spotify</span>
+          <span class="sr-only">
+            {{ $t('viewOn', { title: 'Nordgarden', network: 'Spotify' }) }}
+          </span>
         </a>
       </li>
       <li>
@@ -21,7 +23,9 @@
           target="_blank"
         >
           <icon-apple aria-hidden="true" width="32" height="32" />
-          <span class="sr-only">{{ $t('viewNordgardenOn') }} Apple</span>
+          <span class="sr-only">
+            {{ $t('viewOn', { title: 'Nordgarden', network: 'Apple Music' }) }}
+          </span>
         </a>
       </li>
       <li>
@@ -31,7 +35,9 @@
           target="_blank"
         >
           <icon-youtube aria-hidden="true" width="32" height="32" />
-          <span class="sr-only">{{ $t('viewNordgardenOn') }} youtube</span>
+          <span class="sr-only">
+            {{ $t('viewOn', { title: 'Nordgarden', network: 'YouTube' }) }}
+          </span>
         </a>
       </li>
 
@@ -42,7 +48,9 @@
           target="_blank"
         >
           <icon-facebook aria-hidden="true" width="32" height="32" />
-          <span class="sr-only">{{ $t('viewNordgardenOn') }} facebook</span>
+          <span class="sr-only">
+            {{ $t('viewOn', { title: 'Nordgarden', network: 'FaceBook' }) }}
+          </span>
         </a>
       </li>
       <li>
@@ -52,7 +60,9 @@
           target="_blank"
         >
           <icon-twitter aria-hidden="true" width="32" height="32" />
-          <span class="sr-only">{{ $t('viewNordgardenOn') }} twitter</span>
+          <span class="sr-only">
+            {{ $t('viewOn', { title: 'Nordgarden', network: 'Twitter' }) }}
+          </span>
         </a>
       </li>
       <li>
@@ -62,7 +72,9 @@
           target="_blank"
         >
           <icon-linkedin aria-hidden="true" width="32" height="32" />
-          <span class="sr-only">{{ $t('viewNordgardenOn') }} LinkedIn</span>
+          <span class="sr-only">
+            {{ $t('viewOn', { title: 'Nordgarden', network: 'LinkedIn' }) }}
+          </span>
         </a>
       </li>
     </ul>

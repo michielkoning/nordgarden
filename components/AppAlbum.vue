@@ -17,16 +17,16 @@
         <li>
           <a :href="album.spotify" rel="noopener" target="_blank">
             <icon-spotify aria-hidden="true" width="24" height="24" />
-            <span class="sr-only"
-              >{{ $t('view') }} {{ album.title }} {{ $t('on') }} Spotify</span
-            >
+            <span class="sr-only">
+              {{ $t('viewOn', { title: album.title, network: 'Spotify' }) }}
+            </span>
           </a>
         </li>
         <li>
           <a :href="album.apple" rel="noopener" target="_blank">
             <icon-apple aria-hidden="true" width="24" height="24" />
             <span class="sr-only">
-              {{ $t('view') }} {{ album.title }} {{ $t('on') }} Apple Music
+              {{ $t('viewOn', { title: album.title, network: 'Apple Music' }) }}
             </span>
           </a>
         </li>
