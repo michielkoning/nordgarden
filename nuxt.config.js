@@ -38,12 +38,7 @@ export default {
         rel: 'dns-prefetch',
         href: apiUrl
       },
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-
-      {
-        href: 'https://fonts.googleapis.com/css?family=ABeeZee&display=swap',
-        rel: 'stylesheet'
-      }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
 

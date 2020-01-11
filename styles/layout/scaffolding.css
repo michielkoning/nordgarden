@@ -35,6 +35,28 @@ p:empty {
 
 main {
   flex: 1 1 auto;
+
+  &::before,
+  &::after {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    content: '';
+    z-index: -1;
+  }
+
+  &::after {
+    border-right: 25vw solid transparent;
+    border-top: 25vw solid var(--color-secondary);
+    width: 1em;
+    height: 1em;
+  }
+
+  &::before {
+    width: 25vw;
+    height: 25vw;
+    background: repeating-linear-gradient(-45deg, transparent, transparent 19px, #c5c5c5 19px, #c5c5c5 21px);
+  }
 }
 
 #app {

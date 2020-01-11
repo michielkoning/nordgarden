@@ -7,9 +7,6 @@
     </section>
     <app-gallery />
     <latest-posts />
-    <div class="mood">
-      <img loading="lazy" src="/media/images/mood.jpg" alt />
-    </div>
   </app-page>
 </template>
 
@@ -50,10 +47,6 @@ export default {
   @mixin center;
 
   max-width: var(--container-width-xlg);
-}
-
-.mood {
-  margin: 0 calc(var(--gutter) * -1);
 }
 
 img {

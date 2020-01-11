@@ -18,6 +18,12 @@
             <main-navigation />
             <audio-player />
             <social-links />
+            <img
+              :src="require('~/assets/images/waves.png')"
+              class="waves"
+              loading="lazy"
+              alt
+            />
           </div>
         </transition>
       </div>
@@ -77,11 +83,15 @@ export default {
   max-height: 100vh;
 
   @media (--navigation-position-left) {
-    padding: 0;
+    padding: var(--gutter);
+
     overflow: visible;
     transform: translateY(0);
-    display: block !important;
+    display: flex !important;
+    flex-direction: column;
     max-height: none;
+    height: 100vh;
+    position: relative;
   }
 }
 
@@ -94,6 +104,17 @@ h1 {
 
   & a {
     text-decoration: none;
+  }
+}
+
+.waves {
+  display: none;
+  @media (--navigation-position-left) and (min-height: 600px) {
+    margin-top: auto;
+    display: block;
+    align-self: flex-start;
+    margin-left: calc(var(--gutter) * -1);
+    width: 10em;
   }
 }
 
@@ -111,13 +132,13 @@ h1 {
 
   @media (--navigation-position-left) {
     background: transparent;
-    padding: var(--gutter);
     border-right: 2px solid #fff;
     overflow: visible;
     display: flex !important;
     flex-direction: column;
     justify-content: space-between;
     width: var(--width-navigation-left);
+    padding: 0;
   }
 }
 

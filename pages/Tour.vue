@@ -1,9 +1,6 @@
 <template>
   <app-page :title="title">
-    <div class="tour">
-      <tour-dates />
-      <img loading="lazy" src="/media/images/tour.jpg" alt />
-    </div>
+    <tour-dates />
   </app-page>
 </template>
 
@@ -31,23 +28,3 @@ export default {
   }
 }
 </script>
-
-<style lang="postcss" scoped>
-.tour {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-
-  @media (--viewport-lg) {
-    flex-direction: row;
-  }
-}
-
-img {
-  flex: 0 1 auto;
-  align-self: flex-end;
-  @media (--viewport-lg) {
-    margin-left: 5rem;
-  }
-}
-</style>

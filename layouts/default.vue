@@ -2,6 +2,7 @@
   <notch-wrapper>
     <app-header />
     <nuxt />
+
     <error-handler />
   </notch-wrapper>
 </template>
@@ -19,14 +20,3 @@ export default {
   }
 }
 </script>
-
-<style lang="postcss" scoped>
-main {
-  min-height: 100vh;
-  padding: var(--gutter) var(--gutter) 0;
-
-  @media (--navigation-position-left) {
-    margin-left: var(--width-navigation-left);
-  }
-}
-</style>

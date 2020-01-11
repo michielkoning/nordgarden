@@ -3,9 +3,9 @@
     <h2>{{ album.title }}</h2>
     <div>
       <img
-        :src="`/media/images/${album.image}.jpg?nf_resize=fit&w=200&h=200`"
+        :src="require(`~/assets/images/albums/${album.image}.jpg`)"
         :srcset="
-          `/media/images/${album.image}.jpg?nf_resize=fit&w=400&h=400 2x`
+          require(`~/assets/images/albums/${album.image}@2x.jpg`) + ' 2x'
         "
         width="200"
         height="200"
