@@ -18,11 +18,11 @@
             <main-navigation />
             <audio-player />
             <social-links />
-            <img
-              :src="require('~/assets/images/waves.png')"
+            <icon-waves
               class="waves"
-              loading="lazy"
-              alt
+              aria-hidden="true"
+              width="186"
+              height="108"
             />
           </div>
         </transition>
@@ -33,6 +33,7 @@
 
 <script>
 import SkipLinks from '@/components/SkipLinks.vue'
+import IconWaves from '@/assets/icons/waves.svg'
 
 import AudioPlayer from '@/components/AudioPlayer.vue'
 import MainNavigation from '@/components/MainNavigation.vue'
@@ -47,7 +48,8 @@ export default {
     AudioPlayer,
     SocialLinks,
     MainNavigation,
-    MobileNavigation
+    MobileNavigation,
+    IconWaves
   },
   data() {
     return {
@@ -111,10 +113,10 @@ h1 {
   display: none;
   @media (--navigation-position-left) and (min-height: 600px) {
     margin-top: auto;
+    fill: var(--color-primary);
     display: block;
     align-self: flex-start;
     margin-left: calc(var(--gutter) * -1);
-    width: 10em;
   }
 }
 
