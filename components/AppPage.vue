@@ -78,6 +78,6 @@ export default {
 
 .promo {
   display: block;
-  margin: 5em auto 0;
+  margin: 3em auto 0;
 }
 </style>
