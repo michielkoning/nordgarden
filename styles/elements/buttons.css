@@ -34,7 +34,7 @@ a {
 
 .read-more {
   &:hover svg {
-    margin-left: 0.25em;
+    margin-left: var(--spacing-xxs);
   }
 
   & svg {
@@ -46,10 +46,10 @@ a {
 .btn {
   text-align: center;
   font-weight: var(--font-weight-bold);
-  border-radius: 0.25em;
+  border-radius: var(--spacing-xxs);
   display: block;
   text-decoration: none;
-  padding: 0.75em 0.5em;
+  padding: var(--spacing-xs) var(--spacing-xs);
   font-family: var(--font-family-headings);
   transition: background-color 0.1s ease-in-out;
   border: 2px solid var(--color-white);

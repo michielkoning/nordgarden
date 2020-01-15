@@ -18,8 +18,8 @@ a {
   &:active {
     position: fixed;
     z-index: 100;
-    top: 1rem;
-    left: 1rem;
+    top: var(--spacing-m);
+    left: var(--spacing-m);
   }
 }
 </style>

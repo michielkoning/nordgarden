@@ -26,7 +26,7 @@ body {
 
 p {
   hanging-punctuation: first;
-  margin: 0 0 1em;
+  margin: 0 0 var(--spacing-s);
 }
 
 h1,
@@ -40,22 +40,22 @@ h5 {
 h1,
 h2,
 h3 {
-  line-height: 1.1;
+  line-height: var(--line-height-header);
   font-weight: var(--font-weight-bold);
 }
 
 h1 {
-  margin: 0 0 0.5em;
+  margin: 0 0 var(--spacing-xs);
   font-size: 2.25rem;
 }
 
 h2 {
-  margin: 0 0 0.5em;
+  margin: 0 0 var(--spacing-xs);
   font-size: 1.5rem;
 }
 
 h3 {
-  margin: 0.5em 0 0;
+  margin: var(--spacing-xs) 0 0;
   font-size: 1.25rem;
 }
 
@@ -74,20 +74,20 @@ address {
 }
 
 .quote {
-  margin: 0 0 1em;
+  margin: 0 0 var(--spacing-s);
 }
 
 .intro {
   max-width: 60ch;
-  margin-bottom: 3em;
-  font-size: 1.2em;
+  margin-bottom: var(--spacing-xl);
+  font-size: var(--font-size-lg);
 }
 
 blockquote {
-  margin: 0 0 0.25em;
+  margin: 0 0 var(--spacing-xxs);
   font-weight: var(--font-weight-bold);
   font-size: 1.5em;
-  line-height: 1.2;
+  line-height: var(--line-height-header);
 }
 
 cite {
@@ -97,6 +97,6 @@ cite {
 
   &::before {
     content: '—';
-    margin-left: 1em;
+    margin-left: var(--spacing-s);
   }
 }
