@@ -96,7 +96,7 @@ export default {
 
 <style lang="postcss" scoped>
 .player {
-  margin-bottom: 2em;
+  margin-bottom: var(--spacing-l);
   display: flex;
 }
 
@@ -106,7 +106,7 @@ audio {
 
 button {
   text-align: center;
-  margin-right: 1em;
+  margin-right: var(--spacing-m);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -120,8 +120,8 @@ button {
 
 .title {
   max-width: 12rem;
-  padding: 0 0.25em;
-  font-size: 0.8em;
+  padding: 0 var(--spacing-xxs);
+  font-size: var(--font-size-sm);
   white-space: nowrap;
   overflow: hidden;
   position: relative;

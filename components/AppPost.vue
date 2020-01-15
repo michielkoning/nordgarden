@@ -55,7 +55,7 @@ export default {
 li {
   display: flex;
   flex-direction: column;
-  padding-bottom: 1em;
+  padding-bottom: var(--spacing-m);
   border-bottom: 2px dashed var(--color-white);
   cursor: pointer;
 
@@ -63,7 +63,7 @@ li {
   &:focus-within .read-more {
     box-shadow: 0 3px 0 0 var(--color-primary);
     & svg {
-      margin-left: 0.25em;
+      margin-left: var(--spacing-xxs);
     }
   }
 }
@@ -74,8 +74,7 @@ a {
 
 time {
   order: -1;
-  font-size: 0.9em;
-  color: var(--color-gray-dark);
+  font-size: var(--font-size-sm);
 }
 
 .link-wrapper {

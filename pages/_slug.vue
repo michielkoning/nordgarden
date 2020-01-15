@@ -55,9 +55,9 @@ export default {
 }
 
 time {
-  font-size: 0.9em;
+  font-size: var(--font-size-sm);
   color: var(--color-gray);
-  margin-bottom: 1em;
+  margin-bottom: var(--spacing-m);
   display: block;
 }
 

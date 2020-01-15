@@ -52,7 +52,7 @@ ul {
   @mixin list-reset;
 
   display: grid;
-  grid-gap: 2em;
+  grid-gap: var(--spacing-l);
   grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
 }
 
@@ -64,7 +64,7 @@ ul {
 .list-enter,
 .list-leave-to {
   opacity: 0;
-  transform: translateY(1em);
+  transform: translateY(var(--spacing-m));
 }
 
 .button-wrapper {

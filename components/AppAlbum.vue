@@ -79,8 +79,8 @@ h2 {
 
 .album {
   display: grid;
-  grid-gap: 1em;
-  margin-bottom: 2em;
+  grid-gap: var(--spacing-m);
+  margin-bottom: var(--spacing-l);
 
   @media (--viewport-sm) {
     grid-template-columns: 10em auto;
@@ -88,14 +88,14 @@ h2 {
 }
 
 time {
-  margin-bottom: 0.25em;
+  margin-bottom: var(--spacing-xxs);
   display: block;
 }
 
 img {
   display: block;
   max-width: 10em;
-  margin-bottom: 0.25em;
+  margin-bottom: var(--spacing-xxs);
   width: 100%;
   @media (--viewport-sm) {
     max-width: none;
@@ -114,7 +114,7 @@ img {
 a {
   @mixin link-reset;
 
-  flex: 0 0 1em;
-  margin-right: 0.5em;
+  flex: 0 0 var(--spacing-m);
+  margin-right: var(--spacing-xs);
 }
 </style>

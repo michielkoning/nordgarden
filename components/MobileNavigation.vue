@@ -94,13 +94,13 @@ export default {
 }
 
 .btn {
-  padding: 0.5em 0.75em 0.5em 0.5em;
-  font-size: 0.8em;
+  padding: var(--spacing-xs) 0.75em var(--spacing-xs) var(--spacing-xs);
+  font-size: var(--font-size-sm);
   display: flex;
   align-items: center;
 }
 
 svg {
-  margin-right: 0.25em;
+  margin-right: var(--spacing-xxs);
 }
 </style>

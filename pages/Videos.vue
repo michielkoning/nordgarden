@@ -173,7 +173,7 @@ export default {
 img {
   width: 100%;
   display: block;
-  margin-bottom: 0.25em;
+  margin-bottom: var(--spacing-xxs);
 }
 
 .image-wrapper {
@@ -184,9 +184,9 @@ svg {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 2em;
-  height: 2em;
-  margin: -1em 0 0 -1em;
+  width: var(--spacing-l);
+  height: var(--spacing-l);
+  margin: calc(var(--spacing-m) * -1) 0 0 calc(var(--spacing-m) * -1);
   opacity: 0.7;
   fill: var(--color-white);
   transition: opacity 0.2s ease-out;
@@ -196,7 +196,7 @@ svg {
   text-align: center;
   border: 2px solid transparent;
   border-bottom: 2px dashed var(--color-primary);
-  padding-bottom: 0.5em;
+  padding-bottom: var(--spacing-xs);
 
   &:focus-within,
   &.is-active {
@@ -219,14 +219,14 @@ svg {
   @mixin list-reset;
 
   display: grid;
-  grid-gap: 1em;
+  grid-gap: var(--spacing-m);
   grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
 }
 
 >>> iframe {
   width: 100%;
   display: block;
-  margin-bottom: 1em;
+  margin-bottom: var(--spacing-m);
 }
 
 .btn-video:focus {

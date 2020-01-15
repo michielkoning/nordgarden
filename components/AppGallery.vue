@@ -44,7 +44,7 @@ export default {
 
   display: grid;
   margin: 2em 0 3em;
-  grid-gap: 1em;
+  grid-gap: var(--spacing-m);
   /* height: 80vh; */
   grid-template-areas:
     'photo-3 photo-3 photo-2  '

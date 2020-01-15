@@ -111,7 +111,7 @@ h1 {
 
 .waves {
   display: none;
-  @media (--navigation-position-left) and (min-height: 600px) {
+  @media (--navigation-position-left) {
     margin-top: auto;
     fill: var(--color-primary);
     display: block;

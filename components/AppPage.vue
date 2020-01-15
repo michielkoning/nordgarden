@@ -55,8 +55,8 @@ export default {
   &::after {
     border-right: var(--triangle-size) solid transparent;
     border-top: var(--triangle-size) solid var(--color-secondary);
-    width: 1em;
-    height: 1em;
+    width: var(--spacing-m);
+    height: var(--spacing-m);
   }
 
   &::before {

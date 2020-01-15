@@ -54,7 +54,7 @@ li {
 .date,
 .venue {
   display: inline-block;
-  margin-right: 0.25em;
+  margin-right: var(--spacing-xxs);
 }
 
 .venue {

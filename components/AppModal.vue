@@ -120,7 +120,7 @@ export default {
   position: relative;
   transition: transform 0.2s ease-out;
   background: var(--color-white);
-  margin: 3em auto 1em;
+  margin: 3em auto var(--spacing-m);
 }
 
 header {
@@ -128,17 +128,17 @@ header {
   color: var(--color-white);
   display: flex;
   align-items: self-start;
-  padding: 1em;
+  padding: var(--spacing-m);
 }
 
 .title {
   flex: 1 1 auto;
-  padding-right: 0.25em;
+  padding-right: var(--spacing-xxs);
   margin: 0;
 }
 
 .content {
-  padding: 1em;
+  padding: var(--spacing-m);
 }
 
 .close {
@@ -147,8 +147,8 @@ header {
   align-items: center;
   background: var(--color-white);
   border-radius: 50%;
-  width: 2em;
-  height: 2em;
+  width: var(--spacing-l);
+  height: var(--spacing-l);
   flex: 0 0 auto;
   color: var(--color-text);
 
