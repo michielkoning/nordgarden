@@ -158,8 +158,8 @@ a {
       position: absolute;
       display: block;
       content: '';
-      border-top: 0.75em solid transparent;
-      border-bottom: 0.75em solid transparent;
+      border-top: var(--spacing-s) solid transparent;
+      border-bottom: var(--spacing-s) solid transparent;
       border-left: var(--spacing-m) solid var(--color-secondary);
     }
 
@@ -168,8 +168,8 @@ a {
       display: block;
       content: '';
       margin-top: -3px;
-      border-top: calc(0.75em + 3px) solid transparent;
-      border-bottom: calc(0.75em + 3px) solid transparent;
+      border-top: calc(var(--spacing-s) + 3px) solid transparent;
+      border-bottom: calc(var(--spacing-s) + 3px) solid transparent;
       border-left: calc(var(--spacing-m) + 6px) solid #fff;
     }
   }

@@ -43,7 +43,7 @@ export default {
   @mixin list-reset;
 
   display: grid;
-  margin: 2em 0 3em;
+  margin: var(--spacing-l) 0 var(--spacing-xl);
   grid-gap: var(--spacing-m);
   /* height: 80vh; */
   grid-template-areas:

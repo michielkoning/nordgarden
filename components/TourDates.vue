@@ -46,7 +46,7 @@ li {
 }
 
 .date {
-  flex: 0 0 3em;
+  flex: 0 0 var(--spacing-xl);
   text-align: right;
 }
 

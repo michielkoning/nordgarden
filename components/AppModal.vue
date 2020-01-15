@@ -120,7 +120,7 @@ export default {
   position: relative;
   transition: transform 0.2s ease-out;
   background: var(--color-white);
-  margin: 3em auto var(--spacing-m);
+  margin: var(--spacing-xl) auto var(--spacing-m);
 }
 
 header {
@@ -172,7 +172,7 @@ header {
   opacity: 0;
 
   & .wrapper {
-    transform: translateY(-3em);
+    transform: translateY(calc(var(--spacing-xl) * -1));
   }
 }
 /* stylelint-enable */

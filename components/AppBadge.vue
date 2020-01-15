@@ -26,6 +26,6 @@ export default {
   align-items: center;
   border-radius: 1.25em;
   color: var(--color-secondary);
-  padding: 0 0.3em;
+  padding: 0 0var (--spacing-xl);
 }
 </style>

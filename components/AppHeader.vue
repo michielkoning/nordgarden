@@ -151,7 +151,7 @@ h1 {
 
 .fade-enter,
 .fade-leave-to {
-  transform: translateY(-2em);
+  transform: translateY(calc(var(--spacing-l) * -1));
   opacity: 0;
 }
 
