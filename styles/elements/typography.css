@@ -69,14 +69,6 @@ h5 {
   margin: 0;
 }
 
-address {
-  font-style: normal;
-}
-
-.quote {
-  margin: 0 0 var(--spacing-s);
-}
-
 .intro {
   max-width: 60ch;
   margin-bottom: var(--spacing-xl);

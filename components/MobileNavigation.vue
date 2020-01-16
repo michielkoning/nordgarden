@@ -99,6 +99,16 @@ export default {
   font-size: var(--font-size-sm);
   display: flex;
   align-items: center;
+
+  &:hover {
+    background: transparent;
+    color: var(--text-color);
+  }
+
+  &[aria-expanded='true'] {
+    background: var(--color-primary);
+    color: var(--color-white);
+  }
 }
 
 svg {
