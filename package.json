@@ -17,7 +17,7 @@
     "coveralls": "jest --coverage && cat ./tests/coverage/lcov.info | coveralls"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.9.3",
+    "@nuxtjs/axios": "^5.9.4",
     "@nuxtjs/pwa": "^3.0.0-beta.19",
     "body-scroll-lock": "^2.6.4",
     "cross-env": "^6.0.3",
