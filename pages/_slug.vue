@@ -9,9 +9,9 @@
 
 <script>
 import AppPage from '@/components/AppPage.vue'
-import axios from '~/plugins/axios'
 import LatestPosts from '@/components/LatestPosts.vue'
 import PostDate from '@/components/PostDate.vue'
+import axios from '~/plugins/axios'
 
 export default {
   components: {

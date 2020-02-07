@@ -53,7 +53,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/vue-youtube', '~/plugins/axios'],
+  plugins: ['~/plugins/vue-youtube', '~/plugins/axios', '~/plugins/announcer'],
 
   /*
    ** Nuxt.js modules

@@ -1,10 +1,12 @@
 <template>
-  <notch-wrapper>
-    <app-header />
-    <nuxt />
+  <div id="app" tabindex="-1">
+    <notch-wrapper>
+      <app-header />
+      <nuxt />
 
-    <error-handler />
-  </notch-wrapper>
+      <error-handler />
+    </notch-wrapper>
+  </div>
 </template>
 
 <script>
