@@ -14,7 +14,7 @@
       />
       <post-date :date="album.releaseDate" />
       <ul class="shops">
-        <li>
+        <li v-if="album.spotify">
           <a :href="album.spotify" rel="noopener" target="_blank">
             <icon-spotify aria-hidden="true" width="24" height="24" />
             <span class="sr-only">
@@ -22,7 +22,7 @@
             </span>
           </a>
         </li>
-        <li>
+        <li v-if="album.apple">
           <a :href="album.apple" rel="noopener" target="_blank">
             <icon-apple aria-hidden="true" width="24" height="24" />
             <span class="sr-only">

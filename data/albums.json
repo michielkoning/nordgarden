@@ -1,5 +1,40 @@
 [
   {
+    "title": "Korsvei",
+    "image": "changes",
+    "spotify": "https://open.spotify.com/album/0HEpQuKQC5B1aNKi9vfLAD?si=uJ1a7PeeTnaskXXhnChpqA",
+    "releaseDate": "2020, 01, 24",
+    "songlist": [
+      {
+        "title": "Herre, vis oss nåde"
+      },
+      {
+        "title": "Korsvei"
+      },
+      {
+        "title": "Tango"
+      },
+      {
+        "title": "Sang til min far"
+      },
+      {
+        "title": "Ingenstedshen"
+      },
+      {
+        "title": "Lever livet"
+      },
+      {
+        "title": "Hva har jeg gjort"
+      },
+      {
+        "title": "Setesdal"
+      },
+      {
+        "title": "Finnes det en kvinne"
+      }
+    ]
+  },
+  {
     "title": "Changes",
     "image": "changes",
     "apple": "https://music.apple.com/nl/album/changes/1277930075",

@@ -1,3 +1,14 @@
+livegang:
+- url backend verplaatsen naar api.
+- wordpress content verplaatsen naar api folder
+- dns instellingen op one.com uitvoeren
+- database nagaan om mixed content
+- database nagaan op verwijzingen vervangen door api
+- yoast plugin installeren
+- deploy plugin installeren
+- redirect voor wp-admin plaatsen
+- nieuw album toevoegen
+
 graphql
 spacing
 notch

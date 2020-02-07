@@ -2,7 +2,7 @@ import albums from '@/data/albums.json'
 
 export const state = () => ({
   list: albums,
-  currentSong: albums[0].songlist.find(song => song.file !== undefined),
+  currentSong: albums[1].songlist.find(song => song.file !== undefined),
   isPlaying: false
 })
 
