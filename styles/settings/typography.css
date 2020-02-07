@@ -8,7 +8,7 @@
   --font-family-header: var(--font-family-base);
   --line-height-header: 1.2;
 
-  --font-size-sm: 0.7em;
-  --font-size-lg: 1.25em;
+  --font-size-sm: 0.75rem;
+  --font-size-lg: 1.25rem;
 
 }

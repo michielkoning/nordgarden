@@ -1,12 +1,12 @@
 livegang:
-- url backend verplaatsen naar api.
-- wordpress content verplaatsen naar api folder
+x url backend verplaatsen naar api.
+x wordpress content verplaatsen naar api folder
 - dns instellingen op one.com uitvoeren
-- database nagaan om mixed content
+x database nagaan om mixed content
 - database nagaan op verwijzingen vervangen door api
 - yoast plugin installeren
 x deploy plugin installeren
-- redirect voor wp-admin plaatsen
+x redirect voor wp-admin plaatsen
 - nieuw album toevoegen
 
 graphql
