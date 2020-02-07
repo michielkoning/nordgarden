@@ -5,7 +5,7 @@ livegang:
 - database nagaan om mixed content
 - database nagaan op verwijzingen vervangen door api
 - yoast plugin installeren
-- deploy plugin installeren
+x deploy plugin installeren
 - redirect voor wp-admin plaatsen
 - nieuw album toevoegen
 
