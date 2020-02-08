@@ -115,6 +115,7 @@ export default {
     }
   },
   generate: {
+    fallback: true,
     async routes() {
       const response = await axios.get(
         `${apiUrl}wp-json/wp/v2/posts/?per_page=100`
