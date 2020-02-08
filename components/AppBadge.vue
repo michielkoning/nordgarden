@@ -26,6 +26,5 @@ export default {
   justify-content: center;
   align-items: center;
   color: var(--color-secondary);
-  padding: 0 0var (--spacing-xl);
 }
 </style>
