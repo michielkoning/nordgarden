@@ -1,34 +1,33 @@
 <template>
-  <div id="app" tabindex="-1">
-    <notch-wrapper>
-      <app-header />
-      <p>Error</p>
-      <error-handler />
-    </notch-wrapper>
+  <div class="container">
+    {{ text }}
   </div>
 </template>
 
 <script>
-import AppHeader from '@/components/AppHeader.vue'
-import ErrorHandler from '@/components/ErrorHandler.vue'
-import NotchWrapper from '@/components/NotchWrapper.vue'
-
 export default {
-  components: {
-    NotchWrapper,
-    AppHeader,
-    ErrorHandler
-  },
   props: {
     error: {
       type: Object,
       required: true
     }
   },
+  data() {
+    return {
+      text: `
+        <p>De pagina die u zoekt kon niet worden gevonden.</p>
+        <p>Suggesties voor een mogelijk vervolg van uw tocht:</p>
+        <ul>
+          <li><a href="Haarlem Bijdeles}">Keer terug naar de homepage</a></li>
+          <li><a href="javascript:history.back(1)">Keer terug naar de vorige pagina</a></li>
+        </ul>
+        `
+    }
+  },
   computed: {
     title() {
       if (this.error.statusCode === 404) {
-        return 'Pagina niet gevonden'
+        return 'Page not found'
       }
       return 'An error occurred'
     }
