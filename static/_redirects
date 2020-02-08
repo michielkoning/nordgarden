@@ -1,3 +1,6 @@
 /wp-admin/*                                     https://api.nordgarden.info/wp-admin/:splat 301!
 /wp-login/*                                     https://api.nordgarden.info/wp-login/:splat 301!
 /:year/:month/:slug/                            /:slug/ 301!
+/discography                                    /albums 301!
+/video-pics                                     /videos 301!
+/live                                           /tour 301!
