@@ -1,5 +1,5 @@
 <template>
-  <span v-if="amount > 0" class="badge">{{ amount }}</span>
+  <span v-if="amount > 0" :class="$style.badge">{{ amount }}</span>
 </template>
 
 <script>
@@ -13,7 +13,7 @@ export default {
 }
 </script>
 
-<style lang="postcss" scoped>
+<style lang="postcss" module>
 .badge {
   font-size: var(--font-size-sm);
   background: var(--text-color);

@@ -66,7 +66,7 @@ export default {
     'nuxt-svg-loader',
     'nuxt-i18n'
   ],
-  // buildModules: ['@nuxtjs/google-analytics'],
+  buildModules: ['@nuxtjs/google-analytics'],
   manifest,
   i18n,
 
