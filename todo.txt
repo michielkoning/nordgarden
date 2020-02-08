@@ -6,11 +6,12 @@ x database nagaan om mixed content
 x deploy plugin installeren
 x redirect voor wp-admin plaatsen
 x yoast plugin installeren
-- database nagaan op verwijzingen vervangen door api
-- nieuw albumafbeelding toevoegen
+x database nagaan op verwijzingen vervangen door api
+x nieuw albumafbeelding toevoegen
 - fonts fixen
+- errorpage
 
 graphql
-spacing
+async posts
 notch
 afbeeldingen
