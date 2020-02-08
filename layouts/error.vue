@@ -1,11 +1,16 @@
 <template>
-  <div class="container">
+  <app-page :title="title">
     {{ text }}
-  </div>
+  </app-page>
 </template>
 
 <script>
+import AppPage from '@/components/AppPage.vue'
+
 export default {
+  components: {
+    AppPage
+  },
   props: {
     error: {
       type: Object,
