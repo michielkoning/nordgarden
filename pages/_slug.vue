@@ -32,13 +32,7 @@ export default {
       post: post.data.post
     }
   },
-  data() {
-    return {
-      title: '',
-      text: '',
-      date: ''
-    }
-  },
+
   head() {
     return {
       title: this.post.title

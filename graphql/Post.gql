@@ -1,11 +1,10 @@
 #import "./Fragments/Seo.gql"
+#import "./Fragments/Post.gql"
 
 query GET_POST_BY_URI($uri: String) {
   post: postBy(uri: $uri) {
-    title
+    ...post
     content
-    date
-    postId
     seo {
       ...seo
     }

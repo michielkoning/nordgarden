@@ -30,12 +30,6 @@ export default {
       page: page.data.page
     }
   },
-  data() {
-    return {
-      title: this.$t('biography'),
-      text: ''
-    }
-  },
   head() {
     return {
       title: this.title
