@@ -1,8 +1,8 @@
 <template>
-  <app-page :title="title" class="biography">
+  <app-page :title="page.title" class="biography">
     <biography-intro />
     <!-- eslint-disable-next-line -->
-    <div class="text" v-html="text"/>
+    <div class="text" v-html="page.content"/>
   </app-page>
 </template>
 
@@ -10,7 +10,7 @@
 import BiographyIntro from '@/components/BiographyIntro.vue'
 import AppPage from '@/components/AppPage.vue'
 import { biographyPageId } from '@/config/pages'
-import axios from '~/plugins/axios'
+import PageQuery from '~/graphql/Page.gql'
 
 export default {
   components: {
@@ -18,10 +18,17 @@ export default {
     AppPage
   },
 
-  async asyncData({ params }) {
-    const response = await axios.get(`wp/v2/pages/${biographyPageId}`)
+  async asyncData({ app }) {
+    const page = await app.apolloProvider.defaultClient.query({
+      query: PageQuery,
+      variables: {
+        pageId: biographyPageId
+      }
+    })
 
-    return { text: response.data.content.rendered }
+    return {
+      page: page.data.page
+    }
   },
   data() {
     return {

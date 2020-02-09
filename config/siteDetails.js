@@ -1,4 +1,4 @@
-export const apiUrl = 'https://api.nordgarden.info/'
+export const apiUrl = 'https://api.nordgarden.michielkoning.nl/'
 export const siteUrl = 'https://www.nordgarden.info/'
 export const siteTitle = 'Nordgarden'
 export const themeColor = '#ddd'

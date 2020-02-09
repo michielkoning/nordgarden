@@ -4,6 +4,7 @@ import splashscreens from './config/splashscreens'
 import googleAnalytics from './config/googleAnalytics'
 import manifest from './config/manifest'
 import i18n from './config/i18n'
+import apollo from './config/apollo'
 import sitemap from './config/sitemap'
 import { apiUrl, siteUrl } from './config/siteDetails'
 
@@ -26,11 +27,12 @@ export default {
         name: 'viewport',
         content: 'width=device-width, initial-scale=1, viewport-fit=cover'
       },
+      { hid: 'description', name: 'description', content: pkg.description },
       {
-        name: 'black-translucent',
-        content: 'apple-mobile-web-app-status-bar-style'
-      },
-      { hid: 'description', name: 'description', content: pkg.description }
+        hid: 'og:description',
+        name: 'og:description',
+        content: pkg.description
+      }
     ],
     link: [
       ...splashscreens,
@@ -63,6 +65,7 @@ export default {
     '@nuxtjs/pwa',
     '@nuxtjs/sitemap',
     '@nuxtjs/axios',
+    '@nuxtjs/apollo',
     'nuxt-svg-loader',
     'nuxt-i18n'
   ],
@@ -126,5 +129,6 @@ export default {
       return urls
     }
   },
+  apollo,
   sitemap
 }

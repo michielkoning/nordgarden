@@ -1,8 +1,8 @@
 <template>
-  <app-page :title="title" class="post">
-    <post-date :date="date" />
+  <app-page :title="post.title" class="post">
+    <post-date :date="post.date" />
     <!-- eslint-disable-next-line -->
-    <div class="text" v-html="text" />
+    <div class="text" v-html="post.content" />
     <latest-posts />
   </app-page>
 </template>
@@ -11,7 +11,7 @@
 import AppPage from '@/components/AppPage.vue'
 import LatestPosts from '@/components/LatestPosts.vue'
 import PostDate from '@/components/PostDate.vue'
-import axios from '~/plugins/axios'
+import PostQuery from '~/graphql/Post.gql'
 
 export default {
   components: {
@@ -20,18 +20,16 @@ export default {
     LatestPosts
   },
 
-  async asyncData({ params }) {
-    const response = await axios.get(`wp/v2/posts/`, {
-      params: {
-        slug: params.slug
+  async asyncData({ app, params }) {
+    const post = await app.apolloProvider.defaultClient.query({
+      query: PostQuery,
+      variables: {
+        uri: params.slug
       }
     })
-    const post = response.data[0]
 
     return {
-      title: post.title.rendered,
-      text: post.content.rendered,
-      date: post.date
+      post: post.data.post
     }
   },
   data() {
@@ -43,7 +41,7 @@ export default {
   },
   head() {
     return {
-      title: this.title
+      title: this.post.title
     }
   }
 }
