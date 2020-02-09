@@ -16,9 +16,7 @@ export default {
     AppAlbum,
     AppPage
   },
-  meta: {
-    step: 2
-  },
+
   data() {
     return {
       title: this.$t('albums')

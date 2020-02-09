@@ -1,7 +1,7 @@
 <template>
   <section class="news-list" aria-labelledby="news-list-title">
     <h1 id="news-list-title">{{ $t('latestPosts') }}</h1>
-    <transition-group v-if="posts.edges.length" name="list" tag="ul">
+    <transition-group v-if="posts" name="list" tag="ul">
       <app-post
         v-for="post in posts.edges"
         :key="post.node.id"

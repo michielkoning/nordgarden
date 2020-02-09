@@ -13,9 +13,6 @@ export default {
     TourDates,
     AppPage
   },
-  meta: {
-    step: 1
-  },
   data() {
     return {
       title: this.$t('tour')

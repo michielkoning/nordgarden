@@ -55,7 +55,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/vue-youtube', '~/plugins/axios', '~/plugins/announcer'],
+  plugins: ['~/plugins/vue-youtube', '~/plugins/announcer'],
 
   /*
    ** Nuxt.js modules
@@ -64,7 +64,6 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/pwa',
     '@nuxtjs/sitemap',
-    '@nuxtjs/axios',
     '@nuxtjs/apollo',
     'nuxt-svg-loader',
     'nuxt-i18n'
@@ -74,13 +73,6 @@ export default {
   i18n,
 
   googleAnalytics,
-
-  /*
-   ** Axios module configuration
-   */
-  axios: {
-    baseURL: `${apiUrl}wp-json/`
-  },
 
   /*
    ** Build configuration

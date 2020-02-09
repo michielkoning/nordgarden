@@ -53,9 +53,7 @@ export default {
     IconPlay,
     AppPage
   },
-  meta: {
-    step: 3
-  },
+
   data() {
     return {
       title: this.$t('videos'),

@@ -25,9 +25,7 @@ export default {
     BiographyIntro,
     AppPage
   },
-  meta: {
-    step: 0
-  },
+
   data() {
     return {
       title: this.$t('home')
