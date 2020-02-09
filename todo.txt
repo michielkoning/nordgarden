@@ -8,8 +8,8 @@ x redirect voor wp-admin plaatsen
 x yoast plugin installeren
 x database nagaan op verwijzingen vervangen door api
 x nieuw albumafbeelding toevoegen
-- fonts fixen
-- errorpage
+x fonts fixen
+x errorpage
 
 graphql
 async posts
