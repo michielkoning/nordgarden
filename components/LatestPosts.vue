@@ -8,7 +8,8 @@
         :post="post.node"
       />
     </transition-group>
-    <div if="posts.pageInfo.hasNextPage" class="button-wrapper">
+    <app-loader v-if="$apollo.queries.posts.loading" />
+    <div v-else-if="posts.pageInfo.hasNextPage" class="button-wrapper">
       <button class="btn" @click="showMore">
         {{ $t('loadMore') }}
       </button>
@@ -18,11 +19,13 @@
 
 <script>
 import AppPost from '@/components/AppPost.vue'
+import AppLoader from '@/components/AppLoader.vue'
 import PostsQuery from '~/graphql/Posts.gql'
 
 export default {
   components: {
-    AppPost
+    AppPost,
+    AppLoader
   },
   apollo: {
     posts: {
