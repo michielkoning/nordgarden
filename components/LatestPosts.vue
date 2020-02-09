@@ -1,12 +1,15 @@
 <template>
   <section class="news-list" aria-labelledby="news-list-title">
     <h1 id="news-list-title">{{ $t('latestPosts') }}</h1>
-    <transition-group name="list" tag="ul">
-      <app-post v-for="post in list" :key="post.slug" :post="post" />
+    <transition-group v-if="posts.edges.length" name="list" tag="ul">
+      <app-post
+        v-for="post in posts.edges"
+        :key="post.node.id"
+        :post="post.node"
+      />
     </transition-group>
-    <app-loader v-if="isLoading" />
-    <div v-else-if="!hasAllPostsLoaded" class="button-wrapper">
-      <button class="btn" @click="setPosts(currentPage)">
+    <div if="posts.pageInfo.hasNextPage" class="button-wrapper">
+      <button class="btn" @click="showMore">
         {{ $t('loadMore') }}
       </button>
     </div>
@@ -14,30 +17,59 @@
 </template>
 
 <script>
-import { mapActions, mapState, mapGetters } from 'vuex'
 import AppPost from '@/components/AppPost.vue'
-import AppLoader from '@/components/AppLoader.vue'
+import PostsQuery from '~/graphql/Posts.gql'
 
 export default {
   components: {
-    AppLoader,
     AppPost
   },
-
-  computed: {
-    ...mapState('posts', ['list', 'isLoading', 'currentPage', 'totalPages']),
-    ...mapGetters({
-      hasAllPostsLoaded: 'posts/hasAllPostsLoaded'
-    })
+  apollo: {
+    posts: {
+      query: PostsQuery,
+      variables() {
+        return {
+          first: 12,
+          notIn: this.notIn
+        }
+      }
+    }
   },
-
-  mounted() {
-    if (!this.list.length) this.setPosts(this.currentPage)
+  props: {
+    notIn: {
+      type: Number,
+      default: 0
+    }
+  },
+  data() {
+    return {
+      posts: null
+    }
   },
   methods: {
-    ...mapActions({
-      setPosts: 'posts/setPosts'
-    })
+    showMore() {
+      // Fetch more data and transform the original result
+      this.$apollo.queries.posts.fetchMore({
+        // New variables
+        variables: {
+          after: this.posts.pageInfo.endCursor
+        },
+        // Transform the previous result with new data
+        updateQuery: (previousResult, { fetchMoreResult }) => {
+          const newPosts = fetchMoreResult.posts
+          this.showMoreButton = fetchMoreResult.posts.pageInfo.hasNextPage
+
+          return {
+            posts: {
+              __typename: previousResult.posts.__typename,
+              pageInfo: newPosts.pageInfo,
+              // Merging the tag list
+              edges: [...previousResult.posts.edges, ...newPosts.edges]
+            }
+          }
+        }
+      })
+    }
   }
 }
 </script>

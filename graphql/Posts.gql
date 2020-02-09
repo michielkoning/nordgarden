@@ -1,4 +1,3 @@
-#import "./Fragments/ImageArchive.gql"
 #import "./Fragments/Post.gql"
 
 query GET_POSTS($first: Int, $after: String, $notIn: [ID]) {
@@ -12,6 +11,7 @@ query GET_POSTS($first: Int, $after: String, $notIn: [ID]) {
     edges {
       node {
         ...post
+        id
         slug
         excerpt
       }
