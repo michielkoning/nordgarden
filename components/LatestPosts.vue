@@ -14,7 +14,6 @@
 </template>
 
 <script>
-//  import axios from 'axios'
 import { mapActions, mapState, mapGetters } from 'vuex'
 import AppPost from '@/components/AppPost.vue'
 import AppLoader from '@/components/AppLoader.vue'
