@@ -61,6 +61,10 @@ export default {
       title: this.$t('videos'),
       videos: [
         {
+          videoId: 'XqWaMrzyXyQ',
+          title: 'Tango'
+        },
+        {
           videoId: 'bH67wt1CHv8',
           title: 'SIDE OF THE ROAD – (OFFICIAL VIDEO)'
         },
