@@ -47,6 +47,7 @@ import { mapState } from 'vuex'
 import EventBusUtil from '~/utils/eventBusUtil'
 import IconPlay from '~/assets/icons/play.svg'
 import AppPage from '~/components/AppPage.vue'
+import getSeoMetaData from '~/helpers/seo'
 
 export default {
   components: {
@@ -164,9 +165,10 @@ export default {
     }
   },
   head() {
-    return {
-      title: this.title
-    }
+    const { title } = this
+    const slug = 'videos'
+    const metaDesc = 'New music video for TANGO!'
+    return getSeoMetaData(title, metaDesc, slug)
   }
 }
 </script>

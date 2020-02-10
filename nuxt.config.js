@@ -6,7 +6,7 @@ import manifest from './config/manifest'
 import i18n from './config/i18n'
 import apollo from './config/apollo'
 import sitemap from './config/sitemap'
-import { apiUrl, siteUrl } from './config/siteDetails'
+import { apiUrl, siteUrl, twitter, siteTitle } from './config/siteDetails'
 
 export default {
   mode: 'universal',
@@ -32,7 +32,21 @@ export default {
         hid: 'og:description',
         name: 'og:description',
         content: pkg.description
-      }
+      },
+      {
+        hid: 'og:locale',
+        name: 'og:locale',
+        content: 'en_US'
+      },
+      {
+        hid: 'og:site_name',
+        name: 'og:site_name',
+        content: siteTitle
+      },
+      // Twitter Card
+      { name: 'twitter:card', content: 'summary' },
+      { name: 'twitter:site', content: `@${twitter}` },
+      { name: 'twitter:creator', content: `@${twitter}` }
     ],
     link: [
       ...splashscreens,

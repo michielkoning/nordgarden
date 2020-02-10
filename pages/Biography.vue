@@ -32,7 +32,9 @@ export default {
     }
   },
   head() {
-    return getSeoMetaData(this.page, this.$nuxt.$route)
+    const { title, metaDesc } = this.page.seo
+    const slug = 'biography'
+    return getSeoMetaData(title, metaDesc, slug)
   }
 }
 </script>

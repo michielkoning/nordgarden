@@ -35,7 +35,9 @@ export default {
   },
 
   head() {
-    return getSeoMetaData(this.post, this.$nuxt.$route)
+    const { title, metaDesc } = this.post.seo
+    const { slug } = this.post
+    return getSeoMetaData(title, metaDesc, slug)
   }
 }
 </script>

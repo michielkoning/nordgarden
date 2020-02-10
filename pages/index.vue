@@ -16,6 +16,7 @@ import TourDates from '~/components/TourDates.vue'
 import AppGallery from '~/components/AppGallery.vue'
 import BiographyIntro from '~/components/BiographyIntro.vue'
 import AppPage from '~/components/AppPage.vue'
+import getSeoMetaData from '~/helpers/seo'
 
 export default {
   components: {
@@ -33,9 +34,11 @@ export default {
   },
 
   head() {
-    return {
-      title: this.title
-    }
+    const title = this.$t('home')
+    const metaDesc =
+      'Nordgarden is a Norwegian artist deriving from the American old school of classic songwriting.'
+
+    return getSeoMetaData(title, metaDesc, '')
   }
 }
 </script>
