@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import TourDates from '@/components/TourDates.vue'
-import AppPage from '@/components/AppPage.vue'
+import TourDates from '~/components/TourDates.vue'
+import AppPage from '~/components/AppPage.vue'
 
 export default {
   components: {

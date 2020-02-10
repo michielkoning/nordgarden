@@ -46,10 +46,10 @@
 </template>
 
 <script>
-import AppSong from '@/components/AppSong.vue'
-import IconApple from '@/assets/icons/apple.svg'
-import IconSpotify from '@/assets/icons/spotify.svg'
-import PostDate from '@/components/PostDate.vue'
+import AppSong from '~/components/AppSong.vue'
+import IconApple from '~/assets/icons/apple.svg'
+import IconSpotify from '~/assets/icons/spotify.svg'
+import PostDate from '~/components/PostDate.vue'
 
 export default {
   components: {

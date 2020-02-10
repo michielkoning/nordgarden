@@ -27,11 +27,11 @@
 
 <script>
 import { mapState, mapGetters } from 'vuex'
-import EventBusUtil from '@/utils/eventBusUtil'
-import IconPlay from '@/assets/icons/play.svg'
-import IconPause from '@/assets/icons/pause.svg'
-import IconBars from '@/assets/icons/bars.svg'
-import NotchWrapper from '@/components/NotchWrapper.vue'
+import EventBusUtil from '~/utils/eventBusUtil'
+import IconPlay from '~/assets/icons/play.svg'
+import IconPause from '~/assets/icons/pause.svg'
+import IconBars from '~/assets/icons/bars.svg'
+import NotchWrapper from '~/components/NotchWrapper.vue'
 
 export default {
   components: {

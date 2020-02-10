@@ -31,11 +31,11 @@
 
 <script>
 import { mapActions, mapState } from 'vuex'
-import EventBusUtil from '@/utils/eventBusUtil'
+import EventBusUtil from '~/utils/eventBusUtil'
 
-import AppModal from '@/components/AppModal.vue'
-import IconPlay from '@/assets/icons/play.svg'
-import IconPause from '@/assets/icons/pause.svg'
+import AppModal from '~/components/AppModal.vue'
+import IconPlay from '~/assets/icons/play.svg'
+import IconPause from '~/assets/icons/pause.svg'
 
 export default {
   components: {

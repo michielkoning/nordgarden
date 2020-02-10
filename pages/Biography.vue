@@ -7,10 +7,10 @@
 </template>
 
 <script>
-import BiographyIntro from '@/components/BiographyIntro.vue'
-import AppPage from '@/components/AppPage.vue'
-import { biographyPageId } from '@/config/pages'
-import getSeoMetaData from '@/helpers/seo'
+import BiographyIntro from '~/components/BiographyIntro.vue'
+import AppPage from '~/components/AppPage.vue'
+import { biographyPageId } from '~/config/pages'
+import getSeoMetaData from '~/helpers/seo'
 import PageQuery from '~/graphql/Page.gql'
 
 export default {

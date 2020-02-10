@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import IconClose from '@/assets/icons/close.svg'
+import IconClose from '~/assets/icons/close.svg'
 
 export default {
   name: 'Modal',

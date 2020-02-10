@@ -8,10 +8,10 @@
 </template>
 
 <script>
-import AppPage from '@/components/AppPage.vue'
-import LatestPosts from '@/components/LatestPosts.vue'
-import PostDate from '@/components/PostDate.vue'
-import getSeoMetaData from '@/helpers/seo'
+import AppPage from '~/components/AppPage.vue'
+import LatestPosts from '~/components/LatestPosts.vue'
+import PostDate from '~/components/PostDate.vue'
+import getSeoMetaData from '~/helpers/seo'
 import PostQuery from '~/graphql/Post.gql'
 
 export default {
