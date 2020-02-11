@@ -2,16 +2,34 @@
   <li class="album">
     <h2>{{ album.title }}</h2>
     <div>
-      <img
-        :src="require(`~/assets/images/albums/${album.image}.jpg`)"
-        :srcset="
-          require(`~/assets/images/albums/${album.image}@2x.jpg`) + ' 2x'
-        "
-        width="200"
-        height="200"
-        loading="lazy"
-        alt
-      />
+      <picture>
+        <source
+          type="image/webp"
+          :srcset="
+            require(`~/assets/images/albums/${album.image}.webp`) +
+              ' 1x, ' +
+              require(`~/assets/images/albums/${album.image}@2x.webp`) +
+              ' 2x'
+          "
+        />
+        <source
+          type="image/jpg"
+          :srcset="
+            require(`~/assets/images/albums/${album.image}.jpg`) +
+              ' 1x, ' +
+              require(`~/assets/images/albums/${album.image}@2x.jpg`) +
+              ' 2x'
+          "
+        />
+
+        <img
+          :src="require(`~/assets/images/albums/${album.image}.jpg`)"
+          width="200"
+          height="200"
+          loading="lazy"
+          alt
+        />
+      </picture>
       <post-date :date="album.releaseDate" />
       <ul class="shops">
         <li v-if="album.spotify">
