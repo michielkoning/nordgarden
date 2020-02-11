@@ -78,10 +78,6 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-header {
-  padding-top: env(safe-area-inset-top);
-}
-
 .content {
   padding: 5em var(--gutter) var(--gutter);
   overflow: auto;
