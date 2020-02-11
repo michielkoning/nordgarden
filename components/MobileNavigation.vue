@@ -75,7 +75,6 @@ export default {
 <style lang="postcss" scoped>
 .wrapper {
   position: fixed;
-  padding: var(--spacing-s) var(--gutter);
   top: 0;
   left: 0;
   right: 0;
@@ -89,6 +88,7 @@ export default {
 }
 
 .buttons {
+  padding: var(--spacing-s) var(--gutter);
   display: flex;
   justify-content: space-between;
 }

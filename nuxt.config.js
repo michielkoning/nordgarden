@@ -27,8 +27,8 @@ export default {
         content: 'width=device-width, initial-scale=1, viewport-fit=cover'
       },
       {
-        name: 'black-translucent',
-        content: 'apple-mobile-web-app-status-bar-style'
+        name: 'apple-mobile-web-app-status-bar-style',
+        content: 'black-translucent'
       },
       { hid: 'description', name: 'description', content: pkg.description }
     ],
