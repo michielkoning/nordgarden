@@ -75,7 +75,6 @@ export default {
 <style lang="postcss" scoped>
 .wrapper {
   position: fixed;
-  padding-top: env(safe-area-inset-top);
   top: 0;
   left: 0;
   right: 0;
