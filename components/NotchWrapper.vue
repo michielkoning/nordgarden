@@ -1,12 +1,12 @@
 <template>
-  <div class="notch-wrapper">
+  <div :class="Sstyle['notch-wrapper']">
     <slot />
   </div>
 </template>
 
-<style lang="postcss" scoped>
+<style lang="postcss" module>
 .notch-wrapper {
-  padding: env(safe-area-inset-top) env(safe-area-inset-right) 0
-    env(safe-area-inset-left);
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 </style>
