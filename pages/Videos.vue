@@ -159,6 +159,7 @@ svg {
   grid-gap: var(--spacing-m);
   grid-template-columns: 5em auto;
 
+  &:hover,
   &:focus-within,
   &.is-active {
     border-style: solid;
