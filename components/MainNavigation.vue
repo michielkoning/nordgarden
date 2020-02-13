@@ -32,6 +32,11 @@
           <span class="title">{{ $t('biography') }}</span>
         </nuxt-link>
       </li>
+      <li>
+        <nuxt-link to="/contact">
+          <span class="title">{{ $t('contact') }}</span>
+        </nuxt-link>
+      </li>
     </ul>
     <div
       :style="{ '-webkit-transform': arrowPosition, transform: arrowPosition }"
