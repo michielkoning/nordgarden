@@ -1,5 +1,5 @@
 <template>
-  <app-page :title="post.title" class="post">
+  <app-page v-if="post" :title="post.title" class="post">
     <post-date :date="post.date" />
     <!-- eslint-disable-next-line -->
     <div class="text" v-html="post.content" />
