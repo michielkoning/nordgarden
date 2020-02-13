@@ -75,14 +75,12 @@ export default {
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
+    '@nuxtjs/apollo',
     '@nuxtjs/pwa',
     '@nuxtjs/sitemap',
-    '@nuxtjs/apollo',
     'nuxt-svg-loader',
     'nuxt-i18n'
   ],
-  axios: {},
 
   buildModules: ['@nuxtjs/google-analytics'],
   manifest,
