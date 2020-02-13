@@ -1,5 +1,5 @@
 import axios from 'axios'
-import EventBusUtil from '@/utils/eventBusUtil'
+import EventBusUtil from '~/utils/eventBusUtil'
 import { apiUrl } from '~/config/siteDetails'
 
 const instance = axios.create({

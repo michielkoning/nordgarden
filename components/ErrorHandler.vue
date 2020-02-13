@@ -14,9 +14,9 @@
 </template>
 
 <script>
-import EventBusUtil from '@/utils/eventBusUtil'
-import IconClose from '@/assets/icons/close.svg'
-import NotchWrapper from '@/components/NotchWrapper.vue'
+import EventBusUtil from '~/utils/eventBusUtil'
+import IconClose from '~/assets/icons/close.svg'
+import NotchWrapper from '~/components/NotchWrapper.vue'
 
 export default {
   components: {

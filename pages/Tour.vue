@@ -5,16 +5,14 @@
 </template>
 
 <script>
-import TourDates from '@/components/TourDates.vue'
-import AppPage from '@/components/AppPage.vue'
+import TourDates from '~/components/TourDates.vue'
+import AppPage from '~/components/AppPage.vue'
+import getSeoMetaData from '~/helpers/seo'
 
 export default {
   components: {
     TourDates,
     AppPage
-  },
-  meta: {
-    step: 1
   },
   data() {
     return {
@@ -22,9 +20,10 @@ export default {
     }
   },
   head() {
-    return {
-      title: this.title
-    }
+    const { title } = this
+    const slug = 'tour'
+    const metaDesc = 'Tour dates'
+    return getSeoMetaData(title, metaDesc, slug)
   }
 }
 </script>

@@ -4,8 +4,9 @@ import splashscreens from './config/splashscreens'
 import googleAnalytics from './config/googleAnalytics'
 import manifest from './config/manifest'
 import i18n from './config/i18n'
+import apollo from './config/apollo'
 import sitemap from './config/sitemap'
-import { apiUrl, siteUrl } from './config/siteDetails'
+import { apiUrl, siteUrl, twitter, siteTitle } from './config/siteDetails'
 
 export default {
   mode: 'universal',
@@ -26,11 +27,25 @@ export default {
         name: 'viewport',
         content: 'width=device-width, initial-scale=1, viewport-fit=cover'
       },
+      { hid: 'description', name: 'description', content: pkg.description },
       {
         name: 'apple-mobile-web-app-status-bar-style',
         content: 'black-translucent'
       },
-      { hid: 'description', name: 'description', content: pkg.description }
+      {
+        hid: 'og:locale',
+        name: 'og:locale',
+        content: 'en_US'
+      },
+      {
+        hid: 'og:site_name',
+        name: 'og:site_name',
+        content: siteTitle
+      },
+      // Twitter Card
+      { name: 'twitter:card', content: 'summary' },
+      { name: 'twitter:site', content: `@${twitter}` },
+      { name: 'twitter:creator', content: `@${twitter}` }
     ],
     link: [
       ...splashscreens,
@@ -53,31 +68,27 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/vue-youtube', '~/plugins/axios', '~/plugins/announcer'],
+  plugins: ['~/plugins/vue-youtube', '~/plugins/announcer'],
 
   /*
    ** Nuxt.js modules
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
+    '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/sitemap',
-    '@nuxtjs/axios',
+    '@nuxtjs/apollo',
     'nuxt-svg-loader',
     'nuxt-i18n'
   ],
+  axios: {},
+
   buildModules: ['@nuxtjs/google-analytics'],
   manifest,
   i18n,
 
   googleAnalytics,
-
-  /*
-   ** Axios module configuration
-   */
-  axios: {
-    baseURL: `${apiUrl}wp-json/`
-  },
 
   /*
    ** Build configuration
@@ -126,5 +137,6 @@ export default {
       return urls
     }
   },
+  apollo,
   sitemap
 }

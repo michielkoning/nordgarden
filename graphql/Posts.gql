@@ -1,0 +1,20 @@
+#import "./Fragments/Post.gql"
+
+query GET_POSTS($first: Int, $after: String, $notIn: [ID]) {
+  posts(first: $first, after: $after, where: { notIn: $notIn }) {
+    pageInfo {
+      hasNextPage
+      endCursor
+      hasPreviousPage
+      startCursor
+    }
+    edges {
+      node {
+        ...post
+        id
+        slug
+        excerpt
+      }
+    }
+  }
+}

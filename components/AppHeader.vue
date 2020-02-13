@@ -32,13 +32,13 @@
 </template>
 
 <script>
-import SkipLinks from '@/components/SkipLinks.vue'
-import IconWaves from '@/assets/icons/waves.svg'
+import SkipLinks from '~/components/SkipLinks.vue'
+import IconWaves from '~/assets/icons/waves.svg'
 
-import AudioPlayer from '@/components/AudioPlayer.vue'
-import MainNavigation from '@/components/MainNavigation.vue'
-import SocialLinks from '@/components/SocialLinks.vue'
-import MobileNavigation from '@/components/MobileNavigation.vue'
+import AudioPlayer from '~/components/AudioPlayer.vue'
+import MainNavigation from '~/components/MainNavigation.vue'
+import SocialLinks from '~/components/SocialLinks.vue'
+import MobileNavigation from '~/components/MobileNavigation.vue'
 
 const bodyScrollLock = require('body-scroll-lock')
 
@@ -130,8 +130,7 @@ h1 {
   height: 100vh;
   overflow: hidden;
   z-index: var(--main-navigation);
-  padding: env(safe-area-inset-top) env(safe-area-inset-right)
-    env(safe-area-inset-bottom) env(safe-area-inset-left);
+  padding: var(--notch);
 
   @media (--navigation-position-left) {
     background: transparent;

@@ -9,6 +9,8 @@
       :src="require('~/assets/images/promo.png')"
       :class="$style.promo"
       loading="lazy"
+      width="472"
+      height="456"
       alt
     />
   </main>
