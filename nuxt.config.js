@@ -1,4 +1,4 @@
-import axios from 'axios'
+import { createApolloFetch } from 'apollo-fetch'
 import pkg from './package'
 import splashscreens from './config/splashscreens'
 import googleAnalytics from './config/googleAnalytics'
@@ -126,13 +126,26 @@ export default {
   generate: {
     fallback: true,
     async routes() {
-      const response = await axios.get(
-        `${apiUrl}wp-json/wp/v2/posts/?per_page=100`
-      )
-      const posts = response.data.map(post => post.slug)
-      const urls = ['biography', ...posts]
+      const uri = `${apiUrl}graphql`
 
-      return urls
+      const query = `
+        query GET_SITEMAP {
+          posts(first: 20, where: {status: PUBLISH}) {
+            edges {
+              node {
+                uri
+              }
+            }
+          }
+        }
+      `
+
+      const apolloFetch = createApolloFetch({ uri })
+      const result = await apolloFetch({ query }) // all apolloFetch arguments are optional
+      const { posts } = result.data
+      return posts.edges.map(item => {
+        return item.node.uri
+      })
     }
   },
   apollo,
