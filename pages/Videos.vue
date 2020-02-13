@@ -147,9 +147,7 @@ svg {
   height: var(--video-button-size);
   margin: calc(var(--video-button-size) / -2) 0 0
     calc(var(--video-button-size) / -2);
-  opacity: 0.7;
   fill: var(--color-white);
-  transition: opacity 0.2s ease-out;
 }
 
 .list-item {
@@ -166,12 +164,6 @@ svg {
     border-style: solid;
   }
 
-  &:focus-within,
-  &:hover {
-    & svg {
-      opacity: 1;
-    }
-  }
   @media (--video-tiles) {
     display: block;
   }
