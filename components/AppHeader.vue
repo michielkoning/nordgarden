@@ -130,7 +130,7 @@ h1 {
   height: 100vh;
   overflow: hidden;
   z-index: var(--main-navigation);
-  padding: 0 env(safe-area-inset-right) 0 env(safe-area-inset-left);
+  padding: var(--notch);
 
   @media (--navigation-position-left) {
     background: transparent;

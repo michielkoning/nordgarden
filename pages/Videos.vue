@@ -48,6 +48,7 @@ import EventBusUtil from '~/utils/eventBusUtil'
 import IconPlay from '~/assets/icons/play.svg'
 import AppPage from '~/components/AppPage.vue'
 import getSeoMetaData from '~/helpers/seo'
+import videos from '~/data/videos'
 
 export default {
   components: {
@@ -58,61 +59,8 @@ export default {
   data() {
     return {
       title: this.$t('videos'),
-      videos: [
-        {
-          videoId: 'XqWaMrzyXyQ',
-          title: 'Tango'
-        },
-        {
-          videoId: 'bH67wt1CHv8',
-          title: 'SIDE OF THE ROAD – (OFFICIAL VIDEO)'
-        },
-        {
-          videoId: 'JRwpPplPqmM',
-          title: 'SIDE OF THE ROAD – LIVE @ TV RAI 1'
-        },
-        {
-          videoId: '3K-f6RVtKwA',
-          title: 'YOU MUST BE THE CHANGE – (OFFICIAL VIDEO)'
-        },
-        {
-          videoId: 'phujbtP9J_Y',
-          title: 'A MERRY OLD CHRISTMAS – (OFFICIAL VIDEO)'
-        },
-        {
-          videoId: '7qO4Lu5rxew',
-          title: 'LA MIA RIVOLUZIONE – (OFFICIAL VIDEO)'
-        },
-        {
-          videoId: 'Rc-fLsWAe_A',
-          title: 'LA CANZONE DEI CANI – (OFFICIAL VIDEO)'
-        },
-        {
-          videoId: '83OIrw0AjgY',
-          title: 'NON È LA CALIFORNIA – (OFFICIAL VIDEO)'
-        },
-        {
-          videoId: 'RA2dLa5ZAVY',
-          title: 'L’ABBANDONO – LIVE @ ROMA – 06.12.13'
-        },
-        {
-          videoId: 'ioYwLp2PKBY',
-          title: 'THESE LOVESICK BLUES – (OFFICIAL VIDEO)'
-        },
-        {
-          videoId: 'PBMpzxa-SJA',
-          title: 'KEEP IT SHINING ON THE INSIDE – (OFFICIAL VIDEO)'
-        },
-        {
-          videoId: '_SnVGrgAHmg',
-          title: 'THE PATH OF LOVE – (OFFICIAL VIDEO)'
-        },
-        {
-          videoId: '986m8vY9DVo',
-          title: 'GOOD THINGS DIE – (OFFICIAL VIDEO)'
-        }
-      ],
-      videoId: 'bH67wt1CHv8',
+      videos,
+      videoId: videos[0].videoId,
       playerVars: {
         rel: 0
       },
@@ -174,6 +122,8 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+@custom-media --video-tiles (--viewport-sm);
+
 img {
   width: 100%;
   display: block;
@@ -185,33 +135,45 @@ img {
 }
 
 svg {
+  --video-button-size: var(--spacing-m);
+  @media (--video-tiles) {
+    --video-button-size: var(--spacing-l);
+  }
+
   position: absolute;
   left: 50%;
   top: 50%;
-  width: var(--spacing-l);
-  height: var(--spacing-l);
-  margin: calc(var(--spacing-m) * -1) 0 0 calc(var(--spacing-m) * -1);
-  opacity: 0.7;
+  width: var(--video-button-size);
+  height: var(--video-button-size);
+  margin: calc(var(--video-button-size) / -2) 0 0
+    calc(var(--video-button-size) / -2);
   fill: var(--color-white);
-  transition: opacity 0.2s ease-out;
 }
 
 .list-item {
-  text-align: center;
   border: 2px solid transparent;
   border-bottom: 2px dashed var(--color-primary);
   padding-bottom: var(--spacing-xs);
 
+  display: grid;
+  grid-gap: var(--spacing-m);
+  grid-template-columns: 5em auto;
+
+  &:hover,
   &:focus-within,
   &.is-active {
     border-style: solid;
   }
 
-  &:focus-within,
-  &:hover {
-    & svg {
-      opacity: 1;
-    }
+  @media (--video-tiles) {
+    display: block;
+  }
+}
+
+.btn-video {
+  text-align: left;
+  @media (--video-tiles) {
+    text-align: center;
   }
 }
 
@@ -221,10 +183,12 @@ svg {
 
 .list {
   @mixin list-reset;
-
   display: grid;
   grid-gap: var(--spacing-m);
-  grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+
+  @media (--video-tiles) {
+    grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+  }
 }
 
 >>> iframe {
