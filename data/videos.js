@@ -1,7 +1,7 @@
 export default [
   {
     videoId: 'XqWaMrzyXyQ',
-    title: 'Tango'
+    title: 'TANGO – (OFFICIAL VIDEO)'
   },
   {
     videoId: 'bH67wt1CHv8',

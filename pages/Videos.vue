@@ -122,6 +122,8 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+@custom-media --video-tiles (--viewport-sm);
+
 img {
   width: 100%;
   display: block;
@@ -133,22 +135,31 @@ img {
 }
 
 svg {
+  --video-button-size: var(--spacing-m);
+  @media (--video-tiles) {
+    --video-button-size: var(--spacing-l);
+  }
+
   position: absolute;
   left: 50%;
   top: 50%;
-  width: var(--spacing-l);
-  height: var(--spacing-l);
-  margin: calc(var(--spacing-m) * -1) 0 0 calc(var(--spacing-m) * -1);
+  width: var(--video-button-size);
+  height: var(--video-button-size);
+  margin: calc(var(--video-button-size) / -2) 0 0
+    calc(var(--video-button-size) / -2);
   opacity: 0.7;
   fill: var(--color-white);
   transition: opacity 0.2s ease-out;
 }
 
 .list-item {
-  text-align: center;
   border: 2px solid transparent;
   border-bottom: 2px dashed var(--color-primary);
   padding-bottom: var(--spacing-xs);
+
+  display: grid;
+  grid-gap: var(--spacing-m);
+  grid-template-columns: 5em auto;
 
   &:focus-within,
   &.is-active {
@@ -161,6 +172,16 @@ svg {
       opacity: 1;
     }
   }
+  @media (--video-tiles) {
+    display: block;
+  }
+}
+
+.btn-video {
+  text-align: left;
+  @media (--video-tiles) {
+    text-align: center;
+  }
 }
 
 .videos {
@@ -169,10 +190,12 @@ svg {
 
 .list {
   @mixin list-reset;
-
   display: grid;
   grid-gap: var(--spacing-m);
-  grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+
+  @media (--video-tiles) {
+    grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+  }
 }
 
 >>> iframe {
