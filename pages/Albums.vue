@@ -8,17 +8,16 @@
 
 <script>
 import { mapState } from 'vuex'
-import AppAlbum from '@/components/AppAlbum.vue'
-import AppPage from '@/components/AppPage.vue'
+import AppAlbum from '~/components/AppAlbum.vue'
+import AppPage from '~/components/AppPage.vue'
+import getSeoMetaData from '~/helpers/seo'
 
 export default {
   components: {
     AppAlbum,
     AppPage
   },
-  meta: {
-    step: 2
-  },
+
   data() {
     return {
       title: this.$t('albums')
@@ -28,9 +27,10 @@ export default {
     ...mapState('albums', ['list'])
   },
   head() {
-    return {
-      title: this.title
-    }
+    const { title } = this
+    const slug = 'albums'
+    const metaDesc = 'The new album KORSVEI is out!'
+    return getSeoMetaData(title, metaDesc, slug)
   }
 }
 </script>

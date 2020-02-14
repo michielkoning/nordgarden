@@ -1,10 +1,10 @@
 <template>
   <li @mousedown="mouseDown" @mouseup="mouseUp">
     <!-- eslint-disable-next-line -->
-    <h2><router-link :to="post.slug" v-html="post.title.rendered" /></h2>
+    <h2><router-link :to="post.slug" v-html="post.title" /></h2>
     <post-date :date="post.date" />
     <!-- eslint-disable-next-line -->
-    <div class="text" v-html="post.excerpt.rendered"/>
+    <div class="text" v-html="post.excerpt"/>
     <div class="link-wrapper">
       <span class="read-more">
         {{ $t('readMore') }}
@@ -15,8 +15,8 @@
 </template>
 
 <script>
-import PostDate from '@/components/PostDate.vue'
-import IconChevronRight from '@/assets/icons/chevron-right.svg'
+import PostDate from '~/components/PostDate.vue'
+import IconChevronRight from '~/assets/icons/chevron-right.svg'
 
 export default {
   components: {

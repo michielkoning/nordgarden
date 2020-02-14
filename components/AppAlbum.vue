@@ -2,16 +2,7 @@
   <li class="album">
     <h2>{{ album.title }}</h2>
     <div>
-      <img
-        :src="require(`~/assets/images/albums/${album.image}.jpg`)"
-        :srcset="
-          require(`~/assets/images/albums/${album.image}@2x.jpg`) + ' 2x'
-        "
-        width="200"
-        height="200"
-        loading="lazy"
-        alt
-      />
+      <app-image :width="200" :height="200" :image="album.image" />
       <post-date :date="album.releaseDate" />
       <ul class="shops">
         <li v-if="album.spotify">
@@ -47,6 +38,7 @@
 
 <script>
 import AppSong from '@/components/AppSong.vue'
+import AppImage from '@/components/Shared/AppImage.vue'
 import IconApple from '@/assets/icons/apple.svg'
 import IconSpotify from '@/assets/icons/spotify.svg'
 import PostDate from '@/components/PostDate.vue'
@@ -56,7 +48,8 @@ export default {
     IconSpotify,
     IconApple,
     AppSong,
-    PostDate
+    PostDate,
+    AppImage
   },
   props: {
     album: {

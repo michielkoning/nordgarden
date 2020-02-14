@@ -10,8 +10,7 @@ x database nagaan op verwijzingen vervangen door api
 x nieuw albumafbeelding toevoegen
 x fonts fixen
 x errorpage
-
-graphql
-async posts
-notch
+x graphql
+x async posts
+x notch
 afbeeldingen

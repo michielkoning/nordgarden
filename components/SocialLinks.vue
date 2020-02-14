@@ -82,12 +82,12 @@
 </template>
 
 <script>
-import IconApple from '@/assets/icons/apple.svg'
-import IconYoutube from '@/assets/icons/youtube.svg'
-import IconFacebook from '@/assets/icons/facebook.svg'
-import IconTwitter from '@/assets/icons/twitter.svg'
-import IconLinkedin from '@/assets/icons/linkedin.svg'
-import IconSpotify from '@/assets/icons/spotify.svg'
+import IconApple from '~/assets/icons/apple.svg'
+import IconYoutube from '~/assets/icons/youtube.svg'
+import IconFacebook from '~/assets/icons/facebook.svg'
+import IconTwitter from '~/assets/icons/twitter.svg'
+import IconLinkedin from '~/assets/icons/linkedin.svg'
+import IconSpotify from '~/assets/icons/spotify.svg'
 
 export default {
   components: {

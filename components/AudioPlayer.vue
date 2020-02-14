@@ -31,11 +31,11 @@
 
 <script>
 import { mapActions, mapGetters, mapState } from 'vuex'
-import EventBusUtil from '@/utils/eventBusUtil'
+import EventBusUtil from '~/utils/eventBusUtil'
 
-import IconPlay from '@/assets/icons/play.svg'
-import IconPause from '@/assets/icons/pause.svg'
-import IconForwards from '@/assets/icons/forwards.svg'
+import IconPlay from '~/assets/icons/play.svg'
+import IconPause from '~/assets/icons/pause.svg'
+import IconForwards from '~/assets/icons/forwards.svg'
 
 export default {
   components: {

@@ -1,11 +1,12 @@
-import axios from 'axios'
+import { createApolloFetch } from 'apollo-fetch'
 import pkg from './package'
 import splashscreens from './config/splashscreens'
 import googleAnalytics from './config/googleAnalytics'
 import manifest from './config/manifest'
 import i18n from './config/i18n'
+import apollo from './config/apollo'
 import sitemap from './config/sitemap'
-import { apiUrl, siteUrl } from './config/siteDetails'
+import { apiUrl, siteUrl, twitter, siteTitle } from './config/siteDetails'
 
 export default {
   mode: 'universal',
@@ -27,10 +28,27 @@ export default {
         content: 'width=device-width, initial-scale=1, viewport-fit=cover'
       },
       {
+        name: 'apple-mobile-web-app-capable',
+        content: 'yes'
+      },
+      {
         name: 'apple-mobile-web-app-status-bar-style',
         content: 'black-translucent'
       },
-      { hid: 'description', name: 'description', content: pkg.description }
+      {
+        hid: 'og:locale',
+        name: 'og:locale',
+        content: 'en_US'
+      },
+      {
+        hid: 'og:site_name',
+        name: 'og:site_name',
+        content: siteTitle
+      },
+      // Twitter Card
+      { name: 'twitter:card', content: 'summary' },
+      { name: 'twitter:site', content: `@${twitter}` },
+      { name: 'twitter:creator', content: `@${twitter}` }
     ],
     link: [
       ...splashscreens,
@@ -53,31 +71,25 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/vue-youtube', '~/plugins/axios', '~/plugins/announcer'],
+  plugins: ['~/plugins/vue-youtube'],
 
   /*
    ** Nuxt.js modules
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
+    '@nuxtjs/apollo',
     '@nuxtjs/pwa',
     '@nuxtjs/sitemap',
-    '@nuxtjs/axios',
     'nuxt-svg-loader',
     'nuxt-i18n'
   ],
+
   buildModules: ['@nuxtjs/google-analytics'],
   manifest,
   i18n,
 
   googleAnalytics,
-
-  /*
-   ** Axios module configuration
-   */
-  axios: {
-    baseURL: `${apiUrl}wp-json/`
-  },
 
   /*
    ** Build configuration
@@ -117,14 +129,28 @@ export default {
   generate: {
     fallback: true,
     async routes() {
-      const response = await axios.get(
-        `${apiUrl}wp-json/wp/v2/posts/?per_page=100`
-      )
-      const posts = response.data.map(post => post.slug)
-      const urls = ['biography', ...posts]
+      const uri = `${apiUrl}graphql`
 
-      return urls
+      const query = `
+        query GET_SITEMAP {
+          posts(first: 20, where: {status: PUBLISH}) {
+            edges {
+              node {
+                uri
+              }
+            }
+          }
+        }
+      `
+
+      const apolloFetch = createApolloFetch({ uri })
+      const result = await apolloFetch({ query }) // all apolloFetch arguments are optional
+      const { posts } = result.data
+      return posts.edges.map(item => {
+        return item.node.uri
+      })
     }
   },
+  apollo,
   sitemap
 }

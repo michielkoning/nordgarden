@@ -44,9 +44,10 @@
 
 <script>
 import { mapState } from 'vuex'
-import EventBusUtil from '@/utils/eventBusUtil'
-import IconPlay from '@/assets/icons/play.svg'
-import AppPage from '@/components/AppPage.vue'
+import EventBusUtil from '~/utils/eventBusUtil'
+import IconPlay from '~/assets/icons/play.svg'
+import AppPage from '~/components/AppPage.vue'
+import getSeoMetaData from '~/helpers/seo'
 import videos from '~/data/videos'
 
 export default {
@@ -54,9 +55,7 @@ export default {
     IconPlay,
     AppPage
   },
-  meta: {
-    step: 3
-  },
+
   data() {
     return {
       title: this.$t('videos'),
@@ -114,9 +113,10 @@ export default {
     }
   },
   head() {
-    return {
-      title: this.title
-    }
+    const { title } = this
+    const slug = 'videos'
+    const metaDesc = 'New music video for TANGO!'
+    return getSeoMetaData(title, metaDesc, slug)
   }
 }
 </script>

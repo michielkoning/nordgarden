@@ -1,4 +1,4 @@
-https://nordgarden.michielkoning.nl/*            https://www.nordgarden.info/:splat 301!
+https://nordgarden.michielkoning.nl/*           https://www.nordgarden.info/:splat 301!
 /wp-admin/*                                     https://api.nordgarden.info/wp-admin/:splat 301!
 /wp-login/*                                     https://api.nordgarden.info/wp-login/:splat 301!
 /discography                                    /albums 301!
