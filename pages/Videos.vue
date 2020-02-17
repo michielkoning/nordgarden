@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import AppPage from '~/components/AppPage.vue'
+import AppPage from '~/components/Layout/AppPage.vue'
 import VideosList from '~/components/Videos/VideosList.vue'
 import getSeoMetaData from '~/helpers/seo'
 import videos from '~/data/videos'

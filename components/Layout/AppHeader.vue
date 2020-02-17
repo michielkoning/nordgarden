@@ -32,13 +32,13 @@
 </template>
 
 <script>
-import SkipLinks from '~/components/Layout/SkipLinks.vue'
+import SkipLinks from '~/components/Menu/SkipLinks.vue'
 import IconWaves from '~/assets/icons/waves.svg'
 
-import AudioPlayer from '~/components/AudioPlayer.vue'
-import MainNavigation from '~/components/MainNavigation.vue'
-import SocialLinks from '~/components/SocialLinks.vue'
-import MobileNavigation from '~/components/MobileNavigation.vue'
+import AudioPlayer from '~/components/Menu/AudioPlayer.vue'
+import MainNavigation from '~/components/Menu/MainNavigation.vue'
+import SocialLinks from '~/components/Menu/SocialLinks.vue'
+import MobileNavigation from '~/components/Menu/MobileNavigation.vue'
 
 const bodyScrollLock = require('body-scroll-lock')
 

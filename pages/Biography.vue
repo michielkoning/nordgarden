@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import BiographyIntro from '~/components/BiographyIntro.vue'
-import AppPage from '~/components/AppPage.vue'
+import BiographyIntro from '~/components/Biography/BiographyIntro.vue'
+import AppPage from '~/components/Layout/AppPage.vue'
 import { biographyPageId } from '~/config/pages'
 import getSeoMetaData from '~/helpers/seo'
 import PageQuery from '~/graphql/Page.gql'

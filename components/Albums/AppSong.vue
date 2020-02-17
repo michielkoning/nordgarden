@@ -17,15 +17,6 @@
       </template>
     </div>
     <span class="title">{{ song.title }}</span>
-    <template v-if="song.lyrics">
-      <button @click="toggleModal(true)">lyrics</button>
-      <app-modal
-        v-if="showModal"
-        :title="song.title"
-        @close="toggleModal(false)"
-        >{{ song.lyrics }}</app-modal
-      >
-    </template>
   </li>
 </template>
 
@@ -33,15 +24,13 @@
 import { mapActions, mapState } from 'vuex'
 import EventBusUtil from '~/utils/eventBusUtil'
 
-import AppModal from '~/components/AppModal.vue'
 import IconPlay from '~/assets/icons/play.svg'
 import IconPause from '~/assets/icons/pause.svg'
 
 export default {
   components: {
     IconPlay,
-    IconPause,
-    AppModal
+    IconPause
   },
   props: {
     song: {
@@ -49,18 +38,10 @@ export default {
       required: true
     }
   },
-  data() {
-    return {
-      showModal: false
-    }
-  },
   computed: {
     ...mapState('albums', ['currentSong', 'isPlaying'])
   },
   methods: {
-    toggleModal(status) {
-      this.showModal = status
-    },
     ...mapActions({
       selectSong: 'albums/selectSong',
       setPlayState: 'albums/setPlayState'

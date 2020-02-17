@@ -13,9 +13,9 @@
 <script>
 import LatestPosts from '~/components/Posts/LatestPosts.vue'
 import TourDates from '~/components/Tour/TourDates.vue'
-import AppGallery from '~/components/AppGallery.vue'
-import BiographyIntro from '~/components/BiographyIntro.vue'
-import AppPage from '~/components/AppPage.vue'
+import AppGallery from '~/components/Home/AppGallery.vue'
+import BiographyIntro from '~/components/Biography/BiographyIntro.vue'
+import AppPage from '~/components/Layout/AppPage.vue'
 import getSeoMetaData from '~/helpers/seo'
 
 export default {

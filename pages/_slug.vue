@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import AppPage from '~/components/AppPage.vue'
+import AppPage from '~/components/Layout/AppPage.vue'
 import LatestPosts from '~/components/Posts/LatestPosts.vue'
 import PostDate from '~/components/Shared/AppDate.vue'
 import getSeoMetaData from '~/helpers/seo'

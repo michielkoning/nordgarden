@@ -6,7 +6,7 @@
 
 <script>
 import TourDates from '~/components/Tour/TourDates.vue'
-import AppPage from '~/components/AppPage.vue'
+import AppPage from '~/components/Layout/AppPage.vue'
 import getSeoMetaData from '~/helpers/seo'
 
 export default {
