@@ -18,8 +18,8 @@
 </template>
 
 <script>
-import AppPost from '~/components/AppPost.vue'
-import AppLoader from '~/components/AppLoader.vue'
+import AppPost from '~/components/Posts/AppPost.vue'
+import AppLoader from '~/components/Shared/AppLoader.vue'
 import PostsQuery from '~/graphql/Posts.gql'
 
 export default {

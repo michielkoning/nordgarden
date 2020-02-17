@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import LatestPosts from '~/components/LatestPosts.vue'
-import TourDates from '~/components/TourDates.vue'
+import LatestPosts from '~/components/Posts/LatestPosts.vue'
+import TourDates from '~/components/Tour/TourDates.vue'
 import AppGallery from '~/components/AppGallery.vue'
 import BiographyIntro from '~/components/BiographyIntro.vue'
 import AppPage from '~/components/AppPage.vue'

@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import SkipLinks from '~/components/SkipLinks.vue'
+import SkipLinks from '~/components/Layout/SkipLinks.vue'
 import IconWaves from '~/assets/icons/waves.svg'
 
 import AudioPlayer from '~/components/AudioPlayer.vue'

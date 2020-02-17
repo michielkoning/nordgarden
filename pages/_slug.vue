@@ -9,8 +9,8 @@
 
 <script>
 import AppPage from '~/components/AppPage.vue'
-import LatestPosts from '~/components/LatestPosts.vue'
-import PostDate from '~/components/PostDate.vue'
+import LatestPosts from '~/components/Posts/LatestPosts.vue'
+import PostDate from '~/components/Shared/AppDate.vue'
 import getSeoMetaData from '~/helpers/seo'
 import PostQuery from '~/graphql/Post.gql'
 

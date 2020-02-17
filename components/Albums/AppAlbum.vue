@@ -37,11 +37,11 @@
 </template>
 
 <script>
-import AppSong from '@/components/AppSong.vue'
-import AppImage from '@/components/Shared/AppImage.vue'
-import IconApple from '@/assets/icons/apple.svg'
-import IconSpotify from '@/assets/icons/spotify.svg'
-import PostDate from '@/components/PostDate.vue'
+import AppSong from '~/components/Albums/AppSong.vue'
+import AppImage from '~/components/Shared/AppImage.vue'
+import IconApple from '~/assets/icons/apple.svg'
+import IconSpotify from '~/assets/icons/spotify.svg'
+import PostDate from '~/components/Shared/AppDate.vue'
 
 export default {
   components: {

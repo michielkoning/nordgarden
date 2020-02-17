@@ -8,7 +8,7 @@
 
 <script>
 import { mapState } from 'vuex'
-import AppAlbum from '~/components/AppAlbum.vue'
+import AppAlbum from '~/components/Albums/AppAlbum.vue'
 import AppPage from '~/components/AppPage.vue'
 import getSeoMetaData from '~/helpers/seo'
 

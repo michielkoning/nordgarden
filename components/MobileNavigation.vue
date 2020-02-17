@@ -31,7 +31,7 @@ import EventBusUtil from '~/utils/eventBusUtil'
 import IconPlay from '~/assets/icons/play.svg'
 import IconPause from '~/assets/icons/pause.svg'
 import IconBars from '~/assets/icons/bars.svg'
-import NotchWrapper from '~/components/NotchWrapper.vue'
+import NotchWrapper from '~/components/Layout/NotchWrapper.vue'
 
 export default {
   components: {

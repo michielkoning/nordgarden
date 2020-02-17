@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import TourDates from '~/components/TourDates.vue'
+import TourDates from '~/components/Tour/TourDates.vue'
 import AppPage from '~/components/AppPage.vue'
 import getSeoMetaData from '~/helpers/seo'
 

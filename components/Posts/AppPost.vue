@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import PostDate from '~/components/PostDate.vue'
+import PostDate from '~/components/Shared/AppDate.vue'
 import IconChevronRight from '~/assets/icons/chevron-right.svg'
 
 export default {

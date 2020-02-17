@@ -18,7 +18,7 @@
 
 <script>
 import { mapState } from 'vuex'
-import AppLoader from '~/components/AppLoader.vue'
+import AppLoader from '~/components/Shared/AppLoader.vue'
 
 export default {
   components: {

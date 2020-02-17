@@ -42,7 +42,7 @@
 
 <script>
 import { mapState, mapActions } from 'vuex'
-import AppBadge from '~/components/AppBadge.vue'
+import AppBadge from '~/components/Shared/AppBadge.vue'
 
 export default {
   components: {

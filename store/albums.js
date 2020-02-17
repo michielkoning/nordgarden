@@ -1,4 +1,4 @@
-import albums from '@/data/albums'
+import albums from '~/data/albums'
 
 export const state = () => ({
   list: albums,
