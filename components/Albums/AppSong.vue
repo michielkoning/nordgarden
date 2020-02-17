@@ -1,22 +1,22 @@
 <template>
-  <li>
-    <div class="button-wrapper">
+  <li :class="$style.song">
+    <div :class="$style['button-wrapper']">
       <template v-if="song.file">
         <button
           v-if="!isPlayingCurrentSong(song)"
-          class="btn-play"
+          :class="$style.btn - play"
           @click="play(song)"
         >
           <icon-play width="20" height="20" aria-hidden="true" />
           <span class="sr-only">{{ $t('play') }}</span>
         </button>
-        <button v-else class="btn-pause" @click="pause">
+        <button v-else :class="$style.btn - pause" @click="pause">
           <icon-pause width="20" height="20" aria-hidden="true" />
           <span class="sr-only">{{ $t('pause') }}</span>
         </button>
       </template>
     </div>
-    <span class="title">{{ song.title }}</span>
+    <span :class="$style.title">{{ song.title }}</span>
   </li>
 </template>
 
@@ -61,8 +61,8 @@ export default {
 }
 </script>
 
-<style lang="postcss" scoped>
-li {
+<style lang="postcss" module>
+.song {
   padding: 0.1em 0;
   border-bottom: 1px solid #ccc;
   display: flex;
