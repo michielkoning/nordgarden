@@ -1,12 +1,22 @@
 <template>
-  <li class="album">
-    <h2>{{ album.title }}</h2>
+  <li :class="$style.album">
+    <h2 :class="$style.title">{{ album.title }}</h2>
     <div>
-      <app-image :width="200" :height="200" :image="album.image" />
-      <post-date :date="album.releaseDate" />
-      <ul class="shops">
+      <app-image
+        :width="200"
+        :height="200"
+        :image="album.image"
+        :class="$style.image"
+      />
+      <post-date :date="album.releaseDate" :class="$style.date" />
+      <ul :class="$style.shops">
         <li v-if="album.spotify">
-          <a :href="album.spotify" rel="noopener" target="_blank">
+          <a
+            :href="album.spotify"
+            rel="noopener"
+            target="_blank"
+            :class="$style['shop-link']"
+          >
             <icon-spotify aria-hidden="true" width="24" height="24" />
             <span class="sr-only">
               {{ $t('viewOn', { title: album.title, network: 'Spotify' }) }}
@@ -14,7 +24,12 @@
           </a>
         </li>
         <li v-if="album.apple">
-          <a :href="album.apple" rel="noopener" target="_blank">
+          <a
+            :href="album.apple"
+            rel="noopener"
+            target="_blank"
+            :class="$style['shop-link']"
+          >
             <icon-apple aria-hidden="true" width="24" height="24" />
             <span class="sr-only">
               {{ $t('viewOn', { title: album.title, network: 'Apple Music' }) }}
@@ -24,12 +39,12 @@
       </ul>
     </div>
     <div>
-      <ul class="songlist">
+      <ul :class="$style.songlist">
         <app-song
           v-for="song in album.songlist"
           :key="song.title"
           :song="song"
-          class="song"
+          :class="$style.song"
         />
       </ul>
     </div>
@@ -60,12 +75,13 @@ export default {
 }
 </script>
 
-<style lang="postcss" scoped>
-ul {
+<style lang="postcss" module>
+.songlist,
+.shops {
   @mixin list-reset;
 }
 
-h2 {
+.title {
   margin: 0;
   grid-column: 1 / -1;
 }
@@ -80,12 +96,12 @@ h2 {
   }
 }
 
-time {
+.date {
   margin-bottom: var(--spacing-xxs);
   display: block;
 }
 
-img {
+.image {
   display: block;
   max-width: 10em;
   margin-bottom: var(--spacing-xxs);
@@ -104,7 +120,7 @@ img {
   display: flex;
 }
 
-a {
+.shop-link {
   @mixin link-reset;
 
   flex: 0 0 var(--spacing-m);
