@@ -152,5 +152,8 @@ export default {
     }
   },
   apollo,
-  sitemap
+  sitemap,
+  router: {
+    middleware: 'mirage'
+  }
 }
