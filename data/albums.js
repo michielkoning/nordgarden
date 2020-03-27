@@ -8,33 +8,33 @@ export default [
     releaseDate: '2020, 01, 24',
     songlist: [
       {
-        title: 'Herre, vis oss nåde'
+        title: 'Herre, vis oss nåde',
       },
       {
-        title: 'Korsvei'
+        title: 'Korsvei',
       },
       {
-        title: 'Tango'
+        title: 'Tango',
       },
       {
-        title: 'Sang til min far'
+        title: 'Sang til min far',
       },
       {
-        title: 'Ingenstedshen'
+        title: 'Ingenstedshen',
       },
       {
-        title: 'Lever livet'
+        title: 'Lever livet',
       },
       {
-        title: 'Hva har jeg gjort'
+        title: 'Hva har jeg gjort',
       },
       {
-        title: 'Setesdal'
+        title: 'Setesdal',
       },
       {
-        title: 'Finnes det en kvinne'
-      }
-    ]
+        title: 'Finnes det en kvinne',
+      },
+    ],
   },
   {
     title: 'Changes',
@@ -46,43 +46,43 @@ export default [
     songlist: [
       {
         title: 'Changes',
-        file: '/media/audio/1.mp3'
+        file: '/media/audio/1.mp3',
       },
       {
         title: 'Side of the Road',
-        file: '/media/audio/2.mp3'
+        file: '/media/audio/2.mp3',
       },
       {
         title: 'Wide Open Spaces',
-        file: '/media/audio/3.mp3'
+        file: '/media/audio/3.mp3',
       },
       {
         title: 'I Ain’t Gonna Let Her (Let Me On No More)',
-        file: '/media/audio/4.mp3'
+        file: '/media/audio/4.mp3',
       },
       {
         title: 'You Must Be the Change',
-        file: '/media/audio/5.mp3'
+        file: '/media/audio/5.mp3',
       },
       {
         title: 'The Storm',
-        file: '/media/audio/6.mp3'
+        file: '/media/audio/6.mp3',
       },
       {
         title: 'Right Now (Love is Hell)',
-        file: '/media/audio/7.mp3'
+        file: '/media/audio/7.mp3',
       },
       {
         title: 'Don’t Need Nobody',
-        file: '/media/audio/8.mp3'
+        file: '/media/audio/8.mp3',
       },
       {
-        title: 'Hearts at Stake'
+        title: 'Hearts at Stake',
       },
       {
-        title: 'Come On, Come In, Come Along'
-      }
-    ]
+        title: 'Come On, Come In, Come Along',
+      },
+    ],
   },
   {
     title: 'Live in Dresden',
@@ -93,47 +93,47 @@ export default [
     releaseDate: '2019, 04, 01',
     songlist: [
       {
-        title: 'A Brighter Kind of Blue'
+        title: 'A Brighter Kind of Blue',
       },
       {
-        title: "They're Building They're Building"
+        title: "They're Building They're Building",
       },
       {
-        title: 'My Father the Sailor'
+        title: 'My Father the Sailor',
       },
       {
-        title: 'All Yr. Notes'
+        title: 'All Yr. Notes',
       },
       {
-        title: 'Invisibile'
+        title: 'Invisibile',
       },
       {
-        title: 'Keep It Shining On The Inside'
+        title: 'Keep It Shining On The Inside',
       },
       {
-        title: '2nd Flight'
+        title: '2nd Flight',
       },
       {
-        title: 'Blessed'
+        title: 'Blessed',
       },
       {
         title: 'Up the Hillside',
-        permalink: 'http://nordgarden.info/songs/up-the-hillside/'
+        permalink: 'http://nordgarden.info/songs/up-the-hillside/',
       },
       {
-        title: 'The Path of Love'
+        title: 'The Path of Love',
       },
       {
-        title: 'Good Things Die'
+        title: 'Good Things Die',
       },
       {
         title: 'The Night',
-        permalink: 'http://nordgarden.info/songs/the-night-2/'
+        permalink: 'http://nordgarden.info/songs/the-night-2/',
       },
       {
-        title: 'B Minor Tinitus'
-      }
-    ]
+        title: 'B Minor Tinitus',
+      },
+    ],
   },
   {
     title: 'Dieci',
@@ -144,36 +144,36 @@ export default [
     releaseDate: '2013, 11, 22',
     songlist: [
       {
-        title: 'Non \\u00e8 la California'
+        title: 'Non \\u00e8 la California',
       },
       {
-        title: 'La mia rivoluzione'
+        title: 'La mia rivoluzione',
       },
       {
-        title: 'Invisibile'
+        title: 'Invisibile',
       },
       {
-        title: 'Cerchi nell\\u2019acqua'
+        title: 'Cerchi nell\\u2019acqua',
       },
       {
-        title: 'Le canzoni dei cani'
+        title: 'Le canzoni dei cani',
       },
       {
-        title: 'Miele'
+        title: 'Miele',
       },
       {
-        title: 'L\\u2019abbandono'
+        title: 'L\\u2019abbandono',
       },
       {
-        title: 'Dove mi perdo'
+        title: 'Dove mi perdo',
       },
       {
-        title: 'La realt\\u00e0 non esiste'
+        title: 'La realt\\u00e0 non esiste',
       },
       {
-        title: 'L\\u2019invasore'
-      }
-    ]
+        title: 'L\\u2019invasore',
+      },
+    ],
   },
   {
     title: 'You Gotta Get Ready',
@@ -184,36 +184,36 @@ export default [
     releaseDate: '2012, 02, 24',
     songlist: [
       {
-        title: 'You Gotta Get Ready'
+        title: 'You Gotta Get Ready',
       },
       {
-        title: 'Schiphol Blues'
+        title: 'Schiphol Blues',
       },
       {
-        title: 'Leaving'
+        title: 'Leaving',
       },
       {
-        title: 'Keep It Shining On The Inside'
+        title: 'Keep It Shining On The Inside',
       },
       {
-        title: 'These Lovesick Blues'
+        title: 'These Lovesick Blues',
       },
       {
-        title: 'Fool To Let You Go'
+        title: 'Fool To Let You Go',
       },
       {
-        title: "They're Building They're Building"
+        title: "They're Building They're Building",
       },
       {
-        title: 'Some Work On You'
+        title: 'Some Work On You',
       },
       {
-        title: 'Why Would She Go'
+        title: 'Why Would She Go',
       },
       {
-        title: 'Carousel On The Loose'
-      }
-    ]
+        title: 'Carousel On The Loose',
+      },
+    ],
   },
   {
     title: 'The Path Of Love',
@@ -225,37 +225,37 @@ export default [
     songlist: [
       {
         title: 'Up the Hillside',
-        permalink: 'http://nordgarden.info/new/songs/up-the-hillside/'
+        permalink: 'http://nordgarden.info/new/songs/up-the-hillside/',
       },
       {
-        title: 'The Path of Love'
+        title: 'The Path of Love',
       },
       {
-        title: 'Stay Away'
+        title: 'Stay Away',
       },
       {
-        title: 'On London Town'
+        title: 'On London Town',
       },
       {
-        title: 'Oh Brother'
+        title: 'Oh Brother',
       },
       {
-        title: 'Capture'
+        title: 'Capture',
       },
       {
-        title: 'So Far Away'
+        title: 'So Far Away',
       },
       {
-        title: 'The Night'
+        title: 'The Night',
       },
       {
         title: 'In Hopes and Dreams',
-        permalink: 'http://nordgarden.info/songs/in-hopes-and-dreams/'
+        permalink: 'http://nordgarden.info/songs/in-hopes-and-dreams/',
       },
       {
-        title: 'The Path of Love (Piano Version)'
-      }
-    ]
+        title: 'The Path of Love (Piano Version)',
+      },
+    ],
   },
   {
     title: 'A Brighter Kind of Blue',
@@ -266,36 +266,36 @@ export default [
     releaseDate: '2006, 06, 26',
     songlist: [
       {
-        title: 'A Brighter Kind of Blue'
+        title: 'A Brighter Kind of Blue',
       },
       {
-        title: 'The Gift of Song'
+        title: 'The Gift of Song',
       },
       {
-        title: 'My Father the Sailor'
+        title: 'My Father the Sailor',
       },
       {
-        title: 'Good Things Die'
+        title: 'Good Things Die',
       },
       {
-        title: 'Blessed'
+        title: 'Blessed',
       },
       {
-        title: 'Metronome'
+        title: 'Metronome',
       },
       {
-        title: 'To the River'
+        title: 'To the River',
       },
       {
-        title: 'Monday'
+        title: 'Monday',
       },
       {
-        title: "What Would Ol' Bob Say?"
+        title: "What Would Ol' Bob Say?",
       },
       {
-        title: 'Weeks At a Time'
-      }
-    ]
+        title: 'Weeks At a Time',
+      },
+    ],
   },
   {
     title: 'Terje Nordgarden',
@@ -306,44 +306,44 @@ export default [
     releaseDate: '2003, 05, 01',
     songlist: [
       {
-        title: 'Winter Mourning'
+        title: 'Winter Mourning',
       },
       {
-        title: 'The Last Song'
+        title: 'The Last Song',
       },
       {
-        title: 'All Yr. Notes'
+        title: 'All Yr. Notes',
       },
       {
-        title: 'Something Else In Mind'
+        title: 'Something Else In Mind',
       },
       {
-        title: 'Even Now'
+        title: 'Even Now',
       },
       {
-        title: 'Nothing Comes That Easy'
+        title: 'Nothing Comes That Easy',
       },
       {
-        title: '2nd Flight'
+        title: '2nd Flight',
       },
       {
-        title: 'Song for Drake'
+        title: 'Song for Drake',
       },
       {
-        title: 'This Time'
+        title: 'This Time',
       },
       {
-        title: 'Sometimes'
+        title: 'Sometimes',
       },
       {
-        title: 'These Memories'
+        title: 'These Memories',
       },
       {
-        title: 'Coming Back Home'
+        title: 'Coming Back Home',
       },
       {
-        title: 'Paint You a Picture'
-      }
-    ]
-  }
+        title: 'Paint You a Picture',
+      },
+    ],
+  },
 ]

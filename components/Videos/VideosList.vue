@@ -48,24 +48,24 @@ import videos from '~/data/videos'
 
 export default {
   components: {
-    IconPlay
+    IconPlay,
   },
 
   props: {
     videos: {
       type: Array,
-      required: true
-    }
+      required: true,
+    },
   },
 
   data() {
     return {
       videoId: videos[0].videoId,
       playerVars: {
-        rel: 0
+        rel: 0,
       },
       isPlayingVideo: false,
-      down: null
+      down: null,
     }
   },
   computed: {
@@ -73,14 +73,14 @@ export default {
 
     player() {
       return this.$refs.youtube.player
-    }
+    },
   },
   watch: {
     isPlaying(value) {
       if (value) {
         this.pauseVideo()
       }
-    }
+    },
   },
   methods: {
     mouseUp(videoId) {
@@ -110,8 +110,8 @@ export default {
 
     playing() {
       EventBusUtil.$emit('audio-play-song', false)
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -130,6 +130,7 @@ img {
 
 svg {
   --video-button-size: var(--spacing-m);
+
   @media (--video-tiles) {
     --video-button-size: var(--spacing-l);
   }
@@ -139,7 +140,10 @@ svg {
   top: 50%;
   width: var(--video-button-size);
   height: var(--video-button-size);
-  margin: calc(var(--video-button-size) / -2) 0 0
+
+  /* prettier-ignore */
+  margin:
+    calc(var(--video-button-size) / -2) 0 0
     calc(var(--video-button-size) / -2);
   fill: var(--color-white);
 }
@@ -148,7 +152,6 @@ svg {
   border: 2px solid transparent;
   border-bottom: 2px dashed var(--color-primary);
   padding-bottom: var(--spacing-xs);
-
   display: grid;
   grid-gap: var(--spacing-m);
   grid-template-columns: 5em auto;
@@ -166,6 +169,7 @@ svg {
 
 .btn-video {
   text-align: left;
+
   @media (--video-tiles) {
     text-align: center;
   }
@@ -177,6 +181,7 @@ svg {
 
 .list {
   @mixin list-reset;
+
   display: grid;
   grid-gap: var(--spacing-m);
 

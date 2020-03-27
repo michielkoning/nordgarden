@@ -21,15 +21,16 @@ export default {
   props: {
     title: {
       type: String,
-      default: ''
-    }
-  }
+      default: '',
+    },
+  },
 }
 </script>
 
 <style lang="postcss" module>
 .main {
   --triangle-size: 50vw;
+
   display: flex;
   position: relative;
   min-height: 100vh;

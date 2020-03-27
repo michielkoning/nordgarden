@@ -1,5 +1,5 @@
 <template>
-  <li @mousedown="mouseDown" @mouseup="mouseUp">
+  <li @mousedown.left="mouseDown" @mouseup.left="mouseUp">
     <!-- eslint-disable-next-line -->
     <h2><router-link :to="post.slug" v-html="post.title" /></h2>
     <post-date :date="post.date" />
@@ -21,17 +21,17 @@ import IconChevronRight from '~/assets/icons/chevron-right.svg'
 export default {
   components: {
     PostDate,
-    IconChevronRight
+    IconChevronRight,
   },
   props: {
     post: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
-      down: null
+      down: null,
     }
   },
   methods: {
@@ -46,8 +46,8 @@ export default {
     },
     goToPost() {
       this.$router.push(this.post.slug)
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -62,6 +62,7 @@ li {
   &:hover .read-more,
   &:focus-within .read-more {
     box-shadow: 0 3px 0 0 var(--color-primary);
+
     & svg {
       margin-left: var(--spacing-xxs);
     }

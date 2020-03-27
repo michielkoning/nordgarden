@@ -38,23 +38,23 @@ export default {
     IconPlay,
     IconPause,
     IconBars,
-    NotchWrapper
+    NotchWrapper,
   },
   data() {
     return {
-      menuIsExpanded: false
+      menuIsExpanded: false,
     }
   },
   computed: {
     ...mapState('albums', ['isPlaying']),
     ...mapGetters({
-      songs: 'albums/playableSongs'
-    })
+      songs: 'albums/playableSongs',
+    }),
   },
   watch: {
     $route() {
       this.toggleMenu(false)
-    }
+    },
   },
 
   methods: {
@@ -67,8 +67,8 @@ export default {
     },
     playAudio() {
       EventBusUtil.$emit('audio-play-song', true)
-    }
-  }
+    },
+  },
 }
 </script>
 

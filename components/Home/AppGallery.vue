@@ -10,13 +10,10 @@
       class="image-wrapper"
     >
       <img
-        :src="
-          `/media/images/${image.name}.jpg?nf_resize=fit&w=${image.width}&h=${image.height}`
-        "
-        :srcset="
-          `/media/images/${image.name}.jpg?nf_resize=fit&w=${image.width *
-            1.5}&h=${image.height * 1.5} 2x`
-        "
+        :src="`/media/images/${image.name}.jpg?nf_resize=fit&w=${image.width}&h=${image.height}`"
+        :srcset="`/media/images/${image.name}.jpg?nf_resize=fit&w=${
+          image.width * 1.5
+        }&h=${image.height * 1.5} 2x`"
         loading="lazy"
         alt
       />
@@ -31,10 +28,10 @@ export default {
       images: [
         { name: '2', width: 640, height: 960 },
         { name: '3', width: 960, height: 640 },
-        { name: '4', width: 960, height: 720 }
-      ]
+        { name: '4', width: 960, height: 720 },
+      ],
     }
-  }
+  },
 }
 </script>
 
@@ -45,6 +42,7 @@ export default {
   display: grid;
   margin: var(--spacing-l) 0 var(--spacing-xl);
   grid-gap: var(--spacing-m);
+
   /* height: 80vh; */
   grid-template-areas:
     'photo-3 photo-3 photo-2  '

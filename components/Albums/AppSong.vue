@@ -30,21 +30,21 @@ import IconPause from '~/assets/icons/pause.svg'
 export default {
   components: {
     IconPlay,
-    IconPause
+    IconPause,
   },
   props: {
     song: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   computed: {
-    ...mapState('albums', ['currentSong', 'isPlaying'])
+    ...mapState('albums', ['currentSong', 'isPlaying']),
   },
   methods: {
     ...mapActions({
       selectSong: 'albums/selectSong',
-      setPlayState: 'albums/setPlayState'
+      setPlayState: 'albums/setPlayState',
     }),
     isPlayingCurrentSong(song) {
       return song.file === this.currentSong.file && this.isPlaying
@@ -56,8 +56,8 @@ export default {
     },
     pause() {
       EventBusUtil.$emit('audio-play-song', false)
-    }
-  }
+    },
+  },
 }
 </script>
 

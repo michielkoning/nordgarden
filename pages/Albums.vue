@@ -15,23 +15,23 @@ import getSeoMetaData from '~/helpers/seo'
 export default {
   components: {
     AppAlbum,
-    AppPage
+    AppPage,
   },
 
   data() {
     return {
-      title: this.$t('albums')
+      title: this.$t('albums'),
     }
   },
   computed: {
-    ...mapState('albums', ['list'])
+    ...mapState('albums', ['list']),
   },
   head() {
     const { title } = this
     const slug = 'albums'
     const metaDesc = 'The new album KORSVEI is out!'
     return getSeoMetaData(title, metaDesc, slug)
-  }
+  },
 }
 </script>
 

@@ -7,9 +7,9 @@ export default {
   props: {
     amount: {
       type: Number,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 }
 </script>
 

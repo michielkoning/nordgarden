@@ -21,16 +21,16 @@ import NotchWrapper from '~/components/Layout/NotchWrapper.vue'
 export default {
   components: {
     IconClose,
-    NotchWrapper
+    NotchWrapper,
   },
   data() {
     return {
-      message: ''
+      message: '',
     }
   },
   created() {
-    EventBusUtil.$on('axios-interceptor-throws-error', error =>
-      this.handleError(error)
+    EventBusUtil.$on('axios-interceptor-throws-error', (error) =>
+      this.handleError(error),
     )
   },
   methods: {
@@ -39,8 +39,8 @@ export default {
     },
     dismiss() {
       this.message = ''
-    }
-  }
+    },
+  },
 }
 </script>
 

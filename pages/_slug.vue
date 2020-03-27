@@ -3,7 +3,10 @@
     <post-date :date="post.date" />
     <!-- eslint-disable-next-line -->
     <div class="text" v-html="post.content" />
-    <latest-posts />
+    <section class="news-list" aria-labelledby="news-list-title">
+      <h1 id="news-list-title">{{ $t('latestPosts') }}</h1>
+      <latest-posts />
+    </section>
   </app-page>
 </template>
 
@@ -18,19 +21,19 @@ export default {
   components: {
     AppPage,
     PostDate,
-    LatestPosts
+    LatestPosts,
   },
 
   async asyncData({ app, params }) {
     const post = await app.apolloProvider.defaultClient.query({
       query: PostQuery,
       variables: {
-        uri: params.slug
-      }
+        uri: params.slug,
+      },
     })
 
     return {
-      post: post.data.post
+      post: post.data.post,
     }
   },
 
@@ -38,7 +41,7 @@ export default {
     const { title, metaDesc } = this.post.seo
     const { slug } = this.post
     return getSeoMetaData(title, metaDesc, slug)
-  }
+  },
 }
 </script>
 

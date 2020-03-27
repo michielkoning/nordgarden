@@ -8,6 +8,7 @@
 <style lang="postcss" scoped>
 a {
   @mixin link-reset;
+
   background: var(--color-secondary);
 
   &:not(:focus) {

@@ -16,26 +16,26 @@ import PageQuery from '~/graphql/Page.gql'
 export default {
   components: {
     BiographyIntro,
-    AppPage
+    AppPage,
   },
 
   async asyncData({ app }) {
     const page = await app.apolloProvider.defaultClient.query({
       query: PageQuery,
       variables: {
-        pageId: biographyPageId
-      }
+        pageId: biographyPageId,
+      },
     })
 
     return {
-      page: page.data.page
+      page: page.data.page,
     }
   },
   head() {
     const { title, metaDesc } = this.page.seo
     const slug = 'biography'
     return getSeoMetaData(title, metaDesc, slug)
-  }
+  },
 }
 </script>
 

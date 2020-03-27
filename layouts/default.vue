@@ -18,7 +18,7 @@ export default {
   components: {
     NotchWrapper,
     AppHeader,
-    ErrorHandler
-  }
+    ErrorHandler,
+  },
 }
 </script>

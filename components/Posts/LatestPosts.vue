@@ -1,6 +1,5 @@
 <template>
-  <section class="news-list" aria-labelledby="news-list-title">
-    <h1 id="news-list-title">{{ $t('latestPosts') }}</h1>
+  <div>
     <transition-group v-if="posts" name="list" tag="ul">
       <app-post
         v-for="post in posts.edges"
@@ -14,7 +13,7 @@
         {{ $t('loadMore') }}
       </button>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
@@ -25,7 +24,7 @@ import PostsQuery from '~/graphql/Posts.gql'
 export default {
   components: {
     AppPost,
-    AppLoader
+    AppLoader,
   },
   apollo: {
     posts: {
@@ -33,20 +32,20 @@ export default {
       variables() {
         return {
           first: 12,
-          notIn: this.notIn
+          notIn: this.notIn,
         }
-      }
-    }
+      },
+    },
   },
   props: {
     notIn: {
       type: Number,
-      default: 0
-    }
+      default: 0,
+    },
   },
   data() {
     return {
-      posts: null
+      posts: null,
     }
   },
   methods: {
@@ -55,7 +54,7 @@ export default {
       this.$apollo.queries.posts.fetchMore({
         // New variables
         variables: {
-          after: this.posts.pageInfo.endCursor
+          after: this.posts.pageInfo.endCursor,
         },
         // Transform the previous result with new data
         updateQuery: (previousResult, { fetchMoreResult }) => {
@@ -67,13 +66,13 @@ export default {
               __typename: previousResult.posts.__typename,
               pageInfo: newPosts.pageInfo,
               // Merging the tag list
-              edges: [...previousResult.posts.edges, ...newPosts.edges]
-            }
+              edges: [...previousResult.posts.edges, ...newPosts.edges],
+            },
           }
-        }
+        },
       })
-    }
-  }
+    },
+  },
 }
 </script>
 

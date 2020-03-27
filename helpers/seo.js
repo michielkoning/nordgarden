@@ -7,31 +7,31 @@ export default (title, description, path) => {
       {
         name: 'description',
         hid: 'description',
-        content: description
+        content: description,
       },
       // Open Graph
       {
         hid: 'og:title',
         name: 'og:title',
-        content: title
+        content: title,
       },
       {
         hid: 'og:description',
         name: 'og:description',
-        content: description
+        content: description,
       },
       {
         name: 'og:url',
-        content: `${siteUrl}${path}`
+        content: `${siteUrl}${path}`,
       },
       {
         name: 'twitter:title',
-        content: title
+        content: title,
       },
       {
         name: 'twitter:description',
-        content: description
-      }
-    ]
+        content: description,
+      },
+    ],
   }
 }

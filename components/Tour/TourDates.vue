@@ -22,17 +22,17 @@ import AppLoader from '~/components/Shared/AppLoader.vue'
 
 export default {
   components: {
-    AppLoader
+    AppLoader,
   },
   filters: {
     formatDate(value) {
       const date = new Date(value)
       return `${date.getDate()}.${date.getMonth() + 1}`
-    }
+    },
   },
   computed: {
-    ...mapState('tour', ['isLoading', 'list'])
-  }
+    ...mapState('tour', ['isLoading', 'list']),
+  },
 }
 </script>
 

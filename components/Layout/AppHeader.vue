@@ -49,11 +49,11 @@ export default {
     SocialLinks,
     MainNavigation,
     MobileNavigation,
-    IconWaves
+    IconWaves,
   },
   data() {
     return {
-      showMenu: false
+      showMenu: false,
     }
   },
 
@@ -72,8 +72,8 @@ export default {
     afterLeave() {
       const bg = this.$refs.bg
       bodyScrollLock.enableBodyScroll(bg)
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -86,7 +86,6 @@ export default {
 
   @media (--navigation-position-left) {
     padding: var(--gutter);
-
     overflow: visible;
     transform: translateY(0);
     display: flex !important;
@@ -111,6 +110,7 @@ h1 {
 
 .waves {
   display: none;
+
   @media (--navigation-position-left) {
     margin-top: auto;
     fill: var(--color-primary);

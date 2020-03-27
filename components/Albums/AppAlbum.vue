@@ -64,14 +64,14 @@ export default {
     IconApple,
     AppSong,
     PostDate,
-    AppImage
+    AppImage,
   },
   props: {
     album: {
       type: Object,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 }
 </script>
 
@@ -106,6 +106,7 @@ export default {
   max-width: 10em;
   margin-bottom: var(--spacing-xxs);
   width: 100%;
+
   @media (--viewport-sm) {
     max-width: none;
   }

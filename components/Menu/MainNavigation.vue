@@ -46,25 +46,25 @@ import AppBadge from '~/components/Shared/AppBadge.vue'
 
 export default {
   components: {
-    AppBadge
+    AppBadge,
   },
   data() {
     return {
-      arrowPosition: 0
+      arrowPosition: 0,
     }
   },
   computed: {
     ...mapState('tour', ['list']),
     step() {
       return this.$store.state.step
-    }
+    },
   },
   watch: {
     $route() {
       this.$nextTick(() => {
         this.setArrowPosition()
       })
-    }
+    },
   },
   mounted() {
     this.setArrowPosition()
@@ -85,9 +85,9 @@ export default {
       }
     },
     ...mapActions({
-      setTours: 'tour/set'
-    })
-  }
+      setTours: 'tour/set',
+    }),
+  },
 }
 </script>
 
@@ -109,6 +109,7 @@ ul {
 
 .title {
   transition: box-shadow 0.1s ease-out;
+
   &.link-active {
     box-shadow: 0 2px 0 0 var(--color-primary);
   }
@@ -140,6 +141,7 @@ a {
       box-shadow: 0 3px 0 0 var(--color-primary);
     }
   }
+
   @media (--navigation-position-left) {
     border-bottom: 0;
     padding: var(--spacing-xxs) 0;

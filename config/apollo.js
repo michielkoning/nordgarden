@@ -4,7 +4,7 @@ export default {
   clientConfigs: {
     default: {
       // required
-      httpEndpoint: `${apiUrl}graphql`
-    }
-  }
+      httpEndpoint: `${apiUrl}graphql`,
+    },
+  },
 }

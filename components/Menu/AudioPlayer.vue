@@ -41,25 +41,25 @@ export default {
   components: {
     IconPlay,
     IconPause,
-    IconForwards
+    IconForwards,
   },
   data() {
     return {
       songIndex: 1,
       player: null,
-      progress: 0
+      progress: 0,
     }
   },
   computed: {
     ...mapState('albums', ['currentSong', 'isPlaying']),
     ...mapGetters({
-      songs: 'albums/playableSongs'
-    })
+      songs: 'albums/playableSongs',
+    }),
   },
 
   created() {
-    EventBusUtil.$on('audio-play-song', state =>
-      state ? this.play() : this.pause()
+    EventBusUtil.$on('audio-play-song', (state) =>
+      state ? this.play() : this.pause(),
     )
     this.$nextTick(() => {
       this.player = this.$refs.audio
@@ -68,7 +68,7 @@ export default {
   methods: {
     ...mapActions({
       setPlayState: 'albums/setPlayState',
-      selectNextSong: 'albums/selectNextSong'
+      selectNextSong: 'albums/selectNextSong',
     }),
     pause() {
       this.player.pause()
@@ -88,10 +88,11 @@ export default {
       this.player.currentTime = scrubTime
     },
     timeupdate() {
-      this.progress = `${(this.player.currentTime / this.player.duration) *
-        100}%`
-    }
-  }
+      this.progress = `${
+        (this.player.currentTime / this.player.duration) * 100
+      }%`
+    },
+  },
 }
 </script>
 

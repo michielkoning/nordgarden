@@ -9,13 +9,13 @@ import AppPage from '~/components/Layout/AppPage.vue'
 
 export default {
   components: {
-    AppPage
+    AppPage,
   },
   props: {
     error: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
 
   computed: {
@@ -24,12 +24,12 @@ export default {
         return 'Page not found'
       }
       return 'An error occurred'
-    }
+    },
   },
   head() {
     return {
-      title: this.title
+      title: this.title,
     }
-  }
+  },
 }
 </script>

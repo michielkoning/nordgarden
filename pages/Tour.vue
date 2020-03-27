@@ -12,11 +12,11 @@ import getSeoMetaData from '~/helpers/seo'
 export default {
   components: {
     TourDates,
-    AppPage
+    AppPage,
   },
   data() {
     return {
-      title: this.$t('tour')
+      title: this.$t('tour'),
     }
   },
   head() {
@@ -24,6 +24,6 @@ export default {
     const slug = 'tour'
     const metaDesc = 'Tour dates'
     return getSeoMetaData(title, metaDesc, slug)
-  }
+  },
 }
 </script>

@@ -13,13 +13,13 @@ import videos from '~/data/videos'
 export default {
   components: {
     AppPage,
-    VideosList
+    VideosList,
   },
 
   data() {
     return {
       title: this.$t('videos'),
-      videos
+      videos,
     }
   },
 
@@ -28,6 +28,6 @@ export default {
     const slug = 'videos'
     const metaDesc = 'New music video for TANGO!'
     return getSeoMetaData(title, metaDesc, slug)
-  }
+  },
 }
 </script>
