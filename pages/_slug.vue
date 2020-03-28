@@ -1,51 +1,47 @@
 <template>
-  <app-page :title="title" class="post">
-    <post-date :date="date" />
+  <app-page :title="post.title" class="post">
+    <post-date :date="post.date" />
     <!-- eslint-disable-next-line -->
-    <div class="text" v-html="text" />
-    <latest-posts />
+    <div class="text" v-html="post.content" />
+    <section class="news-list" aria-labelledby="news-list-title">
+      <h1 id="news-list-title">{{ $t('latestPosts') }}</h1>
+      <latest-posts />
+    </section>
   </app-page>
 </template>
 
 <script>
-import AppPage from '@/components/AppPage.vue'
-import LatestPosts from '@/components/LatestPosts.vue'
-import PostDate from '@/components/PostDate.vue'
-import axios from '~/plugins/axios'
+import AppPage from '~/components/Layout/AppPage.vue'
+import LatestPosts from '~/components/Posts/LatestPosts.vue'
+import PostDate from '~/components/Shared/AppDate.vue'
+import getSeoMetaData from '~/helpers/seo'
+import PostQuery from '~/graphql/Post.gql'
 
 export default {
   components: {
     AppPage,
     PostDate,
-    LatestPosts
+    LatestPosts,
   },
 
-  async asyncData({ params }) {
-    const response = await axios.get(`wp/v2/posts/`, {
-      params: {
-        slug: params.slug
-      }
+  async asyncData({ app, params }) {
+    const post = await app.apolloProvider.defaultClient.query({
+      query: PostQuery,
+      variables: {
+        uri: params.slug,
+      },
     })
-    const post = response.data[0]
 
     return {
-      title: post.title.rendered,
-      text: post.content.rendered,
-      date: post.date
+      post: post.data.post,
     }
   },
-  data() {
-    return {
-      title: '',
-      text: '',
-      date: ''
-    }
-  },
+
   head() {
-    return {
-      title: this.title
-    }
-  }
+    const { title, metaDesc } = this.post.seo
+    const { slug } = this.post
+    return getSeoMetaData(title, metaDesc, slug)
+  },
 }
 </script>
 

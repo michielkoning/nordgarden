@@ -2,7 +2,7 @@ import axios from '~/plugins/axios'
 import { toursApiUrl } from '~/config/siteDetails'
 export const state = () => ({
   list: [],
-  isLoading: false
+  isLoading: false,
 })
 
 export const mutations = {
@@ -11,7 +11,7 @@ export const mutations = {
   },
   updateLoader: (state, payload) => {
     state.isLoading = payload
-  }
+  },
 }
 
 export const actions = {
@@ -20,13 +20,13 @@ export const actions = {
     try {
       const response = await axios.get(toursApiUrl)
       if (response.data) {
-        const tours = response.data.map(tour => {
+        const tours = response.data.map((tour) => {
           return {
             name: tour.lineup.name,
             date: tour.datetime,
             venue: tour.venue.name === 'Unknown venue' ? null : tour.venue.name,
             city: tour.venue.city === 'Unknown' ? null : tour.venue.city,
-            url: tour.url
+            url: tour.url,
           }
         })
         commit('set', tours)
@@ -34,5 +34,5 @@ export const actions = {
     } finally {
       commit('updateLoader', false)
     }
-  }
+  },
 }

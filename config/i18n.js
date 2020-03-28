@@ -7,8 +7,8 @@ export default {
       name: 'English',
       code: 'en',
       iso: 'en-US',
-      file: 'en.json'
-    }
+      file: 'en.json',
+    },
   ],
   vueI18nLoader: true,
   vueI18n: {
@@ -17,7 +17,7 @@ export default {
         short: {
           year: 'numeric',
           month: 'long',
-          day: 'numeric'
+          day: 'numeric',
         },
         long: {
           year: 'numeric',
@@ -25,9 +25,9 @@ export default {
           day: 'numeric',
           weekday: 'short',
           hour: 'numeric',
-          minute: 'numeric'
-        }
-      }
-    }
-  }
+          minute: 'numeric',
+        },
+      },
+    },
+  },
 }

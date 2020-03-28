@@ -1,20 +1,20 @@
-import albums from '@/data/albums.json'
+import albums from '~/data/albums'
 
 export const state = () => ({
   list: albums,
-  currentSong: albums[1].songlist.find(song => song.file !== undefined),
-  isPlaying: false
+  currentSong: albums[1].songlist.find((song) => song.file !== undefined),
+  isPlaying: false,
 })
 
 export const getters = {
   playableSongs: () => {
     let newArray = []
-    albums.forEach(album => {
-      const songs = album.songlist.filter(song => song.file !== undefined)
+    albums.forEach((album) => {
+      const songs = album.songlist.filter((song) => song.file !== undefined)
       newArray = [...newArray, ...songs]
     })
     return newArray
-  }
+  },
 }
 
 export const mutations = {
@@ -23,13 +23,13 @@ export const mutations = {
   },
   setPlayState: (state, payload) => {
     state.isPlaying = payload
-  }
+  },
 }
 
 export const actions = {
   selectSong({ commit }, payload) {
     const songs = getters.playableSongs()
-    const song = songs.find(item => item.file === payload.file)
+    const song = songs.find((item) => item.file === payload.file)
     commit('selectSong', song)
   },
   setPlayState: ({ commit }, payload) => {
@@ -37,7 +37,7 @@ export const actions = {
   },
   selectNextSong({ commit }, currentSong) {
     const songs = getters.playableSongs()
-    const currentSongIndex = songs.findIndex(song => song === currentSong)
+    const currentSongIndex = songs.findIndex((song) => song === currentSong)
     let nextSongIndex
     if (currentSongIndex + 1 >= songs.length) {
       nextSongIndex = 0
@@ -45,5 +45,5 @@ export const actions = {
       nextSongIndex = currentSongIndex + 1
     }
     commit('selectSong', songs[nextSongIndex])
-  }
+  },
 }

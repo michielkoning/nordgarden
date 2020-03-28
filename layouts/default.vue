@@ -10,15 +10,15 @@
 </template>
 
 <script>
-import AppHeader from '@/components/AppHeader.vue'
-import ErrorHandler from '@/components/ErrorHandler.vue'
-import NotchWrapper from '@/components/NotchWrapper.vue'
+import AppHeader from '~/components/Layout/AppHeader.vue'
+import ErrorHandler from '~/components/Layout/ErrorHandler.vue'
+import NotchWrapper from '~/components/Layout/NotchWrapper.vue'
 
 export default {
   components: {
     NotchWrapper,
     AppHeader,
-    ErrorHandler
-  }
+    ErrorHandler,
+  },
 }
 </script>

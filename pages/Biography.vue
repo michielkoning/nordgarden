@@ -1,39 +1,41 @@
 <template>
-  <app-page :title="title" class="biography">
+  <app-page :title="page.title" class="biography">
     <biography-intro />
     <!-- eslint-disable-next-line -->
-    <div class="text" v-html="text"/>
+    <div class="text" v-html="page.content"/>
   </app-page>
 </template>
 
 <script>
-import BiographyIntro from '@/components/BiographyIntro.vue'
-import AppPage from '@/components/AppPage.vue'
-import { biographyPageId } from '@/config/pages'
-import axios from '~/plugins/axios'
+import BiographyIntro from '~/components/Biography/BiographyIntro.vue'
+import AppPage from '~/components/Layout/AppPage.vue'
+import { biographyPageId } from '~/config/pages'
+import getSeoMetaData from '~/helpers/seo'
+import PageQuery from '~/graphql/Page.gql'
 
 export default {
   components: {
     BiographyIntro,
-    AppPage
+    AppPage,
   },
 
-  async asyncData({ params }) {
-    const response = await axios.get(`wp/v2/pages/${biographyPageId}`)
+  async asyncData({ app }) {
+    const page = await app.apolloProvider.defaultClient.query({
+      query: PageQuery,
+      variables: {
+        pageId: biographyPageId,
+      },
+    })
 
-    return { text: response.data.content.rendered }
-  },
-  data() {
     return {
-      title: this.$t('biography'),
-      text: ''
+      page: page.data.page,
     }
   },
   head() {
-    return {
-      title: this.title
-    }
-  }
+    const { title, metaDesc } = this.page.seo
+    const slug = 'biography'
+    return getSeoMetaData(title, metaDesc, slug)
+  },
 }
 </script>
 

@@ -1,45 +1,62 @@
-import axios from 'axios'
-import pkg from './package'
+import { createApolloFetch } from 'apollo-fetch'
 import splashscreens from './config/splashscreens'
 import googleAnalytics from './config/googleAnalytics'
 import manifest from './config/manifest'
 import i18n from './config/i18n'
+import apollo from './config/apollo'
 import sitemap from './config/sitemap'
-import { apiUrl, siteUrl } from './config/siteDetails'
+import { apiUrl, siteUrl, twitter, siteTitle } from './config/siteDetails'
 
 export default {
   mode: 'universal',
   env: {
-    siteUrl
+    siteUrl,
   },
   /*
    ** Headers of the page
    */
   head: {
     htmlAttrs: {
-      lang: 'en'
+      lang: 'en',
     },
     titleTemplate: '%s | Nordgarden',
     meta: [
       { charset: 'utf-8' },
       {
         name: 'viewport',
-        content: 'width=device-width, initial-scale=1, viewport-fit=cover'
+        content: 'width=device-width, initial-scale=1, viewport-fit=cover',
+      },
+      {
+        name: 'apple-mobile-web-app-capable',
+        content: 'yes',
       },
       {
         name: 'apple-mobile-web-app-status-bar-style',
-        content: 'black-translucent'
+        content: 'black-translucent',
       },
-      { hid: 'description', name: 'description', content: pkg.description }
+      {
+        hid: 'og:locale',
+        name: 'og:locale',
+        content: 'en_US',
+      },
+      {
+        hid: 'og:site_name',
+        name: 'og:site_name',
+        content: siteTitle,
+      },
+      // Twitter Card
+      { name: 'twitter:card', content: 'summary' },
+      { name: 'twitter:site', content: `@${twitter}` },
+      { name: 'twitter:creator', content: `@${twitter}` },
     ],
     link: [
       ...splashscreens,
       {
         rel: 'dns-prefetch',
-        href: apiUrl
+        href: apiUrl,
       },
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+    ],
   },
 
   /*
@@ -53,31 +70,25 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/vue-youtube', '~/plugins/axios'],
+  plugins: ['~/plugins/vue-youtube'],
 
   /*
    ** Nuxt.js modules
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
+    '@nuxtjs/apollo',
     '@nuxtjs/pwa',
     '@nuxtjs/sitemap',
-    '@nuxtjs/axios',
     'nuxt-svg-loader',
-    'nuxt-i18n'
+    'nuxt-i18n',
   ],
+
   buildModules: ['@nuxtjs/google-analytics'],
   manifest,
   i18n,
 
   googleAnalytics,
-
-  /*
-   ** Axios module configuration
-   */
-  axios: {
-    baseURL: `${apiUrl}wp-json/`
-  },
 
   /*
    ** Build configuration
@@ -93,14 +104,25 @@ export default {
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
-          exclude: /(node_modules)/
+          exclude: /(node_modules)/,
         })
       }
+    },
+    babel: {
+      plugins: ['@babel/plugin-proposal-optional-chaining'],
+    },
+    loaders: {
+      cssModules: {
+        modules: {
+          // this is where you can alter the generated class names:
+          localIdentName: '[local]-[hash:base64:4]',
+        },
+      },
     },
     postcss: {
       plugins: {
         'postcss-mixins': {
-          mixinsDir: './styles/mixins/'
+          mixinsDir: './styles/mixins/',
         },
         'postcss-preset-env': {
           importFrom: ['./styles/media-queries/media-queries.css'],
@@ -108,23 +130,37 @@ export default {
           features: {
             'nesting-rules': true,
             'custom-media-queries': true,
-            'media-query-ranges': true
-          }
-        }
-      }
-    }
+            'media-query-ranges': true,
+          },
+        },
+      },
+    },
   },
   generate: {
     fallback: true,
     async routes() {
-      const response = await axios.get(
-        `${apiUrl}wp-json/wp/v2/posts/?per_page=100`
-      )
-      const posts = response.data.map(post => post.slug)
-      const urls = ['biography', ...posts]
+      const uri = `${apiUrl}graphql`
 
-      return urls
-    }
+      const query = `
+        query GET_SITEMAP {
+          posts(first: 20, where: {status: PUBLISH}) {
+            edges {
+              node {
+                uri
+              }
+            }
+          }
+        }
+      `
+
+      const apolloFetch = createApolloFetch({ uri })
+      const result = await apolloFetch({ query }) // all apolloFetch arguments are optional
+      const { posts } = result.data
+      return posts.edges.map(item => {
+        return item.node.uri
+      })
+    },
   },
-  sitemap
+  apollo,
+  sitemap,
 }

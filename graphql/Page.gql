@@ -1,0 +1,11 @@
+#import "./Fragments/Seo.gql"
+
+query GET_PAGE_BY_PAGEID($pageId: Int) {
+  page: pageBy(pageId: $pageId) {
+    title
+    content
+    seo {
+      ...seo
+    }
+  }
+}
