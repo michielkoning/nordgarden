@@ -6,13 +6,13 @@
 </template>
 
 <script>
-import AppPage from '@/components/AppPage.vue'
 import { contactPageId } from '@/config/pages'
+import AppPage from '~/components/Layout/AppPage.vue'
 import axios from '~/plugins/axios'
 
 export default {
   components: {
-    AppPage
+    AppPage,
   },
 
   async asyncData({ params }) {
@@ -23,14 +23,14 @@ export default {
   data() {
     return {
       title: this.$t('biography'),
-      text: ''
+      text: '',
     }
   },
   head() {
     return {
-      title: this.title
+      title: this.title,
     }
-  }
+  },
 }
 </script>
 
