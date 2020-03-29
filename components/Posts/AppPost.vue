@@ -1,27 +1,23 @@
 <template>
   <li @mousedown.left="mouseDown" @mouseup.left="mouseUp">
-    <!-- eslint-disable-next-line -->
-    <h2><router-link :to="post.slug" v-html="post.title" /></h2>
-    <post-date :date="post.date" />
-    <!-- eslint-disable-next-line -->
-    <div class="text" v-html="post.excerpt"/>
-    <div class="link-wrapper">
-      <span class="read-more">
-        {{ $t('readMore') }}
-        <icon-chevron-right aria-hidden="true" width="16" height="16" />
-      </span>
+    <div class="text">
+      <!-- eslint-disable-next-line -->
+       <h2><router-link :to="post.slug" v-html="post.title" /></h2>
+      <post-date :date="post.date" />
     </div>
+    <img
+      src="https://api.nordgarden.info/wp-content/uploads/2018/11/Cover_Nordgarden_Du-vel-komme-hjem-til-jul_1400x1400-300x300.jpg"
+      alt=""
+    />
   </li>
 </template>
 
 <script>
 import PostDate from '~/components/Shared/AppDate.vue'
-import IconChevronRight from '~/assets/icons/chevron-right.svg'
 
 export default {
   components: {
     PostDate,
-    IconChevronRight,
   },
   props: {
     post: {
@@ -53,11 +49,9 @@ export default {
 
 <style lang="postcss" scoped>
 li {
-  display: flex;
-  flex-direction: column;
-  padding-bottom: var(--spacing-m);
   border-bottom: 2px dashed var(--color-white);
   cursor: pointer;
+  position: relative;
 
   &:hover .read-more,
   &:focus-within .read-more {
@@ -69,6 +63,10 @@ li {
   }
 }
 
+h2 {
+  margin-bottom: 0;
+}
+
 a {
   @mixin link-reset;
 }
@@ -78,7 +76,31 @@ time {
   font-size: var(--font-size-sm);
 }
 
-.link-wrapper {
+.text {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  padding: 2em var(--spacing-xs) var(--spacing-xs);
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  /* prettier-ignore */
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.7) 20%
+    );
+}
+
+img {
+  display: block;
+  height: 20em;
+  object-fit: cover;
+  margin-bottom: var(--spacing-xs);
+}
+
+.text .link-wrapper {
   margin-top: auto;
 }
 </style>
