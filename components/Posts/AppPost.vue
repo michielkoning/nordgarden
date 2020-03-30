@@ -11,17 +11,20 @@
         <icon-chevron-right aria-hidden="true" width="16" height="16" />
       </span>
     </div>
+    <image-archive :image="post.featuredImage" class="image" />
   </li>
 </template>
 
 <script>
 import PostDate from '~/components/Shared/AppDate.vue'
+import ImageArchive from '~/components/Shared/Images/ImageArchive.vue'
 import IconChevronRight from '~/assets/icons/chevron-right.svg'
 
 export default {
   components: {
     PostDate,
     IconChevronRight,
+    ImageArchive,
   },
   props: {
     post: {
@@ -71,6 +74,14 @@ li {
 
 a {
   @mixin link-reset;
+}
+
+.image {
+  width: 100%;
+  height: 8em;
+  object-fit: cover;
+  order: -2;
+  margin-bottom: var(--spacing-xs);
 }
 
 time {

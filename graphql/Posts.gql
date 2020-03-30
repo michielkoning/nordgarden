@@ -1,4 +1,5 @@
 #import "./Fragments/Post.gql"
+#import "./Fragments/ImageArchive.gql"
 
 query GET_POSTS($first: Int, $after: String, $notIn: [ID]) {
   posts(first: $first, after: $after, where: { notIn: $notIn }) {
@@ -14,6 +15,9 @@ query GET_POSTS($first: Int, $after: String, $notIn: [ID]) {
         id
         slug
         excerpt
+        featuredImage {
+          ...imageArchive
+        }
       }
     }
   }

@@ -2,7 +2,7 @@
   <li :class="$style.album">
     <h2 :class="$style.title">{{ album.title }}</h2>
     <div>
-      <app-image
+      <album-image
         :width="200"
         :height="200"
         :image="album.image"
@@ -53,7 +53,7 @@
 
 <script>
 import AppSong from '~/components/Albums/AppSong.vue'
-import AppImage from '~/components/Shared/AppImage.vue'
+import AlbumImage from '~/components/Albums/AlbumImage.vue'
 import IconApple from '~/assets/icons/apple.svg'
 import IconSpotify from '~/assets/icons/spotify.svg'
 import PostDate from '~/components/Shared/AppDate.vue'
@@ -64,7 +64,7 @@ export default {
     IconApple,
     AppSong,
     PostDate,
-    AppImage,
+    AlbumImage,
   },
   props: {
     album: {
