@@ -32,6 +32,7 @@
 </template>
 
 <script>
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
 import SkipLinks from '~/components/Menu/SkipLinks.vue'
 import IconWaves from '~/assets/icons/waves.svg'
 
@@ -39,8 +40,6 @@ import AudioPlayer from '~/components/Menu/AudioPlayer.vue'
 import MainNavigation from '~/components/Menu/MainNavigation.vue'
 import SocialLinks from '~/components/Menu/SocialLinks.vue'
 import MobileNavigation from '~/components/Menu/MobileNavigation.vue'
-
-const bodyScrollLock = require('body-scroll-lock')
 
 export default {
   components: {
@@ -62,16 +61,22 @@ export default {
       this.showMenu = status
     },
     afterEnter() {
-      const bg = this.$refs.bg
-      bodyScrollLock.disableBodyScroll(bg)
+      this.lockBodyScoll(true)
     },
     beforeLeave() {
       const bg = this.$refs.bg
       bg.scrollTop = 0
     },
     afterLeave() {
-      const bg = this.$refs.bg
-      bodyScrollLock.enableBodyScroll(bg)
+      this.lockBodyScoll(false)
+    },
+    lockBodyScoll(isOpen) {
+      const { bg } = this.$refs
+      if (isOpen) {
+        disableBodyScroll(bg)
+      } else {
+        enableBodyScroll(bg)
+      }
     },
   },
 }
