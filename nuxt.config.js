@@ -143,7 +143,7 @@ export default {
 
       const query = `
         query GET_SITEMAP {
-          posts(first: 20, where: {status: PUBLISH}) {
+          posts(first: 99) {
             edges {
               node {
                 uri
