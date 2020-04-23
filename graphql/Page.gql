@@ -1,7 +1,7 @@
 #import "./Fragments/Seo.gql"
 
-query GET_PAGE_BY_PAGEID($pageId: Int) {
-  page: pageBy(pageId: $pageId) {
+query Page($pageId: ID!) {
+  page(id: $pageId, idType: DATABASE_ID) {
     title
     content
     seo {

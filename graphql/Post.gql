@@ -1,8 +1,8 @@
 #import "./Fragments/Seo.gql"
 #import "./Fragments/Post.gql"
 
-query GET_POST_BY_URI($uri: String) {
-  post: postBy(uri: $uri) {
+query Post($uri: ID!) {
+  post(id: $uri, idType: URI) {
     ...post
     content
     seo {
