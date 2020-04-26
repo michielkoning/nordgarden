@@ -89,11 +89,7 @@ export default {
       setTours: 'tour/set',
     }),
     changePage() {
-      if (!this.isSmallScreen) return
       EventBusUtil.$emit('header-close-mobile-menu')
-    },
-    isSmallScreen() {
-      return window.innerWidth < 768
     },
   },
 }
