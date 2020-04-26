@@ -56,7 +56,9 @@ export default {
       this.toggleMenu(false)
     },
   },
-
+  mounted() {
+    EventBusUtil.$on('header-close-mobile-menu', () => this.toggleMenu(false))
+  },
   methods: {
     toggleMenu(status) {
       this.menuIsExpanded = status

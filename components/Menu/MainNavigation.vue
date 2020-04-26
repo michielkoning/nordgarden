@@ -5,30 +5,30 @@
     </h2>
     <ul ref="menu">
       <li>
-        <nuxt-link id="menu" to="/">
+        <nuxt-link id="menu" to="/" @click.native="changePage">
           <span class="title">
             {{ $t('home') }}
           </span>
         </nuxt-link>
       </li>
       <li>
-        <nuxt-link to="/tour">
+        <nuxt-link to="/tour" @click.native="changePage">
           <span class="title">{{ $t('tour') }}</span>
           <app-badge :amount="list.length" />
         </nuxt-link>
       </li>
       <li>
-        <nuxt-link to="/albums">
+        <nuxt-link to="/albums" @click.native="changePage">
           <span class="title">{{ $t('albums') }}</span>
         </nuxt-link>
       </li>
       <li>
-        <nuxt-link to="/videos">
+        <nuxt-link to="/videos" @click.native="changePage">
           <span class="title">{{ $t('videos') }}</span>
         </nuxt-link>
       </li>
       <li>
-        <nuxt-link to="/biography">
+        <nuxt-link to="/biography" @click.native="changePage">
           <span class="title">{{ $t('biography') }}</span>
         </nuxt-link>
       </li>
@@ -43,6 +43,7 @@
 <script>
 import { mapState, mapActions } from 'vuex'
 import AppBadge from '~/components/Shared/AppBadge.vue'
+import EventBusUtil from '~/utils/eventBusUtil'
 
 export default {
   components: {
@@ -87,6 +88,13 @@ export default {
     ...mapActions({
       setTours: 'tour/set',
     }),
+    changePage() {
+      if (!this.isSmallScreen) return
+      EventBusUtil.$emit('header-close-mobile-menu')
+    },
+    isSmallScreen() {
+      return window.innerWidth < 768
+    },
   },
 }
 </script>
