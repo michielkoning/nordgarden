@@ -5,6 +5,9 @@ export default {
     default: {
       // required
       httpEndpoint: `${apiUrl}graphql`,
+      httpLinkOptions: {
+        credentials: 'include',
+      },
     },
   },
 }
