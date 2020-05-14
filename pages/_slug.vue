@@ -47,6 +47,8 @@ export default {
 
 <style lang="postcss" scoped>
 .text {
+  @mixin text-overflow;
+
   max-width: 60ch;
 }
 

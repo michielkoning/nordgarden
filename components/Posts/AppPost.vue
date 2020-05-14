@@ -89,6 +89,10 @@ time {
   font-size: var(--font-size-sm);
 }
 
+.text {
+  @mixin text-overflow;
+}
+
 .link-wrapper {
   margin-top: auto;
 }
