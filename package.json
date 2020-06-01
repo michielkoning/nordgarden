@@ -34,7 +34,7 @@
     "@nuxtjs/sitemap": "^2.3.0",
     "apollo-fetch": "^0.7.0",
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.0.0",
+    "eslint": "^7.1.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-loader": "^4.0.2",
