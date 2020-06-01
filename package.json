@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
-    "@babel/plugin-proposal-optional-chaining": "^7.9.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.10.1",
     "@babel/preset-env": "^7.9.6",
     "@nuxtjs/eslint-config": "^3.0.0",
     "@nuxtjs/google-analytics": "^2.2.3",
