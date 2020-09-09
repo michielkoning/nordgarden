@@ -16,7 +16,9 @@ query Posts($first: Int, $after: String, $notIn: [ID]) {
         slug
         excerpt
         featuredImage {
-          ...imageArchive
+          node {
+            ...imageArchive
+          }
         }
       }
     }

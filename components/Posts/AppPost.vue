@@ -11,7 +11,11 @@
         <icon-chevron-right aria-hidden="true" width="16" height="16" />
       </span>
     </div>
-    <image-archive :image="post.featuredImage" class="image" />
+    <image-archive
+      v-if="post.featuredImage"
+      :image="post.featuredImage.node"
+      class="image"
+    />
   </li>
 </template>
 
