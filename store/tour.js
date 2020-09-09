@@ -1,3 +1,4 @@
+import axios from 'axios'
 import { toursApiUrl } from '~/config/siteDetails'
 export const state = () => ({
   list: [],
@@ -17,7 +18,8 @@ export const actions = {
   async set({ commit }) {
     commit('updateLoader', true)
     try {
-      const response = await this.$axios.$get(toursApiUrl)
+      const response = await axios.get(toursApiUrl)
+      // const response = await this.$axios.$get(toursApiUrl)
       if (response.data) {
         const tours = response.data.map((tour) => {
           return {
