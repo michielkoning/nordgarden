@@ -9,6 +9,8 @@ import { apiUrl, siteUrl, twitter, siteTitle } from './config/siteDetails'
 
 export default {
   mode: 'universal',
+  modern: true,
+  target: 'static',
   env: {
     siteUrl,
   },
@@ -70,13 +72,14 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/vue-youtube'],
+  plugins: ['~/plugins/axios', '~/plugins/vue-youtube'],
 
   /*
    ** Nuxt.js modules
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
+    '@nuxtjs/axios',
     '@nuxtjs/apollo',
     '@nuxtjs/pwa',
     '@nuxtjs/sitemap',
@@ -138,28 +141,8 @@ export default {
   },
   generate: {
     fallback: true,
-    async routes() {
-      const uri = `${apiUrl}graphql`
-
-      const query = `
-        query GET_SITEMAP {
-          posts(first: 20, where: {status: PUBLISH}) {
-            edges {
-              node {
-                uri
-              }
-            }
-          }
-        }
-      `
-
-      const apolloFetch = createApolloFetch({ uri })
-      const result = await apolloFetch({ query }) // all apolloFetch arguments are optional
-      const { posts } = result.data
-      return posts.edges.map((item) => {
-        return item.node.uri
-      })
-    },
+    interval: 2000,
+    concurrency: 5,
   },
   apollo,
   sitemap,

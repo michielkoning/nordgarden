@@ -1,16 +1,8 @@
-import axios from 'axios'
 import EventBusUtil from '~/utils/eventBusUtil'
-import { apiUrl } from '~/config/siteDetails'
 
-const instance = axios.create({
-  baseURL: `${apiUrl}wp-json/`,
-})
-
-instance.interceptors.response.use(
-  (response) => response,
-  (error) => {
+export default function ({ $axios }) {
+  $axios.setBaseURL(process.env.BASE_URL)
+  $axios.onError((error) => {
     EventBusUtil.$emit('axios-interceptor-throws-error', error)
-  },
-)
-
-export default instance
+  })
+}
