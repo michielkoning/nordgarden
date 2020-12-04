@@ -1,11 +1,10 @@
-#import "./Fragments/Seo.gql"
-
 query Page($pageId: ID!) {
   page(id: $pageId, idType: DATABASE_ID) {
     title
     content
     seo {
-      ...seo
+      metaDesc
+      title
     }
   }
 }

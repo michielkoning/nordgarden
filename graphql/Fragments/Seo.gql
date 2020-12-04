@@ -1,4 +1,0 @@
-fragment seo on SEO {
-  metaDesc
-  title
-}

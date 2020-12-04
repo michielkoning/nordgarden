@@ -1,4 +1,3 @@
-#import "./Fragments/Seo.gql"
 #import "./Fragments/Post.gql"
 
 query Post($uri: ID!) {
@@ -6,7 +5,8 @@ query Post($uri: ID!) {
     ...post
     content
     seo {
-      ...seo
+      metaDesc
+      title
     }
   }
 }
