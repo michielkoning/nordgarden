@@ -3,7 +3,6 @@ import googleAnalytics from './config/googleAnalytics'
 import manifest from './config/manifest'
 import i18n from './config/i18n'
 import apollo from './config/apollo'
-import sitemap from './config/sitemap'
 import { apiUrl, siteUrl, twitter, siteTitle } from './config/siteDetails'
 
 export default {
@@ -147,5 +146,4 @@ export default {
     concurrency: 5,
   },
   apollo,
-  sitemap,
 }
