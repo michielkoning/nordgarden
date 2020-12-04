@@ -1,6 +1,7 @@
 export default {
   defaultLocale: 'en',
   lazy: true,
+  seo: true,
   langDir: 'locales/',
   locales: [
     {

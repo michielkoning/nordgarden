@@ -1,4 +1,3 @@
-import { createApolloFetch } from 'apollo-fetch'
 import splashscreens from './config/splashscreens'
 import googleAnalytics from './config/googleAnalytics'
 import manifest from './config/manifest'
@@ -8,7 +7,6 @@ import sitemap from './config/sitemap'
 import { apiUrl, siteUrl, twitter, siteTitle } from './config/siteDetails'
 
 export default {
-  mode: 'universal',
   modern: true,
   target: 'static',
   env: {

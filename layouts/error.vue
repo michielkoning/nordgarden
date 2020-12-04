@@ -17,6 +17,11 @@ export default {
       required: true,
     },
   },
+  head() {
+    return {
+      title: this.title,
+    }
+  },
 
   computed: {
     title() {
@@ -25,11 +30,6 @@ export default {
       }
       return 'An error occurred'
     },
-  },
-  head() {
-    return {
-      title: this.title,
-    }
   },
 }
 </script>

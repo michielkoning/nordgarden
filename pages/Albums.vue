@@ -23,14 +23,14 @@ export default {
       title: this.$t('albums'),
     }
   },
-  computed: {
-    ...mapState('albums', ['list']),
-  },
   head() {
     const { title } = this
     const slug = 'albums'
     const metaDesc = 'The new album KORSVEI is out!'
     return getSeoMetaData(title, metaDesc, slug)
+  },
+  computed: {
+    ...mapState('albums', ['list']),
   },
 }
 </script>
