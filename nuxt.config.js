@@ -83,7 +83,6 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/apollo',
     '@nuxtjs/pwa',
-    '@nuxtjs/sitemap',
     'nuxt-svg-loader',
     'nuxt-i18n',
   ],
