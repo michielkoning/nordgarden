@@ -1,9 +1,9 @@
-import { siteTitle, themeColor } from './siteDetails'
+import { siteTitle } from './siteDetails'
 
 export default {
   name: siteTitle,
-  background_color: themeColor,
-  theme_color: 'transparent',
+  background_color: '#464545',
+  theme_color: '#dcac4c',
   short_name: siteTitle,
   orientation: 'any',
   categories: ['music'],
