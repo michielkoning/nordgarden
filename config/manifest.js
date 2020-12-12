@@ -3,7 +3,7 @@ import { siteTitle, themeColor } from './siteDetails'
 export default {
   name: siteTitle,
   background_color: themeColor,
-  theme_color: themeColor,
+  theme_color: 'transparent',
   short_name: siteTitle,
   orientation: 'any',
   categories: ['music'],
