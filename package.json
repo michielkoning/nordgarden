@@ -2,7 +2,7 @@
   "name": "nordgarden",
   "version": "1.0.0",
   "private": true,
-  "description": "nordgarden",
+  "description": "Nordgarden is a Norwegian artist deriving from the American old school of classic songwriting.",
   "author": "Michiel Koning",
   "scripts": {
     "build": "nuxt build",
