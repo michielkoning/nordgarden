@@ -2,7 +2,7 @@ import albums from '~/data/albums'
 
 export const state = () => ({
   list: albums,
-  currentSong: albums[1].songlist.find((song) => song.file !== undefined),
+  currentSong: null,
   isPlaying: false,
 })
 
@@ -11,7 +11,16 @@ export const getters = {
     let newArray = []
     albums.forEach((album) => {
       const songs = album.songlist.filter((song) => song.file !== undefined)
-      newArray = [...newArray, ...songs]
+      const songsWithAlbum = songs.map((song) => {
+        return {
+          ...song,
+          album: {
+            title: album.title,
+            image: album.image,
+          },
+        }
+      })
+      newArray = [...newArray, ...songsWithAlbum]
     })
     return newArray
   },
@@ -37,7 +46,9 @@ export const actions = {
   },
   selectNextSong({ commit }, currentSong) {
     const songs = getters.playableSongs()
-    const currentSongIndex = songs.findIndex((song) => song === currentSong)
+    const currentSongIndex = songs.findIndex(
+      (song) => song.title === currentSong.title,
+    )
     let nextSongIndex
     if (currentSongIndex + 1 >= songs.length) {
       nextSongIndex = 0
@@ -45,5 +56,18 @@ export const actions = {
       nextSongIndex = currentSongIndex + 1
     }
     commit('selectSong', songs[nextSongIndex])
+  },
+  selectPreviousSong({ commit }, currentSong) {
+    const songs = getters.playableSongs()
+    const currentSongIndex = songs.findIndex(
+      (song) => song.title === currentSong.title,
+    )
+    let previousSongIndex
+    if (currentSongIndex === 0) {
+      previousSongIndex = songs.length - 1
+    } else {
+      previousSongIndex = currentSongIndex - 1
+    }
+    commit('selectSong', songs[previousSongIndex])
   },
 }

@@ -14,18 +14,18 @@
     </button>
     <div v-show="songs.length" ref="progress" class="progress" @click="scrub">
       <div :style="{ width: progress }" class="bar"></div>
-      <div class="title">{{ currentSong.title }}</div>
+      <div v-if="currentSong" class="title">{{ currentSong.title }}</div>
     </div>
     <audio
       id="audio"
       ref="audio"
-      :src="currentSong.file"
+      :src="currentSong ? currentSong.file : null"
       preload="none"
       @timeupdate="timeupdate"
       @ended="next"
       @play="setPlayState(true)"
       @pause="setPlayState(false)"
-    ></audio>
+    />
   </div>
 </template>
 
@@ -64,11 +64,16 @@ export default {
     this.$nextTick(() => {
       this.player = this.$refs.audio
     })
+    this.selectSong(this.songs[0])
+    this.addMetaData()
+    this.mediaSessionEventListeners()
   },
   methods: {
     ...mapActions({
       setPlayState: 'albums/setPlayState',
       selectNextSong: 'albums/selectNextSong',
+      selectPreviousSong: 'albums/selectPreviousSong',
+      selectSong: 'albums/selectSong',
     }),
     pause() {
       this.player.pause()
@@ -76,10 +81,30 @@ export default {
     play() {
       this.player.play()
     },
+    previous() {
+      this.selectPreviousSong(this.currentSong).then(() => {
+        this.player.play()
+        this.updateMetaData()
+      })
+    },
     next() {
       this.selectNextSong(this.currentSong).then(() => {
         this.player.play()
+        this.updateMetaData()
       })
+    },
+    updateMetaData() {
+      navigator.mediaSession.metadata.title = this.currentSong.title
+      navigator.mediaSession.metadata.album = this.currentSong.album.title
+      const sizes = [96, 128, 192, 256, 384, 512]
+      const artwork = sizes.map((size) => {
+        return {
+          src: `/media/albums/${this.currentSong.album.image}/${size}.png`,
+          sizes: `${size}x${size}`,
+          type: 'image/png',
+        }
+      })
+      navigator.mediaSession.metadata.artwork = artwork
     },
     scrub(event) {
       const progress = this.$refs.progress
@@ -91,6 +116,40 @@ export default {
       this.progress = `${
         (this.player.currentTime / this.player.duration) * 100
       }%`
+    },
+    addMetaData() {
+      if (!process.client) return
+      if (!('mediaSession' in window.navigator)) return
+      // eslint-disable-next-line no-undef
+      navigator.mediaSession.metadata = new MediaMetadata({
+        artist: 'Nordgarden',
+      })
+      this.updateMetaData()
+    },
+    mediaSessionEventListeners() {
+      if (!process.client) return
+      if (!('mediaSession' in window.navigator)) return
+      navigator.mediaSession.setActionHandler('pause', () => {
+        this.pause()
+      })
+      navigator.mediaSession.setActionHandler('play', () => {
+        this.play()
+      })
+      navigator.mediaSession.setActionHandler('seekbackward', (details) => {
+        this.player.currentTime =
+          this.player.currentTime - (details.seekOffset || 10)
+      })
+      navigator.mediaSession.setActionHandler('seekforward', (details) => {
+        this.player.currentTime =
+          this.player.currentTime + (details.seekOffset || 10)
+      })
+      navigator.mediaSession.setActionHandler('previoustrack', () => {
+        this.previous()
+      })
+
+      navigator.mediaSession.setActionHandler('nexttrack', () => {
+        this.next()
+      })
     },
   },
 }
