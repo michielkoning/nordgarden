@@ -190,6 +190,7 @@ button {
 }
 
 .bar {
+  transition: width linear 0.1s;
   position: absolute;
   left: 0;
   top: 0;
