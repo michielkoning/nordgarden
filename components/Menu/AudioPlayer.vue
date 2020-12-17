@@ -17,10 +17,9 @@
       <div v-if="currentSong" class="title">{{ currentSong.title }}</div>
     </div>
     <audio
-      id="audio"
       ref="audio"
       :src="currentSong ? currentSong.file : null"
-      preload="none"
+      :preload="preload"
       @timeupdate="timeupdate"
       @ended="next"
       @play="setPlayState(true)"
@@ -48,6 +47,7 @@ export default {
       songIndex: 1,
       player: null,
       progress: 0,
+      preload: 'none',
     }
   },
   computed: {
@@ -67,8 +67,21 @@ export default {
     this.selectSong(this.songs[0])
     this.addMetaData()
     this.mediaSessionEventListeners()
+    this.setPreloadOnFastConnection()
   },
   methods: {
+    setPreloadOnFastConnection() {
+      if (!process.client) return
+      const connection =
+        window.navigator.connection ||
+        window.navigator.mozConnection ||
+        window.navigator.webkitConnection
+      if (!connection) return
+
+      const slowConnections = ['slow-2g', '2g', '3g']
+      if (slowConnections.includes(connection.effectiveType)) return
+      this.preload = 'auto'
+    },
     ...mapActions({
       setPlayState: 'albums/setPlayState',
       selectNextSong: 'albums/selectNextSong',

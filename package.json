@@ -20,7 +20,7 @@
     "body-scroll-lock": "^3.1.5",
     "cross-env": "^7.0.3",
     "graphql-tag": "^2.11.0",
-    "nuxt": "^2.14.11",
+    "nuxt": "^2.14.12",
     "nuxt-i18n": "^6.16.0",
     "vue": "^2.6.12",
     "vue-youtube": "^1.4.0"
