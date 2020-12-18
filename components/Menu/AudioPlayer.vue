@@ -18,7 +18,7 @@
     </div>
     <audio
       ref="audio"
-      :src="currentSong ? currentSong.file : null"
+      :src="currentSongFile"
       :preload="preload"
       @timeupdate="timeupdate"
       @ended="next"
@@ -55,6 +55,10 @@ export default {
     ...mapGetters({
       songs: 'albums/playableSongs',
     }),
+    currentSongFile() {
+      if (!this.currentSong) return null
+      return this.currentSong.file
+    },
   },
 
   created() {
@@ -70,17 +74,23 @@ export default {
     this.setPreloadOnFastConnection()
   },
   methods: {
-    setPreloadOnFastConnection() {
-      if (!process.client) return
+    userHasFastConnection() {
+      if (!process.client) return false
       const connection =
         window.navigator.connection ||
         window.navigator.mozConnection ||
         window.navigator.webkitConnection
-      if (!connection) return
+      if (!connection) return false
 
       const slowConnections = ['slow-2g', '2g', '3g']
-      if (slowConnections.includes(connection.effectiveType)) return
-      this.preload = 'auto'
+      return !slowConnections.includes(connection.effectiveType)
+    },
+    setPreloadOnFastConnection() {
+      if (this.userHasFastConnection()) {
+        this.preload = 'auto'
+      } else {
+        this.preload = 'none'
+      }
     },
     ...mapActions({
       setPlayState: 'albums/setPlayState',
@@ -94,17 +104,15 @@ export default {
     play() {
       this.player.play()
     },
-    previous() {
-      this.selectPreviousSong(this.currentSong).then(() => {
-        this.player.play()
-        this.updateMetaData()
-      })
+    async previous() {
+      await this.selectPreviousSong(this.currentSong)
+      this.player.play()
+      this.updateMetaData()
     },
-    next() {
-      this.selectNextSong(this.currentSong).then(() => {
-        this.player.play()
-        this.updateMetaData()
-      })
+    async next() {
+      await this.selectNextSong(this.currentSong)
+      this.player.play()
+      this.updateMetaData()
     },
     updateMetaData() {
       navigator.mediaSession.metadata.title = this.currentSong.title

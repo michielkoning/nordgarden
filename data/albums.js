@@ -144,7 +144,7 @@ export default [
     releaseDate: '2013, 11, 22',
     songlist: [
       {
-        title: 'Non \\u00e8 la California',
+        title: 'Non è la California',
       },
       {
         title: 'La mia rivoluzione',
@@ -153,7 +153,7 @@ export default [
         title: 'Invisibile',
       },
       {
-        title: 'Cerchi nell\\u2019acqua',
+        title: "Cerchi Nell'acqua",
       },
       {
         title: 'Le canzoni dei cani',
@@ -162,16 +162,16 @@ export default [
         title: 'Miele',
       },
       {
-        title: 'L\\u2019abbandono',
+        title: 'L’abbandono',
       },
       {
         title: 'Dove mi perdo',
       },
       {
-        title: 'La realt\\u00e0 non esiste',
+        title: 'La Realtà Non Esiste',
       },
       {
-        title: 'L\\u2019invasore',
+        title: 'L’invasore',
       },
     ],
   },
