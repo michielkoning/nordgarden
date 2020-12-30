@@ -20,6 +20,7 @@
       ref="audio"
       :src="currentSongFile"
       :preload="preload"
+      type="audio/mp3"
       @timeupdate="timeupdate"
       @ended="next"
       @play="setPlayState(true)"
