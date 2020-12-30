@@ -8,7 +8,7 @@
       />
     </transition-group>
     <app-loader v-if="$apollo.queries.posts.loading" />
-    <div v-else-if="posts.pageInfo.hasNextPage" class="button-wrapper">
+    <div v-else-if="posts && posts.pageInfo.hasNextPage" class="button-wrapper">
       <button class="btn" @click="showMore">
         {{ $t('loadMore') }}
       </button>

@@ -32,6 +32,7 @@ export default {
     }
   },
   head() {
+    if (!this.page) return
     const { title, metaDesc } = this.page.seo
     const slug = 'biography'
     return getSeoMetaData(title, metaDesc, slug)
