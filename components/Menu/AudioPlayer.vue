@@ -19,6 +19,7 @@
     <audio
       ref="audio"
       :src="currentSongFile"
+      :preload="preload"
       type="audio/mp3"
       @timeupdate="timeupdate"
       @ended="next"
@@ -70,8 +71,8 @@ export default {
     })
     this.selectSong(this.songs[0])
     this.addMetaData()
-    // this.mediaSessionEventListeners()
-    // this.setPreloadOnFastConnection()
+    this.mediaSessionEventListeners()
+    this.setPreloadOnFastConnection()
   },
   methods: {
     userHasFastConnection() {
