@@ -70,8 +70,8 @@ export default {
     })
     this.selectSong(this.songs[0])
     this.addMetaData()
-    this.mediaSessionEventListeners()
-    this.setPreloadOnFastConnection()
+    // this.mediaSessionEventListeners()
+    // this.setPreloadOnFastConnection()
   },
   methods: {
     userHasFastConnection() {
