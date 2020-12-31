@@ -62,13 +62,11 @@ export default {
     },
   },
 
-  created() {
+  mounted() {
     EventBusUtil.$on('audio-play-song', (state) =>
       state ? this.play() : this.pause(),
     )
-    this.$nextTick(() => {
-      this.player = this.$refs.audio
-    })
+    this.player = this.$refs.audio
     this.selectSong(this.songs[0])
     this.addMetaData()
     this.mediaSessionEventListeners()
