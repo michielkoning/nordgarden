@@ -1,5 +1,9 @@
 export default [
   {
+    videoId: 'aklyaZ5NkSk',
+    title: ' Last Breath',
+  },
+  {
     videoId: 'XqWaMrzyXyQ',
     title: 'Tango – (Official Video)',
   },

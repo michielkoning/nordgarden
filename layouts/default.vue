@@ -1,13 +1,20 @@
 <template>
-  <div id="app" tabindex="-1">
-    <notch-wrapper>
-      <app-header />
-      <nuxt />
+  <notch-wrapper>
+    <vue-announcer />
+    <app-header />
+    <nuxt />
 
-      <error-handler />
-    </notch-wrapper>
-  </div>
+    <error-handler />
+  </notch-wrapper>
 </template>
+
+<script>
+export default {
+  head() {
+    return this.$nuxtI18nHead({ addSeoAttributes: true })
+  },
+}
+</script>
 
 <script>
 import AppHeader from '~/components/Layout/AppHeader.vue'
